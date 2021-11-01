@@ -86,6 +86,7 @@ class MyDocument extends Document {
             body {
               background-color: var(--bg-clr);
               color: var(--primary-clr);
+              transition: all .3s ease;
             }
          `,
             }}

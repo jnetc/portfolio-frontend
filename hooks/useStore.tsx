@@ -3,15 +3,11 @@ import { FC, useContext, createContext, useState, useEffect } from 'react';
 interface State {
   lang: string;
   setLang: (lang: string) => void;
-  theme: string;
-  setTheme: (theme: string) => void;
 }
 
 const state: State = {
   lang: 'en',
   setLang: lang => lang,
-  theme: 'dark',
-  setTheme: theme => theme,
 };
 const Content = createContext(state);
 
@@ -25,19 +21,18 @@ export const useStore = () => {
 
 export const Store: FC = ({ children }) => {
   const [lang, setLang] = useState(state.lang);
-  const [theme, setTheme] = useState(state.theme);
   useEffect(() => {
     const docLang = document.documentElement.lang;
     // const
     // if (lang !== docLang) {
     // }
-    console.log('update lang', docLang);
+    // console.log('update lang', docLang);
 
     setLang(docLang);
     // console.log(document.documentElement.lang);
     // console.log(navigator.language);
   }, []);
-  console.log('store___');
+  // console.log('store___');
 
   // First check user system color theme
   // useEffect(() => {
@@ -67,8 +62,6 @@ export const Store: FC = ({ children }) => {
       value={{
         lang,
         setLang,
-        theme,
-        setTheme,
       }}
     >
       {children}

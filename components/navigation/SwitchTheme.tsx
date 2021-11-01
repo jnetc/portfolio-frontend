@@ -14,20 +14,16 @@ export const SwitchTheme: FC = () => {
     });
   };
 
-  // Set attributes to the button for screen reader & save to the localStorage
-  const accessibilityAttr = (value: string, checked: boolean) => {
-    ref.current?.setAttribute('aria-label', `Change to ${value} mode`);
-    ref.current?.setAttribute('aria-cheked', `${checked}`);
+  const themeSwitcher = useCallback(value => {
+    document.body.dataset.theme = value;
+    ref.current?.setAttribute('aria-label', `change to ${value} mode`);
     localStorage.setItem('theme', value);
-  };
+  }, []);
 
-  const themeSwitcher = useCallback(
-    value => {
-      document.body.dataset.theme = value;
-      accessibilityAttr(value, theme);
-    },
-    [theme]
-  );
+  useEffect(() => {
+    const lS = localStorage.getItem('theme');
+    setTheme(lS === DARK_SCHEME);
+  }, []);
 
   // Switch theme
   useEffect(() => {
@@ -40,7 +36,7 @@ export const SwitchTheme: FC = () => {
 
   return (
     <>
-      <button onClick={toggleTheme} ref={ref}>
+      <button tabIndex={0} onClick={toggleTheme} ref={ref}>
         {theme ? DARK_SCHEME : LIGHT_SCHEME}
       </button>
     </>
