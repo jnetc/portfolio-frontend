@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { NextPage, GetStaticProps } from 'next';
 
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { groq } from 'next-sanity';
 // import { usePreviewSubscription, urlFor } from '../lib/sanity';
-import { getClient } from '../lib/sanity.server';
+// import { getClient } from '../lib/sanity.server';
 import { useStore } from '@Hooks/useStore';
 
 // Components
@@ -74,6 +74,7 @@ const query = groq`*[_type == 'main'] {
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   // const [data] = await getClient(preview).fetch(query);
+  console.log(preview, query);
 
   return {
     props: {

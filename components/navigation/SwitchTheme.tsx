@@ -1,6 +1,5 @@
 import { FC, useEffect, useState, useRef, useCallback } from 'react';
 
-const COLOR_SCHEMES = ['no-preference', 'dark', 'light'];
 const DARK_SCHEME = 'dark';
 const LIGHT_SCHEME = 'light';
 
@@ -24,31 +23,11 @@ export const SwitchTheme: FC = () => {
 
   const themeSwitcher = useCallback(
     value => {
-      const html = document.documentElement;
-      html.dataset.theme = value;
+      document.body.dataset.theme = value;
       accessibilityAttr(value, theme);
     },
     [theme]
   );
-
-  // First check user system color theme
-  useEffect(() => {
-    const lS = localStorage.getItem('theme');
-    if (!lS) {
-      // Проверка цветовой схемы системы
-      for (const scheme of COLOR_SCHEMES) {
-        if (window.matchMedia(`(prefers-color-scheme: ${scheme})`).matches) {
-          const mode = scheme === DARK_SCHEME;
-          setTheme(mode);
-          accessibilityAttr(scheme, mode);
-        }
-      }
-    }
-    if (lS) {
-      setTheme(lS === DARK_SCHEME);
-    }
-    console.log('switchTheme');
-  }, []);
 
   // Switch theme
   useEffect(() => {
@@ -67,3 +46,26 @@ export const SwitchTheme: FC = () => {
     </>
   );
 };
+
+//! PS
+// const COLOR_SCHEMES = ['no-preference', 'dark', 'light'];
+
+// First check user system color theme
+// useEffect(() => {
+//   const lS = localStorage.getItem('theme');
+//   if (!lS) {
+//     // Проверка цветовой схемы системы
+//     for (const scheme of COLOR_SCHEMES) {
+//       if (window.matchMedia(`(prefers-color-scheme: ${scheme})`).matches) {
+//         document.body.dataset.theme = scheme;
+//         const mode = scheme === DARK_SCHEME;
+//         setTheme(mode);
+//         accessibilityAttr(scheme, mode);
+//       }
+//     }
+//   }
+//   if (lS) {
+//     setTheme(lS === DARK_SCHEME);
+//   }
+//   console.log('switchTheme');
+// }, []);

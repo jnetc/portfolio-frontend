@@ -19,9 +19,9 @@ export const useStore = () => {
   return useContext(Content);
 };
 
-const COLOR_SCHEMES = ['no-preference', 'dark', 'light'];
-const DARK_SCHEME = 'dark';
-const LIGHT_SCHEME = 'light';
+// const COLOR_SCHEMES = ['no-preference', 'dark', 'light'];
+// const DARK_SCHEME = 'dark';
+// const LIGHT_SCHEME = 'light';
 
 export const Store: FC = ({ children }) => {
   const [lang, setLang] = useState(state.lang);

@@ -13,6 +13,7 @@ const Navigation: FC = () => {
       <ul>
         <LinkName />
       </ul>
+      <LinkArrow />
       <SwitchLang />
       <SwitchTheme />
     </nav>
