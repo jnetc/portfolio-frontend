@@ -1,22 +1,21 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import { useStore } from '@Hooks/useStore';
-export const SwitchLang: FC = () => {
-  const { setLang } = useStore();
-  // const [lang, setLang] = useState('');
 
-  const toggleLang = (value: string) => {
-    setLang(value);
-  };
+import { useStore } from '@Store';
+
+export const SwitchLang: FC = () => {
+  const { lang } = useStore();
+
+  console.log(lang);
 
   return (
-    <>
+    <div className="switch-language">
       <Link href="/" locale="en">
-        <a onClick={() => toggleLang('en')}>EN</a>
+        <a className={lang === 'en' ? 'active' : undefined}>EN</a>
       </Link>
       <Link href="/ru" locale="ru">
-        <a onClick={() => toggleLang('ru')}>RU</a>
+        <a className={lang === 'ru' ? 'active' : undefined}>RU</a>
       </Link>
-    </>
+    </div>
   );
 };

@@ -2,9 +2,12 @@ import { FC, useEffect, useState, useRef, useCallback } from 'react';
 
 const DARK_SCHEME = 'dark';
 const LIGHT_SCHEME = 'light';
+//!
+// Also should add additional lines of code to the _document.tsx.
+//!
 
 export const SwitchTheme: FC = () => {
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = useState<Boolean | null>(null);
   const ref = useRef<HTMLButtonElement>(null);
 
   const toggleTheme = () => {
@@ -15,20 +18,30 @@ export const SwitchTheme: FC = () => {
   };
 
   const themeSwitcher = useCallback(value => {
-    document.body.dataset.theme = value;
+    document.documentElement.dataset.theme = value;
     ref.current?.setAttribute('aria-label', `change to ${value} mode`);
     localStorage.setItem('theme', value);
   }, []);
 
+  // Define value from localStorage or system color
   useEffect(() => {
     const lS = localStorage.getItem('theme');
+    if (!lS) {
+      setTheme(
+        window.matchMedia(`(prefers-color-scheme: ${DARK_SCHEME})`).matches
+      );
+      return;
+    }
     setTheme(lS === DARK_SCHEME);
+
+    return () => setTheme(null);
   }, []);
 
   // Switch theme
   useEffect(() => {
     if (theme) {
       themeSwitcher(DARK_SCHEME);
+
       return;
     }
     themeSwitcher(LIGHT_SCHEME);
@@ -42,26 +55,3 @@ export const SwitchTheme: FC = () => {
     </>
   );
 };
-
-//! PS
-// const COLOR_SCHEMES = ['no-preference', 'dark', 'light'];
-
-// First check user system color theme
-// useEffect(() => {
-//   const lS = localStorage.getItem('theme');
-//   if (!lS) {
-//     // Проверка цветовой схемы системы
-//     for (const scheme of COLOR_SCHEMES) {
-//       if (window.matchMedia(`(prefers-color-scheme: ${scheme})`).matches) {
-//         document.body.dataset.theme = scheme;
-//         const mode = scheme === DARK_SCHEME;
-//         setTheme(mode);
-//         accessibilityAttr(scheme, mode);
-//       }
-//     }
-//   }
-//   if (lS) {
-//     setTheme(lS === DARK_SCHEME);
-//   }
-//   console.log('switchTheme');
-// }, []);

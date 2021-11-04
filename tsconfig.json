@@ -17,15 +17,16 @@
     "paths": {
       "@About": ["./components/about"],
       "@Footer": ["./components/footer"],
+      "@Helpers/*": ["./helpers/*"],
       "@Home": ["./components/home"],
       "@Hooks/*": ["./hooks/*"],
       "@Modal": ["./components/modal"],
       "@Navigation": ["./components/navigation"],
       "@Portfolio": ["./components/portfolio"],
       "@Skills": ["./components/skills"],
-      "@Store": ["./store"],
+      "@Store": ["./pages"],
       "@Styles/*": ["./styles/*"],
-      "@Types": ["./types"]
+      "@Types": ["types.ts"]
     },
     "pretty": true,
     "resolveJsonModule": true,

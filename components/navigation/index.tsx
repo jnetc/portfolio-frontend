@@ -5,10 +5,16 @@ import { LinkName } from './LinkName';
 import { Logo } from './Logo';
 import { SwitchLang } from './SwitchLang';
 import { SwitchTheme } from './SwitchTheme';
-
+// Context
+import { useStore } from '@Store';
+// Style
+import style from './navigation.module.css';
 const Navigation: FC = () => {
+  const { context } = useStore();
+  console.log('navigation', context);
+
   return (
-    <nav>
+    <nav className={style.nav}>
       <Logo />
       <ul>
         <LinkName />
