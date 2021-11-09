@@ -1,0 +1,93 @@
+#theme {
+  transition: all 0.5s cubic-bezier(0, 1.46, 0.23, 1.83);
+  transition-delay: 0s;
+}
+#theme.moon {
+  transition-delay: 0.65s;
+  transform: rotate(-45deg);
+}
+
+#theme.moon line {
+  stroke-dasharray: 19;
+}
+
+#theme.moon #sun {
+  transform: scale(1.2);
+}
+#theme.moon #half_moon {
+  transform: translate(8px, 0px);
+  transition-delay: 0.5s;
+}
+
+#theme #sun {
+  fill: var(--primary-clr);
+  transform-origin: 16px 16px;
+  transition: all 0.8s ease-in-out;
+}
+
+#theme #half_moon {
+  fill: #000;
+  transform: translate(16px, 0px);
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0s;
+}
+
+#theme line {
+  stroke: var(--primary-clr);
+  stroke-dasharray: 8;
+  stroke-dashoffset: 22;
+  stroke-linecap: round;
+  stroke-width: 3;
+  transition: all 0.5s ease-in-out;
+}
+
+#theme.moon line:nth-of-type(2) {
+  transition-delay: 0.05s;
+}
+#theme.moon line:nth-of-type(3) {
+  transition-delay: 0.1s;
+}
+#theme.moon line:nth-of-type(4) {
+  transition-delay: 0.15s;
+}
+#theme.moon line:nth-of-type(5) {
+  transition-delay: 0.2s;
+}
+#theme.moon line:nth-of-type(6) {
+  transition-delay: 0.25s;
+}
+#theme.moon line:nth-of-type(7) {
+  transition-delay: 0.3s;
+}
+#theme.moon line:nth-of-type(8) {
+  transition-delay: 0.35s;
+}
+
+#theme line:nth-of-type(1) {
+  transition-delay: 0.05s;
+}
+#theme line:nth-of-type(2) {
+  transition-delay: 0.1s;
+}
+#theme line:nth-of-type(3) {
+  transition-delay: 0.15s;
+}
+#theme line:nth-of-type(4) {
+  transition-delay: 0.2s;
+}
+#theme line:nth-of-type(5) {
+  transition-delay: 0.25s;
+}
+#theme line:nth-of-type(6) {
+  transition-delay: 0.3s;
+}
+#theme line:nth-of-type(7) {
+  transition-delay: 0.35s;
+}
+#theme line:nth-of-type(8) {
+  transition-delay: 0.4s;
+}
+
+#theme #mask {
+  fill: #fff;
+}

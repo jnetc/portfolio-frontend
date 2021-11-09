@@ -4,7 +4,7 @@ import Head from 'next/head';
 
 // Sanity CMS
 import { groq } from 'next-sanity';
-import { PortableText } from '../lib/sanity';
+// import { PortableText } from '../lib/sanity';
 import { getClient } from '../lib/sanity.server';
 
 // Components
@@ -40,12 +40,12 @@ const Home: NextPage<{ data: Data; locale: string }> = ({ data, locale }) => {
         </Head>
 
         <Navigation />
-        <main>
+        {/* <main>
           <h1>Welcome to 😃</h1>
           <button>😍</button>
 
           <PortableText blocks={currentLangData.slogan} />
-        </main>
+        </main> */}
       </div>
     </Store.Provider>
   );

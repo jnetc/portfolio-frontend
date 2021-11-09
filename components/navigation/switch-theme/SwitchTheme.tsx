@@ -1,4 +1,5 @@
 import { FC, useEffect, useState, useRef, useCallback } from 'react';
+import { ThemeIcon } from './ThemeIcon';
 
 const DARK_SCHEME = 'dark';
 const LIGHT_SCHEME = 'light';
@@ -7,8 +8,8 @@ const LIGHT_SCHEME = 'light';
 //!
 
 export const SwitchTheme: FC = () => {
-  const [theme, setTheme] = useState<Boolean | null>(null);
-  const ref = useRef<HTMLButtonElement>(null);
+  const [theme, setTheme] = useState<boolean | null>(null);
+  let ref = useRef<HTMLDivElement>(null);
 
   const toggleTheme = () => {
     setTheme(prevState => {
@@ -19,7 +20,6 @@ export const SwitchTheme: FC = () => {
 
   const themeSwitcher = useCallback(value => {
     document.documentElement.dataset.theme = value;
-    ref.current?.setAttribute('aria-label', `change to ${value} mode`);
     localStorage.setItem('theme', value);
   }, []);
 
@@ -34,7 +34,15 @@ export const SwitchTheme: FC = () => {
     }
     setTheme(lS === DARK_SCHEME);
 
-    return () => setTheme(null);
+    // Prevent transition when page is loaded
+    const preventTransition = setTimeout(() => {
+      ref.current?.classList.remove('prevent-theme');
+    }, 0);
+
+    return () => {
+      clearTimeout(preventTransition);
+      setTheme(null);
+    };
   }, []);
 
   // Switch theme
@@ -47,11 +55,25 @@ export const SwitchTheme: FC = () => {
     themeSwitcher(LIGHT_SCHEME);
   }, [theme, themeSwitcher]);
 
+  console.log('up parent');
+
   return (
     <>
-      <button tabIndex={0} onClick={toggleTheme} ref={ref}>
-        {theme ? DARK_SCHEME : LIGHT_SCHEME}
-      </button>
+      <div
+        className="theme-switcher prevent-theme"
+        tabIndex={0}
+        role="button"
+        aria-label={
+          theme
+            ? `change to ${LIGHT_SCHEME} mode`
+            : `change to ${DARK_SCHEME} mode`
+        }
+        onClick={toggleTheme}
+        onKeyPress={toggleTheme}
+        ref={ref}
+      >
+        <ThemeIcon theme={theme} />
+      </div>
     </>
   );
 };

@@ -1,4 +1,4 @@
 import { FC } from 'react';
 export const LinkArrow: FC = () => {
-  return <div>Arrow</div>;
+  return <div id="nav-arrow">Arrow</div>;
 };

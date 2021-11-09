@@ -1,12 +1,15 @@
-type Locale<T> = {
-  [K in keyof T]: string | Array<string>;
+export type Locale = {
+  [key: string]: string | Array<string>;
 };
+// export type Locale<T> = {
+//   [K in keyof T]: string | Array<string>;
+// };
 
-export interface TransformedData<T> {
-  action_btn: Locale<T>;
-  second_btn: Locale<T>;
-  navigation: Locale<T>;
-  slogan: Locale<T>;
+export interface TransformedData {
+  action_btn: string;
+  second_btn: string;
+  navigation: Array<string>;
+  slogan: Array<string>;
 }
 
 export interface Localization {
@@ -22,6 +25,6 @@ export interface Data {
 }
 
 export interface Store {
-  context: TransformedData<string> | null;
+  context: TransformedData | null;
   lang: string;
 }

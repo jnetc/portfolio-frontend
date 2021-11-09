@@ -34,6 +34,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta name="color-scheme" content="dark light" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
@@ -44,7 +45,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
             rel="stylesheet"
           ></link>
-          <meta name="color-scheme" content="dark light" />
           <style
             id="___critical-css"
             dangerouslySetInnerHTML={{

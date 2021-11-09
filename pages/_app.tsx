@@ -1,4 +1,5 @@
 import '@Styles/globals.css';
+import '@Styles/navigation.css';
 
 import type { AppProps } from 'next/app';
 
