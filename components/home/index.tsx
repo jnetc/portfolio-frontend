@@ -1,8 +1,14 @@
 import { FC } from 'react';
-// Style
-import style from './home.module.css';
+
+import Title from './title/Title';
+
 const Home: FC = () => {
-  return <section className={style.nav}>Home</section>;
+  return (
+    <>
+      <Title />
+      <div id="main-image">image</div>
+    </>
+  );
 };
 
 export default Home;

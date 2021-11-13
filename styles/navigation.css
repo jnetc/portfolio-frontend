@@ -1,8 +1,8 @@
 .nav {
+  grid-column: 1 / -1;
   height: 2rem;
   display: flex;
   gap: 1.8rem;
-  /* border: 1px solid darkolivegreen; */
   align-items: center;
 }
 
@@ -13,9 +13,14 @@
 }
 
 #logo {
-  height: 40px;
-  display: flex;
-  justify-content: flex-start;
+  width: 50px;
+  height: auto;
+  fill: var(--primary-clr);
+}
+@media screen and (max-width: 768px) {
+  #logo {
+    width: 40px;
+  }
 }
 
 /* LINKS */
@@ -56,12 +61,13 @@
   clip-path: circle(0px at calc(100vw - 72px) 32px);
   transition: all 0.3s ease-in-out;
   transition-delay: 0.2s;
-  backdrop-filter: blur(3px);
+  /* backdrop-filter: blur(3px); */
+  will-change: clip-path;
   z-index: -1;
 }
 
 .mob-nav-links.open {
-  --alpha: 0.8;
+  --alpha: 1;
   background-color: hsla(
     var(--bg-nav-h),
     var(--bg-nav-s),
@@ -101,7 +107,8 @@
 .mob-nav-links .nav-link:nth-of-type(3),
 .mob-nav-links .nav-link:nth-of-type(4) {
   opacity: 0;
-  transform: translateY(-1rem);
+  transform: translate3d(0, -1rem, 0);
+  will-change: transform opacity;
 }
 .mob-nav-links .nav-link:nth-of-type(1) {
   transition-delay: 0s;
@@ -121,7 +128,7 @@
 .open.mob-nav-links .nav-link:nth-of-type(3),
 .open.mob-nav-links .nav-link:nth-of-type(4) {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 .open.mob-nav-links .nav-link:nth-of-type(1) {
   transition-delay: 0.4s;
@@ -148,10 +155,7 @@ button#mob-nav-close {
 button#mob-nav-btn {
   width: 2rem;
   height: 2rem;
-  /* background-color: var(--bg-dimed); */
   border-radius: 0 0.313rem 0.313rem 0;
-  /* position: fixed; */
-  /* left: 0; */
   margin-left: auto;
 }
 
@@ -172,11 +176,12 @@ button#mob-nav-close {
   background-color: var(--primary-clr);
   transition: all 0.3s ease-in-out;
   transition-delay: 0s;
+  will-change: transform opacity;
 }
 
 .open button#mob-nav-close {
   transition-delay: 0.4s;
-  transform: translateY(-15vh);
+  transform: translate3d(0, -15vh, 0);
   opacity: 1;
 }
 span#mob-nav-icon {
@@ -267,7 +272,6 @@ button#mob-nav-close::after {
 @media screen and (max-width: 768px) and (orientation: portrait) {
   .lang-switcher {
     display: none;
-    /* margin-left: auto; */
   }
   .mob-nav-links .lang-switcher {
     display: flex;
@@ -275,13 +279,14 @@ button#mob-nav-close::after {
     top: 10px;
     right: 10px;
     opacity: 0;
-    transform: translateY(-50px);
+    transform: translate3d(0, -50px, 0);
     transition: all 0.3s ease-in-out;
     transition-delay: 0s;
+    will-change: transform opacity;
   }
   .open.mob-nav-links .lang-switcher {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
     transition-delay: 0.5s;
   }
 }
@@ -310,10 +315,10 @@ button#mob-nav-close::after {
 }
 /* prevent animation onload */
 .lang-switcher.en .static {
-  transform: translate(0);
+  transform: translate3d(0, 0, 0);
 }
 .lang-switcher.ru .static {
-  transform: translateX(var(--width-box));
+  transform: translate3d(var(--width-box), 0, 0);
 }
 /* remove duration & add after 300ms */
 .en .switch {
@@ -376,12 +381,6 @@ button#mob-nav-close::after {
 .theme-switcher {
   display: flex;
   cursor: pointer;
-}
-
-@media screen and (max-width: 768px) and (orientation: portrait) {
-  .theme-switcher {
-    /* margin-left: auto; */
-  }
 }
 
 @import url('./theme-icon.css');

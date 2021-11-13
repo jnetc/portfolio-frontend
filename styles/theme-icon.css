@@ -15,7 +15,7 @@
   transform: scale(1.2);
 }
 #theme.moon #half_moon {
-  transform: translate(8px, 0px);
+  transform: translate3d(8px, 0, 0);
   transition-delay: 0.5s;
 }
 
@@ -27,9 +27,10 @@
 
 #theme #half_moon {
   fill: #000;
-  transform: translate(16px, 0px);
+  transform: translate3d(16px, 0, 0);
   transition: all 0.3s ease-in-out;
   transition-delay: 0s;
+  will-change: transform;
 }
 
 #theme line {

@@ -21,3 +21,16 @@ export const transformLocalization = (
 
   return newObj as TransformedData;
 };
+
+export const animationOptimization = (duration: number) => {
+  let start: null | number = null;
+
+  const step = (timestamp: number) => {
+    if (!start) start = timestamp;
+    var progress = timestamp - start;
+    if (progress < duration) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+};

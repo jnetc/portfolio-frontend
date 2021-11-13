@@ -2,13 +2,14 @@ import { MouseEvent, useState } from 'react';
 // Components
 // import { LinkArrow } from './link-arrow/LinkArrow';
 import { LinkName } from './link-name/LinkName';
-// import { Logo } from './logo/Logo';
+import { Logo } from './logo/Logo';
 import { SwitchLang } from './switch-lang/SwitchLang';
 import { SwitchTheme } from './switch-theme/SwitchTheme';
 // Context
 import { useStore } from '@Store';
 // Style
 // import style from './navigation.module.css';
+import { animationOptimization } from '@Helpers/functions';
 
 const anchors = [
   {
@@ -50,7 +51,7 @@ const Navigation = () => {
 
   const openMenu = () => {
     setMenu(!menu);
-    console.log('click');
+    animationOptimization(1000);
   };
 
   const links = anchors.map(link => {
@@ -65,8 +66,8 @@ const Navigation = () => {
   });
 
   return (
-    <header className="nav">
-      {/* <Logo /> */}
+    <header className="nav" aria-label="navigation panel">
+      <Logo />
       <nav
         className="nav-links"
         onClick={selectButton}
