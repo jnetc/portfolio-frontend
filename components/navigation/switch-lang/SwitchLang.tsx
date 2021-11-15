@@ -10,7 +10,6 @@ export const SwitchLang: FC = () => {
   setTimeout(() => {
     if (!ref.current) return;
     ref.current.classList.add('wait-animation');
-    ref.current.classList.remove('static');
   }, 300);
 
   return (
@@ -28,7 +27,7 @@ export const SwitchLang: FC = () => {
       <Link href="/ru" locale="ru">
         <a className={lang === 'ru' ? 'active' : undefined}>RU</a>
       </Link>
-      <div className="switch static" ref={ref}></div>
+      <div className="switch" ref={ref}></div>
     </div>
   );
 };

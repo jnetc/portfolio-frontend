@@ -1,5 +1,6 @@
 import { FC, useEffect, useState, useRef, useCallback } from 'react';
 import { ThemeIcon } from './ThemeIcon';
+import { useStore } from '@Store';
 
 const DARK_SCHEME = 'dark';
 const LIGHT_SCHEME = 'light';
@@ -8,6 +9,7 @@ const LIGHT_SCHEME = 'light';
 //!
 
 export const SwitchTheme: FC = () => {
+  const { switchTheme } = useStore();
   const [theme, setTheme] = useState<boolean | null>(null);
   let ref = useRef<HTMLDivElement>(null);
 
@@ -49,11 +51,12 @@ export const SwitchTheme: FC = () => {
   useEffect(() => {
     if (theme) {
       themeSwitcher(DARK_SCHEME);
-
+      switchTheme(DARK_SCHEME);
       return;
     }
     themeSwitcher(LIGHT_SCHEME);
-  }, [theme, themeSwitcher]);
+    switchTheme(LIGHT_SCHEME);
+  }, [theme, themeSwitcher, switchTheme]);
 
   console.log('up parent');
 

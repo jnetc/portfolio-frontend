@@ -27,4 +27,6 @@ export interface Data {
 export interface Store {
   context: TransformedData | null;
   lang: string;
+  theme: string;
+  switchTheme: (lang: string) => void;
 }

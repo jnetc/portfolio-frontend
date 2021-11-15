@@ -41,7 +41,10 @@ const Title: FC = () => {
           Hire me
         </button>
         <Link href="#portfolio">
-          <a role="button">My works</a>
+          <a role="button">
+            My works
+            <span id="works-btn-arrow" />
+          </a>
         </Link>
       </div>
     </header>

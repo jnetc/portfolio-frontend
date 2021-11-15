@@ -1,12 +1,13 @@
 import { FC } from 'react';
 
 import Title from './title/Title';
+import Picture from './picture/Picture';
 
 const Home: FC = () => {
   return (
     <>
       <Title />
-      <div id="main-image">image</div>
+      <Picture />
     </>
   );
 };
