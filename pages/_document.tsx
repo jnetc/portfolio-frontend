@@ -21,13 +21,14 @@ class MyDocument extends Document {
     // or get this with "matchMedia" to define color scheme.
     // Set the resulting value to the HTML tag.
     // Inject before the page starts rendering.
+    // return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
     //!
     const setInitialTheme = `
       function getUserPreference() {
         if(window.localStorage.getItem('theme')) {
           return window.localStorage.getItem('theme')
         }
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        return 'dark'
       }
       document.documentElement.dataset.theme = getUserPreference();
     `;
@@ -78,6 +79,7 @@ class MyDocument extends Document {
           <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
         </Head>
         <body>
+          <span id="orientation-landscape">Rotate ro portrait</span>
           <Main />
           <NextScript />
         </body>

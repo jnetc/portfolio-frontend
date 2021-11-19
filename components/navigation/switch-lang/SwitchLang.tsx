@@ -9,7 +9,7 @@ export const SwitchLang: FC = () => {
 
   setTimeout(() => {
     if (!ref.current) return;
-    ref.current.classList.add('wait-animation');
+    ref.current.classList.add('lang-duration');
   }, 300);
 
   return (

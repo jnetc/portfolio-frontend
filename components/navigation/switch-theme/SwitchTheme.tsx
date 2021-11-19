@@ -10,13 +10,19 @@ const LIGHT_SCHEME = 'light';
 
 export const SwitchTheme: FC = () => {
   const { switchTheme } = useStore();
-  const [theme, setTheme] = useState<boolean | null>(null);
+  const [theme, setTheme] = useState<string | null>(DARK_SCHEME);
   let ref = useRef<HTMLDivElement>(null);
 
   const toggleTheme = () => {
     setTheme(prevState => {
-      const newValue = !prevState;
-      return newValue;
+      switch (prevState) {
+        case DARK_SCHEME:
+          return LIGHT_SCHEME;
+        case LIGHT_SCHEME:
+          return DARK_SCHEME;
+        default:
+          return DARK_SCHEME;
+      }
     });
   };
 
@@ -29,17 +35,19 @@ export const SwitchTheme: FC = () => {
   useEffect(() => {
     const lS = localStorage.getItem('theme');
     if (!lS) {
-      setTheme(
-        window.matchMedia(`(prefers-color-scheme: ${DARK_SCHEME})`).matches
-      );
+      setTheme(DARK_SCHEME);
+      // window.matchMedia(`(prefers-color-scheme: ${DARK_SCHEME})`).matches
+      // Prevent transition when page is loaded
+      setTimeout(() => {
+        ref.current?.classList.add('theme-duration');
+      }, 800);
       return;
     }
-    setTheme(lS === DARK_SCHEME);
+    setTheme(lS);
 
-    // Prevent transition when page is loaded
     const preventTransition = setTimeout(() => {
-      ref.current?.classList.remove('prevent-theme');
-    }, 0);
+      ref.current?.classList.add('theme-duration');
+    }, 800);
 
     return () => {
       clearTimeout(preventTransition);
@@ -49,7 +57,7 @@ export const SwitchTheme: FC = () => {
 
   // Switch theme
   useEffect(() => {
-    if (theme) {
+    if (theme === DARK_SCHEME) {
       themeSwitcher(DARK_SCHEME);
       switchTheme(DARK_SCHEME);
       return;
@@ -58,12 +66,10 @@ export const SwitchTheme: FC = () => {
     switchTheme(LIGHT_SCHEME);
   }, [theme, themeSwitcher, switchTheme]);
 
-  console.log('up parent');
-
   return (
     <>
       <div
-        className="theme-switcher prevent-theme"
+        className="theme-switcher"
         tabIndex={0}
         role="button"
         aria-label={
@@ -75,7 +81,7 @@ export const SwitchTheme: FC = () => {
         onKeyPress={toggleTheme}
         ref={ref}
       >
-        <ThemeIcon theme={theme} />
+        <ThemeIcon />
       </div>
     </>
   );

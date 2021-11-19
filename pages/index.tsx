@@ -12,7 +12,7 @@ import Navigation from '@Navigation';
 import Home from '@Home';
 import Portfolio from '@Portfolio';
 // Types
-import { Data, Store } from '@Types';
+import { Data, Store, StackOverflow } from '@Types';
 // Helpers
 import { transformLocalization } from '@Helpers/functions';
 
@@ -20,8 +20,9 @@ import { transformLocalization } from '@Helpers/functions';
 const state: Store = {
   context: null,
   lang: '',
-  theme: 'light',
+  theme: 'dark',
   switchTheme: theme => theme,
+  stackoverflow: null,
 };
 
 const Store = createContext(state);
@@ -31,7 +32,11 @@ export const useStore = () => {
 };
 //
 
-const App: NextPage<{ data: Data; locale: string }> = ({ data, locale }) => {
+const App: NextPage<{
+  data: Data;
+  locale: string;
+  stackoverflow: StackOverflow<number>;
+}> = ({ data, locale, stackoverflow }) => {
   const currentLangData = transformLocalization(locale, data);
   const [theme, switchTheme] = useState(state.theme);
 
@@ -42,6 +47,7 @@ const App: NextPage<{ data: Data; locale: string }> = ({ data, locale }) => {
         lang: locale,
         theme,
         switchTheme,
+        stackoverflow,
       }}
     >
       <>
@@ -85,12 +91,25 @@ export const getStaticProps: GetStaticProps = async ({
 
   const [data] = await getClient(preview).fetch(query);
 
-  console.log('staticprops...', preview, data, locale);
+  // get data from stackoverflow
+  const responseStackOverflow = await fetch(
+    'https://api.stackexchange.com/2.3/users/15545116?order=desc&sort=reputation&site=stackoverflow'
+  );
+  const resultStackOverflow = await responseStackOverflow.json();
 
+  const stackoverflow: StackOverflow<number> = {
+    reputation: resultStackOverflow.items[0].reputation,
+    link: resultStackOverflow.items[0].link,
+    name: resultStackOverflow.items[0].display_name,
+    image: resultStackOverflow.items[0].profile_image,
+  };
+
+  console.log('staticprops...', stackoverflow);
   return {
     props: {
       data,
       locale,
+      stackoverflow,
     },
   };
   // return {

@@ -29,4 +29,12 @@ export interface Store {
   lang: string;
   theme: string;
   switchTheme: (lang: string) => void;
+  stackoverflow: StackOverflow<number> | null;
 }
+
+export type StackOverflow<T> = {
+  reputation: T;
+  link: string;
+  name: string;
+  image: string;
+};

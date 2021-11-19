@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-export const ThemeIcon: FC<{ theme: boolean | null }> = ({ theme }) => {
+export const ThemeIcon: FC = () => {
   return (
     <svg
       width="32"
@@ -8,7 +8,6 @@ export const ThemeIcon: FC<{ theme: boolean | null }> = ({ theme }) => {
       viewBox="0 0 32 32"
       fill="none"
       id="theme"
-      className={theme ? `moon` : undefined}
       xmlns="http://www.w3.org/2000/svg"
     >
       <line x1="16" y1="2" x2="16" y2="10" id="0" />

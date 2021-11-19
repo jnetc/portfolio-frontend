@@ -1,31 +1,57 @@
 import { FC } from 'react';
 import Image from 'next/image';
+import { StackOverflowWidget } from '../stack-overflow/StackOverflowWidget';
 
 import { useStore } from '@Store';
 
-const Picture: FC = () => {
+export const Picture: FC = () => {
   const { theme } = useStore();
-  console.log(theme);
 
   return (
     <div id="main-picture">
-      <div className="pic">
+      <StackOverflowWidget />
+      <div className={theme === 'light' ? 'pic-l' : 'pic-d'}>
         <Image
           src={
             theme === 'light'
-              ? '/images/1000_light.png'
-              : '/images/1000_dark.png'
+              ? '/images/picture_light.png'
+              : '/images/picture_dark.png'
           }
           alt="Anton"
-          blurDataURL="/images/image.png"
-          placeholder="blur"
           layout="fill"
           objectFit="contain"
-          // objectPosition="50% 50%"
           quality={80}
           priority
         />
       </div>
+      {/* {theme === 'light' ? (
+        <div className="pic">
+          <Image
+            src="/images/picture_light.png"
+            alt="Anton"
+            blurDataURL="/images/placeholder_light.png"
+            placeholder="blur"
+            layout="fill"
+            objectFit="contain"
+            quality={80}
+            priority
+          />
+        </div>
+      ) : (
+        <div className="pic">
+          <Image
+            src="/images/picture_dark.png"
+            alt="Anton"
+            blurDataURL="/images/placeholder_dark.png"
+            placeholder="blur"
+            layout="fill"
+            objectFit="contain"
+            quality={80}
+            priority
+          />
+        </div>
+      )} */}
+
       <svg viewBox="0 0 650 436" fill="none" className="rectangle">
         <path d="M245.333 7.52434L633.328 196.22C641.634 200.259 646.093 209.46 644.119 218.482L601.087 415.074C598.89 425.115 589.44 431.855 579.231 430.663L23.3896 365.786C8.60272 364.061 0.817329 347.362 9.0018 334.926L219.88 14.5148C225.404 6.12167 236.297 3.12986 245.333 7.52434Z" />
       </svg>
@@ -35,5 +61,3 @@ const Picture: FC = () => {
     </div>
   );
 };
-
-export default Picture;

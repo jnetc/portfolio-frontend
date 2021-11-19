@@ -3,18 +3,10 @@ import Link from 'next/link';
 
 import { Bulb } from '../bulb-icon/Bulb';
 
-const Title: FC = () => {
+export const Title: FC = () => {
   return (
     <header id="main-title" aria-label="home page title and quick links">
       <div id="title">
-        {/* <span id="and">&</span>
-        <h1>
-          <span id="bulb-wrap">
-            <Bulb />
-          </span>
-          <strong>your ideas</strong>
-          <strong>my skills</strong>
-        </h1> */}
         <svg viewBox="0 0 625 220">
           <text id="ampersand" x="-5" y="210">
             &
@@ -33,8 +25,9 @@ const Title: FC = () => {
       </div>
       <h1>your ideas and my skills</h1>
       <p>
-        Together, we will make your product in the digital world simple, clear
-        and modern!
+        Hi! I am Anton and i create simple, clear and modern web things in the
+        digital world! Currently, I am focused to find position as a UI designer
+        / developer.
       </p>
       <div id="main-btns">
         <button title="Hire me" aria-label="contact me by email">
@@ -50,5 +43,3 @@ const Title: FC = () => {
     </header>
   );
 };
-
-export default Title;

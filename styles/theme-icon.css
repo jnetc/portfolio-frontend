@@ -1,20 +1,20 @@
 #theme {
-  transition: all 0.5s cubic-bezier(0, 1.46, 0.23, 1.83);
+  transition: all cubic-bezier(0, 1.46, 0.23, 1.83);
   transition-delay: 0s;
 }
-#theme.moon {
+html[data-theme='dark'] #theme {
   transition-delay: 0.65s;
   transform: rotate(-45deg);
 }
 
-#theme.moon line {
+html[data-theme='dark'] #theme line {
   stroke-dasharray: 19;
 }
 
-#theme.moon #sun {
+html[data-theme='dark'] #theme #sun {
   transform: scale(1.2);
 }
-#theme.moon #half_moon {
+html[data-theme='dark'] #theme #half_moon {
   transform: translate3d(8px, 0, 0);
   transition-delay: 0.5s;
 }
@@ -22,13 +22,13 @@
 #theme #sun {
   fill: var(--primary-clr);
   transform-origin: 16px 16px;
-  transition: all 0.8s ease-in-out;
+  transition: all ease-in-out;
 }
 
 #theme #half_moon {
   fill: #000;
   transform: translate3d(16px, 0, 0);
-  transition: all 0.3s ease-in-out;
+  transition: all ease-in-out;
   transition-delay: 0s;
   will-change: transform;
 }
@@ -39,28 +39,28 @@
   stroke-dashoffset: 22;
   stroke-linecap: round;
   stroke-width: 3;
-  transition: all 0.5s ease-in-out;
+  transition: all ease-in-out;
 }
 
-#theme.moon line:nth-of-type(2) {
+html[data-theme='dark'] #theme line:nth-of-type(2) {
   transition-delay: 0.05s;
 }
-#theme.moon line:nth-of-type(3) {
+html[data-theme='dark'] #theme line:nth-of-type(3) {
   transition-delay: 0.1s;
 }
-#theme.moon line:nth-of-type(4) {
+html[data-theme='dark'] #theme line:nth-of-type(4) {
   transition-delay: 0.15s;
 }
-#theme.moon line:nth-of-type(5) {
+html[data-theme='dark'] #theme line:nth-of-type(5) {
   transition-delay: 0.2s;
 }
-#theme.moon line:nth-of-type(6) {
+html[data-theme='dark'] #theme line:nth-of-type(6) {
   transition-delay: 0.25s;
 }
-#theme.moon line:nth-of-type(7) {
+html[data-theme='dark'] #theme line:nth-of-type(7) {
   transition-delay: 0.3s;
 }
-#theme.moon line:nth-of-type(8) {
+html[data-theme='dark'] #theme line:nth-of-type(8) {
   transition-delay: 0.35s;
 }
 
