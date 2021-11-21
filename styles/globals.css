@@ -21,12 +21,14 @@ html[data-theme='light'] {
   --bg-nav-l2: 95%;
 
   --primary-clr: hsl(252, 10%, 10%);
-  /* primary h / s / l / a */
   --primary-h: 252;
   --primary-s: 10%;
   --primary-l: 10%;
 
   --secondary-clr: hsl(341, 53%, 33%);
+  --secondary-h: 341;
+  --secondary-s: 53%;
+  --secondary-l: 33%;
   --card-clr: hsl(39, 42%, 87%);
   --card-shadow-clr: hsl(38 12% 70% / 0.6);
   --card-extra-clr: hsl(38, 12%, 70%);
@@ -42,12 +44,15 @@ html[data-theme='dark'] {
   --bg-nav-l2: 30%;
 
   --primary-clr: hsl(39, 43%, 90%);
-  /* primary h / s / l / a */
   --primary-h: 39;
   --primary-s: 43%;
   --primary-l: 90%;
 
   --secondary-clr: hsl(162, 47%, 66%);
+  --secondary-h: 162;
+  --secondary-s: 47%;
+  --secondary-l: 66%;
+
   --card-clr: hsl(240, 3%, 12%);
   --card-shadow-clr: hsl(0 0% 0% / 0.6);
   --card-extra-clr: hsl(220, 6%, 19%);
@@ -99,14 +104,16 @@ body {
 }
 
 main {
-  --gap: 20px;
+  --gap: 1.25rem;
   display: grid;
   grid-template-columns: repeat(12, minmax(6px, 96px));
   grid-template-rows:
     clamp(750px, 100vh, calc(1080px - 4rem - var(--gap)))
     auto;
+  grid-auto-rows: auto;
   justify-content: center;
-  gap: var(--gap);
+  column-gap: var(--gap);
+  row-gap: 1rem;
   position: relative;
 }
 
@@ -127,12 +134,17 @@ ol {
   list-style: none;
 }
 
+svg {
+  width: 100%;
+}
+
 @media screen and (max-width: 768px) {
   body {
     padding: 1rem 0;
   }
   main {
     grid-template-columns: repeat(6, minmax(6px, 96px));
+    grid-template-rows: calc(100vh - 1rem - var(--gap)) auto;
     overflow: hidden;
     padding: 0 1rem;
   }
@@ -153,3 +165,8 @@ ol {
     display: none;
   }
 }
+
+@import url('./navigation.css');
+@import url('./home.css');
+@import url('./anchor.css');
+@import url('./portfolio.css');

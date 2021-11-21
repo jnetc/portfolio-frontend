@@ -1,0 +1,48 @@
+.anchor {
+  grid-column: 1 / -1;
+  margin-top: 10rem;
+  position: relative;
+  color: var(--secondary-clr);
+  font-size: 1.25em;
+  text-transform: uppercase;
+}
+.anchor::before {
+  --size: 18rem;
+  content: attr(data-hash);
+  position: absolute;
+  top: calc(-1 * var(--size) / 3);
+  left: 0;
+  color: hsl(var(--secondary-h) var(--secondary-s) var(--secondary-l) / 0.05);
+  font-size: var(--size);
+  font-weight: bold;
+}
+.anchor-desc {
+  grid-column: 3 / -1;
+  margin-bottom: 10rem;
+  font-size: 2.25em;
+}
+.anchor-separator {
+  grid-column: 1 / 3;
+  width: 100%;
+  height: 3px;
+  position: relative;
+  top: 1rem;
+  background-color: var(--secondary-clr);
+}
+
+@media screen and (max-width: 768px) {
+  .anchor {
+    font-size: 1em;
+  }
+  .anchor::before {
+    --size: 12rem;
+  }
+  .anchor-desc {
+    grid-column: 2 / -1;
+    font-size: 1.3em;
+  }
+  .anchor-separator {
+    grid-column: 1;
+    top: 0.5rem;
+  }
+}

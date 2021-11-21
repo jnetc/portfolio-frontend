@@ -16,6 +16,7 @@
     "noUnusedParameters": true,
     "paths": {
       "@About": ["./components/about"],
+      "@Anchor": ["./components/anchor"],
       "@Footer": ["./components/footer"],
       "@Helpers/*": ["./helpers/*"],
       "@Home": ["./components/home"],

@@ -1,8 +1,12 @@
 import { FC } from 'react';
-// Style
-import style from './about.module.css';
+import Anchor from '@Anchor';
+
 const About: FC = () => {
-  return <section className={style.nav}>About</section>;
+  return (
+    <>
+      <Anchor anchor="about" hash="#4" />
+    </>
+  );
 };
 
 export default About;

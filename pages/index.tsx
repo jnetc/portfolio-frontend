@@ -11,6 +11,8 @@ import { getClient } from '../lib/sanity.server';
 import Navigation from '@Navigation';
 import Home from '@Home';
 import Portfolio from '@Portfolio';
+import Skills from '@Skills';
+import About from '@About';
 // Types
 import { Data, Store, StackOverflow } from '@Types';
 // Helpers
@@ -35,7 +37,7 @@ export const useStore = () => {
 const App: NextPage<{
   data: Data;
   locale: string;
-  stackoverflow: StackOverflow<number>;
+  stackoverflow: StackOverflow<string>;
 }> = ({ data, locale, stackoverflow }) => {
   const currentLangData = transformLocalization(locale, data);
   const [theme, switchTheme] = useState(state.theme);
@@ -61,13 +63,9 @@ const App: NextPage<{
         <main>
           <Home />
           <Portfolio />
+          <Skills />
+          <About />
         </main>
-        {/* <main>
-          <h1>Welcome to 😃</h1>
-          <button>😍</button>
-
-          <PortableText blocks={currentLangData.slogan} />
-        </main> */}
       </>
     </Store.Provider>
   );
@@ -93,15 +91,19 @@ export const getStaticProps: GetStaticProps = async ({
 
   // get data from stackoverflow
   const responseStackOverflow = await fetch(
-    'https://api.stackexchange.com/2.3/users/15545116?order=desc&sort=reputation&site=stackoverflow'
+    'https://api.stackexchange.com/2.3/users/15545116/posts?order=desc&sort=activity&site=stackoverflow&filter=!0Rylmhd1awe02cfA2k-D_oKq4'
   );
   const resultStackOverflow = await responseStackOverflow.json();
 
-  const stackoverflow: StackOverflow<number> = {
-    reputation: resultStackOverflow.items[0].reputation,
-    link: resultStackOverflow.items[0].link,
-    name: resultStackOverflow.items[0].display_name,
-    image: resultStackOverflow.items[0].profile_image,
+  const stackoverflow: StackOverflow<string> = {
+    reputation: `${(
+      resultStackOverflow.items[0].owner.reputation / 1000
+    ).toFixed(1)}k`,
+    link: resultStackOverflow.items[0].owner.link,
+    answers:
+      resultStackOverflow.total < 1000
+        ? `${resultStackOverflow.total}`
+        : `${(resultStackOverflow.total / 1000).toFixed(1)}k`,
   };
 
   console.log('staticprops...', stackoverflow);

@@ -1,14 +1,12 @@
 import { MouseEvent, useState } from 'react';
 // Components
-// import { LinkArrow } from './link-arrow/LinkArrow';
 import { LinkName } from './link-name/LinkName';
 import { Logo } from './logo/Logo';
 import { SwitchLang } from './switch-lang/SwitchLang';
 import { SwitchTheme } from './switch-theme/SwitchTheme';
 // Context
 import { useStore } from '@Store';
-// Style
-// import style from './navigation.module.css';
+// Helpers
 import { animationOptimization } from '@Helpers/functions';
 
 const anchors = [
@@ -43,7 +41,6 @@ const Navigation = () => {
     const el = ev.target as HTMLAnchorElement;
     anchors.forEach(a => {
       if (a.anchor === el.id) {
-        console.log(el.id);
         setActiveLink(el.id);
       }
     });
@@ -66,40 +63,39 @@ const Navigation = () => {
   });
 
   return (
-    <header className="nav" aria-label="navigation panel">
+    <header className="header" aria-label="navigation panel">
       <Logo />
       <nav
-        className="nav-links"
+        className="nav"
         onClick={selectButton}
         aria-label="desktop navigation"
       >
         {links}
-        {/* <LinkArrow /> */}
       </nav>
       <nav
-        className={menu ? 'mob-nav-links open' : 'mob-nav-links'}
+        className={menu ? 'mob-nav open' : 'mob-nav'}
         onClick={selectButton}
         aria-label="mobile navigation"
       >
         <SwitchLang />
         {links}
         <button
-          id="mob-nav-close"
+          className="mob-nav__close-btn"
           aria-label="close mobile menu button"
           onClick={openMenu}
         ></button>
-        <svg id="nav-background">
-          <circle />
-          <circle />
+        <svg className="mob-nav__bg">
+          <circle className="mob-nav__1-circle" />
+          <circle className="mob-nav__2-circle" />
         </svg>
       </nav>
       <SwitchLang />
       <button
-        id="mob-nav-btn"
+        className="mob-menu-btn"
         aria-label="mobile menu navigation button"
         onClick={openMenu}
       >
-        <span id="mob-nav-icon"></span>
+        <span className="mob-menu-btn__icon"></span>
       </button>
       <SwitchTheme />
     </header>

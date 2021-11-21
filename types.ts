@@ -29,12 +29,14 @@ export interface Store {
   lang: string;
   theme: string;
   switchTheme: (lang: string) => void;
-  stackoverflow: StackOverflow<number> | null;
+  stackoverflow: StackOverflow<string> | null;
 }
 
 export type StackOverflow<T> = {
   reputation: T;
-  link: string;
-  name: string;
-  image: string;
+  link: T;
+  answers: T;
 };
+
+export type AnchorType = 'portfolio' | 'skills' | 'about';
+export type HashType = '#2' | '#3' | '#4';

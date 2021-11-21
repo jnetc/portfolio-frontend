@@ -1,6 +1,6 @@
 @import url('./stackoverflow.css');
 
-#main-title {
+.home-left-side {
   align-self: center;
   grid-column: span 5;
   width: min-content;
@@ -11,53 +11,51 @@
 }
 
 /* SVG TITLE instead h1 tag */
-#title {
+.svg-title {
   display: flex;
   width: clamp(300px, 40vw, 500px);
 }
-#title svg {
-  width: 100%;
-}
-#title text {
+
+.svg-title__text {
   font-weight: bold;
 }
-#skill,
-#ampersand {
+.text-skill,
+.ampersand {
   fill: var(--secondary-clr);
 }
-#ampersand,
-#ampersand-stroke {
+.ampersand,
+.ampersand-stroke {
   font-size: 200px;
   stroke: var(--secondary-clr);
   stroke-width: 3;
 }
-#ampersand-stroke {
+.ampersand-stroke {
   fill: transparent;
 }
-#idea,
-#skill {
+.text-idea,
+.text-skill {
   font-size: 86px;
   text-transform: uppercase;
 }
-#idea {
+.text-idea {
   fill: var(--primary-clr);
 }
-#skill {
+.text-skill {
   letter-spacing: 3px;
 }
-#bulb-icon .details,
-#bulb-icon .reflection {
+.bulb-icon__path,
+.bulb-icon__reflection {
   stroke-linecap: round;
   stroke-width: 3px;
   stroke: var(--primary-clr);
 }
-#bulb-icon .details {
+.bulb-icon__path {
   stroke-width: 3px;
 }
-#bulb-icon .reflection {
+.bulb-icon__reflection {
   stroke-width: 2px;
 }
-#bulb-icon .bulb {
+.bulb-icon__bulb {
   fill: var(--primary-clr);
 }
 .flash {
@@ -77,7 +75,7 @@
   }
 }
 
-#main-title h1 {
+.home-left-side__title {
   color: var(--primary-clr);
   position: absolute;
   opacity: 0;
@@ -87,20 +85,20 @@
 }
 /* --- */
 
-#main-title p {
+.home-left-side__desc {
   grid-column: span 2;
   font-size: clamp(18px, 3vw, 28px);
   font-weight: 200;
   line-height: 1.2;
 }
 
-#main-btns {
+.home-btns {
   display: flex;
   gap: 50px;
   margin-top: 2rem;
   padding: 0 1rem;
 }
-#main-btns button {
+.home-btns__button {
   position: relative;
   padding: 13px min(30px, 40px);
   color: transparent;
@@ -109,20 +107,20 @@
   line-height: 1;
   box-shadow: inset 0px 0px 0 3px var(--secondary-clr);
 }
-#main-btns button::before,
-#main-btns button::after {
+.home-btns__button::before,
+.home-btns__button::after {
   position: absolute;
   border-radius: inherit;
   transition: all 0.3s ease-in-out;
 }
-#main-btns button::before {
+.home-btns__button::before {
   content: '';
   inset: 0;
   background-color: var(--secondary-clr);
   transform: translate(-15px, -15px);
   z-index: 1;
 }
-#main-btns button::after {
+.home-btns__button::after {
   content: attr(title);
   top: 50%;
   left: 50%;
@@ -131,13 +129,13 @@
   transform: translate(calc(-15px - 50%), calc(-15px - 50%));
   z-index: 2;
 }
-#main-btns button:hover::before {
+.home-btns__button:hover::before {
   transform: translate(0, 0);
 }
-#main-btns button:hover::after {
+.home-btns__button:hover::after {
   transform: translate(-50%, -50%);
 }
-#main-btns a {
+.home-btns__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -145,7 +143,7 @@
   font-size: clamp(1.125em, 2.5vw, 1.5em);
   font-weight: bold;
 }
-#works-btn-arrow {
+.link-arrow-icon {
   width: 16px;
   height: 3px;
   position: absolute;
@@ -156,8 +154,8 @@
   transition: all 0.3s ease-in-out;
 }
 
-#works-btn-arrow::before,
-#works-btn-arrow::after {
+.link-arrow-icon::before,
+.link-arrow-icon::after {
   content: '';
   height: inherit;
   position: absolute;
@@ -168,24 +166,24 @@
   transform-origin: center right;
   transition: inherit;
 }
-#works-btn-arrow::before {
+.link-arrow-icon::before {
   width: 20px;
   transform: rotate(-45deg);
 }
-#works-btn-arrow::after {
+.link-arrow-icon::after {
   width: 15px;
   transform: rotate(-90deg);
 }
-#main-btns a:hover #works-btn-arrow {
+.home-btns__link:hover .link-arrow-icon {
   width: 100%;
   background-color: var(--secondary-clr);
 }
-#main-btns a:hover #works-btn-arrow::before,
-#main-btns a:hover #works-btn-arrow::after {
+.home-btns__link:hover .link-arrow-icon::before,
+.home-btns__link:hover .link-arrow-icon::after {
   width: 0;
 }
 
-#main-picture {
+.home-right-side {
   grid-column: 7 / span 6;
   align-self: center;
   position: relative;
@@ -202,53 +200,51 @@ html[data-theme='dark'] .pic-d {
   opacity: 1;
 }
 
-.rectangle {
+.home-right-side__rect {
   position: absolute;
-
   left: 0;
   z-index: -1;
   stroke-width: 10;
   transform: translateY(-50%);
 }
-.rectangle:nth-of-type(1) {
+.rect-1 {
   top: 52%;
   stroke: var(--primary-clr);
 }
-.rectangle:nth-of-type(2) {
+.rect-2 {
   top: 45%;
   stroke: var(--secondary-clr);
 }
 
 @media screen and (max-width: 768px) {
-  #main-title {
+  .home-left-side {
     justify-self: center;
     grid-column: span 6;
   }
-  #title {
+  .svg-title {
     width: clamp(250px, 80vw, 600px);
   }
-  #main-title p {
+  .home-left-side__desc {
     font-weight: 400;
   }
-  #main-title p {
+  .home-left-side__desc {
     line-height: 1.5;
   }
 
-  #main-btns {
+  .home-btns {
     padding: 0 0 0 1rem;
   }
-  #main-btns button {
+  .home-btns__button {
     padding: 13px min(25px, 30px);
     font-size: clamp(1em, 2.5vw, 1.5em);
   }
-  #main-btns a {
+  .home-btns__link {
     font-size: clamp(1em, 2.5vw, 1.5em);
   }
 
-  #main-picture {
+  .home-right-side {
     grid-column: span 6;
-    /* top: 50vh; */
-    /* right: -40vw; */
+    top: 10vh;
     opacity: 0.3;
     position: absolute;
     width: 75vh;
@@ -256,12 +252,12 @@ html[data-theme='dark'] .pic-d {
     transform: translateX(-50%);
     z-index: -1;
   }
-  .rectangle {
+  .home-right-side__rect {
     opacity: 0.2;
   }
 }
 @media screen and (max-width: 330px) {
-  #main-btns {
+  .home-btns {
     justify-content: space-between;
   }
 }
