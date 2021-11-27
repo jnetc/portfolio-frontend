@@ -73,7 +73,7 @@
 }
 
 .btn {
-  padding: 0.6em 1em;
+  padding: 0.6rem 1rem;
   border: 2px solid var(--secondary-clr);
   border-radius: var(--m-radius);
   background-color: transparent;

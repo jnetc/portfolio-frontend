@@ -1,0 +1,13 @@
+.separator-title,
+.separator-desc {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+.separator-title {
+  color: var(--primary-clr);
+  font-size: 2.125rem;
+}
+.separator-desc {
+  color: var(--secondary-clr);
+  margin-bottom: 10rem;
+}

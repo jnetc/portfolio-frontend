@@ -1,13 +1,13 @@
 import { FC } from 'react';
 
-import { Title } from './title/Title';
-import { Picture } from './picture/Picture';
+import { HomeLeftSide } from './home-left-side/HomeLeftSide';
+import { HomeRightSide } from './home-right-side/HomeRightSide';
 
 const Home: FC = () => {
   return (
     <>
-      <Title />
-      <Picture />
+      <HomeLeftSide />
+      <HomeRightSide />
     </>
   );
 };

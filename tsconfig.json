@@ -24,6 +24,7 @@
       "@Modal": ["./components/modal"],
       "@Navigation": ["./components/navigation"],
       "@Portfolio": ["./components/portfolio"],
+      "@Sanity/*": ["./lib/*"],
       "@Skills": ["./components/skills"],
       "@Store": ["./pages"],
       "@Styles/*": ["./styles/*"],
@@ -41,7 +42,10 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/api/hello.js",
-    "pages/api/hello.js"
+    "pages/api/hello.js",
+    "lib/sanity.js",
+    "lib/sanity.server.js",
+    "lib/config.js"
   ],
   "exclude": ["node_modules"]
 }

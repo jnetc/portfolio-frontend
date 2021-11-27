@@ -7,10 +7,10 @@
   --l-radius: 0.625rem;
   --m-radius: 0.313rem;
   --s-radius: 0.313rem;
+  --gap: 1.25rem;
 }
 
 html[data-theme='light'] {
-  /* --bg-clr: red; */
   --bg-clr: hsl(39, 43%, 90%);
   --bg-dimed: hsl(23, 33%, 85%);
   /* navigation */
@@ -69,20 +69,22 @@ html[data-theme='dark'] {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: auto;
+  width: 0.5rem;
+  height: 0.5rem;
 }
 ::-webkit-scrollbar-track {
-  background-color: var(--bg);
+  background-color: var(--card-clr);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--secondary-clr);
+  border-radius: 0.815rem;
+  background-color: var(--card-extra-clr);
 }
 
 html {
   line-height: 1;
   font-size: 1em;
   scrollbar-width: thin;
+  scrollbar-color: var(--card-extra-clr) var(--card-clr);
   background-color: var(--bg-clr);
 }
 
@@ -103,17 +105,18 @@ body {
   display: none;
 }
 
-main {
-  --gap: 1.25rem;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(6px, 96px));
+.main {
+  grid-auto-rows: auto;
   grid-template-rows:
     clamp(750px, 100vh, calc(1080px - 4rem - var(--gap)))
     auto;
-  grid-auto-rows: auto;
   justify-content: center;
-  column-gap: var(--gap);
   row-gap: 1rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(6px, 96px));
+  column-gap: var(--gap);
   position: relative;
 }
 
@@ -142,15 +145,21 @@ svg {
   body {
     padding: 1rem 0;
   }
-  main {
-    grid-template-columns: repeat(6, minmax(6px, 96px));
+  .main {
     grid-template-rows: calc(100vh - 1rem - var(--gap)) auto;
     overflow: hidden;
-    padding: 0 1rem;
+    padding-left: 1rem;
+    /* margin-right: 1rem; */
+  }
+  .grid {
+    grid-template-columns: repeat(6, minmax(6px, 96px));
+  }
+  .mob-right-pad {
+    padding-right: 1rem;
   }
 }
-
-@media only screen and (orientation: landscape) and (max-device-height: 1000px) {
+/* Prevent to show content if orientation & height is valid */
+@media only screen and (orientation: landscape) and (max-device-height: 480px) {
   body {
     height: 100vh;
     display: flex;
@@ -169,4 +178,5 @@ svg {
 @import url('./navigation.css');
 @import url('./home.css');
 @import url('./anchor.css');
+@import url('./separator.css');
 @import url('./portfolio.css');

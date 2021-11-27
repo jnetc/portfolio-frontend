@@ -63,7 +63,7 @@ const Navigation = () => {
   });
 
   return (
-    <header className="header" aria-label="navigation panel">
+    <header className="header mob-right-pad" aria-label="navigation panel">
       <Logo />
       <nav
         className="nav"

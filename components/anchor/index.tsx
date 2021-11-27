@@ -11,8 +11,8 @@ const anchors = {
       en: 'portfolio',
     },
     desc: {
-      ru: 'Некоторые мои работы',
-      en: 'Some of my works',
+      ru: 'Мои недавние работы',
+      en: 'My recent works',
     },
   },
   skills: {
@@ -21,8 +21,8 @@ const anchors = {
       en: 'skills',
     },
     desc: {
-      ru: 'Сферы где имею опыт',
-      en: 'Areas in which i have experience',
+      ru: 'Какие навыки у меня есть',
+      en: 'Which skills do i have',
     },
   },
   about: {

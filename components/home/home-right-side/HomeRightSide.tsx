@@ -1,15 +1,15 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import { StackOverflowWidget } from '../stack-overflow/StackOverflowWidget';
+import { Widget } from '../stack-overflow/Widget';
 
 import { useStore } from '@Store';
 
-export const Picture: FC = () => {
+export const HomeRightSide: FC = () => {
   const { theme } = useStore();
 
   return (
     <div className="home-right-side">
-      <StackOverflowWidget />
+      <Widget />
       <div className={theme === 'light' ? 'pic-l' : 'pic-d'}>
         <Image
           src={

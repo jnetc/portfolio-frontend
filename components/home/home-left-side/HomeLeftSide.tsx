@@ -1,12 +1,37 @@
 import { FC } from 'react';
 import Link from 'next/link';
-
+// Components
 import { Bulb } from '../bulb-icon/Bulb';
+// Sanity Block text
+import { PortableText } from '@Sanity/sanity';
+// Hook
+import { useStore } from '@Store';
+// Types
+import { SanitySerializer } from '@Types';
 
-export const Title: FC = () => {
+const primaryBtn = {
+  en: 'Get in touch',
+  ru: 'Связаться',
+};
+const secondaryBtn = {
+  en: 'My works',
+  ru: 'Проекты',
+};
+
+export const HomeLeftSide: FC = () => {
+  const { context, lang } = useStore();
+  // Sanity block component
+  const serializer = {
+    types: {
+      block: (props: SanitySerializer) => {
+        return <p className="home-left-side__desc">{props.children}</p>;
+      },
+    },
+  };
+
   return (
     <header
-      className="home-left-side"
+      className="home-left-side mob-right-pad"
       aria-label="home page title and quick links"
     >
       <div className="svg-title">
@@ -26,23 +51,19 @@ export const Title: FC = () => {
           </text>
         </svg>
       </div>
-      <h1 className="home-left-side__title">your ideas and my skills</h1>
-      <p className="home-left-side__desc">
-        Hi! I am Anton and i create simple, clear and modern web things in the
-        digital world! Currently, I am focused to find position as a UI designer
-        / developer.
-      </p>
+      <h1 className="home-left-side__title">{context?.title}</h1>
+      <PortableText blocks={context?.slogan} serializers={serializer} />
       <div className="home-btns">
         <button
           className="home-btns__button"
-          title="Hire me"
+          title={lang === 'en' ? primaryBtn.en : primaryBtn.ru}
           aria-label="contact me by email"
         >
-          Hire me
+          {lang === 'en' ? primaryBtn.en : primaryBtn.ru}
         </button>
         <Link href="#portfolio">
           <a className="home-btns__link" role="button">
-            My works
+            {lang === 'en' ? secondaryBtn.en : secondaryBtn.ru}
             <span className="link-arrow-icon" />
           </a>
         </Link>

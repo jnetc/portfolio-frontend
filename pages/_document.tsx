@@ -36,8 +36,19 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta name="color-scheme" content="dark light" />
+          <meta name="generator" content="Next.js" />
+          <meta name="google" content="notranslate" />
+          <meta name="rating" content="General" />
+          <meta name="robots" content="noimageindex notranslate" />
+          <meta name="theme-color" content="#333232" />
+
           {/* <link rel="icon" href="/favicon.ico" sizes="any"/> */}
           {/* <link rel="icon" href="/favicon.svg" type="image/svg+xml"/> */}
+          <link
+            rel="alternate"
+            href="https://es.example.com/ru"
+            hrefLang="ru"
+          />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
@@ -78,8 +89,8 @@ class MyDocument extends Document {
           />
           <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
         </Head>
-        <body>
-          <span id="orientation-landscape">Rotate ro portrait</span>
+        <body id="home">
+          <span id="orientation-landscape">Rotate to portrait</span>
           <Main />
           <NextScript />
         </body>

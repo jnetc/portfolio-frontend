@@ -1,25 +1,56 @@
-import { Data, TransformedData } from 'types';
+import { TransformedData, MainType, SanityData, ProjectType } from 'types';
 
 export const transformLocalization = (
   lang: string,
-  arr: Data
+  arr: Array<SanityData>
 ): TransformedData => {
-  const toKeyAndLanguages = Object.entries(arr);
-  const newObj = {};
+  const data = {} as MainType;
+  const projects: Array<ProjectType> = [];
+  // const skills = [];
+  // const education = [];
 
-  for (const [key, val] of toKeyAndLanguages) {
-    const value = val[lang] as string | Array<string>;
-    Object.assign(newObj, { [key]: value });
-    // if (typeof val[lang] === 'string') {
-    //   value = val[lang] as string | Array<string>;
-    //   Object.assign(newObj, { [key]: value });
-    // } else {
-    //   value = val[lang] as Array<string>;
-    //   Object.assign(newObj, { [key]: value });
-    // }
+  for (const type of arr) {
+    // Generate the main content object
+    if (type._type === 'main') {
+      const main: MainType = type;
+
+      const result = transformData(main, lang);
+      Object.assign(data, { ...result });
+    }
+    // Generate an array of the project objects
+    if (type._type === 'projects') {
+      const project: ProjectType = type;
+
+      const result = transformData(project, lang);
+      projects.push(result);
+    }
   }
 
-  return newObj as TransformedData;
+  return Object.assign(data, { projects }) as TransformedData;
+};
+
+const transformData = <T>(currObj: T, lang: string): T => {
+  // Remove this unnecessary keys
+  const ignoreKeys = ['_createdAt', '_rev', '_type', '_updatedAt'];
+  const obj = {} as T;
+
+  const arrKeyAndValue = Object.entries(currObj);
+
+  for (const [key, val] of arrKeyAndValue) {
+    // Checking valid keys
+    if (!ignoreKeys.includes(key)) {
+      // Boolean, is the key has a locale value ['en', 'ru']
+      const isLocale = Object.getOwnPropertyNames(val).includes('en');
+      // If the value has localization
+      if (typeof val === 'object' && isLocale) {
+        Object.assign(obj, { [key]: val[lang] });
+      }
+      if (!isLocale) {
+        Object.assign(obj, { [key]: val });
+      }
+    }
+  }
+  return obj;
 };
 
 export const animationOptimization = (duration: number) => {
@@ -27,7 +58,7 @@ export const animationOptimization = (duration: number) => {
 
   const step = (timestamp: number) => {
     if (!start) start = timestamp;
-    var progress = timestamp - start;
+    const progress = timestamp - start;
     if (progress < duration) {
       window.requestAnimationFrame(step);
     }
