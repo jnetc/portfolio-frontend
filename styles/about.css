@@ -1,0 +1,13 @@
+.about {
+  grid-column: 1 / -1;
+  /* column-count: 600px; */
+  height: min-content;
+}
+.about div {
+  height: min-content;
+  column-width: 450px;
+  column-gap: 6.25rem;
+}
+.about__paragraph {
+  margin: 0 0 1rem 0;
+}

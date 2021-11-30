@@ -4,6 +4,7 @@ import {
   SanityData,
   ProjectType,
   SkillType,
+  CourseType,
 } from 'types';
 
 export const transformLocalization = (
@@ -13,7 +14,7 @@ export const transformLocalization = (
   const data = {} as MainType;
   const projects: Array<ProjectType> = [];
   const skills: Array<SkillType> = [];
-  // const education = [];
+  const courses = [];
 
   for (const type of arr) {
     // Generate the main content object
@@ -30,16 +31,28 @@ export const transformLocalization = (
       const result = transformData(project, lang);
       projects.push(result);
     }
-    // Generate an array of the project objects
+    // Generate an array of the skills objects
     if (type._type === 'skills') {
       const skill: SkillType = type;
 
       const result = transformData(skill, lang);
       skills.push(result);
     }
+    // Generate an array of the skills objects
+    if (type._type === 'education') {
+      const course: CourseType = type;
+
+      const result = transformData(course, lang);
+      courses.push(result);
+    }
   }
 
-  return Object.assign(data, { projects }, { skills }) as TransformedData;
+  return Object.assign(
+    data,
+    { projects },
+    { skills },
+    { courses }
+  ) as TransformedData;
 };
 
 const transformData = <T>(currObj: T, lang: string): T => {

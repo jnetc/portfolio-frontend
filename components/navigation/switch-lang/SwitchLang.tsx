@@ -15,7 +15,7 @@ export const SwitchLang: FC = () => {
   return (
     <div
       className={lang === 'en' ? 'lang-switcher en' : 'lang-switcher ru'}
-      aria-label={
+      title={
         lang === 'en'
           ? 'The English version of the site is selected'
           : 'The Russian version of the site is selected'

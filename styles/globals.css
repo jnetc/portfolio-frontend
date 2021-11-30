@@ -146,6 +146,17 @@ svg {
   width: 100%;
 }
 
+.card-title {
+  color: var(--primary-clr);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+.card-description {
+  color: var(--primary-clr);
+  font-size: 1.125em;
+  line-height: 1.4;
+}
+
 @media screen and (max-width: 768px) {
   body {
     padding: 1rem 0;
@@ -186,3 +197,4 @@ svg {
 @import url('./separator.css');
 @import url('./portfolio.css');
 @import url('./skills.css');
+@import url('./about.css');

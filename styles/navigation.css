@@ -308,6 +308,7 @@
 
 .lang-switcher a.active {
   color: var(--bg-clr);
+  background-color: var(--secondary-clr);
   transition-delay: 0.15s;
 }
 

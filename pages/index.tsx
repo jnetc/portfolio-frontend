@@ -78,7 +78,7 @@ export const getStaticProps: GetStaticProps = async ({
 }) => {
   // Альтернативный вариант
   // navigation {${locale}}
-  const queryMain = groq`*[_type in ['main', "projects", "skills"]] `;
+  const queryMain = groq`*[_type in ['main', "projects", "skills", "education"]] `;
   // const queryMain = groq`*[_type == 'main'] {
   //   meta_title,
   //   meta_desc,

@@ -1,14 +1,3 @@
-// export type Locale = {
-//   [key: string]: string | Array<string>;
-// };
-// export type Locale<T> = {
-//   [K in keyof T]: string | Array<string>;
-// };
-// interface Localization {
-//   en: string | Array<string>;
-//   ru: string | Array<string>;
-// }
-
 export interface Query {
   _createdAt: string;
   _id: string;
@@ -27,7 +16,7 @@ export interface MainType {
   story: Array<string>;
 }
 
-interface Poster {
+interface ImageType {
   _type: string;
   asset: {
     _ref: string;
@@ -37,7 +26,7 @@ interface Poster {
 export interface ProjectType {
   _id: string;
   recent: boolean;
-  poster: Poster;
+  poster: ImageType;
   label_recent: string;
   label: string;
   recent_order: number;
@@ -54,36 +43,27 @@ export interface SkillType {
   skill_name: string;
   skill_desc: string;
 }
+export interface CourseType {
+  _id: string;
+  course_completed: string;
+  course_image: ImageType;
+  course_name: string;
+  course_desc: string;
+  course_href: string;
+  certificate_href: string;
+}
 
-export type SanityData = MainType & ProjectType & SkillType & Query;
+export type SanityData = MainType &
+  ProjectType &
+  SkillType &
+  CourseType &
+  Query;
 
 export interface TransformedData extends MainType {
   projects: Array<ProjectType>;
   skills: Array<SkillType>;
+  courses: Array<CourseType>;
 }
-
-// export interface Main {
-//   github_href: string;
-//   meta_title: Localization;
-//   meta_desc: Localization;
-//   slogan: Localization;
-//   title: Localization;
-// }
-
-// export interface Projects {
-//   recent_project: Localization;
-//   recent: boolean;
-//   project_title: string;
-//   description: Localization;
-//   poster: string;
-//   stacks: Array<string>;
-//   page_href: string;
-//   github_href: string;
-// }
-
-// export interface Data<T> {
-//   data: Array<T>;
-// }
 
 export interface Store {
   context: TransformedData | null;
@@ -109,33 +89,3 @@ export interface SanitySerializer {
   node: {};
   options: {};
 }
-
-// export interface M {
-//   _createdAt: string;
-//   _id: string;
-//   _rev: string;
-//   _type: string;
-//   _updatedAt: string;
-//   github_href: string;
-//   meta_title: Localization;
-//   meta_desc: Localization;
-//   slogan: Localization;
-//   story: Localization;
-//   title: Localization;
-// }
-// export interface P {
-//   _createdAt: string;
-//   _id: string;
-//   _rev: string;
-//   _type: string;
-//   _updatedAt: string;
-//   description: Localization;
-//   github_href: string;
-//   page_href: string;
-//   name_project: Localization;
-//   poster: Poster;
-//   project_title: string;
-//   recent: boolean;
-//   recent_project: Localization;
-//   stacks: Array<string>;
-// }

@@ -1,6 +1,6 @@
 .anchor {
   grid-column: 1 / -1;
-  margin-top: 10rem;
+  margin-top: 15rem;
   position: relative;
   color: var(--secondary-clr);
   font-size: 1.25em;

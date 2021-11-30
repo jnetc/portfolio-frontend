@@ -101,7 +101,7 @@
 .home-btns__button {
   position: relative;
   padding: 13px min(30px, 40px);
-  color: transparent;
+  color: var(--primary-clr);
   font-size: clamp(1.125em, 2.5vw, 1.5em);
   font-weight: bold;
   line-height: 1;

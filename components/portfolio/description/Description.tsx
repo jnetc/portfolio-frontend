@@ -6,12 +6,14 @@ import { PortableText } from '@Sanity/sanity';
 
 export const Description: FC<{ desc: string }> = ({ desc }) => {
   // Sanity block component
-  const serializer = {
-    types: {
-      block: (props: SanitySerializer) => {
-        return <p className="project__desc">{props.children}</p>;
-      },
-    },
+  const serializer = ({ children }: SanitySerializer) => {
+    return <p className="card-description project__desc">{children}</p>;
   };
-  return <PortableText blocks={desc} serializers={serializer} />;
+
+  return (
+    <PortableText
+      blocks={desc}
+      serializers={{ types: { block: serializer } }}
+    />
+  );
 };

@@ -12,8 +12,6 @@ import { WebDesign } from '@Skills/icons/WebDesign';
 import { SkillType } from '@Types';
 
 export const Skill: FC<{ data: SkillType }> = ({ data }) => {
-  console.log(data);
-
   return (
     <article className="skill">
       {data.skill_id === 'frontend' && <Frontend />}

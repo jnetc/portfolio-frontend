@@ -21,20 +21,14 @@ const secondaryBtn = {
 export const HomeLeftSide: FC = () => {
   const { context, lang } = useStore();
   // Sanity block component
-  const serializer = {
-    types: {
-      block: (props: SanitySerializer) => {
-        return <p className="home-left-side__desc">{props.children}</p>;
-      },
-    },
+  // https://github.com/coreyward/react-portable-text
+  const serializer = ({ children }: SanitySerializer) => {
+    return <p className="home-left-side__desc">{children}</p>;
   };
 
   return (
-    <header
-      className="home-left-side mob-right-pad"
-      aria-label="home page title and quick links"
-    >
-      <div className="svg-title">
+    <header className="home-left-side mob-right-pad">
+      <div className="svg-title" title="your ideas & my skills">
         <svg viewBox="0 0 625 220">
           <text className="svg-title__text ampersand" x="-5" y="210">
             &
@@ -52,7 +46,14 @@ export const HomeLeftSide: FC = () => {
         </svg>
       </div>
       <h1 className="home-left-side__title">{context?.title}</h1>
-      <PortableText blocks={context?.slogan} serializers={serializer} />
+      <PortableText
+        blocks={context?.slogan}
+        serializers={{
+          types: {
+            block: serializer,
+          },
+        }}
+      />
       <div className="home-btns">
         <button
           className="home-btns__button"

@@ -14,7 +14,6 @@ export const Widget: FC = () => {
       </h1>
       <div
         className="widget__data widget__left-side"
-        aria-label="Achievements"
         title="Recent achievements: reputation, badges, and privileges earned"
       >
         <span className="widget__num">{stackoverflow.reputation}</span>
@@ -24,7 +23,6 @@ export const Widget: FC = () => {
       </div>
       <div
         className="widget__data widget__right-side"
-        aria-label="Answers"
         title="Amount answers, which i have answered for all time"
       >
         <span className="widget__num">{stackoverflow.answers}</span>
