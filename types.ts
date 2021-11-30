@@ -48,10 +48,18 @@ export interface ProjectType {
   github_href: string;
 }
 
-export type SanityData = MainType & ProjectType & Query;
+export interface SkillType {
+  _id: string;
+  skill_id: string;
+  skill_name: string;
+  skill_desc: string;
+}
+
+export type SanityData = MainType & ProjectType & SkillType & Query;
 
 export interface TransformedData extends MainType {
   projects: Array<ProjectType>;
+  skills: Array<SkillType>;
 }
 
 // export interface Main {

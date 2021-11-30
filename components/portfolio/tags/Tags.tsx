@@ -1,6 +1,6 @@
 import { FC } from 'react';
 // Components
-import { Tag } from '../tag/Tag';
+import { Tag } from '@Portfolio/tag/Tag';
 
 export const Tags: FC<{ tags: Array<string> }> = ({ tags }) => (
   <ul className="project__tags">

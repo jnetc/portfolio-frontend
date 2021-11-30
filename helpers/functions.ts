@@ -1,4 +1,10 @@
-import { TransformedData, MainType, SanityData, ProjectType } from 'types';
+import {
+  TransformedData,
+  MainType,
+  SanityData,
+  ProjectType,
+  SkillType,
+} from 'types';
 
 export const transformLocalization = (
   lang: string,
@@ -6,7 +12,7 @@ export const transformLocalization = (
 ): TransformedData => {
   const data = {} as MainType;
   const projects: Array<ProjectType> = [];
-  // const skills = [];
+  const skills: Array<SkillType> = [];
   // const education = [];
 
   for (const type of arr) {
@@ -24,9 +30,16 @@ export const transformLocalization = (
       const result = transformData(project, lang);
       projects.push(result);
     }
+    // Generate an array of the project objects
+    if (type._type === 'skills') {
+      const skill: SkillType = type;
+
+      const result = transformData(skill, lang);
+      skills.push(result);
+    }
   }
 
-  return Object.assign(data, { projects }) as TransformedData;
+  return Object.assign(data, { projects }, { skills }) as TransformedData;
 };
 
 const transformData = <T>(currObj: T, lang: string): T => {

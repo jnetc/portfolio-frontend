@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import { Widget } from '../stack-overflow/Widget';
+import { Widget } from '@Home/stack-overflow/Widget';
 
 import { useStore } from '@Store';
 

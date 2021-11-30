@@ -1,9 +1,9 @@
 import { MouseEvent, useState } from 'react';
 // Components
-import { LinkName } from './link-name/LinkName';
-import { Logo } from './logo/Logo';
-import { SwitchLang } from './switch-lang/SwitchLang';
-import { SwitchTheme } from './switch-theme/SwitchTheme';
+import { LinkName } from '@Navigation/link-name/LinkName';
+import { Logo } from '@Navigation/logo/Logo';
+import { SwitchLang } from '@Navigation/switch-lang/SwitchLang';
+import { SwitchTheme } from '@Navigation/switch-theme/SwitchTheme';
 // Context
 import { useStore } from '@Store';
 // Helpers

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Link from 'next/link';
 // Components
-import { Bulb } from '../bulb-icon/Bulb';
+import { Bulb } from '@Home/bulb-icon/Bulb';
 // Sanity Block text
 import { PortableText } from '@Sanity/sanity';
 // Hook

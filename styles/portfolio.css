@@ -77,12 +77,14 @@
 /* components */
 .project__label {
   color: var(--secondary-clr);
-  font-size: 1.125em;
+  font-size: 1em;
+  letter-spacing: 1px;
 }
 .project__name {
   margin: 0.6rem 0 2rem 0;
   color: var(--primary-clr);
-  font-size: 2.125rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
 }
 .project__desc {
   color: var(--primary-clr);

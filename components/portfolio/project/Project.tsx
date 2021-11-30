@@ -1,10 +1,10 @@
 import { FC } from 'react';
 
-import { Label } from '../label/Label';
-import { Title } from '../title/Title';
-import { Description } from '../description/Description';
-import { Links } from '../links/Links';
-import { Tags } from '../tags/Tags';
+import { Label } from '@Portfolio/label/Label';
+import { Title } from '@Portfolio/title/Title';
+import { Description } from '@Portfolio/description/Description';
+import { Links } from '@Portfolio/links/Links';
+import { Tags } from '@Portfolio/tags/Tags';
 // Type
 import { ProjectType } from '@Types';
 

@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import Anchor from '@Anchor';
 // Components
-import { RecentProject } from './recent-project/RecentProject';
-import { Project } from './project/Project';
-import Separator from '../separator';
+import { RecentProject } from '@Portfolio/recent-project/RecentProject';
+import { Project } from '@Portfolio/project/Project';
+import Separator from '@Separator';
 // Hook
 import { useStore } from '@Store';
 

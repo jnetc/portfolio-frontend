@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import Image from 'next/image';
 // Components
-import { Label } from '../label/Label';
-import { Title } from '../title/Title';
-import { Description } from '../description/Description';
-import { Tags } from '../tags/Tags';
-import { Links } from '../links/Links';
+import { Label } from '@Portfolio/label/Label';
+import { Title } from '@Portfolio/title/Title';
+import { Description } from '@Portfolio/description/Description';
+import { Tags } from '@Portfolio/tags/Tags';
+import { Links } from '@Portfolio/links/Links';
 // Type
 import { ProjectType } from '@Types';
 // Sanity

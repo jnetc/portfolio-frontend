@@ -54,7 +54,7 @@ html[data-theme='dark'] {
   --secondary-l: 66%;
 
   --card-clr: hsl(240, 3%, 12%);
-  --card-shadow-clr: hsl(0 0% 0% / 0.6);
+  --card-shadow-clr: hsl(0 0% 0% / 0.15);
   --card-extra-clr: hsl(220, 6%, 19%);
 }
 
@@ -78,6 +78,11 @@ html[data-theme='dark'] {
 ::-webkit-scrollbar-thumb {
   border-radius: 0.815rem;
   background-color: var(--card-extra-clr);
+}
+
+::selection {
+  color: var(--bg-clr);
+  background-color: var(--secondary-clr);
 }
 
 html {
@@ -180,3 +185,4 @@ svg {
 @import url('./anchor.css');
 @import url('./separator.css');
 @import url('./portfolio.css');
+@import url('./skills.css');

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 // Components
-import { GithubLink } from '../link-github/GithibLink';
-import { ExternalLink } from '../link-external/ExternalLink';
+import { GithubLink } from '@Portfolio/link-github/GithibLink';
+import { ExternalLink } from '@Portfolio/link-external/ExternalLink';
 
 export const Links: FC<{ github: string; page: string }> = ({
   github,

@@ -30,7 +30,13 @@ export const Widget: FC = () => {
         <span className="widget__num">{stackoverflow.answers}</span>
         <p className="widget__label">{lang === 'en' ? 'Answers' : 'Ответы'}</p>
       </div>
-      <a href={stackoverflow.link} className="btn row-4" role="button">
+      <a
+        href={stackoverflow.link}
+        className="btn row-4"
+        role="button"
+        target="_blank"
+        rel="noreferrer"
+      >
         {lang === 'en' ? 'follow' : 'перейти'}
       </a>
     </section>

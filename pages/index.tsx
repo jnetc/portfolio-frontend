@@ -6,11 +6,11 @@ import Head from 'next/head';
 import { groq } from 'next-sanity';
 import { getClient } from '@Sanity/sanity.server';
 // Components
-import Navigation from '@Navigation';
-import Home from '@Home';
-import Portfolio from '@Portfolio';
-import Skills from '@Skills';
-import About from '@About';
+import Navigation from '@Navigation/index';
+import Home from '@Home/index';
+import Portfolio from '@Portfolio/index';
+import Skills from '@Skills/index';
+import About from '@About/index';
 // Types
 import { Store, StackOverflow, SanityData } from '@Types';
 // Helpers
@@ -78,7 +78,7 @@ export const getStaticProps: GetStaticProps = async ({
 }) => {
   // Альтернативный вариант
   // navigation {${locale}}
-  const queryMain = groq`*[_type in ['main', "projects"]] `;
+  const queryMain = groq`*[_type in ['main', "projects", "skills"]] `;
   // const queryMain = groq`*[_type == 'main'] {
   //   meta_title,
   //   meta_desc,
