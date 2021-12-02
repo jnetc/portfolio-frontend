@@ -15,7 +15,9 @@ export const Project: FC<{ data: ProjectType }> = ({ data }) => {
       <Links github={data.github_href} page={data.page_href} />
       <Label label={data.label} />
       <Title title={data.project_title} />
-      <Description desc={data.description} />
+      <div className="project__desc">
+        <Description desc={data.description} />
+      </div>
       <Tags tags={data.tags} />
     </article>
   );

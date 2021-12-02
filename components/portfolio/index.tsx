@@ -10,15 +10,23 @@ import { useStore } from '@Store';
 const Portfolio: FC = () => {
   const { context } = useStore();
 
-  const recentProjects = context?.projects.map(recent => {
-    if (!recent.recent) return;
-    if (recent.recent_order === 1) {
-      return <RecentProject key={recent._id} position="left" data={recent} />;
-    }
-    if (recent.recent_order === 2) {
-      return <RecentProject key={recent._id} position="right" data={recent} />;
-    }
-  });
+  const recentProjects = context?.projects
+    .filter(f => f.recent)
+    .sort((a, b) => {
+      const dateA = Date.parse(a.project_completed);
+      const dateB = Date.parse(b.project_completed);
+      if (dateA > dateB) return -1;
+      return 1;
+    })
+    .map((el, idx) => {
+      return (
+        <RecentProject
+          key={el._id}
+          position={idx === 0 ? 'left' : 'right'}
+          data={el}
+        />
+      );
+    });
 
   const otherProjects = context?.projects.map(project => {
     if (!project.recent) return <Project key={project._id} data={project} />;
@@ -29,8 +37,8 @@ const Portfolio: FC = () => {
       <Anchor anchor="portfolio" hash="#2" />
       {recentProjects}
       <Separator separator="portfolio" />
-      <section className="projects-scrollarea">
-        <div className="projects-archive">{otherProjects}</div>
+      <section className="card-scrollarea">
+        <div className="card-wrapper">{otherProjects}</div>
       </section>
     </>
   );

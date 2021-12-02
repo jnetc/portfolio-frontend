@@ -14,8 +14,8 @@ const primaryBtn = {
   ru: 'Связаться',
 };
 const secondaryBtn = {
-  en: 'My works',
-  ru: 'Проекты',
+  en: 'For employers',
+  ru: 'Работадателям',
 };
 
 export const HomeLeftSide: FC = () => {

@@ -7,7 +7,7 @@ import { PortableText } from '@Sanity/sanity';
 export const Description: FC<{ desc: string }> = ({ desc }) => {
   // Sanity block component
   const serializer = ({ children }: SanitySerializer) => {
-    return <p className="card-description project__desc">{children}</p>;
+    return <p className="card-description">{children}</p>;
   };
 
   return (

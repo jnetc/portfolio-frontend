@@ -1,10 +1,6 @@
 .project-left,
-.project-right,
-.projects-scrollarea {
+.project-right {
   grid-column: 1 / -1;
-}
-.projects-scrollarea {
-  overflow: hidden;
 }
 .project-left {
   grid-row: 4;
@@ -13,17 +9,7 @@
   grid-row: 5;
   margin-top: 10rem;
 }
-.projects-archive {
-  min-width: 100%;
-  display: grid;
-  grid-auto-columns: 380px;
-  grid-auto-flow: column;
-  gap: 5.625rem;
-  padding: 0.2rem 3rem 3rem 0.2rem;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--card-extra-clr) var(--card-clr);
-}
+
 .project-left .recent {
   grid-column: 1 / 6;
 }
@@ -115,14 +101,9 @@
   margin-bottom: 2.5rem;
 }
 
-.project__link:hover .webpage {
-  stroke: var(--secondary-clr);
-}
-
 .project__link:hover .github {
   fill: var(--secondary-clr);
 }
-.webpage,
 .github {
   width: 23px;
   height: 23px;
@@ -131,13 +112,6 @@
 
 .github {
   fill: var(--primary-clr);
-}
-
-.project__icon {
-  stroke: var(--primary-clr);
-  stroke-width: 3px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
 .project__arrow {
@@ -264,10 +238,6 @@
     width: 1000px;
     opacity: 0.3;
     z-index: 1;
-  }
-  .projects-archive {
-    grid-auto-columns: clamp(19rem, 50vw, 23.75rem);
-    gap: 4rem;
   }
   .archive {
     max-width: 23.75rem;

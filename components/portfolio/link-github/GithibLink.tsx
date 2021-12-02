@@ -1,5 +1,5 @@
 export const GithubLink = ({ url }: { url: string }) => {
-  const name = url.split('/')[4];
+  const labelUrl = url.split('//')[1];
 
   return (
     <a
@@ -8,8 +8,8 @@ export const GithubLink = ({ url }: { url: string }) => {
       role="button"
       target="_blank"
       rel="noreferrer"
-      aria-label={`link to github, ${name} repository`}
-      title={`${name} repository`}
+      aria-label={`link to github repository, ${labelUrl}`}
+      title={`repository ${labelUrl} `}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

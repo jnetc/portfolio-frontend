@@ -1,6 +1,5 @@
 .about {
   grid-column: 1 / -1;
-  /* column-count: 600px; */
   height: min-content;
 }
 .about div {
@@ -11,3 +10,5 @@
 .about__paragraph {
   margin: 0 0 1rem 0;
 }
+
+@import url('./courses.css');

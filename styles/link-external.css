@@ -1,0 +1,18 @@
+.link:hover .link__icon {
+  stroke: var(--secondary-clr);
+}
+
+.link__icon {
+  width: 23px;
+  height: 23px;
+  stroke: var(--primary-clr);
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 0.3s ease-in-out;
+}
+
+.course__link {
+  justify-self: flex-end;
+  margin: 2rem 2rem 0 0;
+}

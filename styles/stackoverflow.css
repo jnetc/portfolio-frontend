@@ -72,22 +72,8 @@
   letter-spacing: 0.8px;
 }
 
-.btn {
-  padding: 0.6rem 1rem;
-  border: 2px solid var(--secondary-clr);
-  border-radius: var(--m-radius);
-  background-color: transparent;
-  color: var(--secondary-clr);
-  font-weight: bold;
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-}
-.btn:hover {
-  color: var(--bg-clr);
-  background-color: var(--secondary-clr);
-}
-
-.btn.row-4 {
+.btn-stackoverflow {
+  padding-block: 0.6rem;
   grid-row: 3;
   grid-column: 1 /-1;
 }

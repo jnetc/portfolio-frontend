@@ -30,7 +30,7 @@ export const Widget: FC = () => {
       </div>
       <a
         href={stackoverflow.link}
-        className="btn row-4"
+        className="btn btn-stackoverflow"
         role="button"
         target="_blank"
         rel="noreferrer"

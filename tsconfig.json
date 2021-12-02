@@ -21,6 +21,7 @@
       "@Helpers/*": ["./helpers/*"],
       "@Home/*": ["./components/home/*"],
       "@Hooks/*": ["./hooks/*"],
+      "@LinkExternal": ["./components/link-external"],
       "@Modal": ["./components/modal"],
       "@Navigation/*": ["./components/navigation/*"],
       "@Portfolio/*": ["./components/portfolio/*"],

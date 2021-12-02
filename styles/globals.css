@@ -11,7 +11,11 @@
 }
 
 html[data-theme='light'] {
-  --bg-clr: hsl(39, 43%, 90%);
+  --bg-clr: hsl(40, 41%, 90%);
+  --bg-clr-h: 40;
+  --bg-clr-s: 41%;
+  --bg-clr-l: 90%;
+
   --bg-dimed: hsl(23, 33%, 85%);
   /* navigation */
   --bg-nav-h: 23;
@@ -35,6 +39,10 @@ html[data-theme='light'] {
 }
 html[data-theme='dark'] {
   --bg-clr: hsl(252, 10%, 10%);
+  --bg-clr-h: 252;
+  --bg-clr-s: 10%;
+  --bg-clr-l: 10%;
+
   --bg-dimed: hsl(185, 17%, 15%);
   /* navigation */
   --bg-nav-h: 185;
@@ -146,16 +154,61 @@ svg {
   width: 100%;
 }
 
+.btn {
+  border: 2px solid var(--secondary-clr);
+  border-radius: var(--m-radius);
+  background-color: transparent;
+  color: var(--secondary-clr);
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+.btn:hover {
+  color: var(--bg-clr);
+  background-color: var(--secondary-clr);
+}
 .card-title {
   color: var(--primary-clr);
   font-size: 1.5rem;
   letter-spacing: 1px;
+  line-height: 1.2;
 }
 .card-description {
   color: var(--primary-clr);
   font-size: 1.125em;
   line-height: 1.4;
 }
+div > .card-description:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+.card-scrollarea {
+  grid-column: 1 / -1;
+}
+.card-scrollarea {
+  overflow: hidden;
+}
+.card-wrapper {
+  min-width: 100%;
+  display: grid;
+  grid-auto-columns: 380px;
+  grid-auto-flow: column;
+  gap: 5.625rem;
+  padding: 0.2rem 3rem 3rem 0.2rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--card-extra-clr) var(--card-clr);
+  transition: all 0.3s ease-in-out;
+}
+/* .card-wrapper:hover {
+  scrollbar-width: initial;
+}
+.card-wrapper:hover::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+} */
 
 @media screen and (max-width: 768px) {
   body {
@@ -172,6 +225,10 @@ svg {
   }
   .mob-right-pad {
     padding-right: 1rem;
+  }
+  .card-wrapper {
+    grid-auto-columns: clamp(19rem, 50vw, 23.75rem);
+    gap: 4rem;
   }
 }
 /* Prevent to show content if orientation & height is valid */
@@ -195,6 +252,7 @@ svg {
 @import url('./home.css');
 @import url('./anchor.css');
 @import url('./separator.css');
+@import url('./link-external.css');
 @import url('./portfolio.css');
 @import url('./skills.css');
 @import url('./about.css');

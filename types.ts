@@ -29,7 +29,7 @@ export interface ProjectType {
   poster: ImageType;
   label_recent: string;
   label: string;
-  recent_order: number;
+  project_completed: string;
   project_title: string;
   description: string;
   tags: Array<string>;
