@@ -256,3 +256,4 @@ div > .card-description:not(:last-of-type) {
 @import url('./portfolio.css');
 @import url('./skills.css');
 @import url('./about.css');
+@import url('./footer.css');

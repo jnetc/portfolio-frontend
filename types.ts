@@ -9,6 +9,7 @@ export interface Query {
 export interface MainType {
   _id: string;
   github_href: string;
+  linkedin_href: string;
   meta_title: string;
   meta_desc: string;
   slogan: Array<string>;

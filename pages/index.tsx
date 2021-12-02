@@ -11,6 +11,7 @@ import Home from '@Home/index';
 import Portfolio from '@Portfolio/index';
 import Skills from '@Skills/index';
 import About from '@About/index';
+import Footer from '@Footer';
 // Types
 import { Store, StackOverflow, SanityData } from '@Types';
 // Helpers
@@ -64,6 +65,7 @@ const App: NextPage<{
           <Portfolio />
           <Skills />
           <About />
+          <Footer />
         </main>
       </>
     </Store.Provider>
