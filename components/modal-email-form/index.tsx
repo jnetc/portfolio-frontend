@@ -47,7 +47,7 @@ const ModalEmailForm: FC = () => {
     []
   );
 
-  console.log('main__', isSend, submitButton(lang, isSend, hasErr));
+  // console.log('main__', isSend, submitButton(lang, isSend, hasErr));
 
   const SendMessage = useCallback(
     ev => {

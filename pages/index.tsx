@@ -1,6 +1,7 @@
-import { useContext, createContext, useState } from 'react';
+import { useContext, createContext, useState, useEffect, useRef } from 'react';
 import { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 
 // Sanity CMS
 import { groq } from 'next-sanity';
@@ -46,6 +47,20 @@ const App: NextPage<{
   const currentLangData = transformLocalization(locale, main);
   const [theme, switchTheme] = useState(state.theme);
   const [modal, toggleModal] = useState(state.modal);
+  const ref = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    document.addEventListener('scroll', () => {
+      const position = window.scrollY;
+      const fromTop = window.innerHeight / 5;
+
+      if (position < fromTop) {
+        ref.current?.classList.remove('view');
+        return;
+      }
+      ref.current?.classList.add('view');
+    });
+  }, []);
 
   return (
     <Store.Provider
@@ -76,6 +91,9 @@ const App: NextPage<{
           <About />
           <Footer />
         </main>
+        <Link href="#home">
+          <a className="to-top" ref={ref}></a>
+        </Link>
       </>
     </Store.Provider>
   );
