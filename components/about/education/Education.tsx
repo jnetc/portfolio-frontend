@@ -6,9 +6,7 @@ import { useStore } from '@Store';
 
 export const Education: FC = () => {
   const { context } = useStore();
-  // console.log(Date.parse('Sept 10, 1982'));
 
-  // console.log(context?.courses);
   const courses = context?.courses
     .map(crs => <Course key={crs._id} data={crs} />)
     .sort((a, b) => {

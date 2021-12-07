@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react';
+import { FC, useRef, useEffect } from 'react';
 // Hook
 import { useStore } from '@Store';
 // Components
@@ -23,12 +23,16 @@ const Modal: FC = ({ children }) => {
     }, 1000);
   }
 
+  useEffect(() => {
+    if (!modal.show) document.body.removeAttribute('style');
+  }, [modal.show]);
+
   return (
     <section
       className="modal"
       role="dialog"
-      aria-labelledby="dialog1Title"
-      aria-describedby="dialog1Desc"
+      aria-labelledby="dialog title"
+      aria-describedby="dialog description"
       ref={ref}
     >
       <div className="modal__close">

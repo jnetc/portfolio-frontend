@@ -47,7 +47,8 @@ const App: NextPage<{
   const currentLangData = transformLocalization(locale, main);
   const [theme, switchTheme] = useState(state.theme);
   const [modal, toggleModal] = useState(state.modal);
-  const ref = useRef<HTMLAnchorElement>(null);
+  const refToTop = useRef<HTMLAnchorElement>(null);
+  const refModalOverlay = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
@@ -55,11 +56,34 @@ const App: NextPage<{
       const fromTop = window.innerHeight / 5;
 
       if (position < fromTop) {
-        ref.current?.classList.remove('view');
+        refToTop.current?.classList.remove('view');
         return;
       }
-      ref.current?.classList.add('view');
+      refToTop.current?.classList.add('view');
     });
+
+    return () => {
+      document.removeEventListener('scroll', () => {});
+    };
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener('click', ev => {
+      const callModalBtns = ['home-contact-btn', 'home-employers-btn'];
+      const el = ev.target as HTMLElement;
+
+      if (callModalBtns.includes(el.className)) {
+        document.body.style.overflow = 'hidden';
+      }
+
+      if (!el.classList.contains('modal__overlay')) return;
+      toggleModal({ show: false, name: el.dataset.modal });
+      document.body.removeAttribute('style');
+    });
+
+    return () => {
+      document.addEventListener('click', () => {});
+    };
   }, []);
 
   return (
@@ -83,6 +107,14 @@ const App: NextPage<{
         </Head>
 
         <ModalSwitch />
+        {modal.show && (
+          <span
+            className="modal__overlay"
+            data-modal={modal.name}
+            ref={refModalOverlay}
+          />
+        )}
+
         <Navigation />
         <main className="main grid">
           <Home />
@@ -92,7 +124,7 @@ const App: NextPage<{
           <Footer />
         </main>
         <Link href="#home">
-          <a className="to-top" ref={ref}></a>
+          <a className="to-top" ref={refToTop}></a>
         </Link>
       </>
     </Store.Provider>

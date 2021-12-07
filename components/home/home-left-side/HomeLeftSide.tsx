@@ -55,7 +55,7 @@ export const HomeLeftSide: FC = () => {
       />
       <div className="home-btns">
         <button
-          className="home-contact-btn "
+          className="home-contact-btn"
           title={lang === 'en' ? primaryBtn.en : primaryBtn.ru}
           aria-label="contact me by email"
           onClick={() => toggleModal({ show: true, name: 'emailform' })}

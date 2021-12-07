@@ -47,8 +47,6 @@ const ModalEmailForm: FC = () => {
     []
   );
 
-  // console.log('main__', isSend, submitButton(lang, isSend, hasErr));
-
   const SendMessage = useCallback(
     ev => {
       ev.preventDefault();
@@ -76,6 +74,7 @@ const ModalEmailForm: FC = () => {
         })
         .catch(error => {
           console.log(error);
+
           setHasErr(true);
         });
     },
