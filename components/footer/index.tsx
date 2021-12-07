@@ -4,7 +4,7 @@ import { useStore } from '@Store';
 const Footer: FC = () => {
   const { context, stackoverflow } = useStore();
   return (
-    <footer className="footer">
+    <footer className="footer mob-right-pad">
       <a
         href={context?.github_href}
         className="footer__link"

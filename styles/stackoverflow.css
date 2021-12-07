@@ -66,7 +66,7 @@
   font-weight: bold;
 }
 .widget__label {
-  color: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.7);
+  color: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 1);
   font-size: 0.875em;
   font-weight: 300;
   letter-spacing: 0.8px;

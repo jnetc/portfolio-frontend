@@ -5,6 +5,7 @@ import {
   ProjectType,
   SkillType,
   CourseType,
+  EmployerModalType,
 } from 'types';
 
 export const transformLocalization = (
@@ -14,7 +15,8 @@ export const transformLocalization = (
   const data = {} as MainType;
   const projects: Array<ProjectType> = [];
   const skills: Array<SkillType> = [];
-  const courses = [];
+  const courses: Array<CourseType> = [];
+  const modal = {} as EmployerModalType;
 
   for (const type of arr) {
     // Generate the main content object
@@ -45,13 +47,21 @@ export const transformLocalization = (
       const result = transformData(course, lang);
       courses.push(result);
     }
+    // Generate the main content object
+    if (type._type === 'modal') {
+      const modalData: MainType = type;
+
+      const result = transformData(modalData, lang);
+      Object.assign(modal, { ...result });
+    }
   }
 
   return Object.assign(
     data,
     { projects },
     { skills },
-    { courses }
+    { courses },
+    { modal }
   ) as TransformedData;
 };
 

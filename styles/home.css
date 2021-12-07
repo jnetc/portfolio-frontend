@@ -98,7 +98,7 @@
   margin-top: 2rem;
   padding: 0 1rem;
 }
-.home-btns__button {
+.home-contact-btn {
   position: relative;
   padding: 13px min(30px, 40px);
   color: var(--primary-clr);
@@ -107,20 +107,20 @@
   line-height: 1;
   box-shadow: inset 0px 0px 0 3px var(--secondary-clr);
 }
-.home-btns__button::before,
-.home-btns__button::after {
+.home-contact-btn::before,
+.home-contact-btn::after {
   position: absolute;
   border-radius: inherit;
   transition: all 0.3s ease-in-out;
 }
-.home-btns__button::before {
+.home-contact-btn::before {
   content: '';
   inset: 0;
   background-color: var(--secondary-clr);
   transform: translate(-15px, -15px);
   z-index: 1;
 }
-.home-btns__button::after {
+.home-contact-btn::after {
   content: attr(title);
   top: 50%;
   left: 50%;
@@ -129,17 +129,18 @@
   transform: translate(calc(-15px - 50%), calc(-15px - 50%));
   z-index: 2;
 }
-.home-btns__button:hover::before {
+.home-contact-btn:hover::before {
   transform: translate(0, 0);
 }
-.home-btns__button:hover::after {
+.home-contact-btn:hover::after {
   transform: translate(-50%, -50%);
 }
-.home-btns__link {
+.home-employers-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  color: var(--primary-clr);
   font-size: clamp(1em, 1.5vw, 1.5em);
   font-weight: bold;
   white-space: nowrap;
@@ -175,12 +176,12 @@
   width: 15px;
   transform: rotate(-90deg);
 }
-.home-btns__link:hover .link-arrow-icon {
+.home-employers-btn:hover .link-arrow-icon {
   width: 100%;
   background-color: var(--secondary-clr);
 }
-.home-btns__link:hover .link-arrow-icon::before,
-.home-btns__link:hover .link-arrow-icon::after {
+.home-employers-btn:hover .link-arrow-icon::before,
+.home-employers-btn:hover .link-arrow-icon::after {
   width: 0;
 }
 
@@ -236,11 +237,11 @@ html[data-theme='dark'] .pic-d {
     gap: clamp(1rem, 6.5vw, 50px);
     padding: 0 0 0 1rem;
   }
-  .home-btns__button {
+  .home-contact-btn {
     padding: 13px min(25px, 30px);
     font-size: clamp(0.9em, 1.5vw, 1.2em);
   }
-  .home-btns__link {
+  .home-employers-btn {
     font-size: clamp(0.9em, 1.5vw, 1.2em);
   }
 

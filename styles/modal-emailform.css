@@ -1,0 +1,109 @@
+.emailform {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.form__input {
+  width: 100%;
+  position: relative;
+}
+.input-field {
+  padding: 1rem;
+  border-radius: var(--m-radius);
+  border: 2px solid var(--card-extra-clr);
+  font-size: 1.2em;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  resize: vertical;
+}
+.form__placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--placeholder);
+  font-size: 0.875em;
+  transition: all 0.3s ease-in-out;
+  transform: translate(1em, 1.5em);
+  pointer-events: none;
+  z-index: 5;
+}
+.input-field:focus {
+  border-color: var(--secondary-clr);
+}
+.input-field:focus ~ .form__placeholder,
+.is-not-empty {
+  transform: translate(0em, -1.7em);
+}
+
+/* SVG LETTER */
+
+.letter {
+  grid-row: 1;
+  width: 160px;
+  justify-self: center;
+  transform-origin: left bottom;
+}
+
+.letter-list,
+.letter-open,
+.letter-close {
+  transition: all 0.3s linear;
+}
+.letter-open,
+.letter-close {
+  transform-origin: center 55px;
+  transition: all 0.3s linear;
+}
+.letter-list,
+.letter-open {
+  transition-delay: 0.3s;
+}
+
+.letter-close {
+  transform: rotateX(90deg);
+  transition-delay: 0s;
+}
+
+@keyframes letter-list {
+  100% {
+    transform: translateY(70px);
+  }
+}
+@keyframes letter-open {
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+@keyframes letter-close {
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+@keyframes letter {
+  30% {
+    transform: rotateZ(-15deg);
+  }
+  100% {
+    transform: translateX(500px) rotateZ(-15deg);
+  }
+}
+
+.sended .letter-list {
+  animation: letter-list 0.3s linear forwards;
+  transition-delay: 0s;
+}
+.sended .letter-open {
+  animation: letter-open 0.3s linear forwards;
+  transition-delay: 0s;
+}
+.sended .letter-close {
+  animation: letter-close 0.3s linear forwards;
+  animation-delay: 0.3s;
+}
+.sended .letter {
+  animation: letter 1s cubic-bezier(0, 1.29, 1, 1) forwards;
+  animation-delay: 0.6s;
+}

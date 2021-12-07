@@ -23,6 +23,8 @@
       "@Hooks/*": ["./hooks/*"],
       "@LinkExternal": ["./components/link-external"],
       "@Modal": ["./components/modal"],
+      "@ModalMailform": ["./components/modal-email-form"],
+      "@ModalForEmployers": ["./components/modal-for-employers"],
       "@Navigation/*": ["./components/navigation/*"],
       "@Portfolio/*": ["./components/portfolio/*"],
       "@Sanity/*": ["./lib/*"],

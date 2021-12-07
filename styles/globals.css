@@ -28,11 +28,13 @@ html[data-theme='light'] {
   --primary-h: 252;
   --primary-s: 10%;
   --primary-l: 10%;
+  --primary-clr-dimed: hsl(220, 6%, 19%);
+  --placeholder: hsl(37, 8%, 42%);
 
-  --secondary-clr: hsl(341, 53%, 33%);
+  --secondary-clr: hsl(341, 53%, 25%);
   --secondary-h: 341;
   --secondary-s: 53%;
-  --secondary-l: 33%;
+  --secondary-l: 25%;
   --card-clr: hsl(39, 42%, 87%);
   --card-shadow-clr: hsl(38 12% 70% / 0.6);
   --card-extra-clr: hsl(38, 12%, 70%);
@@ -55,6 +57,8 @@ html[data-theme='dark'] {
   --primary-h: 39;
   --primary-s: 43%;
   --primary-l: 90%;
+  --primary-clr-dimed: hsl(38, 12%, 70%);
+  --placeholder: hsl(37, 8%, 42%);
 
   --secondary-clr: hsl(162, 47%, 66%);
   --secondary-h: 162;
@@ -153,6 +157,14 @@ ol {
 svg {
   width: 100%;
 }
+input,
+textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--primary-clr);
+}
 
 .btn {
   border: 2px solid var(--secondary-clr);
@@ -176,12 +188,12 @@ svg {
   letter-spacing: 1px;
   line-height: 1.2;
 }
-.card-description {
+.paragraph {
   color: var(--primary-clr);
   font-size: 1.125em;
   line-height: 1.4;
 }
-div > .card-description:not(:last-of-type) {
+div > .paragraph:not(:last-of-type) {
   margin-bottom: 1rem;
 }
 .card-scrollarea {
@@ -257,3 +269,4 @@ div > .card-description:not(:last-of-type) {
 @import url('./skills.css');
 @import url('./about.css');
 @import url('./footer.css');
+@import url('./modal.css');

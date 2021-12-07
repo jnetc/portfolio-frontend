@@ -11,11 +11,11 @@ export const Story: FC = () => {
   const { context } = useStore();
 
   const serializer = ({ children }: SanitySerializer) => {
-    return <p className="card-description about__paragraph">{children}</p>;
+    return <p className="paragraph about__paragraph">{children}</p>;
   };
 
   return (
-    <div className="about">
+    <div className="about mob-right-pad">
       <PortableText
         blocks={context?.story}
         serializers={{ types: { block: serializer } }}

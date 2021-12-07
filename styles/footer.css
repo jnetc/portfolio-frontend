@@ -23,17 +23,17 @@
   position: absolute;
   color: var(--secondary-clr);
   transition: all 0.3s cubic-bezier(0, 1.14, 0.34, 1.35);
-  opacity: 1;
+  opacity: 0;
 }
 .footer__link::before {
   left: 0;
   top: -10px;
-  transform: translate(16px, 18px);
+  transform: translate(1rem, 18px);
 }
 .footer__link::after {
   bottom: -10px;
   right: 0;
-  transform: translate(-16px, -18px);
+  transform: translate(-1rem, -18px);
 }
 .footer__link:hover {
   color: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.5);
@@ -47,4 +47,19 @@
 .footer__link:hover::before,
 .footer__link:hover::after {
   transform: translate(0, 0);
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    gap: clamp(0.5rem, 3vw, 1rem);
+  }
+  .footer__link {
+    padding: 0.5em;
+  }
+  .footer__link::before {
+    transform: translate(0.5rem, 18px);
+  }
+  .footer__link::after {
+    transform: translate(-0.5rem, -18px);
+  }
 }

@@ -54,16 +54,33 @@ export interface CourseType {
   certificate_href: string;
 }
 
+export interface EmployerModalType {
+  active: boolean;
+  title: string;
+  subtitle: string;
+  info: Array<string>;
+  subsidy: string;
+  extra_info: string;
+  modal_href: string;
+}
+
 export type SanityData = MainType &
   ProjectType &
   SkillType &
   CourseType &
+  EmployerModalType &
   Query;
 
 export interface TransformedData extends MainType {
   projects: Array<ProjectType>;
   skills: Array<SkillType>;
   courses: Array<CourseType>;
+  modal: EmployerModalType;
+}
+
+export interface ModalType {
+  show: boolean;
+  name?: string;
 }
 
 export interface Store {
@@ -72,6 +89,8 @@ export interface Store {
   theme: string;
   switchTheme: (lang: string) => void;
   stackoverflow: StackOverflow<string> | null;
+  modal: ModalType;
+  toggleModal: (show: ModalType) => void;
 }
 
 export type StackOverflow<T> = {
@@ -89,4 +108,8 @@ export interface SanitySerializer {
   isInline: undefined;
   node: {};
   options: {};
+}
+
+export interface MailStateType {
+  [key: string]: string;
 }

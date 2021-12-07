@@ -44,9 +44,7 @@ export const Course: FC<{ data: CourseType }> = ({ data }) => {
             : `In the learning process`}
         </p>
       </div>
-      <p className="card-description course__desc course-pad2">
-        {data.course_desc}
-      </p>
+      <p className="paragraph course__desc course-pad2">{data.course_desc}</p>
       {data.certificate_href && (
         <a
           href={data.certificate_href}

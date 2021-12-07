@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import Link from 'next/link';
 // Components
 import { Bulb } from '@Home/bulb-icon/Bulb';
 // Sanity Block text
@@ -15,11 +14,11 @@ const primaryBtn = {
 };
 const secondaryBtn = {
   en: 'For employers',
-  ru: 'Работадателям',
+  ru: 'Нанимателям',
 };
 
 export const HomeLeftSide: FC = () => {
-  const { context, lang } = useStore();
+  const { context, lang, toggleModal } = useStore();
   // Sanity block component
   // https://github.com/coreyward/react-portable-text
   const serializer = ({ children }: SanitySerializer) => {
@@ -56,18 +55,22 @@ export const HomeLeftSide: FC = () => {
       />
       <div className="home-btns">
         <button
-          className="home-btns__button"
+          className="home-contact-btn "
           title={lang === 'en' ? primaryBtn.en : primaryBtn.ru}
           aria-label="contact me by email"
+          onClick={() => toggleModal({ show: true, name: 'emailform' })}
         >
           {lang === 'en' ? primaryBtn.en : primaryBtn.ru}
         </button>
-        <Link href="#portfolio">
-          <a className="home-btns__link" role="button">
-            {lang === 'en' ? secondaryBtn.en : secondaryBtn.ru}
-            <span className="link-arrow-icon" />
-          </a>
-        </Link>
+        <button
+          className="home-employers-btn"
+          title={lang === 'en' ? secondaryBtn.en : secondaryBtn.ru}
+          aria-label="information for employers"
+          onClick={() => toggleModal({ show: true, name: 'employers' })}
+        >
+          {lang === 'en' ? secondaryBtn.en : secondaryBtn.ru}
+          <span className="link-arrow-icon" />
+        </button>
       </div>
     </header>
   );
