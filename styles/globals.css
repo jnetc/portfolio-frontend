@@ -38,8 +38,6 @@ html[data-theme='light'] {
   --card-clr: hsl(39, 42%, 87%);
   --card-shadow-clr: hsl(38 12% 70% / 0.6);
   --card-extra-clr: hsl(38, 12%, 70%);
-
-  --shadow: red;
 }
 html[data-theme='dark'] {
   --bg-clr: hsl(252, 10%, 10%);
@@ -70,8 +68,6 @@ html[data-theme='dark'] {
   --card-clr: hsl(240, 3%, 12%);
   --card-shadow-clr: hsl(0 0% 0% / 0.15);
   --card-extra-clr: hsl(220, 6%, 19%);
-
-  --shadow: red;
 }
 
 *,
@@ -311,7 +307,6 @@ div > .paragraph:not(:last-of-type) {
     grid-template-rows: calc(100vh - 1rem - var(--gap)) auto;
     overflow: hidden;
     padding-left: 1rem;
-    /* margin-right: 1rem; */
   }
   .grid {
     grid-template-columns: repeat(6, minmax(6px, 96px));
@@ -326,6 +321,10 @@ div > .paragraph:not(:last-of-type) {
   .to-top {
     right: 1rem;
     bottom: 1rem;
+  }
+  .to-left,
+  .to-right {
+    display: none;
   }
 }
 /* Prevent to show content if orientation & height is valid */

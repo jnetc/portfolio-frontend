@@ -18,12 +18,19 @@ export const ScrollArea: FC = ({ children }) => {
     if (!scroll) return;
 
     const getStyle = window.getComputedStyle(scroll);
-    const gap = parseInt(getStyle.getPropertyValue('gap'));
+    const gap = parseInt(getStyle.getPropertyValue('grid-column-gap'));
 
     const scrollWidth = scroll.scrollWidth;
     const scrollPosition = scroll.scrollLeft;
     const scrollVisibleArea = scroll.offsetWidth;
     const scrollEndPosition = scrollWidth - scrollVisibleArea;
+
+    // Show / Hide right button area is overflowed
+    if (scrollWidth > scrollVisibleArea) {
+      setRightBtn(true);
+    } else {
+      setRightBtn(false);
+    }
 
     setScrollOpt({
       step: scrollVisibleArea + gap,
@@ -31,21 +38,6 @@ export const ScrollArea: FC = ({ children }) => {
       scrollEnd: scrollEndPosition,
     });
   }, [resize]);
-
-  // useEffect(() => {
-  //   const resize = () => {
-  //     const getWidth =
-  //       window.innerWidth ||
-  //       document.documentElement.clientWidth ||
-  //       document.body.clientWidth;
-  //     setResize(getWidth);
-  //   };
-  //   window.addEventListener('resize', resize);
-
-  //   return () => {
-  //     window.removeEventListener('resize', resize);
-  //   };
-  // }, []);
 
   const scroll = (ev: MouseEvent<HTMLDivElement>) => {
     const areaPosition = ev.currentTarget.scrollLeft;
