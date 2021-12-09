@@ -28,6 +28,7 @@
       "@Navigation/*": ["./components/navigation/*"],
       "@Portfolio/*": ["./components/portfolio/*"],
       "@Sanity/*": ["./lib/*"],
+      "@ScrollArea": ["./components/scroll-area"],
       "@Separator": ["./components/separator"],
       "@Skills/*": ["./components/skills/*"],
       "@Store": ["./pages"],

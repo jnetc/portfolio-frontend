@@ -3,6 +3,7 @@ import Anchor from '@Anchor';
 // Components
 import { RecentProject } from '@Portfolio/recent-project/RecentProject';
 import { Project } from '@Portfolio/project/Project';
+import { ScrollArea } from '@ScrollArea';
 import Separator from '@Separator';
 // Hook
 import { useStore } from '@Store';
@@ -37,9 +38,7 @@ const Portfolio: FC = () => {
       <Anchor anchor="portfolio" hash="#2" />
       {recentProjects}
       <Separator separator="portfolio" />
-      <section className="card-scrollarea">
-        <div className="card-wrapper">{otherProjects}</div>
-      </section>
+      <ScrollArea>{otherProjects}</ScrollArea>
     </>
   );
 };

@@ -38,6 +38,8 @@ html[data-theme='light'] {
   --card-clr: hsl(39, 42%, 87%);
   --card-shadow-clr: hsl(38 12% 70% / 0.6);
   --card-extra-clr: hsl(38, 12%, 70%);
+
+  --shadow: red;
 }
 html[data-theme='dark'] {
   --bg-clr: hsl(252, 10%, 10%);
@@ -68,6 +70,8 @@ html[data-theme='dark'] {
   --card-clr: hsl(240, 3%, 12%);
   --card-shadow-clr: hsl(0 0% 0% / 0.15);
   --card-extra-clr: hsl(220, 6%, 19%);
+
+  --shadow: red;
 }
 
 *,
@@ -198,10 +202,9 @@ div > .paragraph:not(:last-of-type) {
 }
 .card-scrollarea {
   grid-column: 1 / -1;
+  position: relative;
 }
-.card-scrollarea {
-  overflow: hidden;
-}
+
 .card-wrapper {
   min-width: 100%;
   display: grid;
@@ -213,6 +216,53 @@ div > .paragraph:not(:last-of-type) {
   scrollbar-width: thin;
   scrollbar-color: var(--card-extra-clr) var(--card-clr);
   transition: all 0.3s ease-in-out;
+}
+
+.card-scroll-button {
+  width: 3rem;
+  height: 3rem;
+  display: none;
+  position: absolute;
+  top: 50%;
+  background-color: var(--primary-clr);
+  border-radius: 50%;
+  border: 2px solid var(--bg-dimed);
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  z-index: 100;
+}
+.card-scroll-button::after,
+.card-scroll-button::before {
+  content: '';
+  width: 12px;
+  height: 3px;
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  background-color: var(--bg-clr);
+  transform-origin: left center;
+  border-radius: 5px;
+}
+.card-scroll-button::before {
+  transform: translateY(-1px) rotate(45deg);
+}
+.card-scroll-button::after {
+  transform: translateY(1px) rotate(-45deg);
+}
+.card-scroll-button:hover {
+  border-color: var(--primary-clr);
+}
+.to-left {
+  display: block;
+  left: -1.5rem;
+  box-shadow: 0 1.5rem 1rem var(--card-shadow-clr);
+}
+.to-right {
+  display: block;
+  right: -1.5rem;
+  box-shadow: 0 -1.5rem 1rem var(--card-shadow-clr);
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .to-top {
@@ -249,7 +299,6 @@ div > .paragraph:not(:last-of-type) {
 .to-top:hover {
   border-color: var(--secondary-clr);
 }
-
 .to-top.view {
   display: block;
 }

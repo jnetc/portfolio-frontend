@@ -1,6 +1,7 @@
 import { FC } from 'react';
 // Components
 import { Course } from '@About/course/Course';
+import { ScrollArea } from '@ScrollArea';
 // Hook
 import { useStore } from '@Store';
 
@@ -24,9 +25,5 @@ export const Education: FC = () => {
       return 1;
     });
 
-  return (
-    <section className="card-scrollarea">
-      <div className="card-wrapper">{courses}</div>
-    </section>
-  );
+  return <ScrollArea>{courses}</ScrollArea>;
 };
