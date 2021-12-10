@@ -24,6 +24,10 @@
   height: fit-content;
   z-index: 3;
 }
+.course__link {
+  justify-self: flex-end;
+  margin: 2rem 2rem 0 0;
+}
 /* LOGOS */
 .course__logo {
   margin: 2rem 0 0 2rem;
@@ -71,10 +75,7 @@
   gap: 1rem;
   align-items: center;
 }
-/* .course__completed-icon {
-  width: 16px;
-  stroke: var(--secondary-clr);
-} */
+
 .course__completed-icon svg,
 .course__studying-icon svg {
   width: 17px;
@@ -86,7 +87,6 @@
 
 .course__desc {
   grid-row: 3;
-  /* padding-top: 2.5rem; */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;

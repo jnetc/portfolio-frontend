@@ -5,7 +5,7 @@ import { urlFor } from '@Sanity/sanity';
 // Types
 import { CourseType } from '@Types';
 // Components
-import { ExternalLink } from '@LinkExternal';
+import { ExternalLink } from '@Links/External';
 import { Opiframe } from '@About/logos/Opiframe';
 import { Udemy } from '@About/logos/Udemy';
 import { Completed } from '@About/icons/Completed';

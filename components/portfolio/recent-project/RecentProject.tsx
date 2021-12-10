@@ -26,7 +26,13 @@ export const RecentProject: FC<{ data: ProjectType; position: string }> = ({
         <Tags tags={data.tags} />
         <Links github={data.github_href} page={data.page_href} />
       </article>
-      <div className="project-image">
+      <a
+        className="project-image"
+        href={data.page_href}
+        title={data.page_href}
+        target="_blank"
+        rel="noreferrer"
+      >
         <Image
           src={imageUrl}
           alt="project"
@@ -35,7 +41,7 @@ export const RecentProject: FC<{ data: ProjectType; position: string }> = ({
           quality={80}
           priority
         />
-      </div>
+      </a>
     </section>
   );
 };

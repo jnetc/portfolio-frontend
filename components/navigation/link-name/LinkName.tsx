@@ -10,13 +10,11 @@ interface NavLink {
 export const LinkName: FC<{
   link: NavLink;
   lang: string;
-  activeLink: string;
-}> = ({ link, lang, activeLink }) => {
+  handler: () => void;
+}> = ({ link, lang, handler }) => {
   return (
     <Link href={link.anchor}>
-      <a
-        className={activeLink === link.anchor ? 'nav-link active' : 'nav-link'}
-      >
+      <a className="nav-link" onClick={() => handler()}>
         {lang === 'en' ? `${link.en}` : `${link.ru}`}
       </a>
     </Link>

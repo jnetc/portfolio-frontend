@@ -5,10 +5,15 @@
   align-items: center;
 }
 
-.logotip {
+.logo {
   width: 50px;
   height: auto;
+}
+.logo__fill {
   fill: var(--primary-clr);
+}
+.logo__alt-fill {
+  fill: var(--secondary-clr);
 }
 
 /* LINKS */
@@ -43,7 +48,6 @@
   clip-path: circle(0px at calc(100vw - 72px) 32px);
   transition: all 0.3s ease-in-out;
   transition-delay: 0.2s;
-  /* backdrop-filter: blur(3px); */
   will-change: clip-path;
   z-index: -1;
 }
@@ -68,10 +72,6 @@
 }
 
 .nav-link:hover {
-  color: var(--secondary-clr);
-}
-
-.nav-link.active {
   color: var(--secondary-clr);
 }
 

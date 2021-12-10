@@ -1,4 +1,4 @@
-import { MouseEvent, useState } from 'react';
+import { useState } from 'react';
 // Components
 import { LinkName } from '@Navigation/link-name/LinkName';
 import { Logo } from '@Navigation/logo/Logo';
@@ -34,17 +34,7 @@ const anchors = [
 
 const Navigation = () => {
   const { lang } = useStore();
-  const [activeLink, setActiveLink] = useState(anchors[0].anchor);
   const [menu, setMenu] = useState(false);
-
-  const selectButton = (ev: MouseEvent<HTMLUListElement>) => {
-    const el = ev.target as HTMLAnchorElement;
-    anchors.forEach(a => {
-      if (a.anchor === el.id) {
-        setActiveLink(el.id);
-      }
-    });
-  };
 
   const openMenu = () => {
     setMenu(!menu);
@@ -53,28 +43,18 @@ const Navigation = () => {
 
   const links = anchors.map(link => {
     return (
-      <LinkName
-        key={link.anchor}
-        link={link}
-        lang={lang}
-        activeLink={activeLink}
-      />
+      <LinkName key={link.anchor} link={link} lang={lang} handler={openMenu} />
     );
   });
 
   return (
     <header className="header mob-right-pad" aria-label="navigation panel">
       <Logo />
-      <nav
-        className="nav"
-        onClick={selectButton}
-        aria-label="desktop navigation"
-      >
+      <nav className="nav" aria-label="desktop navigation">
         {links}
       </nav>
       <nav
         className={menu ? 'mob-nav open' : 'mob-nav'}
-        onClick={selectButton}
         aria-label="mobile navigation"
       >
         <SwitchLang />

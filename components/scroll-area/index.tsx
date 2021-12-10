@@ -19,6 +19,8 @@ export const ScrollArea: FC = ({ children }) => {
 
     const getStyle = window.getComputedStyle(scroll);
     const gap = parseInt(getStyle.getPropertyValue('grid-column-gap'));
+    const padLeft = parseInt(getStyle.getPropertyValue('padding-left'));
+    const padRight = parseInt(getStyle.getPropertyValue('padding-right'));
 
     const scrollWidth = scroll.scrollWidth;
     const scrollPosition = scroll.scrollLeft;
@@ -33,7 +35,7 @@ export const ScrollArea: FC = ({ children }) => {
     }
 
     setScrollOpt({
-      step: scrollVisibleArea + gap,
+      step: scrollVisibleArea + gap - padLeft - padRight,
       position: scrollPosition,
       scrollEnd: scrollEndPosition,
     });

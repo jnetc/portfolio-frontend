@@ -1,0 +1,29 @@
+.link:hover :is(.external, .stackoverflow) {
+  stroke: var(--secondary-clr);
+}
+.link:hover :is(.github, .linkedin) {
+  fill: var(--secondary-clr);
+}
+
+.link__svg {
+  width: 23px;
+  height: 23px;
+  transition: all 0.3s ease-in-out;
+}
+.external {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3px;
+}
+.external,
+.stackoverflow {
+  stroke: var(--primary-clr);
+}
+.stackoverflow {
+  stroke-width: 2px;
+}
+
+.github,
+.linkedin {
+  fill: var(--primary-clr);
+}

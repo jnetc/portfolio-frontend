@@ -173,7 +173,6 @@ textarea {
   color: var(--secondary-clr);
   font-weight: bold;
   text-align: center;
-  letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   user-select: none;
@@ -265,9 +264,10 @@ div > .paragraph:not(:last-of-type) {
   width: 2.5rem;
   height: 2.5rem;
   display: none;
-  position: fixed;
+  position: sticky;
   right: 2rem;
   bottom: 2rem;
+  margin-left: auto;
   background-color: var(--card-clr);
   border: 2px solid transparent;
   border-radius: 50%;
@@ -348,7 +348,7 @@ div > .paragraph:not(:last-of-type) {
 @import url('./home.css');
 @import url('./anchor.css');
 @import url('./separator.css');
-@import url('./link-external.css');
+@import url('./links.css');
 @import url('./portfolio.css');
 @import url('./skills.css');
 @import url('./about.css');
