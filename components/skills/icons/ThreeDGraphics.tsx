@@ -2,8 +2,6 @@ export const ThreeDGraphics = () => {
   return (
     <div className="skill__icon">
       <svg
-        width="109"
-        height="91"
         viewBox="0 0 109 91"
         fill="none"
         className="skill__svg threeDGraphocs"

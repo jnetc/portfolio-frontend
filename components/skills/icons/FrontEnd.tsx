@@ -3,8 +3,6 @@ export const Frontend: FC = () => {
   return (
     <div className="skill__icon">
       <svg
-        // width="109"
-        // height="86"
         viewBox="0 0 109 86"
         fill="none"
         className="skill__svg frontend"

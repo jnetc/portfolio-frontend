@@ -5,7 +5,6 @@ import { PortableText } from '@Sanity/sanity';
 import { useStore } from '@Store';
 // Types
 import { SanitySerializer } from '@Types';
-// import BlockContent from '@Sanity/block-content-to-react'
 
 export const Story: FC = () => {
   const { context } = useStore();

@@ -3,12 +3,15 @@ import { FC, useRef, useEffect } from 'react';
 import { useStore } from '@Store';
 // Components
 import { Cloud } from './Cloud';
+// Helper
+import { animationOptimization } from '@Helpers/functions';
 
 const Modal: FC = ({ children }) => {
   const { modal, toggleModal } = useStore();
   const ref = useRef<HTMLElement>(null);
 
   if (modal.show) {
+    animationOptimization(1000);
     ref.current?.classList.add('modal-transition');
     setTimeout(() => {
       ref.current?.classList.add('modal-show');
@@ -16,6 +19,7 @@ const Modal: FC = ({ children }) => {
     }, 0);
   }
   if (!modal.show) {
+    animationOptimization(1000);
     ref.current?.classList.add('modal-transition');
     setTimeout(() => {
       ref.current?.classList.remove('modal-show');

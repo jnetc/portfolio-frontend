@@ -37,7 +37,6 @@ const Store = createContext(state);
 export const useStore = () => {
   return useContext(Store);
 };
-//
 
 const App: NextPage<{
   main: Array<SanityData>;
@@ -48,7 +47,6 @@ const App: NextPage<{
   const [theme, switchTheme] = useState(state.theme);
   const [modal, toggleModal] = useState(state.modal);
   const refToTop = useRef<HTMLAnchorElement>(null);
-  const refModalOverlay = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
@@ -107,13 +105,12 @@ const App: NextPage<{
         </Head>
 
         <ModalSwitch />
-        {modal.show && (
-          <span
-            className="modal__overlay"
-            data-modal={modal.name}
-            ref={refModalOverlay}
-          />
-        )}
+        <span
+          className={
+            modal.show ? 'modal__overlay' : 'modal__overlay overlay-hidden'
+          }
+          data-modal={modal.name}
+        />
 
         <Navigation />
         <main className="main grid">

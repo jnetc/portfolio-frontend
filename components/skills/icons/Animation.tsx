@@ -2,8 +2,6 @@ export const Animation = () => {
   return (
     <div className="skill__icon">
       <svg
-        // width="110"
-        // height="85"
         viewBox="0 0 110 85"
         fill="none"
         className="skill__svg animation"
