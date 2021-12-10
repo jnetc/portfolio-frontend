@@ -7,6 +7,8 @@ import { PortableText } from '@Sanity/sanity';
 import { useStore } from '@Store';
 // Types
 import { SanitySerializer } from '@Types';
+// Helper
+import { animationOptimization } from '@Helpers/functions';
 
 const primaryBtn = {
   en: 'Get in touch',
@@ -23,6 +25,11 @@ export const HomeLeftSide: FC = () => {
   // https://github.com/coreyward/react-portable-text
   const serializer = ({ children }: SanitySerializer) => {
     return <p className="home-left-side__desc">{children}</p>;
+  };
+
+  const openModal = (name: string) => {
+    animationOptimization(1000);
+    toggleModal({ show: true, name });
   };
 
   return (
@@ -58,7 +65,7 @@ export const HomeLeftSide: FC = () => {
           className="home-contact-btn"
           title={lang === 'en' ? primaryBtn.en : primaryBtn.ru}
           aria-label="contact me by email"
-          onClick={() => toggleModal({ show: true, name: 'emailform' })}
+          onClick={() => openModal('emailform')}
         >
           {lang === 'en' ? primaryBtn.en : primaryBtn.ru}
         </button>
@@ -66,7 +73,7 @@ export const HomeLeftSide: FC = () => {
           className="home-employers-btn"
           title={lang === 'en' ? secondaryBtn.en : secondaryBtn.ru}
           aria-label="information for employers"
-          onClick={() => toggleModal({ show: true, name: 'employers' })}
+          onClick={() => openModal('employers')}
         >
           {lang === 'en' ? secondaryBtn.en : secondaryBtn.ru}
           <span className="link-arrow-icon" />

@@ -17,7 +17,10 @@ import Footer from '@Footer';
 // Types
 import { Store, StackOverflow, SanityData } from '@Types';
 // Helpers
-import { transformLocalization } from '@Helpers/functions';
+import {
+  transformLocalization,
+  animationOptimization,
+} from '@Helpers/functions';
 
 // Create context
 const state: Store = {
@@ -75,6 +78,7 @@ const App: NextPage<{
       }
 
       if (!el.classList.contains('modal__overlay')) return;
+      animationOptimization(1000);
       toggleModal({ show: false, name: el.dataset.modal });
       document.body.removeAttribute('style');
     });
