@@ -125,7 +125,14 @@ const App: NextPage<{
           <Footer />
         </main>
         <Link href="#home">
-          <a className="to-top" ref={refToTop}></a>
+          <a
+            className="to-top"
+            ref={refToTop}
+            role="button"
+            tabIndex={0}
+            aria-label="go to top"
+            title="go to top"
+          ></a>
         </Link>
       </>
     </Store.Provider>

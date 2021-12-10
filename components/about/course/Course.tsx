@@ -29,7 +29,6 @@ export const Course: FC<{ data: CourseType }> = ({ data }) => {
           layout="fill"
           objectFit="cover"
           quality={80}
-          priority
         />
       </div>
       <h1 className="card-title course__name course-pad2">
