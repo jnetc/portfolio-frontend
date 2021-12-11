@@ -192,6 +192,9 @@ textarea {
   font-size: 1.125em;
   line-height: 1.4;
 }
+.paragraph__link {
+  color: var(--secondary-clr);
+}
 div > .paragraph:not(:last-of-type) {
   margin-bottom: 1rem;
 }

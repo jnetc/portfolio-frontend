@@ -6,7 +6,7 @@ import { PortableText } from '@Sanity/sanity';
 // Hook
 import { useStore } from '@Store';
 // Types
-import { SanitySerializer } from '@Types';
+import { SerializerBlock } from '@Types';
 // Helper
 import { animationOptimization } from '@Helpers/functions';
 
@@ -23,7 +23,7 @@ export const HomeLeftSide: FC = () => {
   const { context, lang, toggleModal } = useStore();
   // Sanity block component
   // https://github.com/coreyward/react-portable-text
-  const serializer = ({ children }: SanitySerializer) => {
+  const serializer = ({ children }: SerializerBlock) => {
     return <p className="home-left-side__desc">{children}</p>;
   };
 

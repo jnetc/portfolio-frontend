@@ -6,14 +6,14 @@ import { ForEmployersSVG } from './ForEmployers';
 // Hook
 import { useStore } from '@Store';
 // Types
-import { SanitySerializer } from '@Types';
+import { SerializerBlock } from '@Types';
 
 const ModalForEmployers: FC = () => {
   const { lang, context } = useStore();
 
   const labelUrl = context?.modal.modal_href.split('//')[1];
 
-  const serializer = ({ children }: SanitySerializer) => {
+  const serializer = ({ children }: SerializerBlock) => {
     return <p className="modal__information paragraph">{children}</p>;
   };
 

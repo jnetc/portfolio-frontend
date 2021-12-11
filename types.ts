@@ -1,8 +1,10 @@
-export interface Query {
-  _createdAt: string;
-  _id: string;
-  _rev: string;
+interface SanityKeyType {
+  _key: string;
   _type: string;
+}
+export interface Query extends SanityKeyType {
+  _createdAt: string;
+  _rev: string;
   _updatedAt: string;
 }
 
@@ -103,11 +105,29 @@ export type AnchorType = 'portfolio' | 'skills' | 'about';
 export type HashType = '#2' | '#3' | '#4';
 export type SeparatorsType = 'portfolio' | 'about';
 
-export interface SanitySerializer {
-  children: [];
+export interface SerializerBlock {
+  children: Array<string>;
   isInline: undefined;
-  node: {};
+  node: SerializerNode;
   options: {};
+}
+interface SerializerNodeChildren extends SanityKeyType {
+  marks: Array<string>;
+  text: string;
+}
+interface SerializerMark extends SanityKeyType {
+  href: string;
+}
+interface SerializerNode extends SanityKeyType {
+  children: Array<SerializerNodeChildren>;
+  markDefs: Array<SerializerMark>;
+  style: string;
+}
+
+export interface SerializerLink extends SanityKeyType {
+  children: Array<string>;
+  mark: SerializerMark;
+  markKey: string;
 }
 
 export interface MailStateType {

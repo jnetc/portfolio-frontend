@@ -4,12 +4,12 @@ import { PortableText } from '@Sanity/sanity';
 // Hook
 import { useStore } from '@Store';
 // Types
-import { SanitySerializer } from '@Types';
+import { SerializerBlock } from '@Types';
 
 export const Story: FC = () => {
   const { context } = useStore();
 
-  const serializer = ({ children }: SanitySerializer) => {
+  const serializer = ({ children }: SerializerBlock) => {
     return <p className="paragraph about__paragraph">{children}</p>;
   };
 
