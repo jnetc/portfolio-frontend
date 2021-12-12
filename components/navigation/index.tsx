@@ -4,46 +4,24 @@ import { LinkName } from '@Navigation/link-name/LinkName';
 import { Logo } from '@Navigation/logo/Logo';
 import { SwitchLang } from '@Navigation/switch-lang/SwitchLang';
 import { SwitchTheme } from '@Navigation/switch-theme/SwitchTheme';
-// Context
-import { useStore } from '@Store';
 // Helpers
 import { animationOptimization } from '@Helpers/functions';
-
-const anchors = [
-  {
-    anchor: '#home',
-    en: 'Home',
-    ru: 'Начальная',
-  },
-  {
-    anchor: '#portfolio',
-    en: 'Portfolio',
-    ru: 'Портфолио',
-  },
-  {
-    anchor: '#skills',
-    en: 'Skills',
-    ru: 'Навыки',
-  },
-  {
-    anchor: '#about',
-    en: 'About me',
-    ru: 'Обо мне',
-  },
-];
+// Localization
+import { navigationLinks } from '@Languages';
 
 const Navigation = () => {
-  const { lang } = useStore();
   const [menu, setMenu] = useState(false);
 
-  const openMenu = () => {
-    setMenu(!menu);
-    animationOptimization(1000);
+  const openMenu = (isOpen: boolean) => {
+    return () => {
+      setMenu(isOpen);
+      animationOptimization(1000);
+    };
   };
 
-  const links = anchors.map(link => {
+  const links = navigationLinks.map(link => {
     return (
-      <LinkName key={link.anchor} link={link} lang={lang} handler={openMenu} />
+      <LinkName key={`id_${link.anchor}`} link={link} handler={openMenu} />
     );
   });
 
@@ -62,7 +40,7 @@ const Navigation = () => {
         <button
           className="mob-nav__close-btn"
           aria-label="close mobile menu button"
-          onClick={openMenu}
+          onClick={openMenu(false)}
         ></button>
         <svg className="mob-nav__bg">
           <circle className="mob-nav__1-circle" />
@@ -73,7 +51,7 @@ const Navigation = () => {
       <button
         className="mob-menu-btn"
         aria-label="mobile menu navigation button"
-        onClick={openMenu}
+        onClick={openMenu(true)}
       >
         <span className="mob-menu-btn__icon"></span>
       </button>

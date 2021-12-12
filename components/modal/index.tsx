@@ -15,19 +15,21 @@ const Modal: FC = ({ children }) => {
     setTimeout(() => {
       ref.current?.classList.add('modal-show');
       ref.current?.classList.remove('modal-transition');
-    }, 0);
+    }, 100);
   }
   if (!modal.show) {
     ref.current?.classList.add('modal-transition');
     setTimeout(() => {
       ref.current?.classList.remove('modal-show');
       ref.current?.classList.remove('modal-transition');
-    }, 1000);
+    }, 500);
   }
 
   const closeModal = (name: string) => {
-    animationOptimization(1000);
-    toggleModal({ show: false, name });
+    return () => {
+      animationOptimization(1000);
+      toggleModal({ show: false, name });
+    };
   };
 
   useEffect(() => {
@@ -48,7 +50,7 @@ const Modal: FC = ({ children }) => {
           role="button"
           tabIndex={0}
           title="close button"
-          onClick={() => closeModal(modal.name || 'emailform')}
+          onClick={closeModal(modal.name || 'emailform')}
         />
       </div>
       <div className="modal__wrapper">

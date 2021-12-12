@@ -1,21 +1,18 @@
 import { FC } from 'react';
 import Link from 'next/link';
+// Context
+import { useStore } from '@Store';
+// Type
+import { LinkNameType } from '@Types';
 
-interface NavLink {
-  anchor: string;
-  en: string;
-  ru: string;
-}
+export const LinkName: FC<LinkNameType> = ({ link, handler }) => {
+  const { lang } = useStore();
+  const closeMenu = () => handler(false);
 
-export const LinkName: FC<{
-  link: NavLink;
-  lang: string;
-  handler: () => void;
-}> = ({ link, lang, handler }) => {
   return (
-    <Link href={link.anchor}>
-      <a className="nav-link" onClick={() => handler()}>
-        {lang === 'en' ? `${link.en}` : `${link.ru}`}
+    <Link href={`#${link.anchor}`}>
+      <a className="nav-link" onClick={closeMenu}>
+        {link[lang]}
       </a>
     </Link>
   );

@@ -4,8 +4,8 @@
 }
 .about div {
   height: min-content;
-  column-width: 450px;
-  column-gap: 6.25rem;
+  column-width: 300px;
+  column-gap: 4rem;
 }
 .about__paragraph {
   margin: 0 0 1rem 0;

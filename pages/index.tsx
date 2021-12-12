@@ -25,7 +25,7 @@ import {
 // Create context
 const state: Store = {
   context: null,
-  lang: '',
+  lang: 'en',
   theme: 'dark',
   switchTheme: theme => theme,
   stackoverflow: null,
@@ -43,7 +43,7 @@ export const useStore = () => {
 
 const App: NextPage<{
   main: Array<SanityData>;
-  locale: string;
+  locale: 'en' | 'ru';
   stackoverflow: StackOverflow<string>;
 }> = ({ main, locale, stackoverflow }) => {
   const currentLangData = transformLocalization(locale, main);

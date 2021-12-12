@@ -3,15 +3,15 @@ import { useRef, useEffect } from 'react';
 import { useStore } from '@Store';
 
 export const EmailFormSVG = () => {
-  const { toggleModal } = useStore();
+  const { toggleModal, modal } = useStore();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     ref.current?.addEventListener('animationend', ev => {
       if (ev.animationName !== 'letter') return;
-      toggleModal({ show: false });
+      toggleModal({ show: false, name: modal.name });
     });
-  }, [toggleModal]);
+  }, [toggleModal, modal.name]);
 
   return (
     <div className="letter" ref={ref}>

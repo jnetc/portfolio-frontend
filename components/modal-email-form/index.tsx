@@ -1,31 +1,13 @@
 import { FC, useState, useCallback } from 'react';
 // Component
 import { EmailFormSVG } from './EmailFormSVG';
+import { ModalInput } from './ModalInput';
+import { ModalTextarea } from './ModalTextarea';
+import { ModalSubmitBtn } from './ModalSubmitBtn';
 // Hook
 import { useStore } from '@Store';
-
-const content = {
-  title: {
-    en: 'Write me a message',
-    ru: 'Напиши мне сообщение',
-  },
-  subTitle: {
-    en: 'and i answer as soon as possible.',
-    ru: 'и я отвечу как можно скорее',
-  },
-  inputName: {
-    en: 'name',
-    ru: 'имя',
-  },
-  inputEmail: {
-    en: 'email',
-    ru: 'электронная почта',
-  },
-  inputMessage: {
-    en: 'message',
-    ru: 'сообщение',
-  },
-};
+// Localization
+import { modalContent } from '@Languages';
 
 const ModalEmailForm: FC = () => {
   const { lang } = useStore();
@@ -35,17 +17,9 @@ const ModalEmailForm: FC = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const submitButton = useCallback(
-    (lang: string, submitted: boolean, err: boolean) => {
-      if (lang === 'en' && submitted) return 'submitted';
-      if (lang === 'ru' && submitted) return 'отправлено';
-      if (lang === 'en' && err) return 'no submitted';
-      if (lang === 'ru' && err) return 'не отправлено';
-      if (lang === 'en') return 'submit';
-      if (lang === 'ru') return 'отправить';
-    },
-    []
-  );
+  const getName = (val: string) => setName(val);
+  const getEmail = (val: string) => setEmail(val);
+  const getMessage = (val: string) => setMessage(val);
 
   const SendMessage = useCallback(
     ev => {
@@ -83,68 +57,27 @@ const ModalEmailForm: FC = () => {
   return (
     <section className={isSend ? 'modal-grid sended' : 'modal-grid'}>
       <EmailFormSVG />
-      <h1 className="modal__title">
-        {lang === 'en' ? content.title.en : content.title.ru}
-      </h1>
-      <p className="modal__sub-title">
-        {lang === 'en' ? content.subTitle.en : content.subTitle.ru}
-      </p>
+      <h1 className="modal__title">{modalContent.title[lang]}</h1>
+      <p className="modal__sub-title">{modalContent.subTitle[lang]}</p>
       <form className="emailform" method="post" onSubmit={SendMessage}>
-        <div className="form__input">
-          <input
-            className="input-field"
-            type="text"
-            name="name"
-            required
-            onChange={ev => setName(ev.currentTarget.value)}
-            value={name}
-          />
-          <label
-            className={
-              name ? 'form__placeholder is-not-empty' : 'form__placeholder'
-            }
-          >
-            {lang === 'en' ? content.inputName.en : content.inputName.ru}
-          </label>
-        </div>
-        <div className="form__input">
-          <input
-            className="input-field"
-            type="email"
-            name="email"
-            required
-            onChange={ev => setEmail(ev.currentTarget.value)}
-            value={email}
-          />
-          <label
-            className={
-              email ? 'form__placeholder is-not-empty' : 'form__placeholder'
-            }
-          >
-            {lang === 'en' ? content.inputEmail.en : content.inputEmail.ru}
-          </label>
-        </div>
-        <div className="form__input">
-          <textarea
-            className="input-field"
-            name="message"
-            rows={3}
-            required
-            maxLength={500}
-            onChange={ev => setMessage(ev.currentTarget.value)}
-            value={message}
-          />
-          <label
-            className={
-              message ? 'form__placeholder is-not-empty' : 'form__placeholder'
-            }
-          >
-            {lang === 'en' ? content.inputMessage.en : content.inputMessage.ru}
-          </label>
-        </div>
-        <button className="btn modal__button">
-          {submitButton(lang, isSend, hasErr)}
-        </button>
+        <ModalInput
+          typeInput="text"
+          nameInput="name"
+          handler={getName}
+          value={name}
+        />
+        <ModalInput
+          typeInput="email"
+          nameInput="email"
+          handler={getEmail}
+          value={email}
+        />
+        <ModalTextarea
+          nameInput="message"
+          handler={getMessage}
+          value={message}
+        />
+        <ModalSubmitBtn status={isSend} error={hasErr} />
       </form>
     </section>
   );

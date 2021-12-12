@@ -1,35 +1,20 @@
 import { FC } from 'react';
 // Components
 import { Bulb } from '@Home/bulb-icon/Bulb';
+import { HomeLeftButton } from '@Home/home-left-side/HomeLeftButton';
 // Sanity Block text
 import { PortableText } from '@Sanity/sanity';
 // Hook
 import { useStore } from '@Store';
 // Types
 import { SerializerBlock } from '@Types';
-// Helper
-import { animationOptimization } from '@Helpers/functions';
-
-const primaryBtn = {
-  en: 'Get in touch',
-  ru: 'Связаться',
-};
-const secondaryBtn = {
-  en: 'For employers',
-  ru: 'Нанимателям',
-};
 
 export const HomeLeftSide: FC = () => {
-  const { context, lang, toggleModal } = useStore();
+  const { context } = useStore();
   // Sanity block component
   // https://github.com/coreyward/react-portable-text
   const serializer = ({ children }: SerializerBlock) => {
     return <p className="home-left-side__desc">{children}</p>;
-  };
-
-  const openModal = (name: string) => {
-    animationOptimization(1000);
-    toggleModal({ show: true, name });
   };
 
   return (
@@ -61,23 +46,16 @@ export const HomeLeftSide: FC = () => {
         }}
       />
       <div className="home-btns">
-        <button
-          className="home-contact-btn"
-          title={lang === 'en' ? primaryBtn.en : primaryBtn.ru}
-          aria-label="contact me by email"
-          onClick={() => openModal('emailform')}
-        >
-          {lang === 'en' ? primaryBtn.en : primaryBtn.ru}
-        </button>
-        <button
-          className="home-employers-btn"
-          title={lang === 'en' ? secondaryBtn.en : secondaryBtn.ru}
-          aria-label="information for employers"
-          onClick={() => openModal('employers')}
-        >
-          {lang === 'en' ? secondaryBtn.en : secondaryBtn.ru}
-          <span className="link-arrow-icon" />
-        </button>
+        <HomeLeftButton
+          style="primary"
+          open="emailform"
+          accessibility="contact me by email"
+        />
+        <HomeLeftButton
+          style="secondary"
+          open="employers"
+          accessibility="information for employers"
+        />
       </div>
     </header>
   );

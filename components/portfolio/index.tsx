@@ -35,9 +35,9 @@ const Portfolio: FC = () => {
 
   return (
     <>
-      <Anchor anchor="portfolio" hash="#2" />
+      <Anchor name="portfolio" hash="#2" />
       {recentProjects}
-      <Separator separator="portfolio" />
+      <Separator name="portfolio" />
       <ScrollArea>{otherProjects}</ScrollArea>
     </>
   );

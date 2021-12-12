@@ -19,7 +19,7 @@ export interface MainType {
   story: Array<string>;
 }
 
-interface ImageType {
+export interface ImageType {
   _type: string;
   asset: {
     _ref: string;
@@ -87,7 +87,7 @@ export interface ModalType {
 
 export interface Store {
   context: TransformedData | null;
-  lang: string;
+  lang: 'en' | 'ru';
   theme: string;
   switchTheme: (lang: string) => void;
   stackoverflow: StackOverflow<string> | null;
@@ -101,9 +101,10 @@ export type StackOverflow<T> = {
   answers: T;
 };
 
-export type AnchorType = 'portfolio' | 'skills' | 'about';
-export type HashType = '#2' | '#3' | '#4';
-export type SeparatorsType = 'portfolio' | 'about';
+export interface AnchorType {
+  name: 'portfolio' | 'skills' | 'about';
+  hash: '#2' | '#3' | '#4';
+}
 
 export interface SerializerBlock {
   children: Array<string>;
@@ -130,6 +131,41 @@ export interface SerializerLink extends SanityKeyType {
   markKey: string;
 }
 
-export interface MailStateType {
-  [key: string]: string;
+export interface InputFromType {
+  typeInput: string;
+  nameInput: 'name' | 'email';
+  handler: (val: string) => void;
+  value: string;
+}
+export interface TextareaFromType
+  extends Pick<InputFromType, 'handler' | 'value'> {
+  nameInput: 'message';
+}
+
+export interface HomeLeftBtnType {
+  style: 'primary' | 'secondary';
+  open: string;
+  accessibility: string;
+}
+
+export interface NavLink {
+  anchor: 'home' | 'portfolio' | 'skills' | 'about';
+  en: string;
+  ru: string;
+}
+
+export interface LinkNameType {
+  link: NavLink;
+  handler: (close: boolean) => void;
+}
+
+export interface FooterLink {
+  name: string;
+  link: string;
+}
+
+export interface ImageComponentType {
+  pathImage: ImageType;
+  objectFit: 'fill' | 'cover';
+  alt: string;
 }

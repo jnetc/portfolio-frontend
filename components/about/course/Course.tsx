@@ -1,7 +1,4 @@
 import { FC } from 'react';
-import Image from 'next/image';
-// Sanity Block text
-import { urlFor } from '@Sanity/sanity';
 // Types
 import { CourseType } from '@Types';
 // Components
@@ -10,11 +7,11 @@ import { Opiframe } from '@About/logos/Opiframe';
 import { Udemy } from '@About/logos/Udemy';
 import { Completed } from '@About/icons/Completed';
 import { Studying } from '@About/icons/Studying';
+import { SertificateButton } from './CertificateButton';
+import Img from '@Img';
 
 export const Course: FC<{ data: CourseType }> = ({ data }) => {
   const isUdemy = data.course_href.match('udemy');
-  // External image
-  const imageUrl = urlFor(data.course_image).url() || '';
 
   return (
     <article className="course">
@@ -23,12 +20,10 @@ export const Course: FC<{ data: CourseType }> = ({ data }) => {
         <ExternalLink url={data.course_href} cssClass="course__link" />
       )}
       <div className="course__poster">
-        <Image
-          src={imageUrl}
-          alt={data.course_name}
-          layout="fill"
+        <Img
+          pathImage={data.course_image}
           objectFit="cover"
-          quality={80}
+          alt={data.course_name}
         />
       </div>
       <h1 className="card-title course__name course-pad2">
@@ -45,17 +40,7 @@ export const Course: FC<{ data: CourseType }> = ({ data }) => {
       </div>
       <p className="paragraph course__desc course-pad2">{data.course_desc}</p>
       {data.certificate_href && (
-        <a
-          href={data.certificate_href}
-          className="btn btn-course course-pad2"
-          role="button"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="link to certificate page"
-          title="link to certificate page"
-        >
-          show certificate
-        </a>
+        <SertificateButton href={data.certificate_href} />
       )}
     </article>
   );

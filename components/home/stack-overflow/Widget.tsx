@@ -1,6 +1,8 @@
 import { FC } from 'react';
 // Hook
 import { useStore } from '@Store';
+// Localization
+import { stackoverflowContent } from '@Languages';
 
 export const Widget: FC = () => {
   const { stackoverflow, lang } = useStore();
@@ -17,16 +19,14 @@ export const Widget: FC = () => {
         title="Recent achievements: reputation, badges, and privileges earned"
       >
         <span className="widget__num">{stackoverflow.reputation}</span>
-        <p className="widget__label">
-          {lang === 'en' ? 'Reputation' : 'Репутация'}
-        </p>
+        <p className="widget__label">{stackoverflowContent.reputation[lang]}</p>
       </div>
       <div
         className="widget__data widget__right-side"
         title="Amount answers, which i have answered for all time"
       >
         <span className="widget__num">{stackoverflow.answers}</span>
-        <p className="widget__label">{lang === 'en' ? 'Answers' : 'Ответы'}</p>
+        <p className="widget__label">{stackoverflowContent.answers[lang]}</p>
       </div>
       <a
         href={stackoverflow.link}
@@ -35,7 +35,7 @@ export const Widget: FC = () => {
         target="_blank"
         rel="noreferrer"
       >
-        {lang === 'en' ? 'follow' : 'перейти'}
+        {stackoverflowContent.button[lang]}
       </a>
     </section>
   );

@@ -14,7 +14,7 @@ const Skills: FC = () => {
 
   return (
     <>
-      <Anchor anchor="skills" hash="#3" />
+      <Anchor name="skills" hash="#3" />
       <section className="skills  mob-right-pad">{skills}</section>
     </>
   );

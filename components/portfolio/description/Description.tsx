@@ -14,7 +14,13 @@ export const Description: FC<{ desc: string }> = ({ desc }) => {
 
   const serializerLink = ({ children, mark }: SerializerLink) => {
     return (
-      <a className="paragraph__link" href={mark.href}>
+      <a
+        className="paragraph__link"
+        href={mark.href}
+        target="_blank"
+        rel="noreferrer"
+        title={`${mark.href}`}
+      >
         {[children]}
       </a>
     );

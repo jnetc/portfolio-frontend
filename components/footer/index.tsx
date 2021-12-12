@@ -1,10 +1,11 @@
 import { FC } from 'react';
 // Hook
 import { useStore } from '@Store';
-//
+// Component
 import { GitHubLink } from '@Links/GitHub';
 import { LinkedIn } from '@Links/LinkedIn';
 import { StackOverflow } from '@Links/StackOverflow';
+import { FooterBaseLink } from './FooterBaseLink';
 
 const Footer: FC = () => {
   const { context, stackoverflow } = useStore();
@@ -20,17 +21,11 @@ const Footer: FC = () => {
       </section>
       <p className="footer__desc">
         The site is based with
-        <a className="footer__desc-link" href="https://nextjs.org/">
-          Next.js,
-        </a>
-        managed with
-        <a className="footer__desc-link" href="https://www.sanity.io/">
-          Sanity.io
-        </a>
+        <FooterBaseLink link="https://nextjs.org/" name="Next.js" />, managed
+        with
+        <FooterBaseLink link="https://www.sanity.io/" name="Sanity.io" />
         and is hosted on the
-        <a className="footer__desc-link" href="https://vercel.com/">
-          Vercel.
-        </a>
+        <FooterBaseLink link="https://vercel.com/" name="Vercel" />
       </p>
     </footer>
   );

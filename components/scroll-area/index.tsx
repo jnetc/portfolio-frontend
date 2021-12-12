@@ -1,6 +1,8 @@
 import { FC, useState, useRef, useEffect, MouseEvent } from 'react';
 // Hook
 import { useResize } from '@Hooks/useResize';
+// Component
+import { ScrollButton } from './ScrollButton';
 
 export const ScrollArea: FC = ({ children }) => {
   const { resize } = useResize();
@@ -53,19 +55,13 @@ export const ScrollArea: FC = ({ children }) => {
     setScrollOpt({ ...scrollOpt });
   };
 
-  const toLeft = () => {
-    scrollOpt.position -= scrollOpt.step;
-
-    ref.current?.scrollTo({
-      left: scrollOpt.position,
-      behavior: 'smooth',
-    });
-
-    setScrollOpt({ ...scrollOpt });
-  };
-
-  const toRight = () => {
-    scrollOpt.position += scrollOpt.step;
+  const moveTo = (direction: string) => {
+    if (direction === 'left') {
+      scrollOpt.position -= scrollOpt.step;
+    }
+    if (direction === 'right') {
+      scrollOpt.position += scrollOpt.step;
+    }
 
     ref.current?.scrollTo({
       left: scrollOpt.position,
@@ -77,29 +73,11 @@ export const ScrollArea: FC = ({ children }) => {
 
   return (
     <section className="card-scrollarea">
-      <span
-        className={
-          leftBtn ? 'card-scroll-button to-left' : 'card-scroll-button'
-        }
-        role="button"
-        tabIndex={0}
-        title="scroll to left"
-        onClick={toLeft}
-      />
-
+      <ScrollButton visible={leftBtn} move="left" handler={moveTo} />
       <div className="card-wrapper" ref={ref} onScroll={scroll}>
         {children}
       </div>
-
-      <span
-        className={
-          rightBtn ? 'card-scroll-button to-right' : 'card-scroll-button'
-        }
-        role="button"
-        tabIndex={0}
-        title="scroll to right"
-        onClick={toRight}
-      />
+      <ScrollButton visible={rightBtn} move="right" handler={moveTo} />
     </section>
   );
 };

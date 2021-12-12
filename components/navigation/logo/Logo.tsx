@@ -1,7 +1,7 @@
 import { FC } from 'react';
 export const Logo: FC = () => {
   return (
-    <div className="logo">
+    <a href="https://www.devan.fi" className="logo" title="Devan">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 836.38 500">
         <path
           className="logo__alt-fill"
@@ -20,6 +20,6 @@ export const Logo: FC = () => {
           d="M180,200H280a50,50,0,0,1,50,50v0a50,50,0,0,1-50,50H180a0,0,0,0,1,0,0V200A0,0,0,0,1,180,200Z"
         />
       </svg>
-    </div>
+    </a>
   );
 };
