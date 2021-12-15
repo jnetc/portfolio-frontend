@@ -14,7 +14,6 @@ const Img: FC<ImageComponentType> = ({ pathImage, objectFit, alt }) => {
       objectFit={objectFit}
       layout="fill"
       quality={80}
-      priority
     />
   );
 };
