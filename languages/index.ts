@@ -60,6 +60,11 @@ export const modalTextarea = {
   },
 };
 
+export const ErrorMessage = {
+  en: 'Something went wrong!',
+  ru: 'Что-то пошло не так!',
+};
+
 export const navigationLinks: Array<NavLink> = [
   {
     anchor: 'home',

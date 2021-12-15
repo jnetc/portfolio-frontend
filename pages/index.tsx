@@ -1,4 +1,4 @@
-import { useContext, createContext, useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -7,39 +7,18 @@ import Link from 'next/link';
 import { groq } from 'next-sanity';
 import { getClient } from '@Sanity/sanity.server';
 // Components
-import ModalSwitch from 'components/modal/ModalSwitch';
-import Navigation from '@Navigation/index';
-import Home from '@Home/index';
-import Portfolio from '@Portfolio/index';
-import Skills from '@Skills/index';
-import About from '@About/index';
+import MainContext from '@Main';
+import Portfolio from '@Portfolio/Portfolio';
+import Skills from '@Skills/Skills';
+import About from '@About/About';
 import Footer from '@Footer';
 // Types
-import { Store, StackOverflow, SanityData } from '@Types';
+import { StackOverflow, SanityData } from '@Types';
 // Helpers
-import {
-  transformLocalization,
-  animationOptimization,
-} from '@Helpers/functions';
-
-// Create context
-const state: Store = {
-  context: null,
-  lang: 'en',
-  theme: 'dark',
-  switchTheme: theme => theme,
-  stackoverflow: null,
-  modal: {
-    show: false,
-  },
-  toggleModal: show => show,
-};
-
-const Store = createContext(state);
-
-export const useStore = () => {
-  return useContext(Store);
-};
+import { transformLocalization } from '@Helpers/functions';
+// Hook
+import { Store } from '@Hooks/useContextStore';
+// import { Main, state } from '@Hooks/useContextMain';
 
 const App: NextPage<{
   main: Array<SanityData>;
@@ -47,8 +26,6 @@ const App: NextPage<{
   stackoverflow: StackOverflow<string>;
 }> = ({ main, locale, stackoverflow }) => {
   const currentLangData = transformLocalization(locale, main);
-  const [theme, switchTheme] = useState(state.theme);
-  const [modal, toggleModal] = useState(state.modal);
   const refToTop = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
@@ -68,36 +45,12 @@ const App: NextPage<{
     };
   }, []);
 
-  useEffect(() => {
-    document.addEventListener('click', ev => {
-      const callModalBtns = ['home-contact-btn', 'home-employers-btn'];
-      const el = ev.target as HTMLElement;
-
-      if (callModalBtns.includes(el.className)) {
-        document.body.style.overflow = 'hidden';
-      }
-
-      if (!el.classList.contains('modal__overlay')) return;
-      animationOptimization(1000);
-      toggleModal({ show: false, name: el.dataset.modal });
-      document.body.removeAttribute('style');
-    });
-
-    return () => {
-      document.addEventListener('click', () => {});
-    };
-  }, []);
-
   return (
     <Store.Provider
       value={{
         context: currentLangData,
         lang: locale,
-        theme,
-        switchTheme,
         stackoverflow,
-        modal,
-        toggleModal,
       }}
     >
       <>
@@ -108,22 +61,14 @@ const App: NextPage<{
           {/* <link rel="icon" href="/favicon.ico" /> */}
         </Head>
 
-        <ModalSwitch />
-        <span
-          className={
-            modal.show ? 'modal__overlay' : 'modal__overlay overlay-hidden'
-          }
-          data-modal={modal.name}
-        />
-
-        <Navigation />
         <main className="main grid">
-          <Home />
+          <MainContext />
           <Portfolio />
           <Skills />
           <About />
           <Footer />
         </main>
+
         <Link href="#home">
           <a
             className="to-top"
@@ -138,6 +83,8 @@ const App: NextPage<{
     </Store.Provider>
   );
 };
+
+export default App;
 
 export const getStaticProps: GetStaticProps = async ({
   preview = false,
@@ -166,6 +113,9 @@ export const getStaticProps: GetStaticProps = async ({
         : `${(resultStackOverflow.total / 1000).toFixed(1)}k`,
   };
 
+  // type mainType = typeof main
+  // type stackoverflowType = typeof stackoverflow
+
   return {
     props: {
       main,
@@ -174,5 +124,3 @@ export const getStaticProps: GetStaticProps = async ({
     },
   };
 };
-
-export default App;

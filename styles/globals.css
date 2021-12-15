@@ -8,6 +8,9 @@
   --m-radius: 0.313rem;
   --s-radius: 0.313rem;
   --gap: 1.25rem;
+
+  --notice-txt-clr: hsl(162, 47%, 66%);
+  --notice-bg-clr: hsl(220, 6%, 19%);
 }
 
 html[data-theme='light'] {
@@ -103,6 +106,7 @@ html {
   scrollbar-width: thin;
   scrollbar-color: var(--card-extra-clr) var(--card-clr);
   background-color: var(--bg-clr);
+  scrollbar-gutter: stable;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -116,25 +120,6 @@ body {
   position: relative;
   padding: 2rem 2.5rem;
   margin: 0 auto;
-}
-
-#orientation-landscape {
-  display: none;
-}
-
-.main {
-  grid-auto-rows: auto;
-  grid-template-rows:
-    clamp(750px, 100vh, calc(1080px - 4rem - var(--gap)))
-    auto;
-  justify-content: center;
-  row-gap: 1rem;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(6px, 96px));
-  column-gap: var(--gap);
-  position: relative;
 }
 
 a {
@@ -157,6 +142,11 @@ ol {
 svg {
   width: 100%;
 }
+
+fieldset {
+  outline: none;
+  border: none;
+}
 input,
 textarea {
   width: 100%;
@@ -164,6 +154,36 @@ textarea {
   border: none;
   outline: none;
   color: var(--primary-clr);
+}
+
+#orientation-landscape {
+  display: none;
+}
+
+/* .main:hover .notice {
+  opacity: 1;
+  clip-path: circle(15rem);
+  transform: translate3d(-50%, -10px, 0);
+} */
+
+.main {
+  grid-auto-rows: auto;
+  grid-template-rows:
+    2rem
+    clamp(750px, 100vh, calc(1080px - 4rem - var(--gap)))
+    auto;
+  justify-content: center;
+  row-gap: 1rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr repeat(12, minmax(6px, 96px)) 1fr;
+  column-gap: var(--gap);
+  position: relative;
+}
+
+.grid-12 {
+  grid-column: 2 / -2;
 }
 
 .btn {
@@ -199,7 +219,6 @@ div > .paragraph:not(:last-of-type) {
   margin-bottom: 1rem;
 }
 .card-scrollarea {
-  grid-column: 1 / -1;
   position: relative;
 }
 
@@ -307,12 +326,15 @@ div > .paragraph:not(:last-of-type) {
     padding: 1rem 0;
   }
   .main {
-    grid-template-rows: calc(100vh - 1rem - var(--gap)) auto;
+    grid-template-rows: 2rem calc(100vh - 1rem - var(--gap)) auto;
     overflow: hidden;
     padding-left: 1rem;
   }
   .grid {
     grid-template-columns: repeat(6, minmax(6px, 96px));
+  }
+  .grid-12 {
+    grid-column: 1 / -1;
   }
   .mob-right-pad {
     padding-right: 1rem;
@@ -328,6 +350,9 @@ div > .paragraph:not(:last-of-type) {
   .to-left,
   .to-right {
     display: none;
+  }
+  .card-scrollarea {
+    grid-column: 1 / -1;
   }
 }
 /* Prevent to show content if orientation & height is valid */
@@ -357,3 +382,4 @@ div > .paragraph:not(:last-of-type) {
 @import url('./about.css');
 @import url('./footer.css');
 @import url('./modal.css');
+@import url('./notice.css');

@@ -1,6 +1,6 @@
 import { FC, useEffect, useState, useRef, useCallback } from 'react';
 import { ThemeIcon } from './ThemeIcon';
-import { useStore } from '@Store';
+import { useContextMain } from '@Hooks/useContextMain';
 
 const DARK_SCHEME = 'dark';
 const LIGHT_SCHEME = 'light';
@@ -9,7 +9,7 @@ const LIGHT_SCHEME = 'light';
 //!
 
 export const SwitchTheme: FC = () => {
-  const { switchTheme } = useStore();
+  const { switchTheme } = useContextMain();
   const [theme, setTheme] = useState<string | null>(DARK_SCHEME);
   let ref = useRef<HTMLDivElement>(null);
 

@@ -80,19 +80,53 @@ export interface TransformedData extends MainType {
   modal: EmployerModalType;
 }
 
+export interface MainPhotoType {
+  cssClass: string;
+  src: string;
+  theme: boolean;
+}
+
+export interface Handler<T> {
+  [key: string]: (value: T) => void;
+}
+
+export type Status = 'default' | 'success' | 'error';
+
+export interface InputFromType {
+  typeInput: 'text' | 'email';
+  nameInput: 'name' | 'email';
+  handler: (val: string) => void;
+  value: string;
+}
+export interface TextareaFromType
+  extends Pick<InputFromType, 'handler' | 'value'> {
+  nameInput: 'message';
+}
+
+export interface ContextStore {
+  context: TransformedData | null;
+  lang: 'en' | 'ru';
+  stackoverflow: StackOverflow<string> | null;
+}
+
 export interface ModalType {
   show: boolean;
   name?: string;
 }
+export interface Notice {
+  status: Status;
+  message?: string;
+}
 
-export interface Store {
-  context: TransformedData | null;
-  lang: 'en' | 'ru';
+export interface ContextMain {
   theme: string;
-  switchTheme: (lang: string) => void;
-  stackoverflow: StackOverflow<string> | null;
+  switchTheme: (theme: string) => void;
   modal: ModalType;
   toggleModal: (show: ModalType) => void;
+  notice: Notice;
+  setNotify: (notice: Notice) => void;
+  response: Notice;
+  setResponse: (notice: Notice) => void;
 }
 
 export type StackOverflow<T> = {
@@ -131,17 +165,6 @@ export interface SerializerLink extends SanityKeyType {
   markKey: string;
 }
 
-export interface InputFromType {
-  typeInput: string;
-  nameInput: 'name' | 'email';
-  handler: (val: string) => void;
-  value: string;
-}
-export interface TextareaFromType
-  extends Pick<InputFromType, 'handler' | 'value'> {
-  nameInput: 'message';
-}
-
 export interface HomeLeftBtnType {
   style: 'primary' | 'secondary';
   open: string;
@@ -168,4 +191,14 @@ export interface ImageComponentType {
   pathImage: ImageType;
   objectFit: 'fill' | 'cover';
   alt: string;
+}
+
+export interface RequestBodyType {
+  name: string;
+  email: string;
+  message: string;
+}
+export interface ResponseType {
+  status: string;
+  message: { en: string; ru: string };
 }

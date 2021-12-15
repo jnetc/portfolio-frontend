@@ -1,11 +1,11 @@
 import { FC } from 'react';
 // Hook
-import { useStore } from '@Store';
+import { useContextStore } from '@Hooks/useContextStore';
 // Localization
 import { stackoverflowContent } from '@Languages';
 
 export const Widget: FC = () => {
-  const { stackoverflow, lang } = useStore();
+  const { stackoverflow, lang } = useContextStore();
 
   if (!stackoverflow) return null;
 

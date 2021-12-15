@@ -1,13 +1,13 @@
 import { FC } from 'react';
 // Component
-import Modal from '@Modal';
-import ModalEmailForm from 'components/modal-email-form';
-import ModalForEmployers from 'components/modal-for-employers';
+import Modal from '@Modal/Modal';
+import ModalEmailForm from '@Modal/modal-email-form';
+import ModalForEmployers from '@Modal/modal-for-employers';
 // Hook
-import { useStore } from '@Store';
+import { useContextMain } from '@Hooks/useContextMain';
 
 const ModalSwitch: FC = () => {
-  const { modal } = useStore();
+  const { modal } = useContextMain();
   return (
     <Modal>
       {modal.name === 'emailform' && <ModalEmailForm />}

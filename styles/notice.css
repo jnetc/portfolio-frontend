@@ -1,0 +1,23 @@
+.notice {
+  position: fixed;
+  left: 50%;
+  padding: 1rem 2rem;
+  opacity: 0;
+  border-radius: var(--m-radius);
+  color: var(--notice-txt-clr);
+  letter-spacing: 0.5px;
+  background-color: var(--notice-bg-clr);
+  box-shadow: 0 20px 20px var(--card-shadow-clr);
+  clip-path: circle(0px);
+  transition: all 0.3s ease-out;
+  transform: translate3d(-50%, -50px, 0);
+  user-select: none;
+  pointer-events: none;
+  z-index: 1001;
+}
+
+.notice-show {
+  opacity: 1;
+  clip-path: circle(15rem);
+  transform: translate3d(-50%, -10px, 0);
+}

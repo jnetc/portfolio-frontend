@@ -1,6 +1,6 @@
 import { FC, ChangeEvent } from 'react';
 // Hook
-import { useStore } from '@Store';
+import { useContextStore } from '@Hooks/useContextStore';
 // Types
 import { TextareaFromType } from '@Types';
 // Localization
@@ -11,14 +11,14 @@ export const ModalTextarea: FC<TextareaFromType> = ({
   handler,
   value,
 }) => {
-  const { lang } = useStore();
+  const { lang } = useContextStore();
 
   const getValue = (ev: ChangeEvent<HTMLTextAreaElement>) => {
     handler(ev.currentTarget.value);
   };
 
   return (
-    <div className="form__input">
+    <fieldset className="form__input">
       <textarea
         className="input-field"
         name={nameInput}
@@ -35,6 +35,6 @@ export const ModalTextarea: FC<TextareaFromType> = ({
       >
         {modalTextarea[nameInput][lang]}
       </label>
-    </div>
+    </fieldset>
   );
 };

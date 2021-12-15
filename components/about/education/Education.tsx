@@ -3,10 +3,10 @@ import { FC } from 'react';
 import { Course } from '@About/course/Course';
 import { ScrollArea } from '@ScrollArea';
 // Hook
-import { useStore } from '@Store';
+import { useContextStore } from '@Hooks/useContextStore';
 
 export const Education: FC = () => {
-  const { context } = useStore();
+  const { context } = useContextStore();
 
   const courses = context?.courses
     .map(crs => <Course key={crs._id} data={crs} />)

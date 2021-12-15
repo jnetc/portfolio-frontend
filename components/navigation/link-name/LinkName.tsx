@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import Link from 'next/link';
 // Context
-import { useStore } from '@Store';
+import { useContextStore } from '@Hooks/useContextStore';
 // Type
 import { LinkNameType } from '@Types';
 
 export const LinkName: FC<LinkNameType> = ({ link, handler }) => {
-  const { lang } = useStore();
+  const { lang } = useContextStore();
   const closeMenu = () => handler(false);
 
   return (

@@ -1,29 +1,14 @@
 import { FC, useRef, useEffect } from 'react';
 // Hook
-import { useStore } from '@Store';
+import { useContextMain } from '@Hooks/useContextMain';
 // Components
 import { Cloud } from './Cloud';
 // Helper
 import { animationOptimization } from '@Helpers/functions';
 
 const Modal: FC = ({ children }) => {
-  const { modal, toggleModal } = useStore();
+  const { modal, toggleModal } = useContextMain();
   const ref = useRef<HTMLElement>(null);
-
-  if (modal.show) {
-    ref.current?.classList.add('modal-transition');
-    setTimeout(() => {
-      ref.current?.classList.add('modal-show');
-      ref.current?.classList.remove('modal-transition');
-    }, 100);
-  }
-  if (!modal.show) {
-    ref.current?.classList.add('modal-transition');
-    setTimeout(() => {
-      ref.current?.classList.remove('modal-show');
-      ref.current?.classList.remove('modal-transition');
-    }, 500);
-  }
 
   const closeModal = (name: string) => {
     return () => {
@@ -33,7 +18,27 @@ const Modal: FC = ({ children }) => {
   };
 
   useEffect(() => {
-    if (!modal.show) document.body.removeAttribute('style');
+    let el = ref.current;
+
+    if (modal.show) {
+      el?.classList.add('modal-transition');
+      setTimeout(() => {
+        el?.classList.add('modal-show');
+        el?.classList.remove('modal-transition');
+      }, 100);
+    }
+    if (!modal.show) {
+      el?.classList.add('modal-transition');
+      setTimeout(() => {
+        el?.classList.remove('modal-show');
+        el?.classList.remove('modal-transition');
+      }, 500);
+      document.body.removeAttribute('style');
+    }
+
+    return () => {
+      el = null;
+    };
   }, [modal.show]);
 
   return (

@@ -14,7 +14,7 @@ export const RecentProject: FC<{ data: ProjectType; position: string }> = ({
   position,
 }) => {
   return (
-    <section className={`grid mob-right-pad project-${position}`}>
+    <section className={`grid mob-right-pad grid-12 project-${position}`}>
       <article className="project recent">
         <Label label={data.label_recent} />
         <Title title={data.project_title} />

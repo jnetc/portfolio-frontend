@@ -5,12 +5,12 @@ import { HomeLeftButton } from '@Home/home-left-side/HomeLeftButton';
 // Sanity Block text
 import { PortableText } from '@Sanity/sanity';
 // Hook
-import { useStore } from '@Store';
+import { useContextStore } from '@Hooks/useContextStore';
 // Types
 import { SerializerBlock } from '@Types';
 
 export const HomeLeftSide: FC = () => {
-  const { context } = useStore();
+  const { context } = useContextStore();
   // Sanity block component
   // https://github.com/coreyward/react-portable-text
   const serializer = ({ children }: SerializerBlock) => {

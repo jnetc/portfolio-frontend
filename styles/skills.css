@@ -1,5 +1,4 @@
 .skills {
-  grid-column: 1 / -1;
   max-width: 100%;
   justify-self: center;
   display: grid;

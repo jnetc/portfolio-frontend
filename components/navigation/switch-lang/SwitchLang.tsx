@@ -1,10 +1,10 @@
 import { FC, useRef } from 'react';
 import Link from 'next/link';
 
-import { useStore } from '@Store';
+import { useContextStore } from '@Hooks/useContextStore';
 
 export const SwitchLang: FC = () => {
-  const { lang } = useStore();
+  const { lang } = useContextStore();
   const ref = useRef<HTMLDivElement>(null);
 
   setTimeout(() => {

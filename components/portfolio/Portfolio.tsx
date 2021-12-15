@@ -1,15 +1,15 @@
 import { FC } from 'react';
-import Anchor from '@Anchor';
+import Anchor from 'components/anchor/Anchor';
 // Components
 import { RecentProject } from '@Portfolio/recent-project/RecentProject';
 import { Project } from '@Portfolio/project/Project';
 import { ScrollArea } from '@ScrollArea';
 import Separator from '@Separator';
 // Hook
-import { useStore } from '@Store';
+import { useContextStore } from '@Hooks/useContextStore';
 
 const Portfolio: FC = () => {
-  const { context } = useStore();
+  const { context } = useContextStore();
 
   const recentProjects = context?.projects
     .filter(f => f.recent)

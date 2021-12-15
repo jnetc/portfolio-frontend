@@ -1,6 +1,6 @@
 import { FC } from 'react';
 // Hook
-import { useStore } from '@Store';
+import { useContextStore } from '@Hooks/useContextStore';
 // Component
 import { GitHubLink } from '@Links/GitHub';
 import { LinkedIn } from '@Links/LinkedIn';
@@ -8,9 +8,9 @@ import { StackOverflow } from '@Links/StackOverflow';
 import { FooterBaseLink } from './FooterBaseLink';
 
 const Footer: FC = () => {
-  const { context, stackoverflow } = useStore();
+  const { context, stackoverflow } = useContextStore();
   return (
-    <footer className="footer mob-right-pad">
+    <footer className="footer mob-right-pad grid-12">
       <section className="footer__links">
         <GitHubLink url={context?.github_href || ''} cssClass="footer__link" />
         <StackOverflow

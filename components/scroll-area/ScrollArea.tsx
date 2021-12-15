@@ -72,7 +72,7 @@ export const ScrollArea: FC = ({ children }) => {
   };
 
   return (
-    <section className="card-scrollarea">
+    <section className="card-scrollarea grid-12">
       <ScrollButton visible={leftBtn} move="left" handler={moveTo} />
       <div className="card-wrapper" ref={ref} onScroll={scroll}>
         {children}

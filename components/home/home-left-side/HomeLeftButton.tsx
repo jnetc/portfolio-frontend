@@ -1,6 +1,7 @@
 import { FC } from 'react';
 // Hook
-import { useStore } from '@Store';
+import { useContextStore } from '@Hooks/useContextStore';
+import { useContextMain } from '@Hooks/useContextMain';
 // Helper
 import { animationOptimization } from '@Helpers/functions';
 // Type
@@ -13,7 +14,8 @@ export const HomeLeftButton: FC<HomeLeftBtnType> = ({
   open,
   accessibility,
 }) => {
-  const { lang, toggleModal } = useStore();
+  const { lang } = useContextStore();
+  const { toggleModal } = useContextMain();
 
   const openModal = (name: string) => {
     return () => {
@@ -25,6 +27,7 @@ export const HomeLeftButton: FC<HomeLeftBtnType> = ({
     <button
       className={`home-${open}-btn`}
       title={homeLeftButton[style][lang]}
+      data-modal="open-modal"
       aria-label={accessibility}
       onClick={openModal(open)}
     >

@@ -1,11 +1,11 @@
 import { FC } from 'react';
 // Context
-import { useStore } from '@Store';
+import { useContextStore } from '@Hooks/useContextStore';
 // Localization
 import { separators } from '@Languages';
 
 const Separator: FC<{ name: 'portfolio' | 'about' }> = ({ name }) => {
-  const { lang } = useStore();
+  const { lang } = useContextStore();
 
   return (
     <>

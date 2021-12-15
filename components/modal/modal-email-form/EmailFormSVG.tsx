@@ -1,17 +1,20 @@
-import { useRef, useEffect } from 'react';
+import { FC, useRef, useEffect } from 'react';
 // Hook
-import { useStore } from '@Store';
+import { useContextMain } from '@Hooks/useContextMain';
 
-export const EmailFormSVG = () => {
-  const { toggleModal, modal } = useStore();
+export const EmailFormSVG: FC = () => {
+  const { toggleModal, modal, setNotify, response } = useContextMain();
   const ref = useRef<HTMLDivElement>(null);
+
+  // remove component after ends of animation
 
   useEffect(() => {
     ref.current?.addEventListener('animationend', ev => {
       if (ev.animationName !== 'letter') return;
       toggleModal({ show: false, name: modal.name });
+      setNotify(response);
     });
-  }, [toggleModal, modal.name]);
+  }, [toggleModal, modal.name, response, setNotify]);
 
   return (
     <div className="letter" ref={ref}>

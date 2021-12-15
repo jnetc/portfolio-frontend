@@ -1,6 +1,6 @@
-import { FC, ChangeEvent } from 'react';
+import { FC, ChangeEvent, useCallback } from 'react';
 // Hook
-import { useStore } from '@Store';
+import { useContextStore } from '@Hooks/useContextStore';
 // Types
 import { InputFromType } from '@Types';
 // Localization
@@ -12,18 +12,22 @@ export const ModalInput: FC<InputFromType> = ({
   handler,
   value,
 }) => {
-  const { lang } = useStore();
+  const { lang } = useContextStore();
 
-  const getValue = (ev: ChangeEvent<HTMLInputElement>) => {
-    handler(ev.currentTarget.value);
-  };
+  const getValue = useCallback(
+    (ev: ChangeEvent<HTMLInputElement>) => {
+      handler(ev.currentTarget.value);
+    },
+    [handler]
+  );
 
   return (
-    <div className="form__input">
+    <fieldset className="form__input">
       <input
         className="input-field"
         type={typeInput}
         name={nameInput}
+        inputMode={typeInput}
         required
         onChange={getValue}
         value={value}
@@ -35,6 +39,6 @@ export const ModalInput: FC<InputFromType> = ({
       >
         {modalInputs[nameInput][lang]}
       </label>
-    </div>
+    </fieldset>
   );
 };

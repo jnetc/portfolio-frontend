@@ -4,12 +4,12 @@ import { PortableText } from '@Sanity/sanity';
 // Component
 import { ForEmployersSVG } from './ForEmployers';
 // Hook
-import { useStore } from '@Store';
+import { useContextStore } from '@Hooks/useContextStore';
 // Types
 import { SerializerBlock } from '@Types';
 
 const ModalForEmployers: FC = () => {
-  const { lang, context } = useStore();
+  const { lang, context } = useContextStore();
 
   const labelUrl = context?.modal.modal_href.split('//')[1];
 

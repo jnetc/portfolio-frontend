@@ -1,17 +1,17 @@
 import { FC } from 'react';
 // Context
-import { useStore } from '@Store';
+import { useContextStore } from '@Hooks/useContextStore';
 // Types
 import { AnchorType } from '@Types';
 // Localization
 import { anchor } from '@Languages';
 
 const Anchor: FC<AnchorType> = ({ name, hash }) => {
-  const { lang } = useStore();
+  const { lang } = useContextStore();
 
   return (
     <>
-      <span id={name} className="anchor" data-hash={hash}>
+      <span id={name} className="anchor grid-12" data-hash={hash}>
         {anchor[name].link[lang]}
       </span>
       <span className="anchor-separator" />

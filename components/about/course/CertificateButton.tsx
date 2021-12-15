@@ -1,9 +1,9 @@
-import { useStore } from '@Store';
+import { useContextStore } from '@Hooks/useContextStore';
 // Localization
 import { sertificateButton } from '@Languages';
 
 export const SertificateButton = ({ href }: { href: string }) => {
-  const { lang } = useStore();
+  const { lang } = useContextStore();
   return (
     <a
       href={href}

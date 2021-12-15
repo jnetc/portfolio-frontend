@@ -1,29 +1,26 @@
 import { FC } from 'react';
-import Image from 'next/image';
 import { Widget } from '@Home/stack-overflow/Widget';
-
-import { useStore } from '@Store';
+// Hook
+import { useContextMain } from '@Hooks/useContextMain';
+// Components
+import { MainPhoto } from './MainPhoto';
 
 export const HomeRightSide: FC = () => {
-  const { theme } = useStore();
+  const { theme } = useContextMain();
 
   return (
     <div className="home-right-side">
       <Widget />
-      <div className={theme === 'light' ? 'pic-l' : 'pic-d'}>
-        <Image
-          src={
-            theme === 'light'
-              ? '/images/picture_light.png'
-              : '/images/picture_dark.png'
-          }
-          alt="Anton"
-          layout="fill"
-          objectFit="contain"
-          quality={80}
-          priority
-        />
-      </div>
+      <MainPhoto
+        src="/images/picture_light.png"
+        cssClass="pic-l"
+        theme={theme === 'light'}
+      />
+      <MainPhoto
+        src="/images/picture_dark.png"
+        cssClass="pic-d"
+        theme={theme === 'dark'}
+      />
       <svg
         viewBox="0 0 650 436"
         fill="none"

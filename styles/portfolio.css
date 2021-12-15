@@ -1,20 +1,11 @@
-.project-left,
 .project-right {
-  grid-column: 1 / -1;
-}
-.project-left {
-  grid-row: 4;
-}
-.project-right {
-  grid-row: 5;
   margin-top: 10rem;
 }
-
 .project-left .recent {
-  grid-column: 1 / 6;
+  grid-column: 2 / 7;
 }
 .project-right .recent {
-  grid-column: 8 / -1;
+  grid-column: 9 / -2;
 }
 .recent {
   align-self: center;
@@ -137,11 +128,11 @@
 
 /* Image property */
 .project-left .project-image {
-  grid-column: 7 / 13;
+  grid-column: 8 / 14;
   grid-row: 1;
 }
 .project-right .project-image {
-  grid-column: 1 / 7;
+  grid-column: 2 / 8;
   grid-row: 1;
 }
 .project-image {
