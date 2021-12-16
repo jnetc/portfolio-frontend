@@ -25,6 +25,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -36,5 +37,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-.vercel
+#VS Code
 .vscode
+
+# Server Workers
+/public/sw.js
+/public/service-worker.js
+/public/workbox-*.js
+/public/worker-*.js
+/public/sw.js.map
+/public/service-worker.js.map
+/public/workbox-*.js.map
+/public/worker-*.js.map
