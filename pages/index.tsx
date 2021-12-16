@@ -56,9 +56,7 @@ const App: NextPage<{
       <>
         <Head>
           <meta name="description" content={currentLangData?.meta_desc} />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>{currentLangData?.meta_title}</title>
-          {/* <link rel="icon" href="/favicon.ico" /> */}
         </Head>
 
         <main className="main grid">

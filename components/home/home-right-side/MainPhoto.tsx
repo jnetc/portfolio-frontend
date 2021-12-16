@@ -14,7 +14,7 @@ export const MainPhoto: FC<MainPhotoType> = ({ src, cssClass, theme }) => {
         layout="responsive"
         objectFit="contain"
         quality={80}
-        priority
+        // priority
       />
     </div>
   );

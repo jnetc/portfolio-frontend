@@ -6,8 +6,6 @@ export const EmailFormSVG: FC = () => {
   const { toggleModal, modal, setNotify, response } = useContextMain();
   const ref = useRef<HTMLDivElement>(null);
 
-  // remove component after ends of animation
-
   useEffect(() => {
     ref.current?.addEventListener('animationend', ev => {
       if (ev.animationName !== 'letter') return;
