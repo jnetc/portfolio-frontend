@@ -24,7 +24,7 @@
       "@Img": ["./components/img/Img"],
       "@Links/*": ["./components/links/*"],
       "@Languages": ["./languages"],
-      "@Main": ["./components/main-context/MainContext"],
+      "@MainContext": ["./components/main-context/MainContext"],
       "@Modal/*": ["./components/modal/*"],
       "@ModalMailform": ["components/modal/modal-email-form"],
       "@ModalForEmployers": ["components/modal/modal-for-employers"],

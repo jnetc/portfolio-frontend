@@ -2,7 +2,7 @@ import { FC } from 'react';
 // Hook
 import { useContextMain } from '@Hooks/useContextMain';
 
-export const ModalOverlay: FC = () => {
+const ModalOverlay: FC = () => {
   const { modal } = useContextMain();
 
   return (
@@ -14,3 +14,5 @@ export const ModalOverlay: FC = () => {
     />
   );
 };
+
+export default ModalOverlay;

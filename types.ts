@@ -84,6 +84,7 @@ export interface MainPhotoType {
   cssClass: string;
   src: string;
   theme: boolean;
+  priority?: boolean;
 }
 
 export interface Handler<T> {

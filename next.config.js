@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const withPWA = require('next-pwa');
+const runtimeCaching = require('next-pwa/cache');
 
 module.exports = withPWA({
   reactStrictMode: true,
@@ -7,6 +8,7 @@ module.exports = withPWA({
     dest: 'public',
     register: true,
     skipWaiting: true,
+    runtimeCaching,
     disable: process.env.NODE_ENV === 'development',
   },
   i18n: {
@@ -15,8 +17,8 @@ module.exports = withPWA({
     localeDetection: false,
   },
   images: {
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    deviceSizes: [640, 1080, 1920],
     formats: ['image/webp'],
-    domains: ['i.stack.imgur.com', 'cdn.sanity.io'],
+    domains: ['cdn.sanity.io'],
   },
 });

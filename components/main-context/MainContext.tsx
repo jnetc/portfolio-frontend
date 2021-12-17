@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 // Components
-import Notice from '@Notice';
-import ModalSwitch from '@Modal/ModalSwitch';
-import { ModalOverlay } from '@Modal/ModalOverlay';
 import Navigation from '@Navigation/Navigation';
 import Home from '@Home/Home';
+// Dynamic components
+const Notice = dynamic(() => import('@Notice'));
+const ModalSwitch = dynamic(() => import('@Modal/ModalSwitch'));
+const ModalOverlay = dynamic(() => import('@Modal/ModalOverlay'));
 // Helpers
 import { animationOptimization } from '@Helpers/functions';
 // Hook

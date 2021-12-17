@@ -20,6 +20,7 @@ export const HomeRightSide: FC = () => {
         src="/images/picture_dark.png"
         cssClass="pic-d"
         theme={theme === 'dark'}
+        priority
       />
       <svg
         viewBox="0 0 650 436"

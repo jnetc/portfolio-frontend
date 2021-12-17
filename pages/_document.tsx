@@ -8,9 +8,7 @@ import Document, {
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx);
-
-    return initialProps;
+    return await Document.getInitialProps(ctx);
   }
 
   render() {
@@ -35,17 +33,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="true"
-          /> */}
-          <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=optional"
-            rel="stylesheet"
-          />
-
           <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
         </Head>
         <body id="home">

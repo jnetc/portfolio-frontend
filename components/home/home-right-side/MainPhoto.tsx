@@ -3,7 +3,12 @@ import Image from 'next/image';
 // Type
 import { MainPhotoType } from '@Types';
 
-export const MainPhoto: FC<MainPhotoType> = ({ src, cssClass, theme }) => {
+export const MainPhoto: FC<MainPhotoType> = ({
+  src,
+  cssClass,
+  theme,
+  priority,
+}) => {
   return (
     <div className={theme ? `${cssClass} pic-show` : `${cssClass}`}>
       <Image
@@ -14,7 +19,7 @@ export const MainPhoto: FC<MainPhotoType> = ({ src, cssClass, theme }) => {
         layout="responsive"
         objectFit="contain"
         quality={80}
-        priority
+        priority={priority}
       />
     </div>
   );

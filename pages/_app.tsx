@@ -22,7 +22,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           content=" UI/UX Designer, UI Designer, Web Designer, UI Developer, FronEnd Developer, Fullstack Developer, React Developer, Javascript Developer, Javascript, Typescript, HTML5, CSS3"
         />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="rating" content="General" />
         <meta name="robots" content="index, follow, noimageindex" />
         <meta
           name="theme-color"
@@ -34,7 +33,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           media="(prefers-color-scheme: dark)"
           content="#18171c"
         />
-        <meta name="subject" content="UI Developer portfolio" />
 
         <link rel="alternate" href="https://devan.fi/ru" hrefLang="ru" />
         <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
@@ -42,16 +40,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         {/* Apple */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="devan.fi" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link
           rel="apple-touch-icon"
           sizes="192x192"
           href="/icons/icon-192x192.png"
         />
-        {/* Windows App */}
-        <meta name="msapplication-config" content="/icons/browserconfig.xml" />
-        <meta name="msapplication-TileColor" content="#18171c" />
-        <meta name="msapplication-tap-highlight" content="no" />
       </Head>
       <Component {...pageProps} />
     </>
