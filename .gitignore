@@ -49,6 +49,3 @@ yarn-error.log*
 /public/service-worker.js.map
 /public/workbox-*.js.map
 /public/worker-*.js.map
-
-# Local fonts
-/public/fonts
