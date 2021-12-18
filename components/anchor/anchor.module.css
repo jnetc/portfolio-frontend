@@ -1,4 +1,4 @@
-.anchor {
+.name {
   margin-top: 15rem;
   position: relative;
   color: var(--secondary-clr);
@@ -6,7 +6,7 @@
   text-transform: uppercase;
   user-select: none;
 }
-.anchor::before {
+.name::before {
   --size: 18rem;
   content: attr(data-hash);
   position: absolute;
@@ -16,13 +16,13 @@
   font-size: var(--size);
   font-weight: bold;
 }
-.anchor-desc {
+.desc {
   grid-column: 4 / -1;
   margin-bottom: 10rem;
   font-size: 2.25em;
   z-index: 2;
 }
-.anchor-separator {
+.separator {
   grid-column: 2 / 4;
   width: 100%;
   height: 3px;
@@ -32,17 +32,17 @@
 }
 
 @media screen and (max-width: 768px) {
-  .anchor {
+  .name {
     font-size: 1em;
   }
-  .anchor::before {
+  .name::before {
     --size: 12rem;
   }
-  .anchor-desc {
+  .desc {
     grid-column: 2 / -1;
     font-size: 1.3em;
   }
-  .anchor-separator {
+  .separator {
     grid-column: 1;
     top: 0.5rem;
   }

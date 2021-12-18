@@ -63,6 +63,7 @@ html[data-theme='light'] {
   --card-clr: hsl(39, 42%, 87%);
   --card-shadow-clr: hsl(38 12% 70% / 0.6);
   --card-extra-clr: hsl(38, 12%, 70%);
+  --stack-overflow-shadow: hsl(38 12% 70% / 1);
 }
 html[data-theme='dark'] {
   --bg-clr: hsl(252, 10%, 10%);
@@ -93,6 +94,7 @@ html[data-theme='dark'] {
   --card-clr: hsl(240, 3%, 12%);
   --card-shadow-clr: hsl(0 0% 0% / 0.15);
   --card-extra-clr: hsl(220, 6%, 19%);
+  --stack-overflow-shadow: hsl(0 0% 0% / 0.4);
 }
 
 *,
@@ -305,45 +307,6 @@ div > .paragraph:not(:last-of-type) {
   transform: translateY(-50%) rotate(180deg);
 }
 
-.to-top {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: none;
-  position: sticky;
-  right: 2rem;
-  bottom: 2rem;
-  margin-left: auto;
-  background-color: var(--card-clr);
-  border: 2px solid transparent;
-  border-radius: 50%;
-  transition: all 0.3s ease-in-out;
-  z-index: 500;
-}
-.to-top::before,
-.to-top::after {
-  content: '';
-  width: 12px;
-  height: 3px;
-  position: absolute;
-  top: 11px;
-  left: 6px;
-  background-color: var(--secondary-clr);
-  transform-origin: center right;
-  border-radius: 5px;
-}
-.to-top::before {
-  transform: translateX(-1px) rotate(-135deg);
-}
-.to-top::after {
-  transform: translateX(1px) rotate(-45deg);
-}
-.to-top:hover {
-  border-color: var(--secondary-clr);
-}
-.to-top.view {
-  display: block;
-}
-
 @media screen and (max-width: 768px) {
   body {
     padding: 1rem 0;
@@ -402,12 +365,6 @@ div > .paragraph:not(:last-of-type) {
 
 @import url('./navigation.css');
 @import url('./home.css');
-@import url('./anchor.css');
-@import url('./separator.css');
 @import url('./links.css');
 @import url('./portfolio.css');
-@import url('./skills.css');
-@import url('./about.css');
-@import url('./footer.css');
 @import url('./modal.css');
-@import url('./notice.css');

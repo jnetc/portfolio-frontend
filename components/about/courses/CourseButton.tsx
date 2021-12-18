@@ -1,20 +1,22 @@
 import { useContextStore } from '@Hooks/useContextStore';
 // Localization
-import { sertificateButton } from '@Languages';
+import { courseButton } from '@Languages';
+// Style
+import style from './course.module.css';
 
-export const SertificateButton = ({ href }: { href: string }) => {
+export const CourseButton = ({ href }: { href: string }) => {
   const { lang } = useContextStore();
   return (
     <a
       href={href}
-      className="btn btn-course course-pad2"
+      className={`btn ${style.btn_course}`}
       role="button"
       target="_blank"
       rel="noreferrer"
       aria-label="link to certificate page"
       title="link to certificate page"
     >
-      {sertificateButton[lang]}
+      {courseButton[lang]}
     </a>
   );
 };

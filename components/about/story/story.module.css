@@ -1,13 +1,11 @@
-.about {
+.module {
   height: min-content;
 }
-.about div {
+.module div {
   height: min-content;
   column-width: 300px;
   column-gap: 4rem;
 }
-.about__paragraph {
+.paragraph {
   margin: 0 0 1rem 0;
 }
-
-@import url('./courses.css');

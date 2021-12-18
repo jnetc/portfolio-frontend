@@ -26,7 +26,7 @@ export const stackoverflowContent = {
   },
 };
 
-export const sertificateButton = {
+export const courseButton = {
   en: 'show certificate',
   ru: 'показать сертификат',
 };

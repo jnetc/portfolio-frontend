@@ -1,10 +1,12 @@
 import { FC } from 'react';
 // Type
 import { FooterLink } from '@Types';
+// Style
+import style from './footer.module.css';
 
 export const FooterBaseLink: FC<FooterLink> = ({ link, name }) => (
   <a
-    className="footer__desc-link"
+    className={style.desc_link}
     href={link}
     target="_blank"
     rel="noreferrer"

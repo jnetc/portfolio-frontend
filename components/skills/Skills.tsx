@@ -3,7 +3,9 @@ import { FC } from 'react';
 import { useContextStore } from '@Hooks/useContextStore';
 // Components
 import Anchor from '@Anchor';
-import { Skill } from '@Skills/skill/Skill';
+import { Skill } from '@Skills/Skill';
+// Style
+import style from './skills.module.css';
 
 const Skills: FC = () => {
   const { context } = useContextStore();
@@ -15,7 +17,9 @@ const Skills: FC = () => {
   return (
     <>
       <Anchor name="skills" hash="#3" />
-      <section className="skills  mob-right-pad grid-12">{skills}</section>
+      <section className={`${style.module} mob-right-pad grid-12`}>
+        {skills}
+      </section>
     </>
   );
 };

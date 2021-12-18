@@ -1,20 +1,27 @@
+import style from '../skills.module.css';
 export const Illustation = () => {
   return (
-    <div className="skill__icon">
+    <div className={style.icon}>
       <svg
         viewBox="0 0 109 94"
         fill="none"
-        className="skill__svg illustration"
+        className={`${style.svg} ${style.illustration}`}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <rect y="27.7007" width="7" height="7" rx="1" className="stroke-60" />
+        <rect
+          y="27.7007"
+          width="7"
+          height="7"
+          rx="1"
+          className={style.stroke_60}
+        />
         <rect
           x="101.613"
           y="15.7183"
           width="7"
           height="7"
           rx="1"
-          className="stroke-60"
+          className={style.stroke_60}
         />
         <rect
           x="50.7603"
@@ -22,7 +29,7 @@ export const Illustation = () => {
           width="7"
           height="7"
           rx="1"
-          className="skill__svg-bg"
+          className={style.svg_bg}
         />
         <path
           d="M6.77972 28.5889C6.77972 28.5889 32.6853 7.34431 54.3564 26.0618C76.0275 44.7792 101.983 21.9133 101.983 21.9133"
@@ -31,14 +38,14 @@ export const Illustation = () => {
           strokeLinecap="round"
           strokeLinejoin="bevel"
           strokeDasharray="6 6"
-          className="stroke-60"
+          className={style.stroke_60}
         />
         <path
           d="M32.1375 6.61816L75.38 44.1316"
           strokeMiterlimit="3.8637"
           strokeLinecap="round"
           strokeLinejoin="bevel"
-          className="stroke-60"
+          className={style.stroke_60}
         />
         <path
           d="M41.3753 66.1883L54.5907 34.584L67.8131 66.1883V69.5348L62.7351 83.6894H46.6512L41.3752 69.4494L41.3753 66.1883Z"

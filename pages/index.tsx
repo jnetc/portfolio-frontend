@@ -1,7 +1,6 @@
-import { useEffect, useRef } from 'react';
+// import { useEffect, useRef } from 'react';
 import { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
 // Sanity CMS
@@ -14,6 +13,7 @@ const Portfolio = dynamic(() => import('@Portfolio/Portfolio'));
 const Skills = dynamic(() => import('@Skills/Skills'));
 const About = dynamic(() => import('@About/About'));
 const Footer = dynamic(() => import('@Footer'));
+const GoToTopButton = dynamic(() => import('@GoToTopButton'));
 // Types
 import { StackOverflow, SanityData } from '@Types';
 // Helpers
@@ -27,24 +27,6 @@ const App: NextPage<{
   stackoverflow: StackOverflow<string>;
 }> = ({ main, locale, stackoverflow }) => {
   const currentLangData = transformLocalization(locale, main);
-  const refToTop = useRef<HTMLAnchorElement>(null);
-
-  useEffect(() => {
-    document.addEventListener('scroll', () => {
-      const position = window.scrollY;
-      const fromTop = window.innerHeight / 5;
-
-      if (position < fromTop) {
-        refToTop.current?.classList.remove('view');
-        return;
-      }
-      refToTop.current?.classList.add('view');
-    });
-
-    return () => {
-      document.removeEventListener('scroll', () => {});
-    };
-  }, []);
 
   return (
     <Store.Provider
@@ -86,18 +68,8 @@ const App: NextPage<{
           <Skills />
           <About />
           <Footer />
+          <GoToTopButton />
         </main>
-
-        <Link href="#home">
-          <a
-            className="to-top"
-            ref={refToTop}
-            role="button"
-            tabIndex={0}
-            aria-label="go to top"
-            title="go to top"
-          ></a>
-        </Link>
       </>
     </Store.Provider>
   );

@@ -6,12 +6,14 @@ import { GitHubLink } from '@Links/GitHub';
 import { LinkedIn } from '@Links/LinkedIn';
 import { StackOverflow } from '@Links/StackOverflow';
 import { FooterBaseLink } from './FooterBaseLink';
+// Style
+import style from './footer.module.css';
 
 const Footer: FC = () => {
   const { context, stackoverflow } = useContextStore();
   return (
-    <footer className="footer mob-right-pad grid-12">
-      <section className="footer__links">
+    <footer className={`${style.block} mob-right-pad grid-12`}>
+      <section className={style.links}>
         <GitHubLink url={context?.github_href || ''} cssClass="footer__link" />
         <StackOverflow
           url={stackoverflow?.link || ''}
@@ -19,7 +21,7 @@ const Footer: FC = () => {
         />
         <LinkedIn url={context?.linkedin_href || ''} cssClass="footer__link" />
       </section>
-      <p className="footer__desc">
+      <p className={style.desc}>
         The site is based with
         <FooterBaseLink link="https://nextjs.org/" name="Next.js" />, managed
         with

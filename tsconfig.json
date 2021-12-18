@@ -18,6 +18,7 @@
       "@About/*": ["./components/about/*"],
       "@Anchor": ["./components/anchor/Anchor"],
       "@Footer": ["./components/footer/Footer"],
+      "@GoToTopButton": ["components/go-to-top-button/GoToTopButton"],
       "@Helpers/*": ["./helpers/*"],
       "@Home/*": ["./components/home/*"],
       "@Hooks/*": ["./hooks/*"],

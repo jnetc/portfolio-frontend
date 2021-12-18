@@ -1,0 +1,30 @@
+.block {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 6rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--card-clr);
+}
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.desc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  color: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.7);
+  line-height: 1.4;
+}
+.desc_link {
+  color: var(--secondary-clr);
+  transition: all 0.3s ease-in-out;
+  text-decoration: underline;
+}
+.desc_link:hover {
+  color: var(--primary-clr);
+}

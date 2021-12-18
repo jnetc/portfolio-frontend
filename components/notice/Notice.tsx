@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 // Hook
 import { useContextMain } from '@Hooks/useContextMain';
+// Style
+import style from './notice.module.css';
 
 const Notice = () => {
   const { notice, setNotify, setResponse } = useContextMain();
@@ -21,7 +23,9 @@ const Notice = () => {
     <>
       <p
         className={
-          notice.status !== 'default' ? 'notice notice-show' : 'notice'
+          notice.status !== 'default'
+            ? `${style.module} ${style.show}`
+            : `${style.module}`
         }
         role="dialog"
         ref={ref}

@@ -3,34 +3,36 @@ import { FC } from 'react';
 import { useContextStore } from '@Hooks/useContextStore';
 // Localization
 import { stackoverflowContent } from '@Languages';
+// Style
+import style from './stack-overflow.module.css';
 
-export const Widget: FC = () => {
+const StackOverflow: FC = () => {
   const { stackoverflow, lang } = useContextStore();
 
   if (!stackoverflow) return null;
 
   return (
-    <section className="widget">
-      <h1>
+    <section className={style.module}>
+      <h1 className={style.title}>
         stack<strong>overflow</strong>
       </h1>
       <div
-        className="widget__data widget__left-side"
+        className={`${style.data} ${style.left_side}`}
         title="Recent achievements: reputation, badges, and privileges earned"
       >
-        <span className="widget__num">{stackoverflow.reputation}</span>
-        <p className="widget__label">{stackoverflowContent.reputation[lang]}</p>
+        <span className={style.number}>{stackoverflow.reputation}</span>
+        <p className={style.label}>{stackoverflowContent.reputation[lang]}</p>
       </div>
       <div
-        className="widget__data widget__right-side"
+        className={`${style.data} ${style.right_side}`}
         title="Amount answers, which i have answered for all time"
       >
-        <span className="widget__num">{stackoverflow.answers}</span>
-        <p className="widget__label">{stackoverflowContent.answers[lang]}</p>
+        <span className={style.number}>{stackoverflow.answers}</span>
+        <p className={style.label}>{stackoverflowContent.answers[lang]}</p>
       </div>
       <a
         href={stackoverflow.link}
-        className="btn btn-stackoverflow"
+        className={`btn ${style.button}`}
         role="button"
         target="_blank"
         rel="noreferrer"
@@ -40,3 +42,4 @@ export const Widget: FC = () => {
     </section>
   );
 };
+export default StackOverflow;

@@ -1,4 +1,4 @@
-.skills {
+.module {
   max-width: 100%;
   justify-self: center;
   display: grid;
@@ -16,7 +16,7 @@
   box-shadow: 0 25px 25px var(--card-shadow-clr);
 }
 
-.skill__arrow {
+.arrow {
   width: 1.25rem;
   height: 3px;
   position: absolute;
@@ -27,8 +27,8 @@
   transform: rotate(45deg);
   transform-origin: bottom right;
 }
-.skill__arrow::before,
-.skill__arrow::after {
+.arrow::before,
+.arrow::after {
   content: '';
   width: 1rem;
   height: inherit;
@@ -37,26 +37,26 @@
   background-color: inherit;
   transform-origin: left center;
 }
-.skill__arrow::before {
+.arrow::before {
   top: 1px;
   transform: rotate(-45deg);
 }
-.skill__arrow::after {
+.arrow::after {
   top: -1px;
   transform: rotate(45deg);
 }
 
-.skill__icon {
+.icon {
   width: 110px;
   height: 90px;
   position: absolute;
   top: -2rem;
   right: 2rem;
 }
-.skill__svg {
+.svg {
   height: 100%;
 }
-.skill__svg-bg {
+.svg_bg {
   fill: var(--primary-clr);
 }
 
@@ -70,19 +70,19 @@
   stroke: var(--primary-clr);
 }
 
-.webdesign__phone-bg {
+.phone_bg {
   fill: var(--card-clr);
 }
 
-.stroke-10 {
+.stroke_10 {
   stroke: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.1);
 }
-.stroke-30 {
+.stroke_30 {
   stroke: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.3);
 }
-.stroke-60 {
+.stroke_60 {
   stroke: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.6);
 }
-.stroke-80 {
+.stroke_80 {
   stroke: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.8);
 }

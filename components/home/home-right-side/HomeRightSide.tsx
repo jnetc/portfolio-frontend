@@ -1,16 +1,20 @@
 import { FC } from 'react';
-import { Widget } from '@Home/stack-overflow/Widget';
-// Hook
-import { useContextMain } from '@Hooks/useContextMain';
+import dynamic from 'next/dynamic';
+// Dynamic components
+const StackOverflow = dynamic(
+  () => import('@Home/stack-overflow/StackOverflow')
+);
 // Components
 import { MainPhoto } from './MainPhoto';
+// Hook
+import { useContextMain } from '@Hooks/useContextMain';
 
 export const HomeRightSide: FC = () => {
   const { theme } = useContextMain();
 
   return (
     <div className="home-right-side">
-      <Widget />
+      <StackOverflow />
       <MainPhoto
         src="/images/picture_light.png"
         cssClass="pic-l"
@@ -20,7 +24,6 @@ export const HomeRightSide: FC = () => {
         src="/images/picture_dark.png"
         cssClass="pic-d"
         theme={theme === 'dark'}
-        priority
       />
       <svg
         viewBox="0 0 650 436"

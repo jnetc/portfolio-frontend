@@ -3,7 +3,7 @@ import { FC } from 'react';
 import Anchor from '@Anchor';
 import Separator from '@Separator';
 import { Story } from '@About/story/Story';
-import { Education } from '@About/education/Education';
+import { Courses } from '@About/courses/Courses';
 
 const About: FC = () => {
   return (
@@ -11,7 +11,7 @@ const About: FC = () => {
       <Anchor name="about" hash="#4" />
       <Story />
       <Separator name="about" />
-      <Education />
+      <Courses />
     </>
   );
 };

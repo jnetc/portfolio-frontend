@@ -10,10 +10,12 @@ import { Animation } from '@Skills/icons/Animation';
 import { WebDesign } from '@Skills/icons/WebDesign';
 // Type
 import { SkillType } from '@Types';
+// Style
+import style from './skills.module.css';
 
 export const Skill: FC<{ data: SkillType }> = ({ data }) => {
   return (
-    <article className="skill">
+    <article className={style.skill}>
       {data.skill_id === 'frontend' && <Frontend />}
       {data.skill_id === 'illustration' && <Illustation />}
       {data.skill_id === 'fullstack' && <Fullstack />}
@@ -23,7 +25,7 @@ export const Skill: FC<{ data: SkillType }> = ({ data }) => {
 
       <Title title={data.skill_name} />
       <Description desc={data.skill_desc} />
-      <span className="skill__arrow" />
+      <span className={style.arrow} />
     </article>
   );
 };

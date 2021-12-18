@@ -1,22 +1,24 @@
+import style from '../skills.module.css';
+
 export const ThreeDGraphics = () => {
   return (
-    <div className="skill__icon">
+    <div className={style.icon}>
       <svg
         viewBox="0 0 109 91"
         fill="none"
-        className="skill__svg threeDGraphocs"
+        className={`${style.svg} ${style.threeDGraphocs}`}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           d="M2.21045 52.2221V77.1797L28.5178 89.3342M2.21045 52.2221L28.5178 64.266M2.21045 52.2221L28.5178 39.437L54.6399 52.2221M28.5178 89.3342V64.266M28.5178 89.3342L54.6399 77.1797V52.2221M28.5178 64.266L54.6399 52.2221"
-          className="stroke-30"
+          className={style.stroke_30}
           strokeMiterlimit="3.8637"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M28.5219 14.6106V39.4336L54.6418 52.2304M28.5219 14.6106L54.6418 26.6748M28.5219 14.6106L54.6418 1.96777L80.9513 14.6106M54.6418 52.2304V26.6748M54.6418 52.2304L80.9513 39.4354V14.6106M54.6418 26.6748L80.9513 14.6106"
-          className="stroke-60"
+          className={style.stroke_60}
           strokeMiterlimit="3.8637"
           strokeLinecap="round"
           strokeLinejoin="round"

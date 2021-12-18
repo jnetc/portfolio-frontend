@@ -30,10 +30,32 @@ class MyDocument extends Document {
       }
       document.documentElement.dataset.theme = getUserPreference();
     `;
+
     return (
       <Html>
         <Head>
           <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
+          <link
+            rel="preload"
+            as="font"
+            type="font/woff2"
+            href="/fonts/subset-Roboto-Bold.woff2"
+            crossOrigin="true"
+          />
+          <link
+            rel="preload"
+            as="font"
+            type="font/woff2"
+            href="/fonts/subset-Roboto-Light.woff2"
+            crossOrigin="true"
+          />
+          <link
+            rel="preload"
+            as="font"
+            type="font/woff2"
+            href="/fonts/subset-Roboto-Regular.woff2"
+            crossOrigin="true"
+          />
         </Head>
         <body id="home">
           <span id="orientation-landscape">Rotate to portrait</span>

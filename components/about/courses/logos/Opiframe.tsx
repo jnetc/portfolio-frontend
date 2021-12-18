@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import style from '../course.module.css';
 
 export const Opiframe: FC = () => {
   const cls2 = { fill: '#e22226' };
@@ -7,7 +8,7 @@ export const Opiframe: FC = () => {
   const cls5 = { fill: '#d71c24' };
 
   return (
-    <div className="course__logo opiframe" title={`Opiframe logo`}>
+    <div className={`${style.logo} ${style.opiframe}`} title={`Opiframe logo`}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168.67 30">
         <path d="M68.57,30c0-7.15,0-14.29,0-21.44,0-.65-.54-1.69.93-1.7,1.18,0,2.13,0,1.91,1.59,0,.06.08.14.19.31a6.3,6.3,0,0,1,4-2.12c3.38-.36,6,1.61,6.76,5.21a12.3,12.3,0,0,1-.16,5.72,7.19,7.19,0,0,1-7,5.37c-1.16,0-2.32,0-3.57,0,0,1.88,0,3.85,0,5.82a1.41,1.41,0,0,1-.6,1.23Zm10.8-15.66a10.61,10.61,0,0,0-.53-2.71,3.36,3.36,0,0,0-4.48-2,3.93,3.93,0,0,0-2.65,3.78c0,1.93,0,3.86,0,5.78,0,.59.11.87.8,1C76.6,21.13,79.4,18.85,79.37,14.34Z" />
         <path
