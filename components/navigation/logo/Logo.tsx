@@ -1,5 +1,4 @@
-import { FC } from 'react';
-export const Logo: FC = () => {
+export const Logo = () => {
   return (
     <a href="https://www.devan.fi" className="logo" title="Devan">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 836.38 500">

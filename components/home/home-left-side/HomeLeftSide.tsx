@@ -1,4 +1,3 @@
-import { FC } from 'react';
 // Components
 import { Bulb } from '@Home/bulb-icon/Bulb';
 import { HomeLeftButton } from '@Home/home-left-side/HomeLeftButton';
@@ -9,7 +8,7 @@ import { useContextStore } from '@Hooks/useContextStore';
 // Types
 import { SerializerBlock } from '@Types';
 
-export const HomeLeftSide: FC = () => {
+export const HomeLeftSide = () => {
   const { context } = useContextStore();
   // Sanity block component
   // https://github.com/coreyward/react-portable-text

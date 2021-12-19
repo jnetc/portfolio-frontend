@@ -1,4 +1,3 @@
-import { FC } from 'react';
 // Hook
 import { useContextStore } from '@Hooks/useContextStore';
 // Component
@@ -9,7 +8,7 @@ import { FooterBaseLink } from './FooterBaseLink';
 // Style
 import style from './footer.module.css';
 
-const Footer: FC = () => {
+const Footer = () => {
   const { context, stackoverflow } = useContextStore();
   return (
     <footer className={`${style.block} mob-right-pad grid-12`}>

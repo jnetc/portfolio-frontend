@@ -33,6 +33,14 @@
 
   --notice-txt-clr: hsl(162, 47%, 66%);
   --notice-bg-clr: hsl(220, 6%, 19%);
+
+  /* SVG Modal */
+  --white: #fff;
+  --beige-light: #f6f4f1;
+  --beige: #ece2d0;
+  --beige-dark: #bbb4a8;
+  --beige-black: #8c8478;
+  --grey-dark: #2d2f33;
 }
 
 html[data-theme='light'] {
@@ -243,69 +251,6 @@ textarea {
 div > .paragraph:not(:last-of-type) {
   margin-bottom: 1rem;
 }
-.card-scrollarea {
-  position: relative;
-}
-
-.card-wrapper {
-  min-width: 100%;
-  display: grid;
-  grid-auto-columns: 380px;
-  grid-auto-flow: column;
-  gap: 5.625rem;
-  padding: 0.2rem 3rem 3rem 0.2rem;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--card-extra-clr) var(--card-clr);
-  transition: all 0.3s ease-in-out;
-}
-
-.card-scroll-button {
-  width: 3rem;
-  height: 3rem;
-  display: none;
-  position: absolute;
-  top: 50%;
-  background-color: var(--primary-clr);
-  border-radius: 50%;
-  border: 2px solid var(--bg-dimed);
-  transform: translateY(-50%);
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  z-index: 100;
-}
-.card-scroll-button::after,
-.card-scroll-button::before {
-  content: '';
-  width: 12px;
-  height: 3px;
-  position: absolute;
-  top: 20px;
-  left: 16px;
-  background-color: var(--bg-clr);
-  transform-origin: left center;
-  border-radius: 5px;
-}
-.card-scroll-button::before {
-  transform: translateY(-1px) rotate(45deg);
-}
-.card-scroll-button::after {
-  transform: translateY(1px) rotate(-45deg);
-}
-.card-scroll-button:hover {
-  border-color: var(--primary-clr);
-}
-.to-left {
-  display: block;
-  left: -1.5rem;
-  box-shadow: 0 1.5rem 1rem var(--card-shadow-clr);
-}
-.to-right {
-  display: block;
-  right: -1.5rem;
-  box-shadow: 0 -1.5rem 1rem var(--card-shadow-clr);
-  transform: translateY(-50%) rotate(180deg);
-}
 
 @media screen and (max-width: 768px) {
   body {
@@ -324,21 +269,6 @@ div > .paragraph:not(:last-of-type) {
   }
   .mob-right-pad {
     padding-right: 1rem;
-  }
-  .card-wrapper {
-    grid-auto-columns: clamp(19rem, 50vw, 23.75rem);
-    gap: 4rem;
-  }
-  .to-top {
-    right: 1rem;
-    bottom: 1rem;
-  }
-  .to-left,
-  .to-right {
-    display: none;
-  }
-  .card-scrollarea {
-    grid-column: 1 / -1;
   }
 }
 /* Prevent to show content if orientation & height is valid */
@@ -366,5 +296,3 @@ div > .paragraph:not(:last-of-type) {
 @import url('./navigation.css');
 @import url('./home.css');
 @import url('./links.css');
-@import url('./portfolio.css');
-@import url('./modal.css');

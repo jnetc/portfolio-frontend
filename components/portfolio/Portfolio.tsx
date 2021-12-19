@@ -1,14 +1,15 @@
-import { FC } from 'react';
-import Anchor from 'components/anchor/Anchor';
 // Components
-import { RecentProject } from '@Portfolio/recent-project/RecentProject';
-import { Project } from '@Portfolio/project/Project';
+import Anchor from 'components/anchor/Anchor';
+import { RecentProject } from '@Portfolio/RecentProject';
+import { Project } from '@Portfolio/Project';
 import { ScrollArea } from '@ScrollArea';
 import Separator from '@Separator';
 // Hook
 import { useContextStore } from '@Hooks/useContextStore';
+// Style
+import style from './portfolio.module.css';
 
-const Portfolio: FC = () => {
+const Portfolio = () => {
   const { context } = useContextStore();
 
   const recentProjects = context?.projects
@@ -23,7 +24,7 @@ const Portfolio: FC = () => {
       return (
         <RecentProject
           key={el._id}
-          position={idx === 0 ? 'left' : 'right'}
+          position={idx === 0 ? `${style.left}` : `${style.right}`}
           data={el}
         />
       );

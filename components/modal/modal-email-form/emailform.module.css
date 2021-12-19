@@ -1,4 +1,4 @@
-.emailform {
+.module {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -6,11 +6,11 @@
   margin-top: 4rem;
 }
 
-.form__input {
+.input_field {
   width: 100%;
   position: relative;
 }
-.input-field {
+.input {
   padding: 1rem;
   border-radius: var(--m-radius);
   border: 2px solid var(--card-extra-clr);
@@ -19,7 +19,7 @@
   transition: all 0.3s ease-in-out;
   resize: vertical;
 }
-.form__placeholder {
+.placeholder {
   position: absolute;
   top: 0;
   left: 0;
@@ -30,11 +30,11 @@
   pointer-events: none;
   z-index: 5;
 }
-.input-field:focus {
+.input:focus {
   border-color: var(--secondary-clr);
 }
-.input-field:focus ~ .form__placeholder,
-.is-not-empty {
+.input:focus ~ .placeholder,
+.not_empty {
   transform: translate(0em, -1.7em);
 }
 
@@ -47,22 +47,22 @@
   transform-origin: left bottom;
 }
 
-.letter-list,
-.letter-open,
-.letter-close {
+.letter_list,
+.letter_open,
+.letter_close {
   transition: all 0.3s linear;
 }
-.letter-open,
-.letter-close {
+.letter_open,
+.letter_close {
   transform-origin: center 55px;
   transition: all 0.3s linear;
 }
-.letter-list,
-.letter-open {
+.letter_list,
+.letter_open {
   transition-delay: 0.3s;
 }
 
-.letter-close {
+.letter_close {
   transform: rotateX(90deg);
   transition-delay: 0s;
 }
@@ -91,15 +91,15 @@
   }
 }
 
-.sended .letter-list {
+.sended .letter_list {
   animation: letter-list 0.3s linear forwards;
   transition-delay: 0s;
 }
-.sended .letter-open {
+.sended .letter_open {
   animation: letter-open 0.3s linear forwards;
   transition-delay: 0s;
 }
-.sended .letter-close {
+.sended .letter_close {
   animation: letter-close 0.3s linear forwards;
   animation-delay: 0.3s;
 }

@@ -5,6 +5,8 @@ import { useContextMain } from '@Hooks/useContextMain';
 import { Cloud } from './Cloud';
 // Helper
 import { animationOptimization } from '@Helpers/functions';
+// Style
+import style from './modal.module.css';
 
 const Modal: FC = ({ children }) => {
   const { modal, toggleModal } = useContextMain();
@@ -21,17 +23,17 @@ const Modal: FC = ({ children }) => {
     let el = ref.current;
 
     if (modal.show) {
-      el?.classList.add('modal-transition');
+      el?.classList.add(`${style.transition}`);
       setTimeout(() => {
-        el?.classList.add('modal-show');
-        el?.classList.remove('modal-transition');
+        el?.classList.add(`${style.show}`);
+        el?.classList.remove(`${style.transition}`);
       }, 100);
     }
     if (!modal.show) {
-      el?.classList.add('modal-transition');
+      el?.classList.add(`${style.transition}`);
       setTimeout(() => {
-        el?.classList.remove('modal-show');
-        el?.classList.remove('modal-transition');
+        el?.classList.remove(`${style.show}`);
+        el?.classList.remove(`${style.transition}`);
       }, 500);
       document.body.removeAttribute('style');
     }
@@ -43,26 +45,26 @@ const Modal: FC = ({ children }) => {
 
   return (
     <section
-      className="modal"
+      className={style.module}
       role="dialog"
       aria-labelledby="dialog title"
       aria-describedby="dialog description"
       ref={ref}
     >
-      <div className="modal__close">
+      <div className={style.close}>
         <span
-          className="modal__close-button"
+          className={style.close_button}
           role="button"
           tabIndex={0}
           title="close button"
           onClick={closeModal(modal.name || 'emailform')}
         />
       </div>
-      <div className="modal__wrapper">
-        <div className="modal__clouds">
-          <Cloud cloudSize="l" />
-          <Cloud cloudSize="m" />
-          <Cloud cloudSize="s" />
+      <div className={style.wrapper}>
+        <div className={style.svg_clouds}>
+          <Cloud cloudSize={style.size_l} />
+          <Cloud cloudSize={style.size_m} />
+          <Cloud cloudSize={style.size_s} />
         </div>
         {children}
       </div>

@@ -1,12 +1,12 @@
 /* SVG EMPLOYER */
 
-.notice-svg {
+.svg {
   grid-row: 1;
   width: 160px;
   justify-self: center;
   transform-origin: left bottom;
 }
-.modal__information {
+.information {
   padding-top: 2rem;
 }
 
@@ -17,7 +17,7 @@
   font-weight: bold;
   text-align: center;
 }
-.modal__link {
+.link {
   margin-top: 2.8rem;
   padding-block: 1rem;
 }

@@ -1,10 +1,10 @@
-.project-right {
+.right {
   margin-top: 10rem;
 }
-.project-left .recent {
+.left .recent {
   grid-column: 2 / 7;
 }
-.project-right .recent {
+.right .recent {
   grid-column: 9 / -2;
 }
 .recent {
@@ -37,34 +37,34 @@
   display: flex;
   flex-flow: column;
 }
-.project-image {
+.image {
   grid-column: 6 / span 7;
 }
 
 /* components */
-.project__label {
+.label {
   color: var(--secondary-clr);
   font-size: 1em;
   letter-spacing: 1px;
 }
-.project__name {
+.title {
   margin: 0.6rem 0 2rem 0;
 }
-.archive .project__desc {
+.archive .desc {
   min-height: 12rem;
 }
-.project__tags {
+.tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.625em;
 }
-.recent .project__tags {
+.recent .tags {
   margin: 1.75rem 0 2.5rem 0;
 }
-.archive .project__tags {
+.archive .tags {
   margin-top: 1.75rem;
 }
-.tag-name {
+.tag_name {
   padding: 0.5em 1em;
   border-radius: var(--s-radius);
   background-color: var(--bg-dimed);
@@ -72,17 +72,17 @@
   font-size: 0.875em;
   white-space: nowrap;
 }
-.project__links {
+.links {
   display: flex;
   gap: 1rem;
 }
 
-.archive .project__links {
+.archive .links {
   justify-content: flex-end;
   margin-bottom: 2.5rem;
 }
 
-.project__arrow {
+.arrow {
   width: 1rem;
   height: 3px;
   position: absolute;
@@ -93,8 +93,8 @@
   transition: all 0.3s ease-in-out;
 }
 
-.project__arrow::before,
-.project__arrow::after {
+.arrow::before,
+.arrow::after {
   content: '';
   width: calc(2rem / 2);
   height: inherit;
@@ -105,37 +105,37 @@
   transform-origin: right center;
   transition: all 0.3s ease-in-out;
 }
-.project__arrow::before {
+.arrow::before {
   top: 0px;
   transform: rotate(0deg);
 }
-.project__arrow::after {
+.arrow::after {
   top: 0px;
   transform: rotate(0deg);
 }
 
-.archive:hover .project__arrow {
+.archive:hover .arrow {
   width: 2rem;
 }
-.archive:hover .project__arrow::before {
+.archive:hover .arrow::before {
   top: -1px;
   transform: rotate(-45deg);
 }
-.archive:hover .project__arrow::after {
+.archive:hover .arrow::after {
   top: 1px;
   transform: rotate(45deg);
 }
 
 /* Image property */
-.project-left .project-image {
+.left .image {
   grid-column: 8 / 14;
   grid-row: 1;
 }
-.project-right .project-image {
+.right .image {
   grid-column: 2 / 8;
   grid-row: 1;
 }
-.project-image {
+.image {
   aspect-ratio: 16 / 9;
   width: calc(100% - 1.75rem);
   position: relative;
@@ -145,7 +145,7 @@
   cursor: pointer;
 }
 
-.project-image::after {
+.image::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -158,32 +158,32 @@
   z-index: -1;
 }
 
-.project-image:hover::after {
+.image:hover::after {
   box-shadow: clamp(1rem, 2vw, 1.75rem) clamp(1rem, 2vw, 1.75rem) 0 0px
       var(--bg-clr),
     clamp(1rem, 2vw, 1.75rem) clamp(1rem, 2vw, 1.75rem) 0 3px
       var(--secondary-clr);
 }
 
-.project-image img {
+.image img {
   border-radius: var(--l-radius);
   transition: all 0.3s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
-  .project-right .recent,
-  .project-left .recent,
-  .project-right .project-image,
-  .project-left .project-image {
+  .right .recent,
+  .left .recent,
+  .right .image,
+  .left .image {
     grid-column: 1 / -1;
     grid-row: 1;
     position: relative;
   }
-  .project-right .recent,
-  .project-left .recent {
+  .right .recent,
+  .left .recent {
     z-index: 2;
   }
-  .project-image {
+  .image {
     left: 50%;
     width: 1000px;
     opacity: 0.3;
@@ -193,7 +193,7 @@
   .archive {
     max-width: 23.75rem;
   }
-  .project-image::after {
+  .image::after {
     display: none;
   }
 }

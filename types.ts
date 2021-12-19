@@ -135,6 +135,17 @@ export type StackOverflow<T> = {
   answers: T;
 };
 
+export interface ScrollButtonType {
+  visible: boolean;
+  move: string;
+  handler: (direction: string) => void;
+}
+
+export interface LinksType {
+  url: string;
+  cssClass: string;
+}
+
 export interface AnchorType {
   name: 'portfolio' | 'skills' | 'about';
   hash: '#2' | '#3' | '#4';

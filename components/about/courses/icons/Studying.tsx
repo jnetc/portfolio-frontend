@@ -1,7 +1,6 @@
-import { FC } from 'react';
 import style from '../course.module.css';
 
-export const Studying: FC = () => {
+export const Studying = () => {
   return (
     <div className={style.studying_icon}>
       <svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">

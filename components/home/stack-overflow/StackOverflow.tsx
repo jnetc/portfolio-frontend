@@ -1,4 +1,3 @@
-import { FC } from 'react';
 // Hook
 import { useContextStore } from '@Hooks/useContextStore';
 // Localization
@@ -6,7 +5,7 @@ import { stackoverflowContent } from '@Languages';
 // Style
 import style from './stack-overflow.module.css';
 
-const StackOverflow: FC = () => {
+const StackOverflow = () => {
   const { stackoverflow, lang } = useContextStore();
 
   if (!stackoverflow) return null;

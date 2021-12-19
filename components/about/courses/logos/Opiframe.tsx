@@ -1,7 +1,6 @@
-import { FC } from 'react';
 import style from '../course.module.css';
 
-export const Opiframe: FC = () => {
+export const Opiframe = () => {
   const cls2 = { fill: '#e22226' };
   const cls3 = { fill: '#b71e1e' };
   const cls4 = { fill: '#343035' };

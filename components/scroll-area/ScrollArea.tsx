@@ -3,6 +3,8 @@ import { FC, useState, useRef, useEffect, MouseEvent } from 'react';
 import { useResize } from '@Hooks/useResize';
 // Component
 import { ScrollButton } from './ScrollButton';
+// Style
+import style from './scroll-area.module.css';
 
 export const ScrollArea: FC = ({ children }) => {
   const { resize } = useResize();
@@ -56,10 +58,10 @@ export const ScrollArea: FC = ({ children }) => {
   };
 
   const moveTo = (direction: string) => {
-    if (direction === 'left') {
+    if (direction === `${style.to_left}`) {
       scrollOpt.position -= scrollOpt.step;
     }
-    if (direction === 'right') {
+    if (direction === `${style.to_right}`) {
       scrollOpt.position += scrollOpt.step;
     }
 
@@ -72,12 +74,12 @@ export const ScrollArea: FC = ({ children }) => {
   };
 
   return (
-    <section className="card-scrollarea grid-12">
-      <ScrollButton visible={leftBtn} move="left" handler={moveTo} />
-      <div className="card-wrapper" ref={ref} onScroll={scroll}>
+    <section className={`${style.module} grid-12`}>
+      <ScrollButton visible={leftBtn} move={style.to_left} handler={moveTo} />
+      <div className={style.wrapper} ref={ref} onScroll={scroll}>
         {children}
       </div>
-      <ScrollButton visible={rightBtn} move="right" handler={moveTo} />
+      <ScrollButton visible={rightBtn} move={style.to_right} handler={moveTo} />
     </section>
   );
 };

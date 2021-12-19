@@ -1,7 +1,6 @@
-import { FC } from 'react';
 // Components
-import { Title } from '@Portfolio/title/Title';
-import { Description } from '@Portfolio/description/Description';
+import { Title } from '@Portfolio/Title';
+import { Description } from '@Portfolio/Description';
 import { Frontend } from '@Skills/icons/FrontEnd';
 import { Fullstack } from '@Skills/icons/Fullstack';
 import { Illustation } from '@Skills/icons/Illustration';
@@ -13,7 +12,7 @@ import { SkillType } from '@Types';
 // Style
 import style from './skills.module.css';
 
-export const Skill: FC<{ data: SkillType }> = ({ data }) => {
+export const Skill = ({ data }: { data: SkillType }) => {
   return (
     <article className={style.skill}>
       {data.skill_id === 'frontend' && <Frontend />}

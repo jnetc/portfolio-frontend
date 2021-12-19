@@ -1,9 +1,9 @@
-import { FC, useRef } from 'react';
+import { useRef } from 'react';
 import Link from 'next/link';
 
 import { useContextStore } from '@Hooks/useContextStore';
 
-export const SwitchLang: FC = () => {
+export const SwitchLang = () => {
   const { lang } = useContextStore();
   const ref = useRef<HTMLDivElement>(null);
 

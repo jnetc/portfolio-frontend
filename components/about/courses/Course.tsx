@@ -1,4 +1,3 @@
-import { FC } from 'react';
 // Types
 import { CourseType } from '@Types';
 // Components
@@ -12,7 +11,7 @@ import Img from '@Img';
 // Style
 import style from './course.module.css';
 
-export const Course: FC<{ data: CourseType }> = ({ data }) => {
+export const Course = ({ data }: { data: CourseType }) => {
   const isUdemy = data.course_href.match('udemy');
 
   return (

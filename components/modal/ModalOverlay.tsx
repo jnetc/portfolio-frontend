@@ -1,16 +1,20 @@
-import { FC } from 'react';
 // Hook
 import { useContextMain } from '@Hooks/useContextMain';
+// Style
+import style from './modal.module.css';
 
-const ModalOverlay: FC = () => {
+const ModalOverlay = () => {
   const { modal } = useContextMain();
 
   return (
     <span
       className={
-        modal.show ? 'modal__overlay' : 'modal__overlay overlay-hidden'
+        modal.show
+          ? `${style.overlay}`
+          : `${style.overlay} ${style.overlay_hidden}`
       }
       data-modal={modal.name}
+      data-overlay="true"
     />
   );
 };

@@ -1,4 +1,4 @@
-import { FC, useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 // Component
 import { ModalInput } from './ModalInput';
 import { ModalTextarea } from './ModalTextarea';
@@ -10,8 +10,10 @@ import { useContextStore } from '@Hooks/useContextStore';
 import { ResponseType } from '@Types';
 // Language
 import { ErrorMessage } from '@Languages';
+// Style
+import emailform from './emailform.module.css';
 
-export const EmailForm: FC = () => {
+export const EmailForm = () => {
   const { setResponse, setNotify } = useContextMain();
   const { lang } = useContextStore();
   const [name, setName] = useState('');
@@ -64,7 +66,7 @@ export const EmailForm: FC = () => {
   );
 
   return (
-    <form className="emailform" method="post" onSubmit={SendMessage}>
+    <form className={emailform.module} method="post" onSubmit={SendMessage}>
       <ModalInput
         typeInput="text"
         nameInput="name"

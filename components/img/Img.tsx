@@ -1,11 +1,10 @@
-import { FC } from 'react';
 import Image from 'next/image';
 // Sanity
 import { urlFor } from '@Sanity/sanity';
 // Type
 import { ImageComponentType } from '@Types';
 
-const Img: FC<ImageComponentType> = ({ pathImage, objectFit, alt }) => {
+const Img = ({ pathImage, objectFit, alt }: ImageComponentType) => {
   const imageUrl = urlFor(pathImage).url() || '';
   return (
     <Image

@@ -1,16 +1,18 @@
-import { FC, ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 // Hook
 import { useContextStore } from '@Hooks/useContextStore';
 // Types
 import { TextareaFromType } from '@Types';
 // Localization
 import { modalTextarea } from '@Languages';
+// Style
+import emailform from './emailform.module.css';
 
-export const ModalTextarea: FC<TextareaFromType> = ({
+export const ModalTextarea = ({
   nameInput,
   handler,
   value,
-}) => {
+}: TextareaFromType) => {
   const { lang } = useContextStore();
 
   const getValue = (ev: ChangeEvent<HTMLTextAreaElement>) => {
@@ -18,9 +20,9 @@ export const ModalTextarea: FC<TextareaFromType> = ({
   };
 
   return (
-    <fieldset className="form__input">
+    <fieldset className={emailform.input_field}>
       <textarea
-        className="input-field"
+        className={emailform.input}
         name={nameInput}
         rows={3}
         required
@@ -30,7 +32,9 @@ export const ModalTextarea: FC<TextareaFromType> = ({
       />
       <label
         className={
-          value ? 'form__placeholder is-not-empty' : 'form__placeholder'
+          value
+            ? `${emailform.placeholder} ${emailform.not_empty}`
+            : `${emailform.placeholder}`
         }
       >
         {modalTextarea[nameInput][lang]}

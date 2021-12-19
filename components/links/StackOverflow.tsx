@@ -1,8 +1,6 @@
-import { FC } from 'react';
-export const StackOverflow: FC<{ url: string; cssClass: string }> = ({
-  url,
-  cssClass,
-}) => {
+import { LinksType } from '@Types';
+
+export const StackOverflow = ({ url, cssClass }: LinksType) => {
   const labelUrl = url.split('//')[1];
 
   return (

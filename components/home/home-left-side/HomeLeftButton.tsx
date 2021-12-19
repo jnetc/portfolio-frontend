@@ -1,4 +1,3 @@
-import { FC } from 'react';
 // Hook
 import { useContextStore } from '@Hooks/useContextStore';
 import { useContextMain } from '@Hooks/useContextMain';
@@ -9,11 +8,11 @@ import { HomeLeftBtnType } from '@Types';
 // Localization
 import { homeLeftButton } from '@Languages';
 
-export const HomeLeftButton: FC<HomeLeftBtnType> = ({
+export const HomeLeftButton = ({
   style,
   open,
   accessibility,
-}) => {
+}: HomeLeftBtnType) => {
   const { lang } = useContextStore();
   const { toggleModal } = useContextMain();
 

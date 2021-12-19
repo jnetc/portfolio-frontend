@@ -24,8 +24,7 @@ const MainContext = () => {
       if (el.dataset.modal === 'open-modal') {
         document.body.style.overflow = 'hidden';
       }
-
-      if (!el.classList.contains('modal__overlay')) return;
+      if (!el.dataset.overlay) return;
 
       animationOptimization(1000);
       toggleModal({ show: false, name: el.dataset.modal });

@@ -1,17 +1,19 @@
-import { FC, ChangeEvent, useCallback } from 'react';
+import { ChangeEvent, useCallback } from 'react';
 // Hook
 import { useContextStore } from '@Hooks/useContextStore';
 // Types
 import { InputFromType } from '@Types';
 // Localization
 import { modalInputs } from '@Languages';
+// Style
+import emailform from './emailform.module.css';
 
-export const ModalInput: FC<InputFromType> = ({
+export const ModalInput = ({
   typeInput,
   nameInput,
   handler,
   value,
-}) => {
+}: InputFromType) => {
   const { lang } = useContextStore();
 
   const getValue = useCallback(
@@ -22,9 +24,9 @@ export const ModalInput: FC<InputFromType> = ({
   );
 
   return (
-    <fieldset className="form__input">
+    <fieldset className={emailform.input_field}>
       <input
-        className="input-field"
+        className={emailform.input}
         type={typeInput}
         name={nameInput}
         inputMode={typeInput}
@@ -34,7 +36,9 @@ export const ModalInput: FC<InputFromType> = ({
       />
       <label
         className={
-          value ? 'form__placeholder is-not-empty' : 'form__placeholder'
+          value
+            ? `${emailform.placeholder} ${emailform.not_empty}`
+            : `${emailform.placeholder}`
         }
       >
         {modalInputs[nameInput][lang]}

@@ -1,10 +1,9 @@
-import { FC } from 'react';
 // Type
 import { FooterLink } from '@Types';
 // Style
 import style from './footer.module.css';
 
-export const FooterBaseLink: FC<FooterLink> = ({ link, name }) => (
+export const FooterBaseLink = ({ link, name }: FooterLink) => (
   <a
     className={style.desc_link}
     href={link}

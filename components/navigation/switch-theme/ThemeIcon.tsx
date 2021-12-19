@@ -1,6 +1,4 @@
-import { FC } from 'react';
-
-export const ThemeIcon: FC = () => {
+export const ThemeIcon = () => {
   return (
     <svg
       width="32"

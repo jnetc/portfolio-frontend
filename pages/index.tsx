@@ -1,5 +1,4 @@
-// import { useEffect, useRef } from 'react';
-import { NextPage, GetStaticProps } from 'next';
+import { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 
@@ -21,11 +20,11 @@ import { transformLocalization } from '@Helpers/functions';
 // Hook
 import { Store } from '@Hooks/useContextStore';
 
-const App: NextPage<{
-  main: Array<SanityData>;
-  locale: 'en' | 'ru';
-  stackoverflow: StackOverflow<string>;
-}> = ({ main, locale, stackoverflow }) => {
+const App: NextPage = ({
+  main,
+  locale,
+  stackoverflow,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const currentLangData = transformLocalization(locale, main);
 
   return (

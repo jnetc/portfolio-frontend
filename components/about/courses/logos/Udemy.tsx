@@ -1,7 +1,6 @@
-import { FC } from 'react';
 import style from '../course.module.css';
 
-export const Udemy: FC = () => {
+export const Udemy = () => {
   const cls1 = { fill: '#5f4394' };
   return (
     <div className={`${style.logo} ${style.udemy}`} title={`Udemy logo`}>

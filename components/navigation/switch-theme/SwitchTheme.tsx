@@ -1,4 +1,4 @@
-import { FC, useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { ThemeIcon } from './ThemeIcon';
 import { useContextMain } from '@Hooks/useContextMain';
 
@@ -8,7 +8,7 @@ const LIGHT_SCHEME = 'light';
 // Also should add additional lines of code to the _document.tsx.
 //!
 
-export const SwitchTheme: FC = () => {
+export const SwitchTheme = () => {
   const { switchTheme } = useContextMain();
   const [theme, setTheme] = useState<string | null>(DARK_SCHEME);
   let ref = useRef<HTMLDivElement>(null);

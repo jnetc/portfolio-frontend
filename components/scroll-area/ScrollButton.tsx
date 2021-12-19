@@ -1,23 +1,14 @@
-import { FC } from 'react';
+// Types
+import { ScrollButtonType } from '@Types';
+// Style
+import style from './scroll-area.module.css';
 
-export interface ScrollButtonType {
-  visible: boolean;
-  move: string;
-  handler: (direction: string) => void;
-}
-
-export const ScrollButton: FC<ScrollButtonType> = ({
-  visible,
-  move,
-  handler,
-}) => {
+export const ScrollButton = ({ visible, move, handler }: ScrollButtonType) => {
   const pressBntArrow = () => handler(move);
 
   return (
     <span
-      className={
-        visible ? `card-scroll-button to-${move}` : 'card-scroll-button'
-      }
+      className={visible ? `${style.button} ${move}` : `${style.button}`}
       role="button"
       tabIndex={0}
       title={`move to ${move}`}

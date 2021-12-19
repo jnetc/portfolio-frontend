@@ -1,0 +1,77 @@
+.module {
+  position: relative;
+}
+
+.wrapper {
+  min-width: 100%;
+  display: grid;
+  grid-auto-columns: 380px;
+  grid-auto-flow: column;
+  gap: 5.625rem;
+  padding: 0.2rem 3rem 3rem 0.2rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--card-extra-clr) var(--card-clr);
+  transition: all 0.3s ease-in-out;
+}
+
+.button {
+  width: 3rem;
+  height: 3rem;
+  display: none;
+  position: absolute;
+  top: 50%;
+  background-color: var(--primary-clr);
+  border-radius: 50%;
+  border: 2px solid var(--bg-dimed);
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  z-index: 100;
+}
+.button::after,
+.button::before {
+  content: '';
+  width: 12px;
+  height: 3px;
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  background-color: var(--bg-clr);
+  transform-origin: left center;
+  border-radius: 5px;
+}
+.button::before {
+  transform: translateY(-1px) rotate(45deg);
+}
+.button::after {
+  transform: translateY(1px) rotate(-45deg);
+}
+.button:hover {
+  border-color: var(--primary-clr);
+}
+.to_left {
+  display: block;
+  left: -1.5rem;
+  box-shadow: 0 1.5rem 1rem var(--card-shadow-clr);
+}
+.to_right {
+  display: block;
+  right: -1.5rem;
+  box-shadow: 0 -1.5rem 1rem var(--card-shadow-clr);
+  transform: translateY(-50%) rotate(180deg);
+}
+
+@media screen and (max-width: 768px) {
+  .module {
+    grid-column: 1 / -1;
+  }
+  .wrapper {
+    grid-auto-columns: clamp(19rem, 50vw, 23.75rem);
+    gap: 4rem;
+  }
+  .to_left,
+  .to_right {
+    display: none;
+  }
+}

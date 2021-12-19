@@ -1,4 +1,3 @@
-import { FC } from 'react';
 // Hook
 import { useContextStore } from '@Hooks/useContextStore';
 // Components
@@ -7,7 +6,7 @@ import { Skill } from '@Skills/Skill';
 // Style
 import style from './skills.module.css';
 
-const Skills: FC = () => {
+const Skills = () => {
   const { context } = useContextStore();
 
   const skills = context?.skills.map(s => {

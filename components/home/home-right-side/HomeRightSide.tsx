@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import dynamic from 'next/dynamic';
 // Dynamic components
 const StackOverflow = dynamic(
@@ -9,7 +8,7 @@ import { MainPhoto } from './MainPhoto';
 // Hook
 import { useContextMain } from '@Hooks/useContextMain';
 
-export const HomeRightSide: FC = () => {
+export const HomeRightSide = () => {
   const { theme } = useContextMain();
 
   return (

@@ -1,11 +1,10 @@
-import { FC } from 'react';
 // Components
 import { Course } from '@About/courses/Course';
 import { ScrollArea } from '@ScrollArea';
 // Hook
 import { useContextStore } from '@Hooks/useContextStore';
 
-export const Courses: FC = () => {
+export const Courses = () => {
   const { context } = useContextStore();
 
   const courses = context?.courses

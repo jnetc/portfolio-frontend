@@ -10,6 +10,7 @@
   border: 2px solid transparent;
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
   z-index: 500;
 }
 .module::before,

@@ -1,6 +1,4 @@
-import { FC } from 'react';
-
-export const Bulb: FC = () => {
+export const Bulb = () => {
   return (
     <svg
       viewBox="0 0 37 51"

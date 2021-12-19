@@ -1,21 +1,25 @@
-import { FC } from 'react';
 // Components
-import { Label } from '@Portfolio/label/Label';
-import { Title } from '@Portfolio/title/Title';
-import { Description } from '@Portfolio/description/Description';
+import { Label } from '@Portfolio/Label';
+import { Title } from '@Portfolio/Title';
+import { Description } from '@Portfolio/Description';
 import { Tags } from '@Portfolio/tags/Tags';
-import { Links } from '@Portfolio/links/Links';
+import { Links } from '@Portfolio/Links';
 import Img from '@Img';
 // Type
 import { ProjectType } from '@Types';
+// Style
+import style from './portfolio.module.css';
 
-export const RecentProject: FC<{ data: ProjectType; position: string }> = ({
+export const RecentProject = ({
   data,
   position,
+}: {
+  data: ProjectType;
+  position: string;
 }) => {
   return (
-    <section className={`grid mob-right-pad grid-12 project-${position}`}>
-      <article className="project recent">
+    <section className={`grid mob-right-pad grid-12 ${position}`}>
+      <article className={`${style.project} ${style.recent}`}>
         <Label label={data.label_recent} />
         <Title title={data.project_title} />
         <Description desc={data.description} />
@@ -23,7 +27,7 @@ export const RecentProject: FC<{ data: ProjectType; position: string }> = ({
         <Links github={data.github_href} page={data.page_href} />
       </article>
       <a
-        className="project-image"
+        className={style.image}
         href={data.page_href}
         title={data.page_href}
         target="_blank"

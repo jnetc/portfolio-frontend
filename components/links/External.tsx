@@ -1,9 +1,6 @@
-import { FC } from 'react';
+import { LinksType } from '@Types';
 
-export const ExternalLink: FC<{ url: string; cssClass: string }> = ({
-  url,
-  cssClass,
-}) => {
+export const ExternalLink = ({ url, cssClass }: LinksType) => {
   const labelUrl = url.split('//')[1];
 
   return (
