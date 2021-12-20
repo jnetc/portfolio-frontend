@@ -1,0 +1,45 @@
+.module {
+  max-width: 500px;
+  min-height: inherit;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin-inline: auto;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+.svg {
+  max-width: 450px;
+  margin-inline: auto;
+}
+.title {
+  color: var(--primary-clr);
+  font-size: clamp(1.7rem, 3vw, 3em);
+}
+.desc {
+  max-width: 500px;
+  color: var(--primary-clr-dimed);
+  /* font-size: 1.5em; */
+  font-size: clamp(1rem, 2vw, 1.5em);
+  line-height: 1.2;
+}
+
+.sub_txt {
+  margin-block-start: 4rem;
+  color: var(--placeholder);
+  font-size: 1em;
+  text-align: center;
+}
+
+.button {
+  max-width: 300px;
+  padding: 1.2rem 5rem;
+  margin-inline: auto;
+  font-size: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  .svg {
+    height: 300px;
+  }
+}

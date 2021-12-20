@@ -159,10 +159,7 @@
 }
 
 .image:hover::after {
-  box-shadow: clamp(1rem, 2vw, 1.75rem) clamp(1rem, 2vw, 1.75rem) 0 0px
-      var(--bg-clr),
-    clamp(1rem, 2vw, 1.75rem) clamp(1rem, 2vw, 1.75rem) 0 3px
-      var(--secondary-clr);
+  box-shadow: 0 0 0 0px var(--bg-clr), 0 0 0 3px var(--secondary-clr);
 }
 
 .image img {

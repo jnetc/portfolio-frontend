@@ -31,6 +31,7 @@
       "@ModalForEmployers": ["components/modal/modal-for-employers"],
       "@Navigation/*": ["./components/navigation/*"],
       "@Notice": ["./components/notice/Notice"],
+      "@PageError/*": ["./components/page-error/*"],
       "@Portfolio/*": ["./components/portfolio/*"],
       "@Sanity/*": ["./lib/*"],
       "@ScrollArea": ["./components/scroll-area/ScrollArea"],

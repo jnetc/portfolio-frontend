@@ -134,6 +134,7 @@ html[data-theme='dark'] {
 }
 
 html {
+  min-height: 100%;
   line-height: 1;
   font-size: 1em;
   scrollbar-width: thin;
@@ -150,9 +151,13 @@ html {
 
 body {
   max-width: 1920px;
+  min-height: 100vh;
   position: relative;
   padding: 2rem 2.5rem;
   margin: 0 auto;
+}
+#__next {
+  min-height: calc(100vh - 4rem);
 }
 
 a {
