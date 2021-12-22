@@ -16,8 +16,8 @@
   padding: 2rem 2rem 2rem;
   border-radius: var(--l-radius);
   background-color: var(--card-clr);
+  scroll-snap-align: start;
 }
-
 .archive::before {
   content: '';
   position: absolute;

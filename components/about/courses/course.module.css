@@ -6,6 +6,7 @@
   border-radius: var(--l-radius);
   background-color: var(--card-clr);
   padding-bottom: 3rem;
+  scroll-snap-align: start;
 }
 .logo,
 .link,

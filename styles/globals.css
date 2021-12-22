@@ -198,12 +198,6 @@ textarea {
   display: none;
 }
 
-/* .main:hover .notice {
-  opacity: 1;
-  clip-path: circle(15rem);
-  transform: translate3d(-50%, -10px, 0);
-} */
-
 .main {
   grid-auto-rows: auto;
   grid-template-rows:

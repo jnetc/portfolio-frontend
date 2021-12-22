@@ -13,6 +13,8 @@
   scrollbar-width: thin;
   scrollbar-color: var(--card-extra-clr) var(--card-clr);
   transition: all 0.3s ease-in-out;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 0.2rem;
 }
 
 .button {

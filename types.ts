@@ -38,6 +38,7 @@ export interface ProjectType {
   tags: Array<string>;
   page_href: string;
   github_href: string;
+  figma_href: string;
 }
 
 export interface SkillType {

@@ -24,7 +24,11 @@ export const RecentProject = ({
         <Title title={data.project_title} />
         <Description desc={data.description} />
         <Tags tags={data.tags} />
-        <Links github={data.github_href} page={data.page_href} />
+        <Links
+          github={data.github_href}
+          page={data.page_href}
+          figma={data.figma_href}
+        />
       </article>
       <a
         className={style.image}

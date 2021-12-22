@@ -1,4 +1,4 @@
-.link:hover :is(.external, .stackoverflow) {
+.link:hover :is(.external, .stackoverflow, .figma) {
   stroke: var(--secondary-clr);
 }
 .link:hover :is(.github, .linkedin) {
@@ -16,10 +16,12 @@
   stroke-width: 3px;
 }
 .external,
-.stackoverflow {
+.stackoverflow,
+.figma {
   stroke: var(--primary-clr);
 }
-.stackoverflow {
+.stackoverflow,
+.figma {
   stroke-width: 2px;
 }
 

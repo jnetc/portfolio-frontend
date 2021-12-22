@@ -13,7 +13,11 @@ export const Project = ({ data }: { data: ProjectType }) => {
   return (
     <article className={`${style.project} ${style.archive}`}>
       <span className={style.arrow} />
-      <Links github={data.github_href} page={data.page_href} />
+      <Links
+        github={data.github_href}
+        page={data.page_href}
+        figma={data.figma_href}
+      />
       <Label label={data.label} />
       <Title title={data.project_title} />
       <div className={style.desc}>
