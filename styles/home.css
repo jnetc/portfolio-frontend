@@ -136,55 +136,6 @@
 .home-contact-btn:hover::after {
   transform: translate(-50%, -50%);
 }
-/* .to-resume-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  color: var(--primary-clr);
-  font-size: clamp(1em, 1.5vw, 1.5em);
-  font-weight: bold;
-  white-space: nowrap;
-}
-.link-arrow-icon {
-  width: 16px;
-  height: 3px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  border-radius: 5px;
-  background-color: var(--primary-clr);
-  transition: all 0.3s ease-in-out;
-}
-
-.link-arrow-icon::before,
-.link-arrow-icon::after {
-  content: '';
-  height: inherit;
-  position: absolute;
-  top: -0.5px;
-  right: 1px;
-  border-radius: inherit;
-  background-color: inherit;
-  transform-origin: center right;
-  transition: inherit;
-}
-.link-arrow-icon::before {
-  width: 20px;
-  transform: rotate(-45deg);
-}
-.link-arrow-icon::after {
-  width: 15px;
-  transform: rotate(-90deg);
-}
-.to-resume-btn:hover .link-arrow-icon {
-  width: 100%;
-  background-color: var(--secondary-clr);
-}
-.to-resume-btn:hover .link-arrow-icon::before,
-.to-resume-btn:hover .link-arrow-icon::after {
-  width: 0;
-} */
 
 .home-right-side {
   height: 650px;

@@ -51,7 +51,7 @@ export const Notice = ({ data }: { data: ResumeNoticeType }) => {
         aria-label={labelUrl}
         title={labelUrl}
       >
-        {lang === 'en' ? 'read more' : 'подробнее'}
+        {lang === 'en' ? 'TE-Palvelu subsidy' : 'TE-Palvelu субсидии'}
       </a>
     </section>
   );

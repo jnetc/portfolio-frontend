@@ -107,10 +107,3 @@
     font-size: clamp(2em, 2vw, 4em);
   }
 }
-/* @media screen and (max-width: 560px) {
-  .links,
-  .button {
-    grid-column: 1;
-    grid-row: initial;
-  }
-} */

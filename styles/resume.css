@@ -1,7 +1,6 @@
 .resume {
   display: grid;
   grid-template-columns: 1fr minmax(280px, 380px);
-  /* grid-template-columns: 1fr minmax(280px, 440px); */
   grid-template-rows: 2rem repeat(5, min-content) auto;
   justify-content: center;
   gap: 5rem;

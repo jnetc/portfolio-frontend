@@ -74,7 +74,6 @@
 .link {
   width: 100%;
   padding: 1.2rem 5rem;
-  /* margin-top: 1rem; */
   justify-self: end;
 }
 @media screen and (max-width: 768px) {
