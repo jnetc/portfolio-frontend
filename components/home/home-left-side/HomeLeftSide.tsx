@@ -1,9 +1,10 @@
 // Components
 import { Bulb } from '@Home/bulb-icon/Bulb';
 import { HomeLeftButton } from '@Home/home-left-side/HomeLeftButton';
+import ButtonWithArraw from '@ButtonWithArrow';
 // Sanity Block text
 import { PortableText } from '@Sanity/sanity';
-// Hook
+// Context
 import { useContextStore } from '@Hooks/useContextStore';
 // Types
 import { SerializerBlock } from '@Types';
@@ -45,15 +46,12 @@ export const HomeLeftSide = () => {
         }}
       />
       <div className="home-btns">
-        <HomeLeftButton
-          style="primary"
-          open="emailform"
-          accessibility="contact me by email"
-        />
-        <HomeLeftButton
-          style="secondary"
-          open="employers"
-          accessibility="information for employers"
+        <HomeLeftButton name="contact" accessibility="contact me by email" />
+        <ButtonWithArraw
+          cssClass=""
+          route="resume"
+          name="resume"
+          accessibility="resume for employers"
         />
       </div>
     </header>

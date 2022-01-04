@@ -7,7 +7,7 @@ import { SwitchTheme } from '@Navigation/switch-theme/SwitchTheme';
 // Helpers
 import { animationOptimization } from '@Helpers/functions';
 // Localization
-import { navigationLinks } from '@Languages';
+import { navigationLinks } from '@Helpers/localization';
 
 const Navigation = () => {
   const [menu, setMenu] = useState(false);
@@ -35,7 +35,6 @@ const Navigation = () => {
         className={menu ? 'mob-nav open' : 'mob-nav'}
         aria-label="mobile navigation"
       >
-        <SwitchLang />
         {links}
         <button
           className="mob-nav__close-btn"

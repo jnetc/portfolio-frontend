@@ -16,13 +16,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="format-detection" content="telephone=no, address=no" />
         <meta name="generator" content="Next.js" />
         <meta name="google" content="notranslate" />
-        <meta name="googlebot" content="index, follow, noimageindex" />
         <meta
           name="keywords"
           content=" UI/UX Designer, UI Designer, Web Designer, UI Developer, FronEnd Developer, Fullstack Developer, React Developer, Javascript Developer, Javascript, Typescript, HTML5, CSS3"
         />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="robots" content="index, follow, noimageindex" />
         <meta
           name="theme-color"
           media="(prefers-color-scheme: light)"

@@ -1,13 +1,20 @@
 import { NavLink } from '@Types';
 
 export const homeLeftButton = {
-  primary: {
+  contact: {
     en: 'Get in touch',
     ru: 'Связаться',
   },
-  secondary: {
-    en: 'For employers',
-    ru: 'Нанимателям',
+};
+
+export const ButtonWithArrowName = {
+  resume: {
+    en: 'Resume',
+    ru: 'Резюме',
+  },
+  back: {
+    en: 'Back to home',
+    ru: 'На главную',
   },
 };
 
@@ -134,12 +141,45 @@ export const separators = {
   },
   about: {
     title: {
-      ru: 'Моё образование и сертификация',
-      en: 'My Education and Certification ',
+      ru: 'Мои онлайн курсы',
+      en: 'My online courses',
     },
     desc: {
-      ru: 'как разработчика',
-      en: 'as a developer',
+      ru: 'и сертификаты',
+      en: 'and certification',
     },
+  },
+};
+
+export const resumeSection = {
+  summary: {
+    ru: 'кратко',
+    en: 'summary',
+  },
+  experience: {
+    ru: 'опыт работы',
+    en: 'work experience',
+  },
+  education: {
+    ru: 'образование',
+    en: 'education',
+  },
+  skills: {
+    ru: 'навыки',
+    en: 'skills',
+  },
+  languages: {
+    ru: 'языки',
+    en: 'languages',
+  },
+  interests: {
+    ru: 'интересы',
+    en: 'interests',
+  },
+};
+export const resumeProfile = {
+  position: {
+    ru: 'UI Дизайнер / Разработчик',
+    en: 'UI Designer / Developer',
   },
 };

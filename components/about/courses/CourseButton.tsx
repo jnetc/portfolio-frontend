@@ -1,11 +1,11 @@
-import { useContextStore } from '@Hooks/useContextStore';
+import { useContextLanguage } from '@Hooks/useContextLanguage';
 // Localization
-import { courseButton } from '@Languages';
+import { courseButton } from '@Helpers/localization';
 // Style
 import style from './course.module.css';
 
 export const CourseButton = ({ href }: { href: string }) => {
-  const { lang } = useContextStore();
+  const { lang } = useContextLanguage();
   return (
     <a
       href={href}

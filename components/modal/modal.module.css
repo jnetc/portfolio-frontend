@@ -1,22 +1,3 @@
-.fill_white {
-  fill: var(--white);
-}
-.fill_beige_light {
-  fill: var(--beige-light);
-}
-.fill_beige {
-  fill: var(--beige);
-}
-.fill_beige_dark {
-  fill: var(--beige-dark);
-}
-.fill_grey_dark {
-  fill: var(--grey-dark);
-}
-.stroke_grey_dark {
-  stroke: var(--grey-dark);
-}
-
 .module {
   width: min(100vw, 480px);
   height: 100vh;

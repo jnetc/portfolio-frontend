@@ -26,7 +26,7 @@ const GoToTop = () => {
   const goToTop = () => window.scrollTo({ top: 0 });
 
   return (
-    <div
+    <span
       className={`${style.module} grid-12`}
       ref={refToTop}
       role="button"

@@ -11,6 +11,7 @@ const ModalOverlay = dynamic(() => import('@Modal/ModalOverlay'));
 import { animationOptimization } from '@Helpers/functions';
 // Hook
 import { Main, state } from '@Hooks/useContextMain';
+
 const MainContext = () => {
   const [theme, switchTheme] = useState(state.theme);
   const [modal, toggleModal] = useState(state.modal);
@@ -33,8 +34,13 @@ const MainContext = () => {
 
     return () => {
       document.addEventListener('click', () => {});
+      switchTheme('dark');
+      toggleModal({ show: false });
+      setNotify({ status: 'default' });
+      setResponse({ status: 'default' });
     };
   }, []);
+
   return (
     <Main.Provider
       value={{

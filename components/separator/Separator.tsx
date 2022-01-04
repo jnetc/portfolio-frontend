@@ -1,12 +1,12 @@
 // Context
-import { useContextStore } from '@Hooks/useContextStore';
+import { useContextLanguage } from '@Hooks/useContextLanguage';
 // Localization
-import { separators } from '@Languages';
+import { separators } from '@Helpers/localization';
 // Style
 import style from './separator.module.css';
 
 const Separator = ({ name }: { name: 'portfolio' | 'about' }) => {
-  const { lang } = useContextStore();
+  const { lang } = useContextLanguage();
 
   return (
     <>

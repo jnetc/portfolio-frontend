@@ -1,0 +1,28 @@
+.module {
+  display: flex;
+  gap: 2.5rem;
+  flex-flow: column;
+}
+
+.title {
+  width: max-content;
+  flex-basis: auto;
+  padding-block: 0.5rem;
+  border-radius: var(--s-radius);
+  color: var(--bg-clr);
+  font-size: 2em;
+  text-transform: capitalize;
+  background-color: var(--secondary-clr);
+}
+.articles {
+  display: flex;
+  gap: 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .right {
+    grid-column: 1;
+    grid-row: 4;
+    margin-block: 5rem;
+  }
+}

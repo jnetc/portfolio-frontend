@@ -1,68 +1,121 @@
 import {
-  TransformedData,
   MainType,
-  SanityData,
+  LandingPageData,
   ProjectType,
   SkillType,
   CourseType,
-  EmployerModalType,
+  ResumeArticleType,
+  ResumeDataFromSanity,
+  ResumeProfileType,
+  ResumeNoticeType,
 } from 'types';
+
+type ObjectKeys = 'main' | 'resume_profile' | 'resume_notice';
+type ArrayKeys =
+  | 'projects'
+  | 'skills'
+  | 'education'
+  | 'resume_education'
+  | 'resume_experience'
+  | 'resume_skills'
+  | 'resume_languages'
+  | 'resume_interests';
 
 export const transformLocalization = (
   lang: string,
-  arr: Array<SanityData>
-): TransformedData => {
-  const data = {} as MainType;
+  arr: Array<LandingPageData>
+) => {
+  const main = {} as MainType;
   const projects: Array<ProjectType> = [];
   const skills: Array<SkillType> = [];
-  const courses: Array<CourseType> = [];
-  const modal = {} as EmployerModalType;
+  const education: Array<CourseType> = [];
 
-  for (const type of arr) {
-    // Generate the main content object
-    if (type._type === 'main') {
-      const main: MainType = type;
+  const arrays = {
+    projects,
+    skills,
+    education,
+  };
+  const objects = {
+    main,
+  };
 
-      const result = transformData(main, lang);
-      Object.assign(data, { ...result });
-    }
-    // Generate an array of the project objects
-    if (type._type === 'projects') {
-      const project: ProjectType = type;
+  arrays.projects = mergeArrayData(arr, 'projects', lang);
+  arrays.skills = mergeArrayData(arr, 'skills', lang);
+  arrays.education = mergeArrayData(arr, 'education', lang);
 
-      const result = transformData(project, lang);
-      projects.push(result);
-    }
-    // Generate an array of the skills objects
-    if (type._type === 'skills') {
-      const skill: SkillType = type;
+  objects.main = mergeObjectData(arr, 'main', lang);
 
-      const result = transformData(skill, lang);
-      skills.push(result);
-    }
-    // Generate an array of the skills objects
-    if (type._type === 'education') {
-      const course: CourseType = type;
+  return { ...objects.main, ...arrays };
+};
 
-      const result = transformData(course, lang);
-      courses.push(result);
-    }
-    // Generate the main content object
-    if (type._type === 'modal') {
-      const modalData: MainType = type;
+export type LandingPageContext = ReturnType<typeof transformLocalization>;
 
-      const result = transformData(modalData, lang);
-      Object.assign(modal, { ...result });
+export const transformLocalizationResume = (
+  lang: string,
+  arr: Array<ResumeDataFromSanity>
+) => {
+  const resume_profile = {} as ResumeProfileType;
+  const resume_notice = {} as ResumeNoticeType;
+  const resume_experience: Array<ResumeArticleType> = [];
+  const resume_education: Array<ResumeArticleType> = [];
+  const resume_skills: Array<ResumeArticleType> = [];
+  const resume_languages: Array<ResumeArticleType> = [];
+  const resume_interests: Array<ResumeArticleType> = [];
+
+  const arrays = {
+    resume_experience,
+    resume_education,
+    resume_skills,
+    resume_languages,
+    resume_interests,
+  };
+  const objects = {
+    resume_profile,
+    resume_notice,
+  };
+
+  arrays.resume_experience = mergeArrayData(arr, 'resume_experience', lang);
+  arrays.resume_education = mergeArrayData(arr, 'resume_education', lang);
+  arrays.resume_skills = mergeArrayData(arr, 'resume_skills', lang);
+  arrays.resume_languages = mergeArrayData(arr, 'resume_languages', lang);
+  arrays.resume_interests = mergeArrayData(arr, 'resume_interests', lang);
+
+  objects.resume_profile = mergeObjectData(arr, 'resume_profile', lang);
+  objects.resume_notice = mergeObjectData(arr, 'resume_notice', lang);
+
+  return { ...objects, ...arrays };
+};
+
+const mergeObjectData = <T>(
+  sanityStaticProps: Array<ResumeDataFromSanity | LandingPageData>,
+  key: ObjectKeys,
+  lang: string
+) => {
+  const obj = {} as T;
+
+  for (const type of sanityStaticProps) {
+    if (type._type === `${key}`) {
+      Object.assign(obj, { ...transformData(type, lang) });
     }
   }
+  return obj;
+};
 
-  return Object.assign(
-    data,
-    { projects },
-    { skills },
-    { courses },
-    { modal }
-  ) as TransformedData;
+const mergeArrayData = <T>(
+  sanityStaticProps: Array<ResumeDataFromSanity | LandingPageData>,
+  key: ArrayKeys,
+  lang: string
+) => {
+  const arr: Array<T> = [];
+
+  for (const type of sanityStaticProps) {
+    if (type._type === `${key}`) {
+      // convert the expression to 'unknown' first.
+      const result = transformData(type, lang) as unknown;
+      arr.push(result as T);
+    }
+  }
+  return arr;
 };
 
 const transformData = <T>(currObj: T, lang: string): T => {
@@ -94,6 +147,7 @@ export const animationOptimization = (duration: number) => {
 
   const step = (timestamp: number) => {
     if (!start) start = timestamp;
+
     const progress = timestamp - start;
     if (progress < duration) {
       window.requestAnimationFrame(step);

@@ -5,17 +5,17 @@ import { ModalTextarea } from './ModalTextarea';
 import { ModalSubmitBtn } from './ModalSubmitBtn';
 // Hook
 import { useContextMain } from '@Hooks/useContextMain';
-import { useContextStore } from '@Hooks/useContextStore';
+import { useContextLanguage } from '@Hooks/useContextLanguage';
 // Type
 import { ResponseType } from '@Types';
-// Language
-import { ErrorMessage } from '@Languages';
+// Localization
+import { ErrorMessage } from '@Helpers/localization';
 // Style
 import emailform from './emailform.module.css';
 
 export const EmailForm = () => {
   const { setResponse, setNotify } = useContextMain();
-  const { lang } = useContextStore();
+  const { lang } = useContextLanguage();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');

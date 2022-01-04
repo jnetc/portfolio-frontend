@@ -99,7 +99,7 @@
   margin-top: 2rem;
   padding: 0 1rem;
 }
-.home-emailform-btn {
+.home-contact-btn {
   position: relative;
   padding: 13px min(30px, 40px);
   color: var(--primary-clr);
@@ -108,20 +108,20 @@
   line-height: 1;
   box-shadow: inset 0px 0px 0 3px var(--secondary-clr);
 }
-.home-emailform-btn::before,
-.home-emailform-btn::after {
+.home-contact-btn::before,
+.home-contact-btn::after {
   position: absolute;
   border-radius: inherit;
   transition: all 0.3s ease-in-out;
 }
-.home-emailform-btn::before {
+.home-contact-btn::before {
   content: '';
   inset: 0;
   background-color: var(--secondary-clr);
   transform: translate(-15px, -15px);
   z-index: 1;
 }
-.home-emailform-btn::after {
+.home-contact-btn::after {
   content: attr(title);
   top: 50%;
   left: 50%;
@@ -130,13 +130,13 @@
   transform: translate(calc(-15px - 50%), calc(-15px - 50%));
   z-index: 2;
 }
-.home-emailform-btn:hover::before {
+.home-contact-btn:hover::before {
   transform: translate(0, 0);
 }
-.home-emailform-btn:hover::after {
+.home-contact-btn:hover::after {
   transform: translate(-50%, -50%);
 }
-.home-employers-btn {
+/* .to-resume-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,14 +177,14 @@
   width: 15px;
   transform: rotate(-90deg);
 }
-.home-employers-btn:hover .link-arrow-icon {
+.to-resume-btn:hover .link-arrow-icon {
   width: 100%;
   background-color: var(--secondary-clr);
 }
-.home-employers-btn:hover .link-arrow-icon::before,
-.home-employers-btn:hover .link-arrow-icon::after {
+.to-resume-btn:hover .link-arrow-icon::before,
+.to-resume-btn:hover .link-arrow-icon::after {
   width: 0;
-}
+} */
 
 .home-right-side {
   height: 650px;
@@ -250,11 +250,11 @@ html[data-theme='dark'] .pic-show {
     gap: clamp(1rem, 6.5vw, 50px);
     padding: 0 0 0 1rem;
   }
-  .home-emailform-btn {
+  .home-contact-btn {
     padding: 13px min(25px, 30px);
     font-size: clamp(0.9em, 1.5vw, 1.2em);
   }
-  .home-employers-btn {
+  .home-resume-btn {
     font-size: clamp(0.9em, 1.5vw, 1.2em);
   }
 

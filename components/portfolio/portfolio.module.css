@@ -67,7 +67,10 @@
 .tag_name {
   padding: 0.5em 1em;
   border-radius: var(--s-radius);
-  background-color: var(--bg-dimed);
+  /* background-color: var(--bg-dimed); */
+  background-color: hsl(
+    var(--secondary-h) var(--secondary-s) var(--secondary-l) / 0.04
+  );
   color: var(--secondary-clr);
   font-size: 0.875em;
   white-space: nowrap;

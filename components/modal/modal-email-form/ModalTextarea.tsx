@@ -1,10 +1,10 @@
 import { ChangeEvent } from 'react';
-// Hook
-import { useContextStore } from '@Hooks/useContextStore';
+// Context
+import { useContextLanguage } from '@Hooks/useContextLanguage';
 // Types
 import { TextareaFromType } from '@Types';
 // Localization
-import { modalTextarea } from '@Languages';
+import { modalTextarea } from '@Helpers/localization';
 // Style
 import emailform from './emailform.module.css';
 
@@ -13,7 +13,7 @@ export const ModalTextarea = ({
   handler,
   value,
 }: TextareaFromType) => {
-  const { lang } = useContextStore();
+  const { lang } = useContextLanguage();
 
   const getValue = (ev: ChangeEvent<HTMLTextAreaElement>) => {
     handler(ev.currentTarget.value);

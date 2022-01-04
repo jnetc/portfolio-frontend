@@ -1,12 +1,12 @@
 import { useCallback } from 'react';
-// Hook
-import { useContextStore } from '@Hooks/useContextStore';
+// Context
+import { useContextLanguage } from '@Hooks/useContextLanguage';
 import { useContextMain } from '@Hooks/useContextMain';
 // Style
 import style from '@Modal/modal.module.css';
 
 export const ModalSubmitBtn = () => {
-  const { lang } = useContextStore();
+  const { lang } = useContextLanguage();
   const { response } = useContextMain();
   const submitButton = useCallback(
     (lang: string) => {

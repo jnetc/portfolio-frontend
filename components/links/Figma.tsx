@@ -1,8 +1,6 @@
 import { LinksType } from '@Types';
 
 export const FigmaLink = ({ url, cssClass }: LinksType) => {
-  const labelUrl = url.split('//')[1];
-
   return (
     <a
       href={url}
@@ -10,8 +8,8 @@ export const FigmaLink = ({ url, cssClass }: LinksType) => {
       role="button"
       target="_blank"
       rel="noreferrer"
-      aria-label={`link to ${labelUrl}`}
-      title={`${labelUrl}`}
+      aria-label="link to Figma template"
+      title="link to Figma template"
     >
       <svg fill="none" viewBox="0 0 18 26" className="link__svg figma">
         <rect

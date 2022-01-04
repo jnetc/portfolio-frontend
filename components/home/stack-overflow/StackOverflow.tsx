@@ -1,12 +1,14 @@
-// Hook
+// Context
 import { useContextStore } from '@Hooks/useContextStore';
+import { useContextLanguage } from '@Hooks/useContextLanguage';
 // Localization
-import { stackoverflowContent } from '@Languages';
+import { stackoverflowContent } from '@Helpers/localization';
 // Style
 import style from './stack-overflow.module.css';
 
 const StackOverflow = () => {
-  const { stackoverflow, lang } = useContextStore();
+  const { stackoverflow } = useContextStore();
+  const { lang } = useContextLanguage();
 
   if (!stackoverflow) return null;
 

@@ -1,8 +1,6 @@
 import { LinksType } from '@Types';
 
 export const GitHubLink = ({ url, cssClass }: LinksType) => {
-  const labelUrl = url.split('//')[1];
-
   return (
     <a
       href={url}
@@ -10,8 +8,8 @@ export const GitHubLink = ({ url, cssClass }: LinksType) => {
       role="button"
       target="_blank"
       rel="noreferrer"
-      aria-label={`link to github repository, ${labelUrl}`}
-      title={`repository ${labelUrl} `}
+      aria-label="link to github repository"
+      title="link to github repository"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

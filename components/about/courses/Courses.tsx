@@ -7,7 +7,7 @@ import { useContextStore } from '@Hooks/useContextStore';
 export const Courses = () => {
   const { context } = useContextStore();
 
-  const courses = context?.courses
+  const courses = context?.education
     .map(crs => <Course key={crs._id} data={crs} />)
     .sort((a, b) => {
       let dateA = Date.parse(a.props.data.course_completed);

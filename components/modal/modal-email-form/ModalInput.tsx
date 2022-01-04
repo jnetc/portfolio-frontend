@@ -1,10 +1,10 @@
 import { ChangeEvent, useCallback } from 'react';
-// Hook
-import { useContextStore } from '@Hooks/useContextStore';
+// Context
+import { useContextLanguage } from '@Hooks/useContextLanguage';
 // Types
 import { InputFromType } from '@Types';
 // Localization
-import { modalInputs } from '@Languages';
+import { modalInputs } from '@Helpers/localization';
 // Style
 import emailform from './emailform.module.css';
 
@@ -14,7 +14,7 @@ export const ModalInput = ({
   handler,
   value,
 }: InputFromType) => {
-  const { lang } = useContextStore();
+  const { lang } = useContextLanguage();
 
   const getValue = useCallback(
     (ev: ChangeEvent<HTMLInputElement>) => {

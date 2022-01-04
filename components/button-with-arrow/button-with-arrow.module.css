@@ -1,0 +1,51 @@
+.module {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 13px;
+  position: relative;
+  color: var(--primary-clr);
+  font-size: clamp(1em, 1.5vw, 1.5em);
+  font-weight: bold;
+  white-space: nowrap;
+}
+.arrow {
+  width: 16px;
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 5px;
+  background-color: var(--primary-clr);
+  transition: all 0.3s ease-in-out;
+}
+
+.arrow::before,
+.arrow::after {
+  content: '';
+  height: inherit;
+  position: absolute;
+  top: -0.5px;
+  right: 1px;
+  border-radius: inherit;
+  background-color: inherit;
+  transform-origin: center right;
+  transition: inherit;
+}
+.arrow::before {
+  width: 20px;
+  transform: rotate(-45deg);
+}
+.arrow::after {
+  width: 15px;
+  transform: rotate(-90deg);
+}
+.module:hover .arrow {
+  width: 100%;
+  background-color: var(--secondary-clr);
+}
+.module:hover .arrow::before,
+.module:hover .arrow::after {
+  width: 0;
+}

@@ -5,6 +5,9 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
+// Helpers
+
+import { setInitialTheme } from '@Helpers/critical';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -20,16 +23,8 @@ class MyDocument extends Document {
     // Set the resulting value to the HTML tag.
     // Inject before the page starts rendering.
     // return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    // also check the folder helpers/critical.ts !
     //!
-    const setInitialTheme = `
-      function getUserPreference() {
-        if(window.localStorage.getItem('theme')) {
-          return window.localStorage.getItem('theme')
-        }
-        return 'dark'
-      }
-      document.documentElement.dataset.theme = getUserPreference();
-    `;
 
     return (
       <Html>

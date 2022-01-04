@@ -15,8 +15,8 @@ export const Links = ({
   figma: string;
 }) => (
   <div className={style.links}>
-    {github && <GitHubLink url={github} cssClass="project__link" />}
-    {page && <ExternalLink url={page} cssClass="project__link" />}
-    {figma && <FigmaLink url={figma} cssClass="project__link" />}
+    {github && <GitHubLink url={github} />}
+    {page && <ExternalLink url={page} />}
+    {figma && <FigmaLink url={figma} />}
   </div>
 );

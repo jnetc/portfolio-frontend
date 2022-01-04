@@ -1,19 +1,19 @@
-// Hook
-import { useContextStore } from '@Hooks/useContextStore';
+// Context
+import { useContextLanguage } from '@Hooks/useContextLanguage';
 import { useContextMain } from '@Hooks/useContextMain';
 // Helper
 import { animationOptimization } from '@Helpers/functions';
-// Type
-import { HomeLeftBtnType } from '@Types';
 // Localization
-import { homeLeftButton } from '@Languages';
+import { homeLeftButton } from '@Helpers/localization';
 
 export const HomeLeftButton = ({
-  style,
-  open,
+  name,
   accessibility,
-}: HomeLeftBtnType) => {
-  const { lang } = useContextStore();
+}: {
+  name: 'contact';
+  accessibility: string;
+}) => {
+  const { lang } = useContextLanguage();
   const { toggleModal } = useContextMain();
 
   const openModal = (name: string) => {
@@ -24,14 +24,13 @@ export const HomeLeftButton = ({
   };
   return (
     <button
-      className={`home-${open}-btn`}
-      title={homeLeftButton[style][lang]}
+      className={`home-${name}-btn`}
+      title={homeLeftButton[name][lang]}
       data-modal="open-modal"
       aria-label={accessibility}
-      onClick={openModal(open)}
+      onClick={openModal(name)}
     >
-      {homeLeftButton[style][lang]}
-      {style === 'secondary' && <span className="link-arrow-icon" />}
+      {homeLeftButton[name][lang]}
     </button>
   );
 };

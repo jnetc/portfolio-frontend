@@ -1,3 +1,4 @@
+import { LandingPageContext } from '@Helpers/functions';
 interface SanityKeyType {
   _key: string;
   _type: string;
@@ -57,28 +58,65 @@ export interface CourseType {
   certificate_href: string;
 }
 
-export interface EmployerModalType {
+export type LandingPageData = MainType &
+  ProjectType &
+  SkillType &
+  CourseType &
+  Query;
+
+export type ResumeDataFromSanity = Query &
+  ResumeProfileType &
+  ResumeNoticeType &
+  ResumeArticleType;
+
+export interface ResumeData {
+  profile: ResumeProfileType;
+  experience: Array<ResumeArticleType>;
+  education: Array<ResumeArticleType>;
+  skills: Array<ResumeArticleType>;
+  languages: Array<ResumeArticleType>;
+  interests: Array<ResumeArticleType>;
+}
+export interface ResumeProfileType {
+  _id: string;
+  name: string;
+  professional: string;
+  summary: Array<string>;
+  github_href: string;
+  stackoverflow_href: string;
+  email: string;
+}
+export type ResumeLinksType = Pick<
+  ResumeProfileType,
+  'email' | 'github_href' | 'stackoverflow_href'
+>;
+
+export interface ResumeNoticeType {
+  _id: string;
   active: boolean;
   title: string;
   subtitle: string;
   info: Array<string>;
   subsidy: string;
   extra_info: string;
-  modal_href: string;
+  external_href: string;
 }
 
-export type SanityData = MainType &
-  ProjectType &
-  SkillType &
-  CourseType &
-  EmployerModalType &
-  Query;
+export interface ResumeArticleType {
+  _id: string;
+  title?: string;
+  date?: string;
+  place?: string;
+  description?: string;
+  tags?: Array<string>;
+  link?: string;
+  order?: number;
+}
 
-export interface TransformedData extends MainType {
-  projects: Array<ProjectType>;
-  skills: Array<SkillType>;
-  courses: Array<CourseType>;
-  modal: EmployerModalType;
+export interface ArticleType {
+  data: ResumeArticleType;
+  positionLeft?: boolean;
+  cssClass: string;
 }
 
 export interface MainPhotoType {
@@ -104,12 +142,6 @@ export interface TextareaFromType
   nameInput: 'message';
 }
 
-export interface ContextStore {
-  context: TransformedData | null;
-  lang: 'en' | 'ru';
-  stackoverflow: StackOverflow<string> | null;
-}
-
 export interface ModalType {
   show: boolean;
   name?: string;
@@ -117,6 +149,15 @@ export interface ModalType {
 export interface Notice {
   status: Status;
   message?: string;
+}
+
+// CONTEXT'S
+export interface ContextStore {
+  context: LandingPageContext | null;
+  stackoverflow?: StackOverflow<string>;
+}
+export interface ContextLanguage {
+  lang: 'en' | 'ru';
 }
 
 export interface ContextMain {
@@ -144,7 +185,7 @@ export interface ScrollButtonType {
 
 export interface LinksType {
   url: string;
-  cssClass: string;
+  cssClass?: string;
 }
 
 export interface AnchorType {
@@ -177,10 +218,15 @@ export interface SerializerLink extends SanityKeyType {
   markKey: string;
 }
 
-export interface HomeLeftBtnType {
-  style: 'primary' | 'secondary';
-  open: string;
+export interface SerializerContainer {
+  children: Array<string>;
+}
+
+export interface ButtonWithArrawType {
+  cssClass?: string;
   accessibility: string;
+  route?: '' | 'resume';
+  name: 'back' | 'resume';
 }
 
 export interface NavLink {

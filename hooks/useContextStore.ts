@@ -5,14 +5,7 @@ import { ContextStore } from '@Types';
 // Create context
 export const storeState: ContextStore = {
   context: null,
-  lang: 'en',
-  // theme: 'dark',
-  // switchTheme: theme => theme,
-  stackoverflow: null,
-  // modal: { show: false },
-  // toggleModal: show => show,
-  // notice: { status: 'default' },
-  // setNotify: notice => notice,
+  stackoverflow: undefined,
 };
 
 export const Store = createContext(storeState);

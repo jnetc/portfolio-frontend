@@ -17,6 +17,7 @@
     "paths": {
       "@About/*": ["./components/about/*"],
       "@Anchor": ["./components/anchor/Anchor"],
+      "@ButtonWithArrow": ["./components/button-with-arrow/ButtonWithArrow"],
       "@Footer": ["./components/footer/Footer"],
       "@GoToTopButton": ["components/go-to-top-button/GoToTopButton"],
       "@Helpers/*": ["./helpers/*"],
@@ -24,7 +25,6 @@
       "@Hooks/*": ["./hooks/*"],
       "@Img": ["./components/img/Img"],
       "@Links/*": ["./components/links/*"],
-      "@Languages": ["./languages"],
       "@MainContext": ["./components/main-context/MainContext"],
       "@Modal/*": ["./components/modal/*"],
       "@ModalMailform": ["components/modal/modal-email-form"],
@@ -33,6 +33,7 @@
       "@Notice": ["./components/notice/Notice"],
       "@PageError/*": ["./components/page-error/*"],
       "@Portfolio/*": ["./components/portfolio/*"],
+      "@Resume/*": ["./components/resume/*"],
       "@Sanity/*": ["./lib/*"],
       "@ScrollArea": ["./components/scroll-area/ScrollArea"],
       "@Separator": ["./components/separator/Separator"],

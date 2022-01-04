@@ -1,11 +1,16 @@
 import { useRef } from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { LangButton } from './LangButton';
 
-import { useContextStore } from '@Hooks/useContextStore';
-
-export const SwitchLang = () => {
-  const { lang } = useContextStore();
+export const SwitchLang = ({
+  path = '',
+  posCss = '',
+}: {
+  path?: string;
+  posCss?: string;
+}) => {
   const ref = useRef<HTMLDivElement>(null);
+  const { locale } = useRouter();
 
   setTimeout(() => {
     if (!ref.current) return;
@@ -14,19 +19,19 @@ export const SwitchLang = () => {
 
   return (
     <div
-      className={lang === 'en' ? 'lang-switcher en' : 'lang-switcher ru'}
+      className={
+        locale === 'en'
+          ? `${posCss} lang-switcher en`
+          : `${posCss} lang-switcher ru`
+      }
       title={
-        lang === 'en'
+        locale === 'en'
           ? 'The English version of the site is selected'
           : 'The Russian version of the site is selected'
       }
     >
-      <Link href="/" locale="en">
-        <a className={lang === 'en' ? 'active' : undefined}>EN</a>
-      </Link>
-      <Link href="/ru" locale="ru">
-        <a className={lang === 'ru' ? 'active' : undefined}>RU</a>
-      </Link>
+      <LangButton path={path} lang="en" />
+      <LangButton path={path} lang="ru" />
       <div className="switch" ref={ref}></div>
     </div>
   );

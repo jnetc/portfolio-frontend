@@ -2,16 +2,16 @@
 import { EmailFormSVG } from './EmailFormSVG';
 import { EmailForm } from './EmailForm';
 // Hook
-import { useContextStore } from '@Hooks/useContextStore';
+import { useContextLanguage } from '@Hooks/useContextLanguage';
 import { useContextMain } from '@Hooks/useContextMain';
 // Localization
-import { modalContent } from '@Languages';
+import { modalContent } from '@Helpers/localization';
 // Style
 import style from '@Modal/modal.module.css';
 import emailform from './emailform.module.css';
 
 const ModalEmailForm = () => {
-  const { lang } = useContextStore();
+  const { lang } = useContextLanguage();
   const { response } = useContextMain();
 
   return (

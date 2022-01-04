@@ -1,11 +1,11 @@
 import Link from 'next/link';
 // Context
-import { useContextStore } from '@Hooks/useContextStore';
+import { useContextLanguage } from '@Hooks/useContextLanguage';
 // Type
 import { LinkNameType } from '@Types';
 
 export const LinkName = ({ link, handler }: LinkNameType) => {
-  const { lang } = useContextStore();
+  const { lang } = useContextLanguage();
   const closeMenu = () => handler(false);
 
   return (

@@ -1,0 +1,68 @@
+.resume {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 380px);
+  /* grid-template-columns: 1fr minmax(280px, 440px); */
+  grid-template-rows: 2rem repeat(5, min-content) auto;
+  justify-content: center;
+  gap: 5rem;
+}
+.resume__header {
+  padding: 0;
+}
+.resume__pos-lang {
+  margin-inline-start: auto;
+}
+
+.resume__activity-block {
+  grid-column: 1;
+  grid-row: 3 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.resume :is(.title__education, .title__experience, .title__summary) {
+  padding-inline: 2rem;
+}
+.resume :is(.article__education, .article__experience, .article__summary) {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;
+}
+
+.resume :is(.section__skills, .section__languages, .section__interests) {
+  flex-flow: column;
+  grid-column: 2;
+}
+.resume :is(.title__skills, .title__languages, .title__interests) {
+  padding-inline: 1rem;
+}
+.resume :is(.article__skills, .article__languages, .article__interests) {
+  display: flex;
+  flex-flow: column;
+}
+.article__skills {
+  gap: 2rem;
+}
+.article__languages {
+  gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .resume {
+    grid-template-columns: 1fr;
+    padding-inline: 1rem;
+    gap: 10rem;
+  }
+  .resume__activity-block {
+    grid-row-start: 4;
+    gap: 10rem;
+  }
+  .resume :is(.article__education, .article__experience) {
+    grid-template-columns: 1fr;
+  }
+  .resume :is(.section__skills, .section__languages, .section__interests) {
+    grid-column: 1;
+  }
+}

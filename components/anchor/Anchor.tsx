@@ -1,14 +1,14 @@
 // Context
-import { useContextStore } from '@Hooks/useContextStore';
+import { useContextLanguage } from '@Hooks/useContextLanguage';
 // Localization
-import { anchor } from '@Languages';
+import { anchor } from '@Helpers/localization';
 // Types
 import { AnchorType } from '@Types';
 // Style
 import style from './anchor.module.css';
 
 const Anchor = ({ name, hash }: AnchorType) => {
-  const { lang } = useContextStore();
+  const { lang } = useContextLanguage();
 
   return (
     <>

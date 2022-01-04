@@ -14,11 +14,13 @@ const About = dynamic(() => import('@About/About'));
 const Footer = dynamic(() => import('@Footer'));
 const GoToTopButton = dynamic(() => import('@GoToTopButton'));
 // Types
-import { StackOverflow, SanityData } from '@Types';
+import { StackOverflow, LandingPageData } from '@Types';
 // Helpers
 import { transformLocalization } from '@Helpers/functions';
-// Hook
+import { criticalCSS } from '@Helpers/critical';
+// Context
 import { Store } from '@Hooks/useContextStore';
+import { Language } from '@Hooks/useContextLanguage';
 
 const App: NextPage = ({
   main,
@@ -28,48 +30,27 @@ const App: NextPage = ({
   const currentLangData = transformLocalization(locale, main);
 
   return (
-    <Store.Provider
-      value={{
-        context: currentLangData,
-        lang: locale,
-        stackoverflow,
-      }}
-    >
-      <>
-        <Head>
-          <meta name="description" content={currentLangData?.meta_desc} />
-          <title>{currentLangData?.meta_title}</title>
-          <style
-            id="___critical-css"
-            dangerouslySetInnerHTML={{
-              __html: `
-  html[data-theme='light'] {
-    --bg-clr: hsl(39, 43%, 90%);
-    --primary-clr: hsl(252, 10%, 10%);
-  }
-  html[data-theme='dark'] {
-    --bg-clr: hsl(252, 10%, 10%);
-    --primary-clr: hsl(39, 43%, 90%);
-  }
-  html {
-    background-color: var(--bg-clr);
-    color: var(--primary-clr);
-    transition: all .5s ease;
-  }
-              `,
-            }}
-          />
-        </Head>
+    <Store.Provider value={{ context: currentLangData, stackoverflow }}>
+      <Language.Provider value={{ lang: locale }}>
+        <>
+          <Head>
+            <style dangerouslySetInnerHTML={{ __html: criticalCSS }} />
+            <meta name="googlebot" content="index, follow, noimageindex" />
+            <meta name="robots" content="index, follow, noimageindex" />
+            <meta name="description" content={currentLangData.meta_desc} />
+            <title>{currentLangData.meta_title}</title>
+          </Head>
 
-        <main className="main grid">
-          <MainContext />
-          <Portfolio />
-          <Skills />
-          <About />
-          <Footer />
-          <GoToTopButton />
-        </main>
-      </>
+          <main className="main grid">
+            <MainContext />
+            <Portfolio />
+            <Skills />
+            <About />
+            <Footer />
+            <GoToTopButton />
+          </main>
+        </>
+      </Language.Provider>
     </Store.Provider>
   );
 };
@@ -82,9 +63,11 @@ export const getStaticProps: GetStaticProps = async ({
 }) => {
   // Альтернативный вариант
   // navigation {${locale}}
-  const queryMain = groq`*[_type in ['main', "projects", "skills", "education", "modal"]] `;
+  const queryMain = groq`*[_type in ['main', "projects", "skills", "education"]] `;
 
-  const main = await getClient(preview).fetch<Array<SanityData>>(queryMain);
+  const main = await getClient(preview).fetch<Array<LandingPageData>>(
+    queryMain
+  );
 
   // get data from stackoverflow
   const responseStackOverflow = await fetch(
@@ -102,9 +85,6 @@ export const getStaticProps: GetStaticProps = async ({
         ? `${resultStackOverflow.total}`
         : `${(resultStackOverflow.total / 1000).toFixed(1)}k`,
   };
-
-  // type mainType = typeof main
-  // type stackoverflowType = typeof stackoverflow
 
   return {
     props: {

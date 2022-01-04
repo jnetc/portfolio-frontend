@@ -2,7 +2,7 @@
 import { useContextStore } from '@Hooks/useContextStore';
 // Component
 import { GitHubLink } from '@Links/GitHub';
-import { LinkedIn } from '@Links/LinkedIn';
+// import { LinkedIn } from '@Links/LinkedIn';
 import { StackOverflow } from '@Links/StackOverflow';
 import { FooterBaseLink } from './FooterBaseLink';
 // Style
@@ -18,7 +18,7 @@ const Footer = () => {
           url={stackoverflow?.link || ''}
           cssClass="footer__link"
         />
-        <LinkedIn url={context?.linkedin_href || ''} cssClass="footer__link" />
+        {/* <LinkedIn url={context?.linkedin_href || ''} cssClass="footer__link" /> */}
       </section>
       <p className={style.desc}>
         The site is based with

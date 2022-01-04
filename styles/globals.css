@@ -69,7 +69,7 @@ html[data-theme='light'] {
   --secondary-s: 53%;
   --secondary-l: 25%;
   --card-clr: hsl(39, 42%, 87%);
-  --card-shadow-clr: hsl(38 12% 70% / 0.6);
+  --card-shadow-clr: hsl(39 42% 70% / 0.4);
   --card-extra-clr: hsl(38, 12%, 70%);
   --stack-overflow-shadow: hsl(38 12% 70% / 1);
 }
@@ -79,7 +79,8 @@ html[data-theme='dark'] {
   --bg-clr-s: 10%;
   --bg-clr-l: 10%;
 
-  --bg-dimed: hsl(185, 17%, 15%);
+  /* --bg-dimed: hsl(185, 17%, 15%); */
+  --bg-dimed: hsl(159, 23%, 11%);
   /* navigation */
   --bg-nav-h: 185;
   --bg-nav-s: 17%;
@@ -94,10 +95,14 @@ html[data-theme='dark'] {
   --primary-clr-dimed: hsl(38, 12%, 70%);
   --placeholder: hsl(37, 8%, 42%);
 
-  --secondary-clr: hsl(162, 47%, 66%);
-  --secondary-h: 162;
+  /* --secondary-clr: hsl(162, 47%, 66%); */
+  /* --secondary-h: 162;
   --secondary-s: 47%;
-  --secondary-l: 66%;
+  --secondary-l: 66%; */
+  --secondary-clr: hsl(159, 23%, 63%);
+  --secondary-h: 159;
+  --secondary-s: 23%;
+  --secondary-l: 63%;
 
   --card-clr: hsl(240, 3%, 12%);
   --card-shadow-clr: hsl(0 0% 0% / 0.15);
@@ -207,6 +212,7 @@ textarea {
   justify-content: center;
   row-gap: 1rem;
 }
+
 .grid {
   display: grid;
   grid-template-columns: 1fr repeat(12, minmax(6px, 96px)) 1fr;
@@ -228,6 +234,11 @@ textarea {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   user-select: none;
+}
+.btn-fit {
+  /* width: fit-content; */
+  width: max-content;
+  padding: 1.2rem 5rem;
 }
 .btn:hover {
   color: var(--bg-clr);
@@ -295,3 +306,5 @@ div > .paragraph:not(:last-of-type) {
 @import url('./navigation.css');
 @import url('./home.css');
 @import url('./links.css');
+
+@import url('./resume.css');

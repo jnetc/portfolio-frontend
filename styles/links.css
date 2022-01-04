@@ -1,4 +1,4 @@
-.link:hover :is(.external, .stackoverflow, .figma) {
+.link:hover :is(.external, .stackoverflow, .figma, .email) {
   stroke: var(--secondary-clr);
 }
 .link:hover :is(.github, .linkedin) {
@@ -6,23 +6,17 @@
 }
 
 .link__svg {
-  width: 23px;
-  height: 23px;
+  min-width: 23px;
+  max-height: 23px;
+  position: relative;
   transition: all 0.3s ease-in-out;
 }
-.external {
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 3px;
-}
+
 .external,
 .stackoverflow,
-.figma {
+.figma,
+.email {
   stroke: var(--primary-clr);
-}
-.stackoverflow,
-.figma {
-  stroke-width: 2px;
 }
 
 .github,
