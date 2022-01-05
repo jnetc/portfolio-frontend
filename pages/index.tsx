@@ -47,8 +47,8 @@ const App: NextPage = ({
             <Skills />
             <About />
             <Footer />
-            <GoToTopButton />
           </main>
+          <GoToTopButton />
         </>
       </Language.Provider>
     </Store.Provider>

@@ -1,8 +1,6 @@
 import { LinksType } from '@Types';
 
 export const StackOverflow = ({ url, cssClass }: LinksType) => {
-  const labelUrl = url.split('//')[1];
-
   return (
     <a
       href={url}
@@ -10,8 +8,8 @@ export const StackOverflow = ({ url, cssClass }: LinksType) => {
       role="button"
       target="_blank"
       rel="noreferrer"
-      aria-label={`link to stackoverflow profile, ${labelUrl}`}
-      title={`link to ${labelUrl} `}
+      aria-label="link to stackoverflow profile"
+      title="link to stackoverflow profile"
     >
       <svg
         fill="none"

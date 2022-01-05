@@ -85,10 +85,11 @@ export interface ResumeProfileType {
   github_href: string;
   stackoverflow_href: string;
   email: string;
+  location: string;
 }
 export type ResumeLinksType = Pick<
   ResumeProfileType,
-  'email' | 'github_href' | 'stackoverflow_href'
+  'email' | 'github_href' | 'stackoverflow_href' | 'location'
 >;
 
 export interface ResumeNoticeType {

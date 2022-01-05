@@ -8,8 +8,8 @@ export const GitHubLink = ({ url, cssClass }: LinksType) => {
       role="button"
       target="_blank"
       rel="noreferrer"
-      aria-label="link to github repository"
-      title="link to github repository"
+      aria-label="link to github profile"
+      title="link to github profile"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

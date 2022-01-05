@@ -13,8 +13,8 @@ export const ButtonWithArrowName = {
     ru: 'Резюме',
   },
   back: {
-    en: 'Back to home',
-    ru: 'На главную',
+    en: 'Back to main page',
+    ru: 'На главную страницу',
   },
 };
 
@@ -141,12 +141,12 @@ export const separators = {
   },
   about: {
     title: {
-      ru: 'Мои онлайн курсы',
-      en: 'My online courses',
+      ru: 'Завершенные или находящиеся в процессе онлайн-курсы',
+      en: 'Completed or in process online courses',
     },
     desc: {
       ru: 'и сертификаты',
-      en: 'and certification',
+      en: 'and certifications',
     },
   },
 };

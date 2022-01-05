@@ -133,7 +133,7 @@
   bottom: -3rem;
   opacity: 0;
   border-radius: 50%;
-  background-color: var(--primary-clr);
+  background-color: var(--primary-clr-dimed);
   transition: all 0.3s ease-in-out;
   transition-delay: 0s;
   will-change: transform opacity;

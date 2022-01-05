@@ -14,7 +14,7 @@
 }
 
 .card {
-  padding: 2rem;
+  padding: 3rem 2rem;
   border-radius: var(--l-radius);
   background-color: var(--card-clr);
   box-shadow: 0 25px 25px var(--card-shadow-clr);

@@ -79,7 +79,6 @@ html[data-theme='dark'] {
   --bg-clr-s: 10%;
   --bg-clr-l: 10%;
 
-  /* --bg-dimed: hsl(185, 17%, 15%); */
   --bg-dimed: hsl(159, 23%, 11%);
   /* navigation */
   --bg-nav-h: 185;
@@ -95,10 +94,6 @@ html[data-theme='dark'] {
   --primary-clr-dimed: hsl(38, 12%, 70%);
   --placeholder: hsl(37, 8%, 42%);
 
-  /* --secondary-clr: hsl(162, 47%, 66%); */
-  /* --secondary-h: 162;
-  --secondary-s: 47%;
-  --secondary-l: 66%; */
   --secondary-clr: hsl(159, 23%, 63%);
   --secondary-h: 159;
   --secondary-s: 23%;
@@ -236,7 +231,6 @@ textarea {
   user-select: none;
 }
 .btn-fit {
-  /* width: fit-content; */
   width: max-content;
   padding: 1.2rem 5rem;
 }

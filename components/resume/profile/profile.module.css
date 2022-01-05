@@ -20,12 +20,11 @@
 .title {
   grid-column: 2;
   grid-row: 1;
+  display: flex;
+  flex-flow: column;
   align-self: center;
 }
 .title_svg {
-  grid-column: 2;
-  grid-row: 1;
-  margin-block-end: 0.5rem;
   color: var(--primary-clr);
   font-size: clamp(1em, 5vw, 4em);
   font-weight: 300;
@@ -35,17 +34,19 @@
 }
 
 .sub_title {
-  grid-column: 2;
+  margin-block: 0.5rem 1.5rem;
   color: var(--secondary-clr);
   font-size: 1.3rem;
   font-weight: 300;
 }
 .summary {
   grid-column: 1/ -1;
+  column-width: 420px;
+  column-gap: 5rem;
   font-size: 1.2em;
   font-weight: 300;
 }
-.links,
+
 .button {
   grid-column: 1 / -1;
   grid-row: 3;
@@ -53,7 +54,6 @@
 .links {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 1rem;
 }
 .button {
@@ -91,8 +91,12 @@
     grid-column: 1;
     grid-row: 2;
     text-align: center;
+    align-items: center;
   }
-  .links,
+  .summary {
+    column-width: auto;
+  }
+
   .button {
     grid-column: 1;
     grid-row: 4;

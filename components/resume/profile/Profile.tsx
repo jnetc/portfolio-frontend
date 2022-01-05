@@ -43,6 +43,7 @@ export const Profile = ({ data }: { data: ResumeProfileType }) => {
       <div className={style.title}>
         <h1 className={style.title_svg}>{name}</h1>
         <p className={style.sub_title}>{professional}</p>
+        <ProfileLinks links={links} />
       </div>
       <PortableText
         blocks={summary}
@@ -53,7 +54,6 @@ export const Profile = ({ data }: { data: ResumeProfileType }) => {
           container,
         }}
       />
-      <ProfileLinks links={links} />
       <ButtonWithArraw
         cssClass={style.button}
         name="back"
