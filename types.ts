@@ -226,7 +226,7 @@ export interface ButtonWithArrawType {
   cssClass?: string;
   accessibility: string;
   route?: '' | 'resume';
-  name: 'back' | 'resume';
+  name: 'resume';
 }
 
 export interface NavLink {

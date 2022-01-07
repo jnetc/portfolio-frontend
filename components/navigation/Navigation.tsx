@@ -46,7 +46,6 @@ const Navigation = () => {
           <circle className="mob-nav__2-circle" />
         </svg>
       </nav>
-      <SwitchLang />
       <button
         className="mob-menu-btn"
         aria-label="mobile menu navigation button"
@@ -54,6 +53,7 @@ const Navigation = () => {
       >
         <span className="mob-menu-btn__icon"></span>
       </button>
+      <SwitchLang />
       <SwitchTheme />
     </header>
   );

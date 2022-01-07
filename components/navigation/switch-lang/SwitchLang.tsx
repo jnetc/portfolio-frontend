@@ -2,13 +2,7 @@ import { useRef } from 'react';
 import { useRouter } from 'next/router';
 import { LangButton } from './LangButton';
 
-export const SwitchLang = ({
-  path = '',
-  posCss = '',
-}: {
-  path?: string;
-  posCss?: string;
-}) => {
+export const SwitchLang = ({ path = '' }: { path?: string }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { locale } = useRouter();
 
@@ -19,11 +13,7 @@ export const SwitchLang = ({
 
   return (
     <div
-      className={
-        locale === 'en'
-          ? `${posCss} lang-switcher en`
-          : `${posCss} lang-switcher ru`
-      }
+      className={locale === 'en' ? `lang-switcher en` : `lang-switcher ru`}
       title={
         locale === 'en'
           ? 'The English version of the site is selected'

@@ -53,10 +53,10 @@ const App: NextPage = ({
             <Logo />
 
             <Link href={locales === 'en' ? '/' : `/${locales}`}>
-              <a className="resume__back-link nav-link">{backLink[locales]}</a>
+              <a className="resume__back-link back-link">{backLink[locales]}</a>
             </Link>
 
-            <SwitchLang path="resume" posCss="resume__pos-lang" />
+            <SwitchLang path="resume" />
             <SwitchTheme />
           </header>
 

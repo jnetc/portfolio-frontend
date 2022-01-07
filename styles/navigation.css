@@ -9,6 +9,7 @@
 .logo {
   width: 50px;
   height: auto;
+  margin-inline-end: auto;
 }
 .logo__fill {
   fill: var(--primary-clr);
@@ -46,7 +47,7 @@
     var(--bg-nav-l),
     var(--alpha)
   );
-  clip-path: circle(0px at calc(100vw - 72px) 32px);
+  clip-path: circle(0px at calc(100vw - 155px) 32px);
   transition: all 0.3s ease-in-out;
   transition-delay: 0.2s;
   will-change: clip-path;
@@ -61,18 +62,21 @@
     var(--bg-nav-l),
     var(--alpha)
   );
-  clip-path: circle(150% at calc(100vw - 72px) 32px);
+  clip-path: circle(150% at calc(100vw - 155px) 32px);
   transition-delay: 0.3s;
   z-index: 1000;
 }
 
-.nav-link {
+.nav-link,
+.back-link {
   font-size: 1em;
   padding: 0.35rem 0;
+  text-align: right;
   transition: all 0.3s ease-in-out;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.back-link:hover {
   color: var(--secondary-clr);
 }
 
@@ -206,13 +210,13 @@
   transition-delay: 0.35s;
   fill: hsla(var(--bg-nav-h), var(--bg-nav-s), var(--bg-nav-l1), var(--alpha));
   cy: 32;
-  cx: calc(100vw - 70px);
+  cx: calc(100vw - 155px);
 }
 .mob-nav__2-circle {
   transition-delay: 0.3s;
   fill: hsla(var(--bg-nav-h), var(--bg-nav-s), var(--bg-nav-l2), var(--alpha));
   cy: 32; /*90 */
-  cx: calc(100vw - 70px); /* -55 */
+  cx: calc(100vw - 155px); /* -55 */
 }
 
 .open .mob-nav__1-circle {
@@ -356,23 +360,4 @@
   .mob-nav__close-btn {
     display: flex;
   }
-  .lang-switcher {
-    margin-inline-start: auto;
-  }
-  /* .mob-nav .lang-switcher {
-    display: flex;
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    opacity: 0;
-    transform: translate3d(0, -50px, 0);
-    transition: all 0.3s ease-in-out;
-    transition-delay: 0s;
-    will-change: transform opacity;
-  }
-  .open.mob-nav .lang-switcher {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    transition-delay: 0.5s;
-  } */
 }
