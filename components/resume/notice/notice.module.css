@@ -61,17 +61,10 @@
 }
 
 .information {
-  padding-top: 2rem;
+  padding-block: 2rem;
 }
 
-.subsidy {
-  padding-block: 2.5rem;
-  color: var(--secondary-clr);
-  font-size: 4em;
-  font-weight: bold;
-  text-align: center;
-}
-.link {
+.button {
   width: 100%;
   padding: 1.2rem 5rem;
   justify-self: end;

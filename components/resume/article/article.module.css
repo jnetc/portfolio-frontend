@@ -10,7 +10,6 @@
 }
 .module_lang {
   gap: 2rem;
-  justify-content: space-between;
 }
 
 .card {
@@ -21,7 +20,7 @@
 }
 
 .title {
-  min-width: 8rem;
+  min-width: 9rem;
   font-size: 1.7em;
   line-height: 1.2;
 }

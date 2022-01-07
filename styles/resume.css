@@ -8,7 +8,7 @@
 .resume__header {
   padding: 0;
 }
-.resume__pos-lang {
+.resume__back-link {
   margin-inline-start: auto;
 }
 
@@ -55,8 +55,10 @@
     gap: 10rem;
   }
   .resume__activity-block {
-    grid-row-start: 4;
     gap: 10rem;
+  }
+  .activity-block-without-notice {
+    grid-row-start: 4;
   }
   .resume :is(.article__education, .article__experience) {
     grid-template-columns: 1fr;

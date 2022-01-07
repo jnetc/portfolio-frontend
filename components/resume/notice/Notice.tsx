@@ -6,11 +6,8 @@ import style from './notice.module.css';
 import { PortableText } from '@Sanity/sanity';
 // Types
 import { ResumeNoticeType, SerializerBlock, SerializerContainer } from '@Types';
-// Context
-import { useContextLanguage } from '@Hooks/useContextLanguage';
 
 export const Notice = ({ data }: { data: ResumeNoticeType }) => {
-  const { lang } = useContextLanguage();
   // Sanity block component
   // https://codesandbox.io/s/p8ms8?file=/src/Page.js:1208-1215
 
@@ -39,10 +36,8 @@ export const Notice = ({ data }: { data: ResumeNoticeType }) => {
           container,
         }}
       />
-      <span className={style.subsidy}>{data.subsidy}€</span>
-      {/* <p className="modal__readmore paragraph">{data.extra_info}</p> */}
       <a
-        className={`btn ${style.link}`}
+        className={`btn ${style.button}`}
         href={data.external_href}
         role="button"
         tabIndex={0}
@@ -51,7 +46,7 @@ export const Notice = ({ data }: { data: ResumeNoticeType }) => {
         aria-label={labelUrl}
         title={labelUrl}
       >
-        {lang === 'en' ? 'TE-Palvelu subsidy' : 'TE-Palvelu субсидии'}
+        {data.button_name}
       </a>
     </section>
   );

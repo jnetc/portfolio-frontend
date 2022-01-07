@@ -98,8 +98,7 @@ export interface ResumeNoticeType {
   title: string;
   subtitle: string;
   info: Array<string>;
-  subsidy: string;
-  extra_info: string;
+  button_name: string;
   external_href: string;
 }
 

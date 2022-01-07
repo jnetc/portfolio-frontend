@@ -9,12 +9,8 @@ export const homeLeftButton = {
 
 export const ButtonWithArrowName = {
   resume: {
-    en: 'Resume',
-    ru: 'Резюме',
-  },
-  back: {
-    en: 'Back to main page',
-    ru: 'На главную страницу',
+    en: 'My resume',
+    ru: 'Моё резюме',
   },
 };
 
@@ -94,6 +90,11 @@ export const navigationLinks: Array<NavLink> = [
     ru: 'Обо мне',
   },
 ];
+
+export const backLink = {
+  en: 'Back to main page',
+  ru: 'На главную страницу',
+};
 
 export const anchor = {
   portfolio: {

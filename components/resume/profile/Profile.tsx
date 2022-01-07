@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { ProfileLinks } from './ProfileLinks';
-import ButtonWithArraw from '@ButtonWithArrow';
 // Style
 import style from './profile.module.css';
 // Sanity Block text
@@ -53,11 +52,6 @@ export const Profile = ({ data }: { data: ResumeProfileType }) => {
           },
           container,
         }}
-      />
-      <ButtonWithArraw
-        cssClass={style.button}
-        name="back"
-        accessibility="back to home"
       />
     </section>
   );
