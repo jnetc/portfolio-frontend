@@ -4,6 +4,7 @@ import { Title } from '@Portfolio/Title';
 import { Description } from '@Portfolio/Description';
 import { Links } from '@Portfolio/Links';
 import { Tags } from '@Portfolio/tags/Tags';
+import { Date } from '@Portfolio/Date';
 // Type
 import { ProjectType } from '@Types';
 // Style
@@ -20,6 +21,7 @@ export const Project = ({ data }: { data: ProjectType }) => {
       />
       <Label label={data.label} />
       <Title title={data.project_title} />
+      <Date date={data.project_completed} />
       <div className={style.desc}>
         <Description desc={data.description} />
       </div>

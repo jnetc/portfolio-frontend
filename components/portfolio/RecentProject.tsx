@@ -4,6 +4,7 @@ import { Title } from '@Portfolio/Title';
 import { Description } from '@Portfolio/Description';
 import { Tags } from '@Portfolio/tags/Tags';
 import { Links } from '@Portfolio/Links';
+import { Date } from '@Portfolio/Date';
 import Img from '@Img';
 // Type
 import { ProjectType } from '@Types';
@@ -22,6 +23,7 @@ export const RecentProject = ({
       <article className={`${style.project} ${style.recent}`}>
         <Label label={data.label_recent} />
         <Title title={data.project_title} />
+        <Date date={data.project_completed} />
         <Description desc={data.description} />
         <Tags tags={data.tags} />
         <Links

@@ -41,7 +41,7 @@ const App: NextPage = ({
           <meta name="robots" content="noindex, nofollow, noimageindex" />
           <meta
             name="description"
-            content="I am interested in a job where I can improve my skills and work remotly with a team. If you think, that i can be of use to you team, I will be happy to meet you for an interview and get to know the job."
+            content="I am interested in a job where I can improve my skills and work remotely with a team. If you think, that i can be of use to you team, I will be happy to meet you for an interview and get to know the job."
           />
           <title>Resume</title>
         </Head>
