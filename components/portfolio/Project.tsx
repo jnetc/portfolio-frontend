@@ -1,5 +1,4 @@
 // Components
-import { Label } from '@Portfolio/Label';
 import { Title } from '@Portfolio/Title';
 import { Description } from '@Portfolio/Description';
 import { Links } from '@Portfolio/Links';
@@ -19,7 +18,6 @@ export const Project = ({ data }: { data: ProjectType }) => {
         page={data.page_href}
         figma={data.figma_href}
       />
-      <Label label={data.label} />
       <Title title={data.project_title} />
       <Date date={data.project_completed} />
       <div className={style.desc}>

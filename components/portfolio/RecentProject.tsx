@@ -1,5 +1,4 @@
 // Components
-import { Label } from '@Portfolio/Label';
 import { Title } from '@Portfolio/Title';
 import { Description } from '@Portfolio/Description';
 import { Tags } from '@Portfolio/tags/Tags';
@@ -21,7 +20,6 @@ export const RecentProject = ({
   return (
     <section className={`grid mob-right-pad grid-12 ${position}`}>
       <article className={`${style.project} ${style.recent}`}>
-        <Label label={data.label_recent} />
         <Title title={data.project_title} />
         <Date date={data.project_completed} />
         <Description desc={data.description} />

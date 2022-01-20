@@ -42,19 +42,13 @@
 }
 
 /* components */
-.label {
-  color: var(--secondary-clr);
-  font-size: 1em;
-  letter-spacing: 1px;
-}
 .title {
   margin-top: 0.6rem;
 }
 .date {
   width: 100%;
-  height: 1.2rem;
+  height: 1.7rem;
   position: relative;
-  margin-bottom: 2rem;
 }
 .date::before {
   content: attr(data-date);

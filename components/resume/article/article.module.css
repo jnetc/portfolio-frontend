@@ -26,7 +26,7 @@
 }
 .date {
   width: 100%;
-  height: 1.6rem;
+  height: 1.7rem;
   position: relative;
 }
 .date::before {
@@ -39,7 +39,10 @@
 }
 
 .desc {
-  padding-block-start: 1rem;
+  color: var(--primary-clr-dimed);
+}
+.desc__skills {
+  padding-block-start: 0.5rem;
   color: var(--primary-clr-dimed);
 }
 .desc__lang {

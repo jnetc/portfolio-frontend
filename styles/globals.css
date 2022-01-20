@@ -248,7 +248,10 @@ textarea {
 .paragraph {
   color: var(--primary-clr);
   font-size: 1.125em;
-  line-height: 1.4;
+  line-height: 1.5;
+}
+.pad-block-start {
+  padding-block-start: 1.5rem;
 }
 .paragraph__link {
   color: var(--secondary-clr);
