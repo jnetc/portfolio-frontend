@@ -28,7 +28,7 @@ export const Profile = ({ data }: { data: ResumeProfileType }) => {
     <section className={style.module}>
       <div className={style.avatar_container}>
         <Image
-          src="/images/avatar.png"
+          src="/images/avatar.webp"
           alt="resume avatar"
           height={200}
           width={200}

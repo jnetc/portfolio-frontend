@@ -4,9 +4,13 @@ import dynamic from 'next/dynamic';
 import Navigation from '@Navigation/Navigation';
 import Home from '@Home/Home';
 // Dynamic components
-const Notice = dynamic(() => import('@Notice'));
-const ModalSwitch = dynamic(() => import('@Modal/ModalSwitch'));
-const ModalOverlay = dynamic(() => import('@Modal/ModalOverlay'));
+const Notice = dynamic(() => import('@Notice'), { ssr: false });
+const ModalSwitch = dynamic(() => import('@Modal/ModalSwitch'), {
+  ssr: false,
+});
+const ModalOverlay = dynamic(() => import('@Modal/ModalOverlay'), {
+  ssr: false,
+});
 // Helpers
 import { animationOptimization } from '@Helpers/functions';
 // Hook

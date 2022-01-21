@@ -15,12 +15,12 @@ export const HomeRightSide = () => {
     <div className="home-right-side">
       <StackOverflow />
       <MainPhoto
-        src="/images/picture_light.png"
+        src="/images/picture_light.webp"
         cssClass="pic-l"
         theme={theme === 'light'}
       />
       <MainPhoto
-        src="/images/picture_dark.png"
+        src="/images/picture_dark.webp"
         cssClass="pic-d"
         theme={theme === 'dark'}
       />

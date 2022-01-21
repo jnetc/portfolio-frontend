@@ -95,7 +95,7 @@ export const getStaticProps: GetStaticProps = async ({
 }) => {
   // Альтернативный вариант
   // navigation {${locale}}
-  const queryMain = groq`*[_type in [
+  const queryResume = groq`*[_type in [
     'resume_profile',
     'resume_notice',
     'resume_education',
@@ -106,7 +106,7 @@ export const getStaticProps: GetStaticProps = async ({
     ]] `;
 
   const main = await getClient(preview).fetch<Array<ResumeDataFromSanity>>(
-    queryMain
+    queryResume
   );
 
   return {
