@@ -13,9 +13,11 @@
 }
 .logo__fill {
   fill: var(--primary-clr);
+  transition: all 0.3s ease-in-out;
 }
 .logo__alt-fill {
   fill: var(--secondary-clr);
+  transition: all 0.3s ease-in-out;
 }
 
 /* LINKS */
@@ -150,6 +152,7 @@
 }
 .mob-menu-btn__icon {
   background-color: var(--primary-clr);
+  transition: all 0.3s ease-in-out;
 }
 .mob-menu-btn__icon {
   width: 1.4rem;
@@ -183,6 +186,7 @@
   border-radius: var(--l-radius);
   position: absolute;
   background-color: var(--bg-clr);
+  transition: all 0.3s ease-in-out;
 }
 .mob-nav__close-btn::before {
   transform: rotate(45deg);
@@ -241,6 +245,7 @@
   inset: 0;
   border-radius: var(--s-radius);
   background-color: var(--bg-dimed);
+  transition: all 0.3s ease-in-out;
   z-index: -2;
 }
 
@@ -255,6 +260,7 @@
   border-radius: var(--s-radius);
   opacity: 1;
   background-color: var(--secondary-clr);
+  transition: all 0.3s ease-in-out;
   z-index: -1;
 }
 
@@ -308,7 +314,7 @@
   position: relative;
   border-radius: 3px;
   text-transform: uppercase;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 

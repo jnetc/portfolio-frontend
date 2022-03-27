@@ -20,11 +20,13 @@
 .text-skill,
 .ampersand {
   fill: var(--secondary-clr);
+  transition: all 0.3s ease-in-out;
 }
 .ampersand,
 .ampersand-stroke {
   font-size: 200px;
   stroke: var(--secondary-clr);
+  transition: all 0.3s ease-in-out;
   stroke-width: 3;
 }
 .ampersand-stroke {
@@ -37,6 +39,7 @@
 }
 .text-idea {
   fill: var(--primary-clr);
+  transition: all 0.3s ease-in-out;
 }
 .text-skill {
   letter-spacing: 3px;
@@ -46,6 +49,7 @@
   stroke-linecap: round;
   stroke-width: 3px;
   stroke: var(--primary-clr);
+  transition: all 0.3s ease-in-out;
 }
 .bulb-icon__path {
   stroke-width: 3px;
@@ -55,6 +59,7 @@
 }
 .bulb-icon__bulb {
   fill: var(--primary-clr);
+  transition: all 0.3s ease-in-out;
 }
 .flash {
   stroke-dasharray: 7;
@@ -74,10 +79,11 @@
 }
 
 .home-left-side__title {
-  color: var(--primary-clr);
   position: absolute;
   opacity: 0;
   visibility: hidden;
+  color: var(--primary-clr);
+  transition: all 0.3s ease-in-out;
   pointer-events: none;
   user-select: none;
 }
@@ -107,6 +113,7 @@
   font-weight: bold;
   line-height: 1;
   box-shadow: inset 0px 0px 0 3px var(--secondary-clr);
+  transition: all 0.3s ease-in-out;
 }
 .home-contact-btn::before,
 .home-contact-btn::after {
@@ -118,6 +125,7 @@
   content: '';
   inset: 0;
   background-color: var(--secondary-clr);
+  transition: all 0.3s ease-in-out;
   transform: translate(-15px, -15px);
   z-index: 1;
 }
@@ -128,6 +136,7 @@
   color: var(--bg-clr);
   white-space: nowrap;
   transform: translate(calc(-15px - 50%), calc(-15px - 50%));
+  transition: all 0.3s ease-in-out;
   z-index: 2;
 }
 .home-contact-btn:hover::before {
@@ -176,10 +185,12 @@ html[data-theme='dark'] .pic-show {
 .rect-1 {
   top: 52%;
   stroke: var(--primary-clr);
+  transition: all 0.3s ease-in-out;
 }
 .rect-2 {
   top: 45%;
   stroke: var(--secondary-clr);
+  transition: all 0.3s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
