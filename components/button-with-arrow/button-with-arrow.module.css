@@ -5,6 +5,8 @@
   align-items: center;
   padding-block: 13px;
   position: relative;
+}
+.button {
   color: var(--primary-clr);
   font-size: clamp(1em, 1.5vw, 1.5em);
   font-weight: bold;
@@ -19,6 +21,8 @@
   border-radius: 5px;
   background-color: var(--primary-clr);
   transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  user-select: none;
 }
 
 .arrow::before,
@@ -41,11 +45,11 @@
   width: 15px;
   transform: rotate(-90deg);
 }
-.module:hover .arrow {
+.button:hover ~ .arrow {
   width: 100%;
   background-color: var(--secondary-clr);
 }
-.module:hover .arrow::before,
-.module:hover .arrow::after {
+.button:hover ~ .arrow::before,
+.button:hover ~ .arrow::after {
   width: 0;
 }

@@ -23,7 +23,7 @@ const ButtonWithArraw = ({
       aria-label={accessibility}
     >
       <Link href={lang === 'en' ? `/${route}` : `/${lang}/${route}`}>
-        {ButtonWithArrowName[name][lang]}
+        <a className={style.button}>{ButtonWithArrowName[name][lang]}</a>
       </Link>
       <span className={style.arrow} />
     </div>
