@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="google" content="notranslate" />
         <meta
           name="keywords"
-          content=" UI/UX Designer, UI Designer, Web Designer, UI Developer, FronEnd Developer, Fullstack Developer, React Developer, Javascript Developer, Javascript, Typescript, HTML5, CSS3"
+          content="ui/ux designer, ui designer, web designer, ui developer, frontend developer, fullstack developer, react developer, vue developer, javascript developer, javascript,typescript, html5, css3, sass, frontend devaaja, ui devaaja, frontend kehittäjä, ui kehittäjä, ui suunnittelija, web suunnittelija, vue kehittäjä, react kehittäjä, software engineer, figma, gatsby.js, react.js, next.js, vue.js, graphql, adobe illustrator, adobe photoshop, adobe xd, vercel, netlify, dato cms, contentful"
         />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta
