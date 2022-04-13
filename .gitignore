@@ -53,3 +53,6 @@ yarn-error.log*
 
 # Lighthouse reports
 *.report.html
+
+# Local Netlify folder
+.netlify
