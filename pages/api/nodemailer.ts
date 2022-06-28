@@ -5,10 +5,7 @@ import nodemailer from 'nodemailer';
 // Type
 import { ResponseType, RequestBodyType } from '@Types';
 
-const handler = async (
-  req: NextApiRequest,
-  res: NextApiResponse<ResponseType>
-) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse<ResponseType>) => {
   const { name, email, message }: RequestBodyType = req.body;
 
   let transporter = nodemailer.createTransport({
