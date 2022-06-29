@@ -37,7 +37,22 @@
 .not_empty {
   transform: translate(0em, -1.7em);
 }
+.message_limit {
+  position: absolute;
+  bottom: -1.5em;
+  right: 0;
+  opacity: 0;
+  color: var(--placeholder);
+  font-size: 0.8em;
+  transition: all 0.3s ease-in-out;
+}
+.input:focus ~ .message_limit {
+  opacity: 1;
+}
 
+.message_limit.limit {
+  color: var(--secondary-clr);
+}
 /* SVG LETTER */
 
 .letter {
