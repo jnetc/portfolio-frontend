@@ -8,7 +8,11 @@ import {
   ResumeDataFromSanity,
   ResumeProfileType,
   ResumeNoticeType,
+  LanguagesType,
+  MonthType,
 } from 'types';
+
+import { dataMonth } from '@Helpers/localization';
 
 type ObjectKeys = 'main' | 'resume_profile' | 'resume_notice';
 type ArrayKeys =
@@ -21,10 +25,7 @@ type ArrayKeys =
   | 'resume_languages'
   | 'resume_interests';
 
-export const transformLocalization = (
-  lang: string,
-  arr: Array<LandingPageData>
-) => {
+export const transformLocalization = (lang: string, arr: Array<LandingPageData>) => {
   const main = {} as MainType;
   const projects: Array<ProjectType> = [];
   const skills: Array<SkillType> = [];
@@ -50,10 +51,7 @@ export const transformLocalization = (
 
 export type LandingPageContext = ReturnType<typeof transformLocalization>;
 
-export const transformLocalizationResume = (
-  lang: string,
-  arr: Array<ResumeDataFromSanity>
-) => {
+export const transformLocalizationResume = (lang: string, arr: Array<ResumeDataFromSanity>) => {
   const resume_profile = {} as ResumeProfileType;
   const resume_notice = {} as ResumeNoticeType;
   const resume_experience: Array<ResumeArticleType> = [];
@@ -154,4 +152,12 @@ export const animationOptimization = (duration: number) => {
     }
   };
   window.requestAnimationFrame(step);
+};
+
+export const dataTranslate = (data: string, lang: LanguagesType) => {
+  const day = data.split(',')[0].split(' ')[1];
+  const year = data.split(',')[1].trim();
+  const month = data.substring(0, 4).trim().toLocaleLowerCase() as MonthType;
+
+  return `${dataMonth[month][lang]} ${day}, ${year}`;
 };

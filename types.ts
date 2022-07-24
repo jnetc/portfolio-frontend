@@ -58,16 +58,9 @@ export interface CourseType {
   certificate_href: string;
 }
 
-export type LandingPageData = MainType &
-  ProjectType &
-  SkillType &
-  CourseType &
-  Query;
+export type LandingPageData = MainType & ProjectType & SkillType & CourseType & Query;
 
-export type ResumeDataFromSanity = Query &
-  ResumeProfileType &
-  ResumeNoticeType &
-  ResumeArticleType;
+export type ResumeDataFromSanity = Query & ResumeProfileType & ResumeNoticeType & ResumeArticleType;
 
 export interface ResumeData {
   profile: ResumeProfileType;
@@ -138,8 +131,7 @@ export interface InputFromType {
   handler: (val: string) => void;
   value: string;
 }
-export interface TextareaFromType
-  extends Pick<InputFromType, 'handler' | 'value'> {
+export interface TextareaFromType extends Pick<InputFromType, 'handler' | 'value'> {
   nameInput: 'message';
 }
 
@@ -157,8 +149,10 @@ export interface ContextStore {
   context: LandingPageContext | null;
   stackoverflow?: StackOverflow<string>;
 }
+
+export type LanguagesType = 'en' | 'ru';
 export interface ContextLanguage {
-  lang: 'en' | 'ru';
+  lang: LanguagesType;
 }
 
 export interface ContextMain {
@@ -261,3 +255,17 @@ export interface ResponseType {
   status: string;
   message: { en: string; ru: string };
 }
+
+export type MonthType =
+  | 'jan'
+  | 'feb'
+  | 'mar'
+  | 'apr'
+  | 'may'
+  | 'june'
+  | 'july'
+  | 'aug'
+  | 'sept'
+  | 'oct'
+  | 'nov'
+  | 'dec';

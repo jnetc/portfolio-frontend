@@ -9,7 +9,7 @@ const About = () => {
     <>
       <Anchor name="about" hash="#4" />
       <Story />
-      <Separator name="about" />
+      <Separator name="about" margin />
       <Courses />
     </>
   );

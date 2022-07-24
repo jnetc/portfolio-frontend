@@ -103,8 +103,8 @@ export const anchor = {
       en: 'portfolio',
     },
     desc: {
-      ru: 'Мои недавние работы',
-      en: 'My recent works',
+      ru: 'Мои любимые работы',
+      en: 'My favorite works',
     },
   },
   skills: {
@@ -182,5 +182,56 @@ export const resumeProfile = {
   position: {
     ru: 'UI Дизайнер / Разработчик',
     en: 'UI Designer / Developer',
+  },
+};
+
+export const dataMonth = {
+  jan: {
+    en: 'Jan',
+    ru: 'Янв',
+  },
+  feb: {
+    en: 'Feb',
+    ru: 'Фев',
+  },
+  mar: {
+    en: 'Mar',
+    ru: 'Мар',
+  },
+  apr: {
+    en: 'Apr',
+    ru: 'Апр',
+  },
+  may: {
+    en: 'May',
+    ru: 'Мая',
+  },
+  june: {
+    en: 'June',
+    ru: 'Июня',
+  },
+  july: {
+    en: 'JuLy',
+    ru: 'Июля',
+  },
+  aug: {
+    en: 'Aug',
+    ru: 'Авг',
+  },
+  sept: {
+    en: 'Sept',
+    ru: 'Сен',
+  },
+  oct: {
+    en: 'Oct',
+    ru: 'Окт',
+  },
+  nov: {
+    en: 'Nov',
+    ru: 'Ноя',
+  },
+  dec: {
+    en: 'Dec',
+    ru: 'Дек',
   },
 };
