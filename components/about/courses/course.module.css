@@ -1,7 +1,7 @@
 .module {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 222px 60px 100px auto;
+  grid-template-rows: 222px 60px 110px auto;
   position: relative;
   border-radius: var(--l-radius);
   background-color: var(--card-clr);
