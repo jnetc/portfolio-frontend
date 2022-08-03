@@ -132,8 +132,8 @@ export const anchor = {
 export const separators = {
   portfolio: {
     title: {
-      ru: 'Предыдущие интересные работы',
-      en: 'Previous interesting projects',
+      ru: 'Предыдущие работы',
+      en: 'Previous projects',
     },
     desc: {
       ru: 'Архив портфолио',
