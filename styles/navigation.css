@@ -7,9 +7,14 @@
 }
 
 .logo {
-  width: 50px;
+  width: 3rem;
   height: auto;
   margin-inline-end: auto;
+}
+@media screen and (max-width: 580px) {
+  .logo {
+    width: 2rem;
+  }
 }
 .logo__fill {
   fill: var(--primary-clr);
@@ -43,12 +48,7 @@
   top: 0;
   left: 0;
 
-  background-color: hsla(
-    var(--bg-nav-h),
-    var(--bg-nav-s),
-    var(--bg-nav-l),
-    var(--alpha)
-  );
+  background-color: hsla(var(--bg-nav-h), var(--bg-nav-s), var(--bg-nav-l), var(--alpha));
   clip-path: circle(0px at calc(100vw - 155px) 32px);
   transition: all 0.3s ease-in-out;
   transition-delay: 0.2s;
@@ -58,12 +58,7 @@
 
 .mob-nav.open {
   --alpha: 1;
-  background-color: hsla(
-    var(--bg-nav-h),
-    var(--bg-nav-s),
-    var(--bg-nav-l),
-    var(--alpha)
-  );
+  background-color: hsla(var(--bg-nav-h), var(--bg-nav-s), var(--bg-nav-l), var(--alpha));
   clip-path: circle(150% at calc(100vw - 155px) 32px);
   transition-delay: 0.3s;
   z-index: 1000;
@@ -250,7 +245,7 @@
 }
 
 .switch {
-  --width-box: 2rem;
+  --width-box: 4rem;
   height: 1.75rem;
   position: absolute;
   top: 0;
@@ -271,7 +266,11 @@
 .ru .switch {
   animation: ru ease-in-out forwards;
 }
+.fi .switch {
+  animation: ru ease-in-out forwards;
+}
 .ru .lang-duration,
+.fi .lang-duration,
 .en .lang-duration {
   animation-duration: 0.3s;
 }
@@ -297,6 +296,20 @@
   }
   50% {
     right: 0;
+    left: 20px;
+  }
+  100% {
+    right: 0;
+    left: var(--width-box);
+  }
+}
+@keyframes fi {
+  0% {
+    right: var(--width-box);
+    left: 0;
+  }
+  50% {
+    right: 0;
     left: 10px;
   }
   100% {
@@ -305,7 +318,7 @@
   }
 }
 
-.lang-switcher span {
+.lang-switcher button {
   width: 2rem;
   height: 1.75rem;
   display: flex;
@@ -313,15 +326,17 @@
   align-items: center;
   position: relative;
   border-radius: 3px;
+  color: var(--primary-clr);
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
-.lang-switcher span.active {
+.lang-switcher button.active {
   color: var(--bg-clr);
   background-color: var(--secondary-clr);
   transition-delay: 0.15s;
+  transition: all 0.3s ease-in-out;
 }
 
 /* THEME SWITCHER */

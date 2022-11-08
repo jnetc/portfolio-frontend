@@ -13,9 +13,9 @@ module.exports = withPWA({
     disable: process.env.NODE_ENV === 'development',
   },
   i18n: {
-    locales: ['en', 'ru'],
-    defaultLocale: 'en',
-    localeDetection: false,
+    locales: ['en', 'ru', 'fi'],
+    defaultLocale: 'fi',
+    localeDetection: true,
   },
   images: {
     deviceSizes: [640, 1080, 1920],

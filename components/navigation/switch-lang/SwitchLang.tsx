@@ -12,17 +12,13 @@ export const SwitchLang = ({ path = '' }: { path?: string }) => {
   }, 300);
 
   return (
-    <div
-      className={locale === 'en' ? `lang-switcher en` : `lang-switcher ru`}
-      title={
-        locale === 'en'
-          ? 'The English version of the site is selected'
-          : 'The Russian version of the site is selected'
-      }
-    >
+    <div className={langSwitchClass(locale)} aria-label="The language switcher">
       <LangButton path={path} lang="en" />
+      <LangButton path={path} lang="fi" />
       <LangButton path={path} lang="ru" />
-      <div className="switch" ref={ref}></div>
+      {/* <div className="switch" ref={ref}></div> */}
     </div>
   );
 };
+
+const langSwitchClass = (lang?: string) => `lang-switcher ${lang}`;

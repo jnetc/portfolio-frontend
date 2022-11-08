@@ -150,7 +150,7 @@ export interface ContextStore {
   stackoverflow?: StackOverflow<string>;
 }
 
-export type LanguagesType = 'en' | 'ru';
+export type LanguagesType = 'en' | 'ru' | 'fi';
 export interface ContextLanguage {
   lang: LanguagesType;
 }
@@ -228,6 +228,7 @@ export interface NavLink {
   anchor: 'home' | 'portfolio' | 'skills' | 'about';
   en: string;
   ru: string;
+  fi: string;
 }
 
 export interface LinkNameType {
@@ -253,7 +254,7 @@ export interface RequestBodyType {
 }
 export interface ResponseType {
   status: string;
-  message: { en: string; ru: string };
+  message: { en: string; ru: string; fi: string };
 }
 
 export type MonthType =

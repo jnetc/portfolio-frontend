@@ -89,14 +89,14 @@ const mergeObjectData = <T>(
   key: ObjectKeys,
   lang: string
 ) => {
-  const obj = {} as T;
+  const obj = {};
 
   for (const type of sanityStaticProps) {
     if (type._type === `${key}`) {
       Object.assign(obj, { ...transformData(type, lang) });
     }
   }
-  return obj;
+  return obj as T;
 };
 
 const mergeArrayData = <T>(
@@ -116,17 +116,17 @@ const mergeArrayData = <T>(
   return arr;
 };
 
-const transformData = <T>(currObj: T, lang: string): T => {
+const transformData = <T extends {} | string>(currObj: T, lang: string): T => {
   // Remove this unnecessary keys
   const ignoreKeys = ['_createdAt', '_rev', '_type', '_updatedAt'];
-  const obj = {} as T;
+  const obj = {};
 
-  const arrKeyAndValue = Object.entries(currObj);
+  const arrKeyAndValue = Object.entries(currObj) as [string, string][];
 
   for (const [key, val] of arrKeyAndValue) {
     // Checking valid keys
     if (!ignoreKeys.includes(key)) {
-      // Boolean, is the key has a locale value ['en', 'ru']
+      // Boolean, is the key has a locale value ['en', 'ru', 'fi']
       const isLocale = Object.getOwnPropertyNames(val).includes('en');
       // If the value has localization
       if (typeof val === 'object' && isLocale) {
@@ -137,7 +137,7 @@ const transformData = <T>(currObj: T, lang: string): T => {
       }
     }
   }
-  return obj;
+  return obj as T;
 };
 
 export const animationOptimization = (duration: number) => {

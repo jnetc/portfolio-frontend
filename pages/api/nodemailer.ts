@@ -34,7 +34,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ResponseType>) 
       status: 'success',
       message: {
         ru: 'Ваше сообщение успешно отправленно!',
-        en: 'Your message was sucessful sended!',
+        en: 'Your message was successful sended!',
+        fi: 'Viestisi lähetys onnistui!',
       },
     });
   } catch (error) {
@@ -43,6 +44,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ResponseType>) 
       message: {
         en: 'Something went wrong!',
         ru: 'Что-то пошло не так!',
+        fi: 'Jotain meni pieleen!',
       },
     });
   }
