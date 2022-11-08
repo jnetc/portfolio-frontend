@@ -11,15 +11,16 @@ export const ModalSubmitBtn = () => {
   const submitButton = useCallback(
     (lang: string) => {
       if (lang === 'en' && response.status === 'success') return 'submitted';
+      if (lang === 'fi' && response.status === 'success') return 'lähetetty';
       if (lang === 'ru' && response.status === 'success') return 'отправлено';
       if (lang === 'en' && response.status === 'error') return 'no submitted';
+      if (lang === 'fi' && response.status === 'error') return 'ei lähetetty';
       if (lang === 'ru' && response.status === 'error') return 'не отправлено';
       if (lang === 'en') return 'submit';
+      if (lang === 'fi') return 'lähetä';
       if (lang === 'ru') return 'отправить';
     },
     [response.status]
   );
-  return (
-    <button className={`btn ${style.button}`}>{submitButton(lang)}</button>
-  );
+  return <button className={`btn ${style.button}`}>{submitButton(lang)}</button>;
 };
