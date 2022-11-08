@@ -13,8 +13,9 @@ export const ModalTextarea = ({ nameInput, handler, value }: TextareaFromType) =
   const maxLength = 1500;
 
   const valueTextArea = {
-    ru: `длина сообщения ${value.length} из 1500`,
-    en: `length message ${value.length} of 1500`,
+    ru: `длина сообщения ${value.length} / 1500`,
+    en: `length message ${value.length} / 1500`,
+    fi: `viestin pituus ${value.length} / 1500`,
   };
 
   const getValue = (ev: ChangeEvent<HTMLTextAreaElement>) => {
