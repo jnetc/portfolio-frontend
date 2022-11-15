@@ -103,7 +103,7 @@ export const navigationLinks: Array<NavLink> = [
     anchor: 'about',
     en: 'About me',
     ru: 'Обо мне',
-    fi: 'Minulta',
+    fi: 'About me',
   },
 ];
 
@@ -142,7 +142,7 @@ export const anchor = {
     link: {
       ru: 'обо мне',
       en: 'about me',
-      fi: 'Minulta',
+      fi: 'About me',
     },
     desc: {
       ru: 'Моя история разработчика',
@@ -208,7 +208,7 @@ export const resumeSection = {
   interests: {
     ru: 'интересы',
     en: 'interests',
-    fi: 'eturyhmät',
+    fi: 'harrastukset',
   },
 };
 export const resumeProfile = {

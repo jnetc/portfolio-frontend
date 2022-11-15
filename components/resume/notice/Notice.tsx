@@ -1,5 +1,4 @@
 import { NoticeSVG } from './NoticeSVG';
-// import { NoticeSVG } from './NoticeSVG2';
 // Style
 import style from './notice.module.css';
 // Sanity Block text
