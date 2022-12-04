@@ -75,9 +75,9 @@ export const modalTextarea = {
 };
 
 export const ErrorMessage = {
-  en: 'Something went wrong!',
-  ru: 'Что-то пошло не так!',
-  fi: 'Jotain meni pieleen!',
+  en: 'Your message has not be sent! Sorry about that. Some error on the server side.',
+  ru: 'Ваше сообщение не отправлено! Прости за это. Какая-то ошибка на стороне сервера.',
+  fi: 'Viestiäsi ei ole lähetetty! Anteeksi tuosta. Joku virhe palvelinpuolella.',
 };
 
 export const navigationLinks: Array<NavLink> = [
@@ -134,7 +134,7 @@ export const anchor = {
     },
     desc: {
       ru: 'Какие навыки у меня есть',
-      en: 'Which skills do i have',
+      en: 'Which skills do I have',
       fi: 'Mitä taitoja minulla on',
     },
   },
