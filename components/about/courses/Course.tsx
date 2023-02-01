@@ -15,7 +15,7 @@ export const Course = ({ data }: { data: CourseType }) => {
   const isUdemy = data.course_href.match('udemy');
 
   return (
-    <article className={style.module}>
+    <article className={style.module} aria-hidden>
       {isUdemy ? <Udemy /> : <Opiframe />}
       {data.course_href && (
         <ExternalLink url={data.course_href} cssClass={style.link} />
