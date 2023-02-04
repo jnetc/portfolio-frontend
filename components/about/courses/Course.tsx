@@ -27,7 +27,7 @@ export const Course = ({ data }: { data: CourseType }) => {
           alt={data.course_name}
         />
       </div>
-      <h1 className={`card-title ${style.name}`}>{data.course_name}</h1>
+      <h1 className={`card-title ${style.name}`} aria-hidden>{data.course_name}</h1>
       <div className={`${style.complete}`}>
         {data.course_completed ? <Completed /> : <Studying />}
 
@@ -37,7 +37,7 @@ export const Course = ({ data }: { data: CourseType }) => {
             : `In the learning process`}
         </p>
       </div>
-      <p className={`paragraph ${style.desc}`}>{data.course_desc}</p>
+      <p className={`paragraph ${style.desc}`} aria-hidden>{data.course_desc}</p>
       {data.certificate_href && <CourseButton href={data.certificate_href} />}
     </article>
   );
