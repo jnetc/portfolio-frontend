@@ -16,10 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="format-detection" content="telephone=no, address=no" />
         <meta name="generator" content="Next.js" />
         <meta name="google" content="notranslate" />
-        <meta
-          name="keywords"
-          content="UI/UX designer, UI designer, web designer, fullstack designer, UI developer, frontend developer, fullstack developer, react developer, vue developer, javascript developer, software engineer, frontend devaaja, UI devaaja, web devaaja, frontend kehittäjä, web kehittäjä, UI kehittäjä, vue kehittäjä, react kehittäjä, UI suunnittelija, fullstack suunnittelija, web suunnittelija, graafinen suunnittelija, UI/UX дизайнер, UI дизайнер, веб дизайнер, fullstack дизайнер, веб разработчик, фронтенд разработчик, frontend разработчик, web разработчик"
-        />
+        <meta name="keywords" content="" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0e9db" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#18171c" />
