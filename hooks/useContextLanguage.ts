@@ -1,6 +1,6 @@
 import { useContext, createContext } from 'react';
-// Types
-import { ContextLanguage } from '@Types';
+
+import type { ContextLanguage } from '@Types';
 
 // Create context
 export const state: ContextLanguage = { lang: 'en' };

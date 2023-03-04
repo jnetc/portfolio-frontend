@@ -1,8 +1,5 @@
 .module {
   height: min-content;
-}
-.module div {
-  height: min-content;
   column-width: 300px;
   column-gap: 4rem;
 }

@@ -1,14 +1,15 @@
-import { FC } from 'react';
-// Sanity Block text
-import { PortableText } from '@Sanity/sanity';
+import type { SerializerBlock } from '@Types';
+
 // Hook
 import { useContextStore } from '@Hooks/useContextStore';
-// Types
-import { SerializerBlock } from '@Types';
+
+// Sanity Block text
+import { PortableText } from '@Sanity/sanity';
+
 // Style
 import style from './story.module.css';
 
-export const Story: FC = () => {
+export const Story = () => {
   const { context } = useContextStore();
 
   const serializer = ({ children }: SerializerBlock) => {
@@ -17,11 +18,7 @@ export const Story: FC = () => {
 
   return (
     <div className={`${style.module} mob-right-pad grid-12`}>
-      <PortableText
-        blocks={context?.story}
-        serializers={{ types: { block: serializer } }}
-        cla
-      />
+      <PortableText value={context?.story} components={{ block: serializer }} />
     </div>
   );
 };

@@ -237,90 +237,23 @@
 .lang-switcher::before {
   content: '';
   position: absolute;
-  inset: 0;
+  height: 100%;
+  aspect-ratio: 3 / 2;
   border-radius: var(--s-radius);
-  background-color: var(--bg-dimed);
+  background-color: var(--secondary-clr);
   transition: all 0.3s ease-in-out;
   z-index: -2;
 }
-
-.switch {
-  --width-box: 4rem;
-  height: 1.75rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: var(--width-box);
-  bottom: 0;
-  border-radius: var(--s-radius);
-  opacity: 1;
-  background-color: var(--secondary-clr);
-  transition: all 0.3s ease-in-out;
-  z-index: -1;
+.lang-switcher.fi::before {
+  transform: translateX(100%);
 }
-
-/* remove duration & add after 300ms */
-.en .switch {
-  animation: en ease-in-out forwards;
-}
-.ru .switch {
-  animation: ru ease-in-out forwards;
-}
-.fi .switch {
-  animation: ru ease-in-out forwards;
-}
-.ru .lang-duration,
-.fi .lang-duration,
-.en .lang-duration {
-  animation-duration: 0.3s;
-}
-
-@keyframes en {
-  0% {
-    right: 0;
-    left: var(--width-box);
-  }
-  50% {
-    right: 10px;
-    left: 0;
-  }
-  100% {
-    right: var(--width-box);
-    left: 0;
-  }
-}
-@keyframes ru {
-  0% {
-    right: var(--width-box);
-    left: 0;
-  }
-  50% {
-    right: 0;
-    left: 20px;
-  }
-  100% {
-    right: 0;
-    left: var(--width-box);
-  }
-}
-@keyframes fi {
-  0% {
-    right: var(--width-box);
-    left: 0;
-  }
-  50% {
-    right: 0;
-    left: 10px;
-  }
-  100% {
-    right: 0;
-    left: var(--width-box);
-  }
+.lang-switcher.ru::before {
+  transform: translateX(200%);
 }
 
 .lang-switcher button {
-  width: 2rem;
-  height: 1.75rem;
+  width: 3rem;
+  height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -334,7 +267,6 @@
 
 .lang-switcher button.active {
   color: var(--bg-clr);
-  background-color: var(--secondary-clr);
   transition-delay: 0.15s;
   transition: all 0.3s ease-in-out;
 }

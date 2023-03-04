@@ -1,4 +1,4 @@
-import { FC, useState, useRef, useEffect, MouseEvent } from 'react';
+import { FC, useState, useRef, useEffect, MouseEvent, ReactNode } from 'react';
 // Hook
 import { useResize } from '@Hooks/useResize';
 // Component
@@ -6,7 +6,7 @@ import { ScrollButton } from './ScrollButton';
 // Style
 import style from './scroll-area.module.css';
 
-export const ScrollArea: FC = ({ children }) => {
+export const ScrollArea: FC<{ children: ReactNode }> = ({ children }) => {
   const { resize } = useResize();
   const ref = useRef<HTMLDivElement>(null);
   const [leftBtn, setLeftBtn] = useState(false);

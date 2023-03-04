@@ -1,6 +1,5 @@
+import type { ContextMain } from '@Types';
 import { useContext, createContext } from 'react';
-// Types
-import { ContextMain } from '@Types';
 
 // Create context
 export const state: ContextMain = {

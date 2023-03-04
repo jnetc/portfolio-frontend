@@ -1,5 +1,4 @@
-// Types
-import { ScrollButtonType } from '@Types';
+import type { ScrollButtonType } from '@Types';
 // Style
 import style from './scroll-area.module.css';
 

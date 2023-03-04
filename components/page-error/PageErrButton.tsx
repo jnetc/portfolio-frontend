@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { useRouter } from 'next/router';
 import style from './page-err.module.css';
 
-export const PageErrButton: FC = ({ children }) => {
+export const PageErrButton: FC<{ children: ReactNode }> = ({ children }) => {
   const router = useRouter();
   const moveTo = () => router.push('/');
 

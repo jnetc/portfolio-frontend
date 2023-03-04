@@ -1,4 +1,4 @@
-import { FC, useRef, useEffect } from 'react';
+import { FC, useRef, useEffect, ReactNode } from 'react';
 // Hook
 import { useContextMain } from '@Hooks/useContextMain';
 // Components
@@ -8,7 +8,7 @@ import { animationOptimization } from '@Helpers/functions';
 // Style
 import style from './modal.module.css';
 
-const Modal: FC = ({ children }) => {
+const Modal: FC<{ children: ReactNode }> = ({ children }) => {
   const { modal, toggleModal } = useContextMain();
   const ref = useRef<HTMLElement>(null);
 
@@ -44,13 +44,7 @@ const Modal: FC = ({ children }) => {
   }, [modal.show]);
 
   return (
-    <section
-      className={style.module}
-      role="dialog"
-      aria-labelledby="dialog title"
-      aria-describedby="dialog description"
-      ref={ref}
-    >
+    <section className={style.module} role="dialog" aria-labelledby="dialog title" aria-describedby="dialog description" ref={ref}>
       <div className={style.close}>
         <span
           className={style.close_button}

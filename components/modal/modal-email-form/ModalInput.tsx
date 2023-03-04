@@ -1,19 +1,13 @@
+import type { InputFromType } from '@Types';
 import { ChangeEvent, useCallback } from 'react';
-// Context
+// Hook
 import { useContextLanguage } from '@Hooks/useContextLanguage';
-// Types
-import { InputFromType } from '@Types';
 // Localization
 import { modalInputs } from '@Helpers/localization';
 // Style
 import emailform from './emailform.module.css';
 
-export const ModalInput = ({
-  typeInput,
-  nameInput,
-  handler,
-  value,
-}: InputFromType) => {
+export const ModalInput = ({ typeInput, nameInput, handler, value }: InputFromType) => {
   const { lang } = useContextLanguage();
 
   const getValue = useCallback(
@@ -34,13 +28,7 @@ export const ModalInput = ({
         onChange={getValue}
         value={value}
       />
-      <label
-        className={
-          value
-            ? `${emailform.placeholder} ${emailform.not_empty}`
-            : `${emailform.placeholder}`
-        }
-      >
+      <label className={value ? `${emailform.placeholder} ${emailform.not_empty}` : `${emailform.placeholder}`}>
         {modalInputs[nameInput][lang]}
       </label>
     </fieldset>

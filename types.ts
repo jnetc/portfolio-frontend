@@ -81,10 +81,7 @@ export interface ResumeProfileType {
   email: string;
   location: string;
 }
-export type ResumeLinksType = Pick<
-  ResumeProfileType,
-  'email' | 'github_href' | 'stackoverflow_href' | 'linkedin_href' | 'location'
->;
+export type ResumeLinksType = Pick<ResumeProfileType, 'email' | 'github_href' | 'stackoverflow_href' | 'linkedin_href' | 'location'>;
 
 export interface ResumeNoticeType {
   _id: string;
@@ -191,11 +188,11 @@ export interface AnchorType {
 export interface SerializerBlock {
   children: Array<string>;
   isInline: undefined;
-  node: SerializerNode;
+  value: SerializerNode;
   options: {};
 }
 interface SerializerNodeChildren extends SanityKeyType {
-  marks: Array<string>;
+  value: Array<string>;
   text: string;
 }
 interface SerializerMark extends SanityKeyType {
@@ -209,12 +206,8 @@ interface SerializerNode extends SanityKeyType {
 
 export interface SerializerLink extends SanityKeyType {
   children: Array<string>;
-  mark: SerializerMark;
+  value: SerializerMark;
   markKey: string;
-}
-
-export interface SerializerContainer {
-  children: Array<string>;
 }
 
 export interface ButtonWithArrawType {
@@ -257,16 +250,4 @@ export interface ResponseType {
   message: { en: string; ru: string; fi: string };
 }
 
-export type MonthType =
-  | 'jan'
-  | 'feb'
-  | 'mar'
-  | 'apr'
-  | 'may'
-  | 'june'
-  | 'july'
-  | 'aug'
-  | 'sept'
-  | 'oct'
-  | 'nov'
-  | 'dec';
+export type MonthType = 'jan' | 'feb' | 'mar' | 'apr' | 'may' | 'june' | 'july' | 'aug' | 'sept' | 'oct' | 'nov' | 'dec';

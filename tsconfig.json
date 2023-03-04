@@ -49,14 +49,6 @@
     "target": "es5",
     "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "pages/api/nodemailer.ts",
-    "lib/sanity.js",
-    "lib/sanity.server.js",
-    "lib/config.js"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/nodemailer.ts", "lib/sanity.client.ts", "lib/sanity.preview.ts"],
   "exclude": ["node_modules"]
 }

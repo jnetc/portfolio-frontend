@@ -1,6 +1,5 @@
+import type { ContextStore } from '@Types';
 import { useContext, createContext } from 'react';
-// Types
-import { ContextStore } from '@Types';
 
 // Create context
 export const storeState: ContextStore = {

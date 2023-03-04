@@ -1,11 +1,13 @@
+import type { ResumeDataFromSanity } from '@Types';
 import { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-
+// Hooks
+import { Language } from '@Hooks/useContextLanguage';
 // Sanity CMS
 import { groq } from 'next-sanity';
-import { getClient } from '@Sanity/sanity.server';
+import { client } from '@Sanity/sanity.client';
 // Components
 import { Profile } from '@Resume/profile/Profile';
 import { Notice } from '@Resume/notice/Notice';
@@ -15,20 +17,13 @@ import { SwitchLang } from '@Navigation/switch-lang/SwitchLang';
 import { SwitchTheme } from '@Navigation/switch-theme/SwitchTheme';
 // Dynamic components
 const GoToTopButton = dynamic(() => import('@GoToTopButton'));
-// Types
-import { ResumeDataFromSanity } from '@Types';
 // Helpers
 import { transformLocalizationResume } from '@Helpers/functions';
 import { criticalCSS } from '@Helpers/critical';
-// Hook
-import { Language } from '@Hooks/useContextLanguage';
 // Localization
 import { backLink } from '@Helpers/localization';
 
-const App: NextPage = ({
-  main,
-  locale,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const App: NextPage = ({ main, locale }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const currentLangData = transformLocalizationResume(locale, main);
   const locales = locale as 'en' | 'ru';
 
@@ -46,14 +41,11 @@ const App: NextPage = ({
           <title>Resume</title>
         </Head>
         <main className="resume">
-          <header
-            className="header resume__header"
-            aria-label="navigation panel"
-          >
+          <header className="header resume__header" aria-label="navigation panel">
             <Logo />
 
-            <Link href={locales === 'en' ? '/' : `/${locales}`}>
-              <a className="resume__back-link back-link">{backLink[locales]}</a>
+            <Link href={locales === 'en' ? '/' : `/${locales}`} className="resume__back-link back-link">
+              {backLink[locales]}
             </Link>
 
             <SwitchLang path="resume" />
@@ -61,20 +53,10 @@ const App: NextPage = ({
           </header>
 
           <Profile data={currentLangData.resume_profile} />
-          {currentLangData.resume_notice.active && (
-            <Notice data={currentLangData.resume_notice} />
-          )}
+          {currentLangData.resume_notice.active && <Notice data={currentLangData.resume_notice} />}
 
-          <div
-            className={`resume__activity-block ${
-              currentLangData.resume_notice.active &&
-              'activity-block-without-notice'
-            }`}
-          >
-            <Section
-              name="experience"
-              data={currentLangData.resume_experience}
-            />
+          <div className={`resume__activity-block ${currentLangData.resume_notice.active && 'activity-block-without-notice'}`}>
+            <Section name="experience" data={currentLangData.resume_experience} />
             <Section name="education" data={currentLangData.resume_education} />
           </div>
           <Section name="skills" data={currentLangData.resume_skills} />
@@ -89,12 +71,9 @@ const App: NextPage = ({
 
 export default App;
 
-export const getStaticProps: GetStaticProps = async ({
-  preview = false,
-  locale,
-}) => {
-  // Альтернативный вариант
-  // navigation {${locale}}
+export const getStaticProps: GetStaticProps = async ({ preview = false, locale }) => {
+  if (preview) return { props: { preview } };
+
   const queryResume = groq`*[_type in [
     'resume_profile',
     'resume_notice',
@@ -105,12 +84,11 @@ export const getStaticProps: GetStaticProps = async ({
     'resume_interests'
     ]] `;
 
-  const main = await getClient(preview).fetch<Array<ResumeDataFromSanity>>(
-    queryResume
-  );
+  const main = await client.fetch<Array<ResumeDataFromSanity>>(queryResume);
 
   return {
     props: {
+      preview,
       main,
       locale,
     },

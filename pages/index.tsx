@@ -1,10 +1,10 @@
+import type { StackOverflow, LandingPageData } from '@Types';
 import { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
-
 // Sanity CMS
 import { groq } from 'next-sanity';
-import { getClient } from '@Sanity/sanity.server';
+import { client } from '@Sanity/sanity.client';
 // Components
 import MainContext from '@MainContext';
 // Dynamic components
@@ -13,21 +13,14 @@ const Skills = dynamic(() => import('@Skills/Skills'), { ssr: false });
 const About = dynamic(() => import('@About/About'), { ssr: false });
 const Footer = dynamic(() => import('@Footer'), { ssr: false });
 const GoToTopButton = dynamic(() => import('@GoToTopButton'), { ssr: false });
-// Types
-import { StackOverflow, LandingPageData } from '@Types';
 // Helpers
 import { transformLocalization } from '@Helpers/functions';
 import { criticalCSS } from '@Helpers/critical';
-// Context
+// Hooks
 import { Store } from '@Hooks/useContextStore';
 import { Language } from '@Hooks/useContextLanguage';
 
-const App: NextPage = ({
-  main,
-  locale,
-  profile,
-  stackoverflow,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const App: NextPage = ({ main, locale, profile, stackoverflow }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const currentLangData = transformLocalization(locale, main);
   // Add profile links from resume
   currentLangData.github_href = profile.github_href;
@@ -61,23 +54,14 @@ const App: NextPage = ({
 
 export default App;
 
-export const getStaticProps: GetStaticProps = async ({
-  preview = false,
-  locale,
-}) => {
-  // Альтернативный вариант
-  // navigation {${locale}}
+export const getStaticProps: GetStaticProps = async ({ preview = false, locale }) => {
+  if (preview) return { props: { preview } };
+
   const queryMain = groq`*[_type in ['main', "projects", "skills", "education"]] `;
-  const main = await getClient(preview).fetch<Array<LandingPageData>>(
-    queryMain
-  );
-  const queryProfile = groq`*[_type in ["resume_profile"]]{
-    github_href,
-    linkedin_href
-  } `;
-  const [profile] = await getClient(preview).fetch<Array<LandingPageData>>(
-    queryProfile
-  );
+  const main = await client.fetch<Array<LandingPageData>>(queryMain);
+
+  const queryProfile = groq`*[_type in ["resume_profile"]] {github_href, linkedin_href}`;
+  const [profile] = await client.fetch<Array<LandingPageData>>(queryProfile);
 
   // get data from stackoverflow
   const responseStackOverflow = await fetch(
@@ -86,14 +70,9 @@ export const getStaticProps: GetStaticProps = async ({
   const resultStackOverflow = await responseStackOverflow.json();
 
   const stackoverflow: StackOverflow<string> = {
-    reputation: `${(
-      resultStackOverflow.items[0].owner.reputation / 1000
-    ).toFixed(1)}k`,
+    reputation: `${(resultStackOverflow.items[0].owner.reputation / 1000).toFixed(1)}k`,
     link: resultStackOverflow.items[0].owner.link,
-    answers:
-      resultStackOverflow.total < 1000
-        ? `${resultStackOverflow.total}`
-        : `${(resultStackOverflow.total / 1000).toFixed(1)}k`,
+    answers: resultStackOverflow.total < 1000 ? `${resultStackOverflow.total}` : `${(resultStackOverflow.total / 1000).toFixed(1)}k`,
   };
 
   return {

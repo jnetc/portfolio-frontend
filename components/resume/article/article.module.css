@@ -28,6 +28,7 @@
   width: 100%;
   height: 1.7rem;
   position: relative;
+  margin-block-end: 1.5rem;
 }
 .date::before {
   content: attr(data-date);

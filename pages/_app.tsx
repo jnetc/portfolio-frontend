@@ -1,7 +1,6 @@
+import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import '@Styles/globals.css';
-
-import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

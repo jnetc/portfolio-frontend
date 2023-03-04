@@ -4,6 +4,8 @@ import { useContextMain } from '@Hooks/useContextMain';
 
 const DARK_SCHEME = 'dark';
 const LIGHT_SCHEME = 'light';
+type ThemeType = typeof DARK_SCHEME | typeof LIGHT_SCHEME;
+
 //!
 // Also should add additional lines of code to the _document.tsx.
 //!
@@ -26,7 +28,7 @@ export const SwitchTheme = () => {
     });
   };
 
-  const themeSwitcher = useCallback(value => {
+  const themeSwitcher = useCallback((value: ThemeType) => {
     document.documentElement.dataset.theme = value;
     localStorage.setItem('theme', value);
   }, []);
@@ -72,11 +74,7 @@ export const SwitchTheme = () => {
         className="theme-switcher"
         tabIndex={0}
         role="button"
-        aria-label={
-          theme
-            ? `change to ${LIGHT_SCHEME} mode`
-            : `change to ${DARK_SCHEME} mode`
-        }
+        aria-label={theme ? `change to ${LIGHT_SCHEME} mode` : `change to ${DARK_SCHEME} mode`}
         onClick={toggleTheme}
         onKeyPress={toggleTheme}
         ref={ref}

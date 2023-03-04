@@ -250,10 +250,12 @@ textarea {
   font-size: 1.125em;
   line-height: 1.5;
 }
-.pad-block-start {
-  padding-block-start: 1.5rem;
+
+[class='paragraph'] {
+  margin-block-start: 1.5rem;
 }
-.paragraph__link {
+
+.paragraph a {
   color: var(--secondary-clr);
 }
 div > .paragraph:not(:last-of-type) {
@@ -304,5 +306,4 @@ div > .paragraph:not(:last-of-type) {
 @import url('./navigation.css');
 @import url('./home.css');
 @import url('./links.css');
-
 @import url('./resume.css');

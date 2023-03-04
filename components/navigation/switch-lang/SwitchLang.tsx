@@ -16,7 +16,6 @@ export const SwitchLang = ({ path = '' }: { path?: string }) => {
       <LangButton path={path} lang="en" />
       <LangButton path={path} lang="fi" />
       <LangButton path={path} lang="ru" />
-      {/* <div className="switch" ref={ref}></div> */}
     </div>
   );
 };

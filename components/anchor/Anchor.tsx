@@ -1,9 +1,8 @@
-// Context
+import type { AnchorType } from '@Types';
+// Hook
 import { useContextLanguage } from '@Hooks/useContextLanguage';
 // Localization
 import { anchor } from '@Helpers/localization';
-// Types
-import { AnchorType } from '@Types';
 // Style
 import style from './anchor.module.css';
 

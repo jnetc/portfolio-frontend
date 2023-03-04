@@ -149,17 +149,21 @@
 .home-right-side {
   height: 650px;
   grid-column: 8 / span 6;
+  display: grid;
   align-self: center;
   position: relative;
 }
 .pic-l,
 .pic-d {
-  width: 100%;
-  height: 650px;
-  display: block;
-  position: absolute;
+  grid-column: 1;
+  grid-row: 1;
   opacity: 0;
+  position: relative;
   pointer-events: none;
+}
+.pic-l img,
+.pic-d img {
+  object-fit: contain;
 }
 html[data-theme='light'] .pic-show,
 html[data-theme='dark'] .pic-show {

@@ -1,5 +1,4 @@
-// Types
-import { CourseType } from '@Types';
+import type { CourseType } from '@Types';
 // Components
 import { ExternalLink } from '@Links/External';
 import { Opiframe } from '@About/courses/logos/Opiframe';
@@ -15,29 +14,25 @@ export const Course = ({ data }: { data: CourseType }) => {
   const isUdemy = data.course_href.match('udemy');
 
   return (
-    <article className={style.module} aria-hidden>
+    <article className={style.module}>
       {isUdemy ? <Udemy /> : <Opiframe />}
-      {data.course_href && (
-        <ExternalLink url={data.course_href} cssClass={style.link} />
-      )}
+      {data.course_href && <ExternalLink url={data.course_href} cssClass={style.link} />}
       <div className={style.poster}>
-        <Img
-          pathImage={data.course_image}
-          objectFit="cover"
-          alt={data.course_name}
-        />
+        <Img pathImage={data.course_image} objectFit="cover" alt={data.course_name} />
       </div>
-      <h1 className={`card-title ${style.name}`} aria-hidden>{data.course_name}</h1>
+      <h1 className={`card-title ${style.name}`} aria-hidden>
+        {data.course_name}
+      </h1>
       <div className={`${style.complete}`}>
         {data.course_completed ? <Completed /> : <Studying />}
 
         <p className={`${style.complete_text}`}>
-          {data.course_completed
-            ? `completed ${data.course_completed}`
-            : `In the learning process`}
+          {data.course_completed ? `completed ${data.course_completed}` : `In the learning process`}
         </p>
       </div>
-      <p className={`paragraph ${style.desc}`} aria-hidden>{data.course_desc}</p>
+      <p className={`paragraph ${style.desc}`} aria-hidden>
+        {data.course_desc}
+      </p>
       {data.certificate_href && <CourseButton href={data.certificate_href} />}
     </article>
   );

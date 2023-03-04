@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, FormEvent } from 'react';
 // Component
 import { ModalInput } from './ModalInput';
 import { ModalTextarea } from './ModalTextarea';
@@ -25,7 +25,7 @@ export const EmailForm = () => {
   const getMessage = (val: string) => setMessage(val);
 
   const SendMessage = useCallback(
-    ev => {
+    (ev: FormEvent<HTMLFormElement>) => {
       ev.preventDefault();
 
       (async () => {
@@ -67,18 +67,8 @@ export const EmailForm = () => {
 
   return (
     <form className={emailform.module} method="post" onSubmit={SendMessage}>
-      <ModalInput
-        typeInput="text"
-        nameInput="name"
-        handler={getName}
-        value={name}
-      />
-      <ModalInput
-        typeInput="email"
-        nameInput="email"
-        handler={getEmail}
-        value={email}
-      />
+      <ModalInput typeInput="text" nameInput="name" handler={getName} value={name} />
+      <ModalInput typeInput="email" nameInput="email" handler={getEmail} value={email} />
       <ModalTextarea nameInput="message" handler={getMessage} value={message} />
       <ModalSubmitBtn />
     </form>

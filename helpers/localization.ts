@@ -108,9 +108,9 @@ export const navigationLinks: Array<NavLink> = [
 ];
 
 export const backLink = {
-  en: 'Back to main page',
-  ru: 'На главную страницу',
-  fi: 'Takaisin etusivulle',
+  en: 'Back ',
+  ru: 'На главную',
+  fi: 'Takaisin',
 };
 
 export const anchor = {

@@ -10,9 +10,10 @@ const Img = ({ pathImage, objectFit, alt }: ImageComponentType) => {
     <Image
       src={imageUrl}
       alt={alt}
-      objectFit={objectFit}
-      layout="fill"
+      sizes="100wv"
+      fill
       quality={80}
+      style={{ objectFit: `${objectFit === 'cover' ? 'cover' : 'contain'}` }}
     />
   );
 };

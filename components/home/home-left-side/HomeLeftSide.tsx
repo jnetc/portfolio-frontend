@@ -1,18 +1,19 @@
+import type { SerializerBlock } from '@Types';
+
+// Hook
+import { useContextStore } from '@Hooks/useContextStore';
+
 // Components
 import { Bulb } from '@Home/bulb-icon/Bulb';
 import { HomeLeftButton } from '@Home/home-left-side/HomeLeftButton';
 import ButtonWithArraw from '@ButtonWithArrow';
+
 // Sanity Block text
 import { PortableText } from '@Sanity/sanity';
-// Context
-import { useContextStore } from '@Hooks/useContextStore';
-// Types
-import { SerializerBlock } from '@Types';
 
 export const HomeLeftSide = () => {
   const { context } = useContextStore();
-  // Sanity block component
-  // https://github.com/coreyward/react-portable-text
+
   const serializer = ({ children }: SerializerBlock) => {
     return <p className="home-left-side__desc">{children}</p>;
   };
@@ -38,21 +39,14 @@ export const HomeLeftSide = () => {
       </div>
       <h1 className="home-left-side__title">{context?.title}</h1>
       <PortableText
-        blocks={context?.slogan}
-        serializers={{
-          types: {
-            block: serializer,
-          },
+        value={context?.slogan}
+        components={{
+          block: serializer,
         }}
       />
       <div className="home-btns">
         <HomeLeftButton name="contact" accessibility="contact me by email" />
-        <ButtonWithArraw
-          cssClass=""
-          route="resume"
-          name="resume"
-          accessibility="resume for employers"
-        />
+        <ButtonWithArraw cssClass="" route="resume" name="resume" accessibility="resume for employers" />
       </div>
     </header>
   );

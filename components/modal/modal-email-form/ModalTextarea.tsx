@@ -1,10 +1,11 @@
+import type { TextareaFromType } from '@Types';
 import { ChangeEvent } from 'react';
-// Context
+// Hook
 import { useContextLanguage } from '@Hooks/useContextLanguage';
-// Types
-import { TextareaFromType } from '@Types';
+
 // Localization
 import { modalTextarea } from '@Helpers/localization';
+
 // Style
 import emailform from './emailform.module.css';
 
@@ -24,27 +25,11 @@ export const ModalTextarea = ({ nameInput, handler, value }: TextareaFromType) =
 
   return (
     <fieldset className={emailform.input_field}>
-      <textarea
-        className={emailform.input}
-        name={nameInput}
-        rows={3}
-        required
-        maxLength={maxLength}
-        onChange={getValue}
-        value={value}
-      />
-      <label
-        className={
-          value ? `${emailform.placeholder} ${emailform.not_empty}` : `${emailform.placeholder}`
-        }
-      >
+      <textarea className={emailform.input} name={nameInput} rows={3} required maxLength={maxLength} onChange={getValue} value={value} />
+      <label className={value ? `${emailform.placeholder} ${emailform.not_empty}` : `${emailform.placeholder}`}>
         {modalTextarea[nameInput][lang]}
       </label>
-      <span
-        className={`${emailform.message_limit} ${value.length === 1500 ? emailform.limit : ''}`}
-      >
-        {valueTextArea[lang]}
-      </span>
+      <span className={`${emailform.message_limit} ${value.length === 1500 ? emailform.limit : ''}`}>{valueTextArea[lang]}</span>
     </fieldset>
   );
 };
