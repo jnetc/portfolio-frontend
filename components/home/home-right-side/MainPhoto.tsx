@@ -1,11 +1,12 @@
 import Image from 'next/image';
-// Type
-import { MainPhotoType } from '@Types';
+// Hook
+import { useContextMain } from '@Hooks/useContextMain';
 
-export const MainPhoto = ({ src, cssClass, theme }: MainPhotoType) => {
+export const MainPhoto = () => {
+  const { theme } = useContextMain();
   return (
-    <div className={theme ? `${cssClass} pic-show` : `${cssClass}`}>
-      <Image priority src={src} alt="Anton" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+    <div className={theme === 'light' ? `pic-l` : `pic-d`}>
+      <Image priority src="/images/picture_light.webp" alt="Anton" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
     </div>
   );
 };

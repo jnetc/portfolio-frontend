@@ -110,12 +110,6 @@ export interface ArticleType {
   cssClass: string;
 }
 
-export interface MainPhotoType {
-  cssClass: string;
-  src: string;
-  theme: boolean;
-}
-
 export interface Handler<T> {
   [key: string]: (value: T) => void;
 }
