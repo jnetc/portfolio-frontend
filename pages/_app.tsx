@@ -1,8 +1,13 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Script from 'next/script';
 import '@Styles/globals.css';
 
+export const GOOGLE_ANALYTIC = process.env.NEXT_PUBLIC_GOOGLE_ANALYTIC as string;
+
 function MyApp({ Component, pageProps }: AppProps) {
+  // console.log(GOOGLE_ANALYTIC);
+
   return (
     <>
       <Head>
@@ -31,6 +36,17 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="generator" content="Next.js" />
         <meta name="google" content="notranslate" />
       </Head>
+      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTIC}`} />
+
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${GOOGLE_ANALYTIC}');
+        `}
+      </Script>
       <Component {...pageProps} />
     </>
   );
