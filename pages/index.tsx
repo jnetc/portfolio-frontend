@@ -1,5 +1,6 @@
 import type { StackOverflow, LandingPageData } from '@Types';
 import { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
+import Script from 'next/script';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 // Sanity CMS
@@ -52,6 +53,17 @@ const App: NextPage = ({ main, locale, profile, stackoverflow }: InferGetStaticP
             <meta name="twitter:description" content={currentLangData.meta_desc} />
             <meta name="twitter:image" content="/icons/favicon.svg" />
           </Head>
+          <Script async strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=GOOGLE_ANALYTIC" />
+
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'GOOGLE_ANALYTIC');
+            `}
+          </Script>
 
           <main className="main grid">
             <MainContext />
