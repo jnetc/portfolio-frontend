@@ -27,6 +27,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="alternate" href="https://devan.fi/ru" hrefLang="ru" />
         <link rel="alternate" href="https://devan.fi/en" hrefLang="en" />
         <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/icons/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/icons/favicon-16x16.png" type="image/png" sizes="16x16" />
+        <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
         {/* Apple */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="devan.fi" />
