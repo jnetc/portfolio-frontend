@@ -8,12 +8,14 @@ import { ButtonWithArrowName } from '@Helpers/localization';
 // Style
 import style from './button-with-arrow.module.css';
 
-const ButtonWithArraw = ({ cssClass = '', route = '', name, accessibility }: ButtonWithArrawType) => {
+const ButtonWithArraw = ({ cssClass = '', name, accessibility }: ButtonWithArrawType) => {
   const { lang } = useContextLanguage();
+
+  const url = 'https://drive.google.com/file/d/1LaIh1jKh5aB0PeRSp6EEAzgCTHa3gKV3/view?usp=share_link';
 
   return (
     <div className={`${style.module} ${cssClass}`} title={accessibility} aria-label={accessibility}>
-      <Link href={lang === 'en' ? `/${route}` : `/${lang}/${route}`} className={style.button}>
+      <Link href={url} className={style.button} target="_blank">
         {ButtonWithArrowName[name][lang]}
       </Link>
       <span className={style.arrow} />

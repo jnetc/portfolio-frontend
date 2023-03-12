@@ -307,4 +307,4 @@ div > .paragraph:not(:last-of-type) {
 @import url('./navigation.css');
 @import url('./home.css');
 @import url('./links.css');
-@import url('./resume.css');
+/* @import url('./resume.css'); */
