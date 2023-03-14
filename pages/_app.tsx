@@ -22,8 +22,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0e9db" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#18171c" />
         {/* Links */}
-        <meta name="url" content="https://devan.fi/" />
-        <link rel="canonical" href="https://devan.fi/" />
+        <link rel="canonical" href="https://devan.fi" />
+        <link rel="alternate" href="https://devan.fi" hrefLang="x-default" />
         <link rel="alternate" href="https://devan.fi/ru" hrefLang="ru" />
         <link rel="alternate" href="https://devan.fi/en" hrefLang="en" />
         <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="generator" content="Next.js" />
         <meta name="google" content="notranslate" />
       </Head>
-      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTIC}`} />
+      {/* <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTIC}`} />
 
       <Script id="google-tags" strategy="afterInteractive">{`
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -55,7 +55,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
           gtag('config', '${GOOGLE_ANALYTIC}');
         `}
-      </Script>
+      </Script> */}
       <Component {...pageProps} />
     </>
   );
