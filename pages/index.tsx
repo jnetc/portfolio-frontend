@@ -40,14 +40,14 @@ const App: NextPage = ({ main, locale, profile, stackoverflow }: InferGetStaticP
             {/* Facebook / Open Graph */}
             <meta property="og:type" content="website" />
             <meta property="og:site_name" content="devan" />
-            <meta property="og:url" content={`${locale === 'fi' ? 'https://devan.fi/' : `https://devan.fi/${locale}/`}`} />
+            <meta property="og:url" content={`${locale === 'fi' ? 'https://devan.fi' : `https://devan.fi/${locale}`}`} />
             <meta property="og:image" content="/icons/favicon.svg" />
             <meta property="og:title" content={currentLangData.meta_title} />
             <meta property="og:description" content={currentLangData.meta_desc} />
             <meta property="og:locale" content={locale} />
             {/* Twitter */}
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:url" content={`${locale === 'fi' ? 'https://devan.fi/' : `https://devan.fi/${locale}/`}`} />
+            <meta name="twitter:url" content={`${locale === 'fi' ? 'https://devan.fi' : `https://devan.fi/${locale}`}`} />
             <meta name="twitter:title" content={currentLangData.meta_title} />
             <meta name="twitter:description" content={currentLangData.meta_desc} />
             <meta name="twitter:image" content="/icons/favicon.svg" />
