@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Script from 'next/script';
 import '@Styles/globals.css';
 
 export const GOOGLE_ANALYTIC = process.env.NEXT_PUBLIC_GOOGLE_ANALYTIC as string;
@@ -36,6 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="generator" content="Next.js" />
         <meta name="google" content="notranslate" />
       </Head>
+      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTIC}`} />
       <Component {...pageProps} />
     </>
   );
