@@ -20,10 +20,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f0e9db" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#18171c" />
         {/* Links */}
-        <link rel="canonical" href="https://devan.fi" />
-        <link rel="alternate" href="https://devan.fi" hrefLang="x-default" />
-        <link rel="alternate" href="https://devan.fi/ru" hrefLang="ru" />
-        <link rel="alternate" href="https://devan.fi/en" hrefLang="en" />
+        <meta name="url" content="https://devan.fi/" />
+        <link rel="alternate" href="https://devan.fi/" hrefLang="x-default" />
+        <link rel="alternate" href="https://devan.fi/ru/" hrefLang="ru" />
+        <link rel="alternate" href="https://devan.fi/en/" hrefLang="en" />
         <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/icons/favicon-32x32.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/icons/favicon-16x16.png" type="image/png" sizes="16x16" />

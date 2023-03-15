@@ -1,36 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xhtml="http://www.w3.org/1999/xhtml"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<!-- Finnish -->
+  <url>
+    <loc>https://www.devan.fi</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://devan.fi/#home</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://devan.fi/#portfolio</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://devan.fi/#skills</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://devan.fi/#about</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi/#home</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi/#portfolio</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi/#skills</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi/#about</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
 
+<!-- Russian -->
+  <url>
+    <loc>https://devan.fi/ru</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://devan.fi/ru#home</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://devan.fi/ru#portfolio</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://devan.fi/ru#skills</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://devan.fi/ru#about</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi/ru</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi/ru#home</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi/ru#portfolio</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi/ru#skills</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi/ru#about</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
 
-<url>
-  <loc>https://www.devan.fi</loc>
-  <xhtml:link rel="alternate" hreflang="fi" href="https://www.devan.fi"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://www.devan.fi/en"/>
-  <xhtml:link rel="alternate" hreflang="ru" href="https://www.devan.fi/ru"/>
-  <lastmod>2023-03-12</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-
-<url>
-  <loc>https://www.devan.fi/ru</loc>
-  <xhtml:link rel="alternate" hreflang="fi" href="https://www.devan.fi"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://www.devan.fi/en"/>
-  <xhtml:link rel="alternate" hreflang="ru" href="https://www.devan.fi/ru"/>
-  <lastmod>2023-03-12</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>https://www.devan.fi/en</loc>
-  <xhtml:link rel="alternate" hreflang="fi" href="https://www.devan.fi"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://www.devan.fi/en"/>
-  <xhtml:link rel="alternate" hreflang="ru" href="https://www.devan.fi/ru"/>
-  <lastmod>2023-03-12</lastmod>
-  <changefreq>monthly</changefreq>
-</url>
-
+  <!-- English -->
+  <url>
+    <loc>https://devan.fi/en</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://devan.fi/en#home</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://devan.fi/en#portfolio</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://devan.fi/en#skills</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://devan.fi/en#about</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi/en</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi/en#home</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi/en#portfolio</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi/en#skills</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.devan.fi/en#about</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2023-03-15</lastmod>
+  </url>
 </urlset>
