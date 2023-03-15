@@ -12,11 +12,13 @@ export interface Query extends SanityKeyType {
 export interface MainType {
   _id: string;
   github_href: string;
+  stackoverflow_href: string;
   linkedin_href: string;
+  email: string;
   meta_title: string;
   meta_desc: string;
-  slogan: Array<string>;
-  title: string;
+  title: Array<string>;
+  extra: Array<string>;
   story: Array<string>;
 }
 

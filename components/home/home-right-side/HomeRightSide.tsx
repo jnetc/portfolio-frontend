@@ -9,11 +9,6 @@ export const HomeRightSide = () => {
     <div className="home-right-side">
       <StackOverflow />
       <MainPhoto />
-      {/* <MainPhoto
-        src="/images/picture_dark.webp"
-        cssClass="pic-d"
-        theme={theme === 'dark'}
-      /> */}
       <svg viewBox="0 0 650 436" fill="none" className="home-right-side__rect rect-1">
         <path d="M245.333 7.52434L633.328 196.22C641.634 200.259 646.093 209.46 644.119 218.482L601.087 415.074C598.89 425.115 589.44 431.855 579.231 430.663L23.3896 365.786C8.60272 364.061 0.817329 347.362 9.0018 334.926L219.88 14.5148C225.404 6.12167 236.297 3.12986 245.333 7.52434Z">
           <animate

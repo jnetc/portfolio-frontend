@@ -16,6 +16,7 @@ const GoToTopButton = dynamic(() => import('@GoToTopButton'), { ssr: false });
 // Helpers
 import { transformLocalization } from '@Helpers/functions';
 import { criticalCSS } from '@Helpers/critical';
+import { createSchema } from '@Helpers/seo-schema';
 // Hooks
 import { Store } from '@Hooks/useContextStore';
 import { Language } from '@Hooks/useContextLanguage';
@@ -25,6 +26,9 @@ const App: NextPage = ({ main, locale, profile, stackoverflow }: InferGetStaticP
   // Add profile links from resume
   currentLangData.github_href = profile.github_href;
   currentLangData.linkedin_href = profile.linkedin_href;
+
+  // Create reach results (schema.org) for google search
+  const schema = createSchema(main);
 
   return (
     <Store.Provider value={{ context: currentLangData, stackoverflow }}>
@@ -40,18 +44,27 @@ const App: NextPage = ({ main, locale, profile, stackoverflow }: InferGetStaticP
             {/* Facebook / Open Graph */}
             <meta property="og:type" content="website" />
             <meta property="og:site_name" content="devan" />
-            <meta property="og:url" content={`${locale === 'fi' ? 'https://devan.fi' : `https://devan.fi/${locale}`}`} />
-            <meta property="og:image" content="/icons/favicon.svg" />
+            <meta property="og:url" content={`${locale === 'fi' ? 'https://www.devan.fi' : `https://www.devan.fi/${locale}`}`} />
+            <meta property="og:image" content="/icons/icon-256x256.png" />
+            <meta property="og:image:type" content="image/png" />
             <meta property="og:title" content={currentLangData.meta_title} />
+            <meta property="og:image:width" content="256" />
+            <meta property="og:image:height" content="256" />
+            <meta property="og:image:alt" content="Logo devan.fi" />
             <meta property="og:description" content={currentLangData.meta_desc} />
-            <meta property="og:locale" content={locale} />
+            <meta property="og:locale" content="fi" />
+            <meta property="og:locale:alternate" content="ru" />
+            <meta property="og:locale:alternate" content="en" />
+
             {/* Twitter */}
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:url" content={`${locale === 'fi' ? 'https://devan.fi' : `https://devan.fi/${locale}`}`} />
+            <meta name="twitter:url" content={`${locale === 'fi' ? 'https://www.devan.fi' : `https://www.devan.fi/${locale}`}`} />
             <meta name="twitter:title" content={currentLangData.meta_title} />
             <meta name="twitter:description" content={currentLangData.meta_desc} />
-            <meta name="twitter:image" content="/icons/favicon.svg" />
+            <meta name="twitter:image" content="/icons/icon-256x256.png" />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
           </Head>
+
           <main className="main grid">
             <MainContext />
             <Portfolio />

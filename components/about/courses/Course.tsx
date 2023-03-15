@@ -20,9 +20,9 @@ export const Course = ({ data }: { data: CourseType }) => {
       <div className={style.poster}>
         <Img pathImage={data.course_image} objectFit="cover" alt={data.course_name} />
       </div>
-      <h1 className={`card-title ${style.name}`} aria-hidden>
+      <h4 className={`card-title ${style.name}`} aria-hidden>
         {data.course_name}
-      </h1>
+      </h4>
       <div className={`${style.complete}`}>
         {data.course_completed ? <Completed /> : <Studying />}
 

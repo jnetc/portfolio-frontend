@@ -14,7 +14,11 @@ import { PortableText } from '@Sanity/sanity';
 export const HomeLeftSide = () => {
   const { context } = useContextStore();
 
-  const serializer = ({ children }: SerializerBlock) => {
+  const titleSerialize = ({ children }: SerializerBlock) => {
+    return <h1 className="home-left-side__desc">{children}</h1>;
+  };
+
+  const extraSerialize = ({ children }: SerializerBlock) => {
     return <p className="home-left-side__desc">{children}</p>;
   };
 
@@ -37,13 +41,20 @@ export const HomeLeftSide = () => {
           </text>
         </svg>
       </div>
-      <h1 className="home-left-side__title">{context?.title}</h1>
-      <PortableText
-        value={context?.slogan}
-        components={{
-          block: serializer,
-        }}
-      />
+      <div>
+        <PortableText
+          value={context?.title}
+          components={{
+            block: titleSerialize,
+          }}
+        />
+        <PortableText
+          value={context?.extra}
+          components={{
+            block: extraSerialize,
+          }}
+        />
+      </div>
       <div className="home-btns">
         <HomeLeftButton name="contact" accessibility="contact me by email" />
         <ButtonWithArraw cssClass="" route="resume" name="resume" accessibility="resume for employers" />
