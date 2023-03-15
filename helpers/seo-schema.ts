@@ -6,10 +6,24 @@ export function createSchema(data: MainType) {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Anton',
-    url: 'https://www.devan.fi',
     jobTitle: 'UI / Front-end developer',
-    description: data.meta_desc,
+    url: 'https://www.devan.fi/',
     sameAs: [data.stackoverflow_href, data.github_href],
+    brand: {
+      '@type': 'Brand',
+      logo: 'https://www.devan.fi/icons/icon-512x512.png',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      areaServed: 'FI',
+      availableLanguage: ['English', 'Finnish', 'Russian'],
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Espoo',
+      addressRegion: 'Uusimaa',
+      addressCountry: 'Finland',
+    },
   };
   return schema;
 }
