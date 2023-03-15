@@ -2,6 +2,8 @@
 import type { MainType } from '@Types';
 
 export function createSchema(data: MainType) {
+  console.log(data);
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Person',

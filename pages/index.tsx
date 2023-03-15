@@ -26,9 +26,10 @@ const App: NextPage = ({ main, locale, profile, stackoverflow }: InferGetStaticP
   // Add profile links from resume
   currentLangData.github_href = profile.github_href;
   currentLangData.linkedin_href = profile.linkedin_href;
+  const { projects, skills, education, ...herosection } = currentLangData;
 
   // Create reach results (schema.org) for google search
-  const schema = createSchema(main);
+  const schema = createSchema(herosection);
 
   return (
     <Store.Provider value={{ context: currentLangData, stackoverflow }}>
