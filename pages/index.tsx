@@ -37,11 +37,14 @@ const App: NextPage = ({ main, locale, profile, stackoverflow }: InferGetStaticP
         <>
           <Head>
             <style dangerouslySetInnerHTML={{ __html: criticalCSS }} />
+            <title>{currentLangData.meta_title}</title>
+            <meta name="description" content={currentLangData.meta_desc} />
             <meta name="googlebot" content="index, follow, noimageindex" />
             <meta name="robots" content="index, follow, noimageindex" />
 
-            <meta name="description" content={currentLangData.meta_desc} />
-            <title>{currentLangData.meta_title}</title>
+            {/* Canonical page */}
+            <link rel="canonical" href={`${locale === 'fi' ? 'https://www.devan.fi' : `https://www.devan.fi/${locale}`}`} />
+
             {/* Facebook / Open Graph */}
             <meta property="og:type" content="website" />
             <meta property="og:site_name" content="devan" />
