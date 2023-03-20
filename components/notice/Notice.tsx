@@ -21,15 +21,7 @@ const Notice = () => {
 
   return (
     <>
-      <p
-        className={
-          notice.status !== 'default'
-            ? `${style.module} ${style.show}`
-            : `${style.module}`
-        }
-        role="dialog"
-        ref={ref}
-      >
+      <p className={notice.status !== 'default' ? `${style.module} ${style.show}` : `${style.module}`} role="dialog" ref={ref}>
         {notice.message || ''}
       </p>
     </>

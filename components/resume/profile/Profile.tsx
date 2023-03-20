@@ -20,7 +20,7 @@ export const Profile = ({ data }: { data: ResumeProfileType }) => {
         <Image src="/images/avatar.webp" alt="resume avatar" height={200} width={200} quality={80} className={style.avatar} priority />
       </div>
       <div className={style.title}>
-        <h1 className={style.title_svg}>{name}</h1>
+        <h2 className={style.title_svg}>{name}</h2>
         <p className={style.sub_title}>{professional}</p>
         <ProfileLinks links={links} />
       </div>

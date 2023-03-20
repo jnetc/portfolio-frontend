@@ -15,15 +15,9 @@ const ModalEmailForm = () => {
   const { response } = useContextMain();
 
   return (
-    <section
-      className={
-        response?.status === 'success'
-          ? `${style.grid} ${emailform.sended}`
-          : `${style.grid}`
-      }
-    >
+    <section className={response?.status === 'success' ? `${style.grid} ${emailform.sended}` : `${style.grid}`}>
       <EmailFormSVG />
-      <h1 className={style.title}>{modalContent.title[lang]}</h1>
+      <h2 className={style.title}>{modalContent.title[lang]}</h2>
       <p className={style.sub_title}>{modalContent.subTitle[lang]}</p>
       <EmailForm />
     </section>

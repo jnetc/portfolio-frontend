@@ -18,7 +18,7 @@ export const Notice = ({ data }: { data: ResumeNoticeType }) => {
   return (
     <section className={style.module}>
       <NoticeSVG />
-      <h1 className={style.title}>{data.title}</h1>
+      <h2 className={style.title}>{data.title}</h2>
       <p className={style.sub_title}>{data.subtitle}</p>
       <div className={`${style.information}`}>
         <PortableText

@@ -13,13 +13,7 @@ export const Section = ({
   name,
   data,
 }: {
-  name:
-    | 'experience'
-    | 'education'
-    | 'interests'
-    | 'skills'
-    | 'languages'
-    | 'summary';
+  name: 'experience' | 'education' | 'interests' | 'skills' | 'languages' | 'summary';
   data: Array<ResumeArticleType>;
 }) => {
   const { lang } = useContextLanguage();
@@ -32,21 +26,12 @@ export const Section = ({
       return 1;
     })
     .map(a => {
-      return (
-        <Article
-          key={a._id}
-          data={a}
-          positionLeft={leftContent.includes(name)}
-          cssClass={name}
-        />
-      );
+      return <Article key={a._id} data={a} positionLeft={leftContent.includes(name)} cssClass={name} />;
     });
 
   return (
     <section className={`${style.module} section__${name}`}>
-      <h1 className={`${style.title} title__${name}`}>
-        {resumeSection[name][lang]}
-      </h1>
+      <h2 className={`${style.title} title__${name}`}>{resumeSection[name][lang]}</h2>
       <div className={` article__${name}`}>{articles}</div>
     </section>
   );
