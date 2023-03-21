@@ -36,10 +36,11 @@
 .project {
   display: flex;
   flex-flow: column;
+  grid-row: 1;
 }
-.image {
+/* .image {
   grid-column: 6 / span 7;
-}
+} */
 
 /* components */
 .title {
@@ -136,15 +137,24 @@
 }
 
 /* Image property */
-.left .image {
+/* .left .image {
   grid-column: 8 / 15;
   grid-row: 1;
 }
 .right .image {
   grid-column: 1 / 8;
   grid-row: 1;
+} */
+
+.left .video {
+  grid-column: 8 / -1;
 }
-.image {
+.right .video {
+  grid-column: 1 / 8;
+}
+.video {
+  align-self: center;
+  border-radius: 1rem;
   aspect-ratio: 16 / 9;
   width: calc(100% - 1.75rem);
   position: relative;
@@ -152,6 +162,38 @@
   border-radius: var(--l-radius);
   align-self: center;
   cursor: pointer;
+}
+
+/* .image {
+  aspect-ratio: 16 / 9;
+  width: calc(100% - 1.75rem);
+  position: relative;
+  margin-bottom: 1.75rem;
+  border-radius: var(--l-radius);
+  align-self: center;
+  cursor: pointer;
+} */
+
+.video::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--l-radius);
+  border-radius: var(--l-radius);
+  box-shadow: clamp(1rem, 2vw, 1.75rem) clamp(1rem, 2vw, 1.75rem) 0 0px var(--bg-clr),
+    clamp(1rem, 2vw, 1.75rem) clamp(1rem, 2vw, 1.75rem) 0 3px var(--card-extra-clr);
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.video:hover::after {
+  box-shadow: 0 0 0 0px var(--bg-clr), 0 0 0 3px var(--secondary-clr);
+}
+
+.video video {
+  border-radius: var(--l-radius);
+  transition: all 0.3s ease-in-out;
+  /* object-fit: cover; */
 }
 
 .image::after {
