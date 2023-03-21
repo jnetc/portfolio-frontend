@@ -12,16 +12,14 @@ export const Article: FC<ArticleType> = ({ data, positionLeft, cssClass }) => {
 
   return (
     <article
-      className={`${row ? style.module_row : style.module_column} ${
-        positionLeft ? style.card : ''
-      } ${cssClass === 'languages' ? style.module_lang : ''}`}
+      className={`${row ? style.module_row : style.module_column} ${positionLeft ? style.card : ''} ${
+        cssClass === 'languages' ? style.module_lang : ''
+      }`}
     >
-      {data.title && <h1 className={style.title}>{data.title}</h1>}
+      {data.title && <h2 className={style.title}>{data.title}</h2>}
 
       {data.date && <Date date={data.date} />}
-      {data.description && (
-        <Description desc={data.description} cssClass={cssClass} />
-      )}
+      {data.description && <Description desc={data.description} cssClass={cssClass} />}
 
       {data.tags && <Tags tags={data.tags} />}
 
