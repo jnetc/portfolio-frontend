@@ -4,7 +4,7 @@ import { Description } from '@Portfolio/Description';
 import { Tags } from '@Portfolio/tags/Tags';
 import { Links } from '@Portfolio/Links';
 import { Date } from '@Portfolio/Date';
-// import Img from '@Img';
+import Img from '@Img';
 // Hooks
 import { useContextLanguage } from '@Hooks/useContextLanguage';
 import { useTransitionObserver } from '@Hooks/useTransitionObserver';
@@ -29,14 +29,9 @@ export const RecentProject = ({ data, position }: { data: ProjectType; position:
         <Tags tags={data.tags} />
         <Links github={data.github_href} page={data.page_href} figma={data.figma_href} />
       </article>
-      <a className={`${style.video} transition`} href={data.page_href} title={data.page_href}>
-        <video muted loop poster="./images/poster_timamih.png">
-          <source src="./video/timamih.webm" type="video/webm" />
-        </video>
-      </a>
-      {/* <a className={style.video} href={data.page_href} title={data.page_href} target="_blank" rel="noreferrer">
+      <a className={style.image} href={data.page_href} title={data.page_href} target="_blank" rel="noreferrer">
         <Img pathImage={data.poster} objectFit="fill" alt={data.project_title} />
-      </a> */}
+      </a>
     </section>
   );
 };
