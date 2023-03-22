@@ -38,9 +38,6 @@
   flex-flow: column;
   grid-row: 1;
 }
-.image {
-  grid-column: 6 / span 7;
-}
 
 /* components */
 .title {
@@ -76,7 +73,6 @@
 .tag_name {
   padding: 0.5em 1em;
   border-radius: var(--s-radius);
-  /* background-color: var(--bg-dimed); */
   background-color: hsl(var(--secondary-h) var(--secondary-s) var(--secondary-l) / 0.04);
   color: var(--secondary-clr);
   font-size: 0.875em;
@@ -159,7 +155,6 @@
   position: absolute;
   inset: 0;
   border-radius: var(--l-radius);
-  border-radius: var(--l-radius);
   box-shadow: clamp(1rem, 2vw, 1.75rem) clamp(1rem, 2vw, 1.75rem) 0 0px var(--bg-clr),
     clamp(1rem, 2vw, 1.75rem) clamp(1rem, 2vw, 1.75rem) 0 3px var(--card-extra-clr);
   transition: all 0.3s ease-in-out;
@@ -167,39 +162,29 @@
 }
 
 .video:hover::after {
-  box-shadow: 0 0 0 0px var(--bg-clr), 0 0 0 3px var(--secondary-clr);
+  inset: 0px 0px 3px 0;
+  box-shadow: 0px 0px 0 0px var(--bg-clr), 0px 0px 0 3px var(--secondary-clr);
 }
 
 .video video {
   border-radius: var(--l-radius);
   transition: all 0.3s ease-in-out;
-  /* object-fit: cover; */
 }
 
 @media screen and (max-width: 768px) {
   .right .recent,
   .left .recent,
-  .right .image,
-  .left .image {
+  .right .video,
+  .left .video {
     grid-column: 1 / -1;
     grid-row: 1;
-    position: relative;
   }
   .right .recent,
   .left .recent {
-    z-index: 2;
+    grid-row: 2;
   }
-  .image {
-    left: 50%;
-    width: 1000px;
-    opacity: 0.3;
-    pointer-events: none;
-    z-index: 1;
-  }
+
   .archive {
     max-width: 23.75rem;
-  }
-  .image::after {
-    display: none;
   }
 }

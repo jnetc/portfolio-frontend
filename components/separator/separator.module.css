@@ -13,12 +13,12 @@
   margin-top: 10rem;
 }
 .desc {
-  margin-bottom: 10rem;
+  padding-block-end: 8rem;
   color: var(--secondary-clr);
 }
 @media screen and (max-width: 768px) {
   .title {
-    font-size: 1.5em;
+    font-size: 1.7em;
     line-height: 1.2;
   }
 }

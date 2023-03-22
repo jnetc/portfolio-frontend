@@ -18,6 +18,14 @@ export const RecentProject = ({ data, position }: { data: ProjectType; position:
   const { lang } = useContextLanguage();
   const projectCompleted = dataTranslate(data.project_completed, lang);
 
+  const id = process.env.NEXT_PUBLIC_PROJECTID;
+  const dataset = process.env.NEXT_PUBLIC_DATASET;
+
+  const video_link = `https://cdn.sanity.io/files/${id}/${dataset}/${data.video.asset._ref.replace(`file-`, '').replace(`-webm`, `.webm`)}`;
+  const poster_link = `https://cdn.sanity.io/images/${id}/${dataset}/${data.poster.asset._ref
+    .replace(`image-`, '')
+    .replace(`-webp`, `.webp`)}`;
+
   useTransitionObserver('transition');
 
   return (
@@ -30,10 +38,8 @@ export const RecentProject = ({ data, position }: { data: ProjectType; position:
         <Links github={data.github_href} page={data.page_href} figma={data.figma_href} />
       </article>
       <a className={`${style.video} transition`} href={data.page_href} title={data.page_href} target="_blank" rel="noreferrer">
-        <video muted loop poster="./images/poster_timamih.png">
-          href={data.page_href}
-          <source src="./video/timamih.webm" type="video/webm" />
-          title={data.page_href}
+        <video muted loop autoPlay poster={poster_link}>
+          <source src={video_link} type="video/webm" />
         </video>
       </a>
     </section>

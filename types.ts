@@ -29,10 +29,19 @@ export interface ImageType {
   };
 }
 
+export interface VideoType {
+  _type: string;
+  asset: {
+    _ref: string;
+  };
+}
+
 export interface ProjectType {
   _id: string;
   recent: boolean;
   poster: ImageType;
+  video: VideoType;
+  video_url: string;
   label_recent: string;
   label: string;
   project_completed: string;

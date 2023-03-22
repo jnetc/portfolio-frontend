@@ -67,6 +67,14 @@ const App: NextPage = ({ main, locale, profile, stackoverflow }: InferGetStaticP
             <meta name="twitter:description" content={currentLangData.meta_desc} />
             <meta name="twitter:image" content="/icons/icon-256x256.png" />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
+            {/* <link
+              rel="preload"
+              as="video"
+              href="https://drive.google.com/file/d/1M1FB6iuSz5yFQnKwPfXF6mC5j3QK9R_s/view"
+              crossOrigin="anonymous"
+              type="video/webm"
+            /> */}
           </Head>
 
           <main className="main grid">

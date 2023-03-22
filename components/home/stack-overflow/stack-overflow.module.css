@@ -51,9 +51,7 @@
   top: 0;
   bottom: 0;
   right: -0.8em;
-  background-color: hsl(
-    var(--primary-h) var(--primary-s) var(--primary-l) / 0.2
-  );
+  background-color: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / 0.2);
 }
 .right_side {
   grid-column: 2;
@@ -76,10 +74,4 @@
   padding-block: 0.6rem;
   grid-row: 3;
   grid-column: 1 /-1;
-}
-
-@media screen and (max-width: 768px) {
-  .module {
-    display: none;
-  }
 }

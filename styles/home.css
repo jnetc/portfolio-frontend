@@ -217,16 +217,6 @@
 
   .home-right-side {
     grid-column: span 6;
-    top: 5vh;
-    opacity: 0.3;
-    position: absolute;
-    width: 75vh;
-    left: 80%;
-    transform: translate(-50%, 0);
-    z-index: -1;
-  }
-  .home-right-side__rect {
-    opacity: 0.2;
   }
 }
 @media screen and (max-width: 330px) {
