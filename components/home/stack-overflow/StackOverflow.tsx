@@ -14,9 +14,9 @@ const StackOverflow = () => {
 
   return (
     <section className={style.module}>
-      <h4 className={style.title}>
+      <p className={style.title}>
         stack<strong>overflow</strong>
-      </h4>
+      </p>
       <div className={`${style.data} ${style.left_side}`} title="Recent achievements: reputation, badges, and privileges earned">
         <span className={style.number}>{stackoverflow.reputation}</span>
         <p className={style.label}>{stackoverflowContent.reputation[lang]}</p>
