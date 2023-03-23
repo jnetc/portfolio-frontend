@@ -179,6 +179,13 @@ ol {
   list-style: none;
 }
 
+svg,
+img,
+video {
+  width: 100%;
+  height: auto;
+}
+
 fieldset {
   outline: none;
   border: none;
@@ -244,7 +251,7 @@ video {
 }
 .card-title {
   color: var(--primary-clr);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   letter-spacing: 1px;
   line-height: 1.2;
 }

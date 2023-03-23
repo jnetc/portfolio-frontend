@@ -1,5 +1,5 @@
 .name {
-  margin-top: 15rem;
+  padding-block-start: 15rem;
   position: relative;
   color: var(--secondary-clr);
   font-size: 1.25em;
@@ -10,7 +10,7 @@
   --size: 18rem;
   content: attr(data-hash);
   position: absolute;
-  top: calc(-1 * var(--size) / 3);
+  bottom: calc(-1 * var(--size) / 1.6);
   left: 0;
   color: hsl(var(--secondary-h) var(--secondary-s) var(--secondary-l) / 0.05);
   font-size: var(--size);
@@ -18,7 +18,7 @@
 }
 .desc {
   grid-column: 4 / -1;
-  margin-bottom: 10rem;
+  padding-block-end: 12rem;
   font-size: 2.25em;
   z-index: 2;
 }
@@ -40,7 +40,7 @@
   }
   .desc {
     grid-column: 2 / -1;
-    font-size: 1.3em;
+    font-size: 1.7em;
   }
   .separator {
     grid-column: 1;
