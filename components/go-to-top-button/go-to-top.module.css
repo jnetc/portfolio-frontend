@@ -1,14 +1,16 @@
 .module {
+  --full-main-width: 1840px;
   width: 2.5rem;
   height: 2.5rem;
   display: none;
-  position: sticky;
-  right: 2rem;
+  position: fixed;
+  right: max(2rem, calc(100vw / 2 - 1.25rem - (var(--full-main-width) / 2)));
   bottom: 2rem;
   margin-left: auto;
+  opacity: 0.5;
   background-color: var(--card-clr);
   border: 2px solid transparent;
-  border-radius: 50%;
+  border-radius: 151rem;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 15px 20px var(--card-shadow-clr);
   cursor: pointer;
@@ -33,7 +35,9 @@
   transform: translateX(1px) rotate(-45deg);
 }
 .module:hover {
+  height: 5rem;
   border-color: var(--secondary-clr);
+  opacity: 1;
 }
 
 .module.view {

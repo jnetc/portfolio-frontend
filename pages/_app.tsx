@@ -30,15 +30,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="alternate" href="https://www.devan.fi/en/" hrefLang="en" />
 
         {/* Favicon */}
-        <link rel="icon" href="/icons/favicon-16x16.png" type="image/png" sizes="16x16" />
-        <link rel="icon" href="/icons/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="shortcut icon" href="/icons/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/icons/favicon-48x48.png" type="image/png" sizes="48x48" />
-        <link rel="icon" href="/icons/favicon-62x62.png" type="image/png" sizes="62x62" />
         <link rel="icon" href="/icons/favicon-192x192.png" type="image/png" sizes="192x192" />
-        <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/icons/favicon-512x512.png" type="image/png" sizes="512x512" />
         <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" sizes="57x57" href="/icons/icon-57x57.png" />
-        <link rel="apple-touch-icon" sizes="180×180" href="/icons/icon-180×180.png" />
+        <link rel="apple-touch-icon" href="/icons/favicon-180×180.png" type="image/png" sizes="180×180" />
 
         {/* Others */}
         <meta name="format-detection" content="telephone=no, address=no" />
