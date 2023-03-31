@@ -38,6 +38,38 @@
   font-size: 1em;
 }
 
+/* LIGHT THEME */
+/* UFO & 0 */
+html[data-theme='light'] .light_to_dark {
+  fill: #2d2f33;
+}
+/* 4 & 4 */
+html[data-theme='light'] .dark_to_light {
+  fill: #ded5c4;
+}
+/* Light from UFO */
+html[data-theme='light'] stop.light_to_dark {
+  stop-color: #878788;
+}
+/* Shadow */
+html[data-theme='light'] stop.dark_to_light {
+  stop-color: #878788;
+}
+
+/* DARK THEME */
+html[data-theme='dark'] .light_to_dark {
+  fill: #ece2d0;
+}
+html[data-theme='dark'] .dark_to_light {
+  fill: #44474e;
+}
+html[data-theme='dark'] stop.light_to_dark {
+  stop-color: #ece2d0;
+}
+html[data-theme='dark'] stop.dark_to_light {
+  stop-color: #ece2d0;
+}
+
 @media screen and (max-width: 768px) {
   .svg {
     height: 300px;
