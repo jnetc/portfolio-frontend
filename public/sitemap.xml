@@ -3,22 +3,22 @@
 <!-- Finnish -->
   <url>
     <loc>https://www.devan.fi</loc>
+    <priority>1.0</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2023-03-31</lastmod>
-     <priority>0.9</priority>
+    <lastmod>2023-04-02</lastmod>
   </url>
 <!-- Russian -->
   <url>
     <loc>https://www.devan.fi/ru</loc>
+    <priority>1.0</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2023-03-31</lastmod>
-     <priority>0.9</priority>
+    <lastmod>2023-04-02</lastmod>
   </url>
   <!-- English -->
   <url>
     <loc>https://www.devan.fi/en</loc>
+    <priority>1.0</priority>
     <changefreq>monthly</changefreq>
-    <lastmod>2023-03-31</lastmod>
-     <priority>0.9</priority>
+    <lastmod>2023-04-02</lastmod>
   </url>
 </urlset>
