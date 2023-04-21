@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/icons/favicon.ico" type="image/x-icon"/>
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon-180x180.png" type="image/png" sizes="180x180"/>
-        <link rel="apple-touch-icon-precomposed" href="/docs/favicon/apple-touch-icon-57x57.png" sizes="57x57"/>
+        <link rel="apple-touch-icon-precomposed" href="/icons/favicon/apple-touch-icon-57x57.png" sizes="57x57"/>
 
 
         {/* Others */}
