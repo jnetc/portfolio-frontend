@@ -25,7 +25,7 @@ const StackOverflow = () => {
         <span className={style.number}>{stackoverflow.answers}</span>
         <p className={style.label}>{stackoverflowContent.answers[lang]}</p>
       </div>
-      <a href={stackoverflow.link} className={`btn ${style.button}`} role="button" target="_blank" rel="noreferrer">
+      <a href={stackoverflow.link} className={`btn ${style.button}`} title="Stack Overflow" role="button" target="_blank" rel="noreferrer">
         {stackoverflowContent.button[lang]}
       </a>
     </section>

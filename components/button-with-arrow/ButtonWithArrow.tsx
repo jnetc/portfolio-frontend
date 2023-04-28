@@ -15,7 +15,7 @@ const ButtonWithArraw = ({ cssClass = '', name, accessibility }: ButtonWithArraw
 
   return (
     <div className={`${style.module} ${cssClass}`} title={accessibility} aria-label={accessibility}>
-      <Link href={url} className={style.button} target="_blank">
+      <Link href={url} rel='nofollow' className={style.button} target="_blank">
         {ButtonWithArrowName[name][lang]}
       </Link>
       <span className={style.arrow} />

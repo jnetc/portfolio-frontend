@@ -15,7 +15,7 @@ export const HomeLeftSide = () => {
   const { context } = useContextStore();
 
   const titleSerialize = ({ children }: SerializerBlock) => {
-    return <h1 className="home-left-side__desc">{children}</h1>;
+    return <p className="home-left-side__desc">{children}</p>;
   };
 
   const extraSerialize = ({ children }: SerializerBlock) => {
@@ -25,6 +25,7 @@ export const HomeLeftSide = () => {
   return (
     <header className="home-left-side mob-right-pad">
       <div className="svg-title" title="your ideas & my skills">
+        <h1 style={{opacity: 0, visibility: "hidden", position: "absolute"}}>{context?.meta_title.split("|")[0].trim()}</h1>
         <svg viewBox="0 0 625 220">
           <text className="svg-title__text ampersand" x="-5" y="210">
             &
@@ -41,7 +42,7 @@ export const HomeLeftSide = () => {
           </text>
         </svg>
       </div>
-      <div>
+      <h2>
         <PortableText
           value={context?.title}
           components={{
@@ -54,7 +55,7 @@ export const HomeLeftSide = () => {
             block: extraSerialize,
           }}
         />
-      </div>
+      </h2>
       <div className="home-btns">
         <HomeLeftButton name="contact" accessibility="contact me by email" />
         <ButtonWithArraw cssClass="" route="resume" name="resume" accessibility="resume for employers" />
