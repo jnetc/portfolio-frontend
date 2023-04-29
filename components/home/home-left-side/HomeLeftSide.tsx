@@ -15,11 +15,11 @@ export const HomeLeftSide = () => {
   const { context } = useContextStore();
 
   const titleSerialize = ({ children }: SerializerBlock) => {
-    return <p className="home-left-side__desc">{children}</p>;
+    return <span className="home-left-side__desc">{children}</span>;
   };
 
   const extraSerialize = ({ children }: SerializerBlock) => {
-    return <p className="home-left-side__desc">{children}</p>;
+    return <span className="home-left-side__desc">{children}</span>;
   };
 
   return (

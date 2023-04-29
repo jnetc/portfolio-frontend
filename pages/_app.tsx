@@ -27,7 +27,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#18171c" />
 
         {/* Links */}
-        <link rel="alternate" href="https://www.devan.fi/" hrefLang="fi" />
         <link rel="alternate" href="https://www.devan.fi/ru/" hrefLang="ru" />
         <link rel="alternate" href="https://www.devan.fi/en/" hrefLang="en" />
 
