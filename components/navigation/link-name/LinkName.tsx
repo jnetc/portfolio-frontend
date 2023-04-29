@@ -9,7 +9,7 @@ export const LinkName = ({ link, handler }: LinkNameType) => {
   const closeMenu = () => handler(false);
 
   return (
-    <Link href={`#${link.anchor}`} className="nav-link" onClick={closeMenu}>
+    <Link href={`#${link.anchor}`} className="nav-link" title={link.anchor} onClick={closeMenu}>
       {link[lang]}
     </Link>
   );
