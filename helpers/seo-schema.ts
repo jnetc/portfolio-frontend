@@ -7,11 +7,11 @@ export function createSchema(data: MainType) {
     '@type': 'WebSite',
     url: 'https://www.devan.fi/',
     name: 'devan.fi',
-    description: 'UI/UX designer and Front-end developer portfolio',
+    description: 'UI/UX designer and front-end developer portfolio',
     author: {
       '@type': 'Person',
       name: 'Anton',
-      jobTitle: 'UI / Front-end developer',
+      jobTitle: 'UI / front-end developer',
       url: 'https://www.devan.fi/',
       sameAs: [data.stackoverflow_href, data.github_href],
       brand: {
