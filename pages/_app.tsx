@@ -13,8 +13,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="HandheldFriendly" content="true" />
         <meta name="MobileOptimized" content="width" />
 
-        <meta name="robots" content="index,follow"/>
-        <meta name="keywords" content="front-end portfolio, ui designer portfolio, front-end developer, web developer, ui developer, ui designer, ui/ux designer, front-end kehittäjä, фронтенд разработчик, javascript, typescript, next.js, react.js, vue.js, figma, adobe illustrator, modern web, modern ui, html, css, svg, pwa, ui, ux, ui/ux, js, ts, seo, web, dev, cms, jamstack, sanity.io, datocms, netlify, vercel, development, developer"/>
+        <meta name="robots" content="index,follow" />
+        <meta
+          name="keywords"
+          content="front-end portfolio, ui designer portfolio, front-end developer, web developer, ui developer, ui designer, ui/ux designer, front-end kehittäjä, фронтенд разработчик, javascript, typescript, next.js, react.js, vue.js, figma, adobe illustrator, modern web, modern ui, html, css, svg, pwa, ui, ux, ui/ux, js, ts, seo, web, dev, cms, jamstack, sanity.io, datocms, netlify, vercel, development, developer"
+        />
 
         {/* App PWA */}
         <meta name="application-name" content="devan.fi" />
@@ -33,17 +36,19 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="alternate" href="https://www.devan.fi/en/" hrefLang="en" />
 
         {/* Favicon */}
-        <link rel="icon" href="/icons/favicon.ico" type="image/x-icon"/>
-        <link rel="shortcut icon" href="/icons/favicon.ico" type="image/x-icon" />
-        <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
+        {/* <link rel="shortcut icon" href="https://devan.fi/icons/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/icons/favicon-32x32.png" type="image/png" sizes="32x32" />
-        <link rel="icon" href="/icons/favicon-48x48.png" type="image/png" sizes="48x48" />
+        <link rel="icon" href="/icons/favicon-48x48.png" type="image/png" sizes="48x48" /> */}
         <link rel="icon" href="/icons/favicon-96x96.png" type="image/png" sizes="96x96" />
-        <link rel="icon" href="/icons/favicon-192x192.png" type="image/png" sizes="192x192" />
-        <link rel="icon" href="/icons/favicon-512x512.png" type="image/png" sizes="512x512" />
-        <link rel="apple-touch-icon" href="/icons/apple-touch-icon-180x180.png" type="image/png" sizes="180x180"/>
-        <link rel="apple-touch-icon-precomposed" href="/icons/apple-touch-icon-57x57.png" type="image/png" sizes="57x57"/>
-
+        {/* <link rel="icon" href="/icons/favicon-192x192.png" type="image/png" sizes="192x192" />
+        <link rel="icon" href="/icons/favicon-512x512.png" type="image/png" sizes="512x512" /> */}
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon-180x180.png" type="image/png" sizes="180x180" />
+        <link
+          rel="apple-touch-icon-precomposed"
+          href="/icons/apple-touch-icon-57x57.png"
+          type="image/png"
+          sizes="57x57"
+        />
 
         {/* Others */}
         <meta name="format-detection" content="telephone=no, address=no" />
