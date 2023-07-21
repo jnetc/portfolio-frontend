@@ -39,16 +39,22 @@ const App: NextPage = ({ main, locale, profile, stackoverflow }: InferGetStaticP
             <style dangerouslySetInnerHTML={{ __html: criticalCSS }} />
             <title>{currentLangData.meta_title}</title>
             <meta name="description" content={currentLangData.meta_desc} />
-            <meta name="googlebot" content="index, follow, noimageindex" />
-            <meta name="robots" content="index, follow, noimageindex" />
+            <meta name="googlebot" content="index, follow" />
+            <meta name="robots" content="index, follow" />
 
             {/* Canonical page */}
-            <link rel="canonical" href={`${locale === 'fi' ? 'https://www.devan.fi' : `https://www.devan.fi/${locale}`}`} />
+            <link
+              rel="canonical"
+              href={`${locale === 'fi' ? 'https://www.devan.fi' : `https://www.devan.fi/${locale}`}`}
+            />
 
             {/* Facebook / Open Graph */}
             <meta property="og:type" content="website" />
             <meta property="og:site_name" content="devan" />
-            <meta property="og:url" content={`${locale === 'fi' ? 'https://www.devan.fi' : `https://www.devan.fi/${locale}`}`} />
+            <meta
+              property="og:url"
+              content={`${locale === 'fi' ? 'https://www.devan.fi' : `https://www.devan.fi/${locale}`}`}
+            />
             <meta property="og:image" content="/icons/favicon-256x256.png" />
             <meta property="og:image:type" content="image/png" />
             <meta property="og:title" content={currentLangData.meta_title} />
@@ -62,7 +68,10 @@ const App: NextPage = ({ main, locale, profile, stackoverflow }: InferGetStaticP
 
             {/* Twitter */}
             <meta name="twitter:card" content="summary" />
-            <meta name="twitter:url" content={`${locale === 'fi' ? 'https://www.devan.fi' : `https://www.devan.fi/${locale}`}`} />
+            <meta
+              name="twitter:url"
+              content={`${locale === 'fi' ? 'https://www.devan.fi' : `https://www.devan.fi/${locale}`}`}
+            />
             <meta name="twitter:title" content={currentLangData.meta_title} />
             <meta name="twitter:description" content={currentLangData.meta_desc} />
             <meta name="twitter:image" content="/icons/favicon-256x256.png" />
@@ -103,7 +112,10 @@ export const getStaticProps: GetStaticProps = async ({ preview = false, locale }
   const stackoverflow: StackOverflow<string> = {
     reputation: `${(resultStackOverflow.items[0].owner.reputation / 1000).toFixed(1)}k`,
     link: resultStackOverflow.items[0].owner.link,
-    answers: resultStackOverflow.total < 1000 ? `${resultStackOverflow.total}` : `${(resultStackOverflow.total / 1000).toFixed(1)}k`,
+    answers:
+      resultStackOverflow.total < 1000
+        ? `${resultStackOverflow.total}`
+        : `${(resultStackOverflow.total / 1000).toFixed(1)}k`,
   };
 
   return {
