@@ -36,10 +36,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="alternate" href="https://www.devan.fi/en/" hrefLang="en" />
 
         {/* Favicon */}
-        {/* <link rel="shortcut icon" href="https://devan.fi/icons/favicon.ico" type="image/x-icon" />
-        <link rel="icon" href="/icons/favicon-32x32.png" type="image/png" sizes="32x32" />
-        <link rel="icon" href="/icons/favicon-48x48.png" type="image/png" sizes="48x48" /> */}
-        <link rel="icon" href="/icons/favicon-96x96.png" type="image/png" sizes="96x96" />
+        <link rel="icon" href="https://devan.fi/icons/favicon.ico" type="image/x-icon" />
+        {/* <link rel="icon" href="/icons/favicon-32x32.png" type="image/png" sizes="32x32" /> */}
+        {/* <link rel="icon" href="/icons/favicon-48x48.png" type="image/png" sizes="48x48" /> */}
+        {/* <link rel="icon" href="https://devan.fi/icons/favicon-96x96.png" type="image/png" sizes="96x96" /> */}
         {/* <link rel="icon" href="/icons/favicon-192x192.png" type="image/png" sizes="192x192" />
         <link rel="icon" href="/icons/favicon-512x512.png" type="image/png" sizes="512x512" /> */}
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon-180x180.png" type="image/png" sizes="180x180" />
