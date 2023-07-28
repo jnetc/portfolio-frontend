@@ -6,7 +6,7 @@ import { useContextStore } from '@Hooks/useContextStore';
 // Components
 import { Bulb } from '@Home/bulb-icon/Bulb';
 import { HomeLeftButton } from '@Home/home-left-side/HomeLeftButton';
-import ButtonWithArraw from '@ButtonWithArrow';
+// import ButtonWithArraw from '@ButtonWithArrow';
 
 // Sanity Block text
 import { PortableText } from '@Sanity/sanity';
@@ -25,7 +25,9 @@ export const HomeLeftSide = () => {
   return (
     <header className="home-left-side mob-right-pad">
       <div className="svg-title" title="your ideas & my skills">
-        <h1 style={{opacity: 0, visibility: "hidden", position: "absolute"}}>{context?.meta_title.split("|")[0].trim()}</h1>
+        <h1 style={{ opacity: 0, visibility: 'hidden', position: 'absolute' }}>
+          {context?.meta_title.split('|')[0].trim()}
+        </h1>
         <svg viewBox="0 0 625 220">
           <text className="svg-title__text ampersand" x="-5" y="210">
             &
@@ -58,7 +60,7 @@ export const HomeLeftSide = () => {
       </h2>
       <div className="home-btns">
         <HomeLeftButton name="contact" accessibility="contact me by email" />
-        <ButtonWithArraw cssClass="" route="resume" name="resume" accessibility="resume for employers" />
+        {/* <ButtonWithArraw cssClass="" route="resume" name="resume" accessibility="resume for employers" /> */}
       </div>
     </header>
   );
