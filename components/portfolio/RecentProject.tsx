@@ -21,7 +21,9 @@ export const RecentProject = ({ data, position }: { data: ProjectType; position:
   const id = process.env.NEXT_PUBLIC_PROJECTID;
   const dataset = process.env.NEXT_PUBLIC_DATASET;
 
-  const video_link = `https://cdn.sanity.io/files/${id}/${dataset}/${data.video.asset._ref.replace(`file-`, '').replace(`-webm`, `.webm`)}`;
+  const video_link = `https://cdn.sanity.io/files/${id}/${dataset}/${data.video.asset._ref
+    .replace(`file-`, '')
+    .replace(`-webm`, `.webm`)}`;
   const poster_link = `https://cdn.sanity.io/images/${id}/${dataset}/${data.poster.asset._ref
     .replace(`image-`, '')
     .replace(`-webp`, `.webp`)}`;
@@ -29,7 +31,11 @@ export const RecentProject = ({ data, position }: { data: ProjectType; position:
   useTransitionObserver('transition');
 
   return (
-    <section className={`grid mob-right-pad grid-12 ${position ? `${style.left} project-margin` : `${style.right} project-margin`}`}>
+    <section
+      className={`grid mob-right-pad grid-12 ${
+        position ? `${style.left} project-margin` : `${style.right} project-margin`
+      }`}
+    >
       <article className={`${style.project} ${style.recent}`}>
         <Title title={data.project_title} />
         <Date date={projectCompleted} />
@@ -37,8 +43,14 @@ export const RecentProject = ({ data, position }: { data: ProjectType; position:
         <Tags tags={data.tags} />
         <Links github={data.github_href} page={data.page_href} figma={data.figma_href} />
       </article>
-      <a className={`${style.video} transition`} href={data.page_href} title={data.page_href} target="_blank" rel="noreferrer">
-        <video muted loop autoPlay poster={poster_link}>
+      <a
+        className={`${style.video} transition`}
+        href={data.page_href}
+        title={data.page_href}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <video muted loop autoPlay poster={poster_link} aria-hidden>
           <source src={video_link} type="video/webm" />
         </video>
       </a>
