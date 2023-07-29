@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /https://drive.google.com/
-
 Sitemap: https://www.devan.fi/sitemap.xml

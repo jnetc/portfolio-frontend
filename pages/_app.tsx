@@ -36,7 +36,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="alternate" href="https://www.devan.fi/en/" hrefLang="en" />
 
         {/* Favicon */}
-        <link rel="icon" href="https://devan.fi/icons/favicon.ico" type="image/x-icon" />
+        {/* <link rel="icon" href="https://devan.fi/icons/favicon.ico" type="image/x-icon" /> */}
+        <link rel="shortcut icon" href="/icons/favicon.svg" type="image/svg+xml" />
         {/* <link rel="icon" href="/icons/favicon-32x32.png" type="image/png" sizes="32x32" /> */}
         {/* <link rel="icon" href="/icons/favicon-48x48.png" type="image/png" sizes="48x48" /> */}
         {/* <link rel="icon" href="https://devan.fi/icons/favicon-96x96.png" type="image/png" sizes="96x96" /> */}
