@@ -1,4 +1,6 @@
-User-agent: *
+User-agent: Googlebot-Image
+Disallow: /
 
+User-agent: *
 Disallow: /https://www.devan.fi/_next/image*
 Sitemap: https://www.devan.fi/sitemap.xml
