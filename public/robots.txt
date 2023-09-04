@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
 Sitemap: https://www.devan.fi/sitemap.xml
+
+Disallow: /https://www.devan.fi/_next/image*
