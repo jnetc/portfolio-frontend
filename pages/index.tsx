@@ -55,7 +55,7 @@ const App: NextPage = ({ main, locale, profile, stackoverflow }: InferGetStaticP
               property="og:url"
               content={`${locale === 'fi' ? 'https://www.devan.fi' : `https://www.devan.fi/${locale}`}`}
             />
-            <meta property="og:image" content="/icons/favicon-256x256.png" />
+            <meta property="og:image" content="/favicon.svg" />
             <meta property="og:image:type" content="image/png" />
             <meta property="og:title" content={currentLangData.meta_title} />
             <meta property="og:image:width" content="256" />
@@ -74,7 +74,7 @@ const App: NextPage = ({ main, locale, profile, stackoverflow }: InferGetStaticP
             />
             <meta name="twitter:title" content={currentLangData.meta_title} />
             <meta name="twitter:description" content={currentLangData.meta_desc} />
-            <meta name="twitter:image" content="/icons/favicon-256x256.png" />
+            <meta name="twitter:image" content="/favicon.svg" />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
           </Head>
 
