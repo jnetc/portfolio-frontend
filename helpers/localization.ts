@@ -82,12 +82,6 @@ export const ErrorMessage = {
 
 export const navigationLinks: Array<NavLink> = [
   {
-    anchor: 'home',
-    en: 'Home',
-    ru: 'Начальная',
-    fi: 'Etusivu',
-  },
-  {
     anchor: 'portfolio',
     en: 'Portfolio',
     ru: 'Портфолио',
@@ -133,9 +127,9 @@ export const anchor = {
       fi: 'taidot',
     },
     desc: {
-      ru: 'Какие навыки у меня есть',
-      en: 'Which skills do I have',
-      fi: 'Mitä taitoja minulla on',
+      ru: 'Имею опыт в',
+      en: 'I have experience in',
+      fi: 'Minulla on kokemusta',
     },
   },
   about: {
@@ -145,8 +139,8 @@ export const anchor = {
       fi: 'About me',
     },
     desc: {
-      ru: 'Моя история разработчика',
-      en: 'My developer story',
+      ru: 'Моя история как разработчика',
+      en: 'My story as a developer',
       fi: 'Kehittäjätarinani',
     },
   },
@@ -160,9 +154,9 @@ export const separators = {
       fi: 'Aiemmat projektit',
     },
     desc: {
-      ru: 'Архив портфолио',
-      en: 'portfolio archive',
-      fi: 'portfolio arkisto',
+      ru: 'Архив',
+      en: 'Archive',
+      fi: 'Arkisto',
     },
   },
   about: {
