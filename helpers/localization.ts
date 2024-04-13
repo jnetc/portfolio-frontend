@@ -121,9 +121,9 @@ export const anchor = {
       fi: 'portfolio',
     },
     desc: {
-      ru: 'Мои лучшие работы',
-      en: 'My best works',
-      fi: 'Parhaat teokseni',
+      ru: 'Мои последние работы',
+      en: 'My last works',
+      fi: 'Viimeiset teokseni',
     },
   },
   skills: {
