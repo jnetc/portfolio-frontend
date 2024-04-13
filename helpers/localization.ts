@@ -127,8 +127,8 @@ export const anchor = {
       fi: 'taidot',
     },
     desc: {
-      ru: 'Имею опыт в',
-      en: 'I have experience in',
+      ru: 'Имею опыт',
+      en: 'I have experience',
       fi: 'Minulla on kokemusta',
     },
   },
